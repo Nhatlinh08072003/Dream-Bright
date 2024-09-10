@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dream-Bridge\\Dream-Bridge.csproj": {}
+    "C:\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj": {}
   },
   "projects": {
-    "D:\\Dream-Bridge\\Dream-Bridge.csproj": {
+    "C:\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dream-Bridge\\Dream-Bridge.csproj",
+        "projectUniqueName": "C:\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj",
         "projectName": "Dream-Bridge",
-        "projectPath": "D:\\Dream-Bridge\\Dream-Bridge.csproj",
+        "projectPath": "C:\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj",
         "packagesPath": "C:\\Users\\letie\\.nuget\\packages\\",
-        "outputPath": "D:\\Dream-Bridge\\obj\\",
+        "outputPath": "C:\\Do-an-cong-nghe-phan-mem-nang-cao\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\letie\\AppData\\Roaming\\NuGet\\NuGet.Config"
