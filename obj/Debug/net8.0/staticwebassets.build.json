@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "33UOIy2pF4w/wiy4ukEFonfN3I1iaSWZZwNrU6HJg64=",
+  "Hash": "JbabtDDz1GdXevX+Z7leq8aGJg4J4TI1KEfx47XkPk4=",
   "Source": "Dream-Bridge",
   "BasePath": "_content/Dream-Bridge",
   "Mode": "Default",
@@ -623,6 +623,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Untitled.png"
+    },
+    {
+      "Identity": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Vanguard.png",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+      "BasePath": "_content/Dream-Bridge",
+      "RelativePath": "Images/Vanguard.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Vanguard.png"
     },
     {
       "Identity": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Visa-du-hoc-my-1024x536.webp",
