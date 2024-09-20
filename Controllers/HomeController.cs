@@ -1,3 +1,4 @@
+
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Dream_Bridge.Models;
@@ -17,8 +18,24 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult VeChungToi()
+    {
+        return View();
+    }
+    public IActionResult DuHoc()
+    {
+        return View();
+    }
+    public IActionResult Lienhe()
+    {
+        return View();
+    }
 
     public IActionResult Privacy()
+    {
+        return View();
+    }
+    public IActionResult DichVu()
     {
         return View();
     }
