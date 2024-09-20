@@ -1,3 +1,4 @@
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,4 +21,29 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+    name: "Home",
+    pattern: "/home",
+    defaults: new { controller = "Home", action = "Home" }
+);
+app.MapControllerRoute(
+    name: "VeChungToi",
+    pattern: "/vechungtoi",
+    defaults: new { controller = "Home", action = "VeChungToi" }
+);
+app.MapControllerRoute(
+    name: "DuHoc",
+    pattern: "/duhoc",
+    defaults: new { controller = "Home", action = "DuHoc" }
+);
+app.MapControllerRoute(
+    name: "LienHe",
+    pattern: "/lienhe",
+    defaults: new { controller = "Home", action = "LienHe" }
+);
+app.MapControllerRoute(
+    name: "DichVu",
+    pattern: "/dichvu",
+    defaults: new { controller = "Home", action = "DichVu" }
+);
 app.Run();

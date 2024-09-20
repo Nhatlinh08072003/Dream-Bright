@@ -1,46 +1,56 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
-    <title>DREAM BRIDGE</title>
-  </head>
-  <body class="">
-    <!-- Phần Hotline -->
-    <div class="border-b border-gray-300 bg-white">
-      <div class="container mx-auto flex items-center justify-end gap-3 p-3">
-        <div class="mt-1">
-          <img class="w-8" src="https://classic.vn/wp-content/uploads/2022/07/phone-icon-800x800.png" alt="Phone Icon" />
-        </div>
-        <div>
-          <h4 class="text-xl font-bold">DREAM BRIDGE</h4>
-          <p>Hotline: <span class="text-red-500">0886007589</span></p>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+  <title>DREAM BRIDGE</title>
+</head>
+
+<body class="">
+  <!-- Phần Hotline -->
+  <div class="border-b border-gray-300 bg-white">
+    <div class="container mx-auto flex items-center justify-end gap-3 p-3">
+      <div class="mt-1">
+        <img class="w-8" src="https://classic.vn/wp-content/uploads/2022/07/phone-icon-800x800.png" alt="Phone Icon" />
+      </div>
+      <div>
+        <h4 class="text-xl font-bold">DREAM BRIDGE</h4>
+        <p>Hotline: <span class="text-red-500">083 8686 8686</span></p>
       </div>
     </div>
+  </div>
 
-    <!-- Phần Logo và Menu -->
-    <div class="bg-white">
-      <div class="container mx-auto flex items-center justify-between">
-        <!-- Logo -->
-        <div class="logo">
-          <img class="w-36" src="~/Images/Vanguard.png" alt="Logo" />
-        </div>
+  <!-- Phần Logo và Menu -->
+  <div class="bg-white">
+    <div class="container mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <div class="logo">
+        <img class="w-36" src="~/Images/Vanguard.png" alt="Logo" />
+      </div>
 
-        <!-- Menu -->
-        <div class="menu ">
-          <ul class="flex gap-7 text-lg font-medium pr-5 pb-7">
-            <li><a class="transition hover:text-blue-500" href="">TRANG CHỦ</a></li>
-            <li><a class="transition hover:text-blue-500" href="">VỀ CHÚNG TÔI</a></li>
-            <li><a class="transition hover:text-blue-500" href="">DU HỌC</a></li>
-            <li><a class="transition hover:text-blue-500" href="">DỊCH VỤ</a></li>
-            <li><a class="transition hover:text-blue-500" href="">TÌM TRƯỜNG</a></li>
-            <li><a class="transition hover:text-blue-500" href="">TIN TỨC</a></li>
-            <li><a class="transition hover:text-blue-500" href="">LIÊN HỆ</a></li>
-          </ul>
-        </div>
+      <!-- Menu -->
+      <div class="menu ">
+        <ul class="flex gap-7 text-lg font-medium pr-5 pb-7">
+          <li><a class="transition hover:text-blue-500" href="/home">TRANG CHỦ</a></li>
+          <li><a class="transition hover:text-blue-500" href="/vechungtoi">VỀ CHÚNG TÔI</a></li>
+          <li><a class="transition hover:text-blue-500" href="/duhoc">DU HỌC</a></li>
+          <li><a class="transition hover:text-blue-500" href="/dichvu">DỊCH VỤ</a></li>
+          <li><a class="transition hover:text-blue-500" href="">TÌM TRƯỜNG</a></li>
+          <li><a class="transition hover:text-blue-500" href="">TIN TỨC</a></li>
+          <li><a class="transition hover:text-blue-500" href="lienhe">LIÊN HỆ</a></li>
+          <li>
+            <form class="flex items-center">
+              <input type="text" placeholder="Tìm kiếm..."
+                class="border rounded-l px-3 py-1 focus:outline-none focus:ring focus:ring-blue-300">
+              <button class="bg-blue-500 text-white px-3 py-1 rounded-r hover:bg-blue-600 transition">Tìm</button>
+            </form>
+          </li>
+        </ul>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
