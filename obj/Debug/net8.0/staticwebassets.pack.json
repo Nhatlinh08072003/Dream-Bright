@@ -1,363 +1,367 @@
 {
   "Files": [
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Dream-Bridge.bundle.scp.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Dream-Bridge.bundle.scp.css",
       "PackagePath": "staticwebassets\\Dream-Bridge.bundle.scp.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Anh.jpg",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Anh.jpg",
       "PackagePath": "staticwebassets\\Images\\Anh.jpg"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Canada.jpg",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Canada.jpg",
       "PackagePath": "staticwebassets\\Images\\Canada.jpg"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Ireland.jpg",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Ireland.jpg",
       "PackagePath": "staticwebassets\\Images\\Ireland.jpg"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Malaysia.jpg",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Malaysia.jpg",
       "PackagePath": "staticwebassets\\Images\\Malaysia.jpg"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Mỹ.jpg",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Mỹ.jpg",
       "PackagePath": "staticwebassets\\Images\\Mỹ.jpg"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\New Zealand.jpg",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\New Zealand.jpg",
       "PackagePath": "staticwebassets\\Images\\New Zealand.jpg"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Philippines.jpg",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Philippines.jpg",
       "PackagePath": "staticwebassets\\Images\\Philippines.jpg"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Thái Lan.jpg",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Thái Lan.jpg",
       "PackagePath": "staticwebassets\\Images\\Thái Lan.jpg"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Thụy Sĩ.jpg",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Thụy Sĩ.jpg",
       "PackagePath": "staticwebassets\\Images\\Thụy Sĩ.jpg"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Untitled.png",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Untitled.png",
       "PackagePath": "staticwebassets\\Images\\Untitled.png"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Visa-du-hoc-my-1024x536.webp",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Vanguard.png",
+      "PackagePath": "staticwebassets\\Images\\Vanguard.png"
+    },
+    {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Visa-du-hoc-my-1024x536.webp",
       "PackagePath": "staticwebassets\\Images\\Visa-du-hoc-my-1024x536.webp"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\chi-phi-du-hoc-my.webp",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\chi-phi-du-hoc-my.webp",
       "PackagePath": "staticwebassets\\Images\\chi-phi-du-hoc-my.webp"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\danh-gia.webp",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\danh-gia.webp",
       "PackagePath": "staticwebassets\\Images\\danh-gia.webp"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\dsa.webp",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\dsa.webp",
       "PackagePath": "staticwebassets\\Images\\dsa.webp"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\du-hoc-my-thinkedu.webp",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\du-hoc-my-thinkedu.webp",
       "PackagePath": "staticwebassets\\Images\\du-hoc-my-thinkedu.webp"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\he-thong-giao-duc-cua-my.webp",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\he-thong-giao-duc-cua-my.webp",
       "PackagePath": "staticwebassets\\Images\\he-thong-giao-duc-cua-my.webp"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\ho-tro-tu-van.webp",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\ho-tro-tu-van.webp",
       "PackagePath": "staticwebassets\\Images\\ho-tro-tu-van.webp"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\hoc-bong.webp",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\hoc-bong.webp",
       "PackagePath": "staticwebassets\\Images\\hoc-bong.webp"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\hình 1.png",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\hình 1.png",
       "PackagePath": "staticwebassets\\Images\\hình 1.png"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\hình 2.png",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\hình 2.png",
       "PackagePath": "staticwebassets\\Images\\hình 2.png"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\hình 3.png",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\hình 3.png",
       "PackagePath": "staticwebassets\\Images\\hình 3.png"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\hình 4.png",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\hình 4.png",
       "PackagePath": "staticwebassets\\Images\\hình 4.png"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\nhan-vien.webp",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\nhan-vien.webp",
       "PackagePath": "staticwebassets\\Images\\nhan-vien.webp"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\singapore.jpg",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\singapore.jpg",
       "PackagePath": "staticwebassets\\Images\\singapore.jpg"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp",
       "PackagePath": "staticwebassets\\Images\\so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\so-luong-sinh-vien-quoc-te-o-my.webp",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\so-luong-sinh-vien-quoc-te-o-my.webp",
       "PackagePath": "staticwebassets\\Images\\so-luong-sinh-vien-quoc-te-o-my.webp"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Úc.jpg",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Úc.jpg",
       "PackagePath": "staticwebassets\\Images\\Úc.jpg"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\css\\input.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\css\\input.css",
       "PackagePath": "staticwebassets\\css\\input.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\css\\output.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\css\\output.css",
       "PackagePath": "staticwebassets\\css\\output.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\css\\site.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\favicon.ico",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\js\\site.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

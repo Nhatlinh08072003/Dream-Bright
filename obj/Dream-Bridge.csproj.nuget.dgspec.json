@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj": {}
+    "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj": {}
   },
   "projects": {
-    "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj": {
+    "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj",
+        "projectUniqueName": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj",
         "projectName": "Dream-Bridge",
-        "projectPath": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj",
-        "packagesPath": "C:\\Users\\letie\\.nuget\\packages\\",
-        "outputPath": "D:\\Do-an-cong-nghe-phan-mem-nang-cao\\obj\\",
+        "projectPath": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\Dream-Bridge.csproj",
+        "packagesPath": "C:\\Users\\anhqu\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\letie\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\anhqu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -42,6 +42,18 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
