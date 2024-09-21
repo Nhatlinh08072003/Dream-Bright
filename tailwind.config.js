@@ -91,7 +91,7 @@ Module.exports = {
 
         xl: '1200px',
 
-        '2xl': '1536px',
+      '2xl': '1536px',
       },
     },
   },
