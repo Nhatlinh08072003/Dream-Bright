@@ -44,8 +44,39 @@
         <ul class="flex gap-7 text-lg font-medium pr-5 pb-7">
           <li><a class="transition hover:text-blue-500" href="/home">TRANG CHỦ</a></li>
           <li><a class="transition hover:text-blue-500" href="/vechungtoi">VỀ CHÚNG TÔI</a></li>
-          <li><a class="transition hover:text-blue-500" href="/duhoc">DU HỌC</a></li>
-          <li><a class="transition hover:text-blue-500" href="/dichvu">DỊCH VỤ</a></li>
+          <div class="relative group">
+            <a href="/duhoc" class="text-lg text-black transition hover:text-blue-500 " id="duhoc-link">DU
+              HỌC</a>
+
+            <!-- Bảng danh sách du học sẽ hiển thị khi di chuột -->
+            <div class=" absolute hidden  bg-gray-100 group-hover:block p-5 z-10 items-center "
+              style="left:-45px; top:40px;width: 153px" id="duhoc-list">
+              <table class="mx-auto w-full table-auto ">
+                <tbody>
+                  <tr class="flex flex-col w-full ">
+                    <td class="p-2 w-full text-center text-lg hover:bg-gray-300 cursor-pointer">Du học Mỹ</td>
+                    <td class="p-2 w-full  text-center text-lg hover:bg-gray-300 cursor-pointer">Du học Anh</td>
+                    <td class="p-2 w-full text-center text-lg hover:bg-gray-300 cursor-pointer">Du học Úc</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="relative group">
+            <a href="/dichvu" class="text-lg text-black transition hover:text-blue-500 " id="tuvan-link">Dịch Vụ</a>
+            <!-- Bảng danh sách du học sẽ hiển thị khi di chuột -->
+            <div class=" absolute hidden  bg-gray-100 group-hover:block p-5 z-10 items-center "
+              style="left:-55px; top:40px;width: 180px" id="tuvan-list">
+              <table class="mx-auto w-full table-auto ">
+                <tbody>
+                  <tr class="flex flex-col w-full ">
+                    <td class="p-2 w-full text-center text-lg hover:bg-gray-300 cursor-pointer">Tư vấn du học</td>
+                    <td class="p-2 w-full  text-center text-lg hover:bg-gray-300 cursor-pointer">Tư vấn Visa</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
           <li><a class="transition hover:text-blue-500" href="">TÌM TRƯỜNG</a></li>
           <li><a class="transition hover:text-blue-500" href="">TIN TỨC</a></li>
           <li><a class="transition hover:text-blue-500" href="lienhe">LIÊN HỆ</a></li>
@@ -61,5 +92,33 @@
     </div>
   </div>
 </body>
+<script>
+  // Lấy các phần tử
+  const duhocLink = document.getElementById('duhoc-link');
+  const duhocList = document.getElementById('duhoc-list');
+  const tuvanLink = document.getElementById('tuvan-link');
+  const tuvanList = document.getElementById('tuvan-list');
+
+  // Thêm sự kiện 'mouseenter' để hiển thị danh sách
+  duhocLink.addEventListener('mouseenter', () => {
+    duhocList.classList.remove('hidden'); // Hiển thị danh sách
+  });
+
+  // Thêm sự kiện 'mouseleave' để ẩn danh sách khi chuột rời khỏi liên kết
+  duhocLink.addEventListener('mouseleave', () => {
+    duhocList.classList.add('hidden'); // Ẩn danh sách
+  });
+
+  // Thêm sự kiện 'mouseenter' để hiển thị danh sách
+  tuvanLink.addEventListener('mouseenter', () => {
+    tuvanList.classList.remove('hidden'); // Hiển thị danh sách
+  });
+
+  // Thêm sự kiện 'mouseleave' để ẩn danh sách khi chuột rời khỏi liên kết
+  tuvanLink.addEventListener('mouseleave', () => {
+    tuvanList.classList.add('hidden'); // Ẩn danh sách
+  });
+
+</script>
 
 </html>
