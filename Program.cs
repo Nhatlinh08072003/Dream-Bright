@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();
 builder.Services.AddSingleton<EmailService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -46,5 +47,15 @@ app.MapControllerRoute(
     name: "DichVu",
     pattern: "/dichvu",
     defaults: new { controller = "Home", action = "DichVu" }
+);
+app.MapControllerRoute(
+    name: "Login",
+    pattern: "/login",
+    defaults: new { controller = "Account", action = "Login" }
+);
+app.MapControllerRoute(
+    name: "Register",
+    pattern: "/register",
+    defaults: new { controller = "Account", action = "Register" }
 );
 app.Run();

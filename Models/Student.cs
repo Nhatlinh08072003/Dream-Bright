@@ -24,4 +24,5 @@ public partial class Student
     public virtual Country? Country { get; set; }
 
     public virtual ICollection<Testimonial> Testimonials { get; set; } = new List<Testimonial>();
+    public string? UserName { get; internal set; }
 }
