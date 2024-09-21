@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="bg-gray-100 flex items-center justify-center p-10">
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+        <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+        <form>
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" placeholder="Nhập Email của bạn..." id="email" name="email" required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:bg-gray-200 focus:border-gray-200 sm:text-sm">
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" placeholder="Nhập Password của bạn" id="password" name="password" required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:bg-gray-200 focus:border-gray-200 sm:text-sm">
+            </div>
+            <button type="submit"
+                class="w-full py-2 px-4 bg-black text-white font-bold rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                Login
+            </button>
+        </form>
+        <div class="mt-4 text-center">
+            <a href="/forgotpassword" class="text-sm text-gray-600 hover:text-gray-800">Forgot your password?</a>
+        </div>
+        <div class="mt-4 text-center justify-center flex gap-1 ">
+            <p class="text-sm text-gray-600">Don't have an account?</p>
+            <a href="/register" class="text-sm  text-black font-bold hover:text-indigo-800">Sign up</a>
+        </div>
+    </div>
+</div>
