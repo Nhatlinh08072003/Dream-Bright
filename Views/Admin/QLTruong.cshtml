@@ -225,7 +225,8 @@
                                 <span class="mr-2">Học phí trung bình:
                                     <p class="inline pl-1 font-bold text-black-700 font-normal">74,100$</p>
                                 </span>
-                                <span class="cursor-pointer">
+                                <!-- Các icon sửa, thêm class cursor-pointer -->
+                                <span class="cursor-pointer editIcon">
                                     <i class="fas fa-edit" style="font-size: 20px;"></i> <!-- Icon sửa -->
                                 </span>
                             </h1>
@@ -296,6 +297,7 @@
         });
 
         const addIcon = document.getElementById('addIcon');
+        const editIcons = document.querySelectorAll('.editIcon'); // Lấy tất cả các icon sửa
         const overlay = document.getElementById('overlay');
         const closeModal = document.getElementById('closeModal');
 
@@ -307,6 +309,12 @@
         // Ẩn modal khi nhấn nút đóng
         closeModal.addEventListener('click', function () {
             overlay.style.display = 'none'; // Ẩn div overlay
+        });
+        // Hiển thị modal khi nhấn vào các icon sửa
+        editIcons.forEach(icon => {
+            icon.addEventListener('click', function () {
+                overlay.style.display = 'flex'; // Hiển thị div overlay khi nhấn vào icon sửa
+            });
         });
     </script>
 </body>
