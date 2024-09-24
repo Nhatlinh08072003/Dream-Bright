@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Effect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .active {
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        a {
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .container.mx-auto.flex.items-center.justify-end.gap-3.p-3 {
+            display: none;
+        }
+
+        .flex.gap-7.text-lg.font-medium.pr-5.pb-7 {
+            display: none;
+        }
+
+        .w-36 {
+            display: none;
+        }
+
+        .flex.items-start.justify-center.gap-20.bg-gray-900 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center">
+    <div class="flex w-[100%]">
+        <!-- Div lớn chứa các icon -->
+        <div
+            class="group relative flex h-[900px] w-[50px] flex-col items-start bg-blue-500 transition-all duration-500 ease-in-out hover:w-[200px]">
+            <!-- Danh sách các icon -->
+            <a href="/tongquan"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">home</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Tổng
+                    Quan</span>
+            </a>
+            <a href="#"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">monetization_on</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Doanh thu</span>
+            </a>
+            <a href="#"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">local_offer</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Khuyến mãi</span>
+            </a>
+            <a href="#"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">announcement</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Tin tức</span>
+            </a>
+            <a href="/qltruong"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">school</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Trường</span>
+            </a>
+            <a href="/qltuvan"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">help_outline</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Tư vấn</span>
+            </a>
+            <a href="#"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">public</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Danh
+                    mục du học</span>
+            </a>
+            <a href="#"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">account_circle</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Tài khoản</span>
+            </a>
+        </div>
+
+        <!-- thẻ div chứa nội dung -->
+        <div class="w-[calc(100%-200px)] h-[900px] mx-auto">
+            <h1 class="w-[100%] font-bold text-center text-2xl mt-[2%]">Danh sách tư vấn</h1>
+            <div class="container mt-[2%] mx-auto">
+                <div class="h-auto w-auto flex border border-black">
+                    <!-- HỌ VÀ TÊN -->
+                    <div class="flex-1 text-black text-center border border-black">
+                        <div class="h-[auto] border-b border-black">
+                            <span class="bg-gray-400 flex items-center justify-center h-[45px]">
+                                Họ và Tên
+                            </span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>Lê Tiên Nhất Linh</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>Lưu Hồng Hữu</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>Trần Anh Quân</span>
+                        </div>
+                        <div class="p-3">
+                            <span>Nguyễn Lê Kim Lân</span>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex-1 text-black text-center border border-black">
+                        <div class="h-[auto] w-auto border-b border-black">
+                            <span class="bg-gray-400 flex items-center justify-center h-[45px]">
+                                Email
+                            </span>
+                        </div>
+                        <div class="p-3 w-auto border-b border-black">
+                            <span>LinhStupid@gmail.com</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>honghuudeptrai@gmail.com</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>trananhquandeptrai@gmail.com</span>
+                        </div>
+                        <div class="p-3">
+                            <span>nguyenlekimlandeptrai@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <!-- Loại tư vấn -->
+                    <div class="flex-1 text-black text-center border border-black">
+                        <div class="h-[auto] border-b border-black">
+                            <span class="bg-gray-400 flex items-center justify-center h-[45px]">
+                                Loại tư vấn
+                            </span>
+                        </div>
+                        <div class="p-3 w-auto border-b border-black">
+                            <span>Tư vấn du học</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>Tư vấn VISA</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>Tư vấn du học</span>
+                        </div>
+                        <div class="p-3">
+                            <span>Tư vấn VISA</span>
+                        </div>
+                    </div>
+
+                    <!-- Quốc gia tư vấn -->
+                    <div class="flex-1 text-black text-center border border-black">
+                        <div class="h-[auto] border-b border-black">
+                            <span class="bg-gray-400 flex items-center justify-center h-[45px]">
+                                Quốc gia tư vấn
+                            </span>
+                        </div>
+                        <div class="p-3 w-auto border-b border-black">
+                            <span>Du học Mỹ</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>VISA Thụy Sĩ</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>Du học Singapore</span>
+                        </div>
+                        <div class="p-3">
+                            <span>VISA Úc</span>
+                        </div>
+                    </div>
+
+                    <!-- Số điện thoại -->
+                    <div class="flex-1 text-black text-center border border-black">
+                        <div class="h-[auto] border-b border-black">
+                            <span class="bg-gray-400 flex items-center justify-center h-[45px]">
+                                số điện thoại
+                            </span>
+                        </div>
+                        <div class="p-3 w-auto border-b border-black">
+                            <span>0923663654</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>0923663654</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>0923663654</span>
+                        </div>
+                        <div class="p-3">
+                            <span>0923663654</span>
+                        </div>
+                    </div>
+
+                    <!-- Lần gọi -->
+                    <div class="flex-1 text-black text-center border border-black">
+                        <div class="h-[auto] border-b border-black">
+                            <span class="bg-gray-400 flex items-center justify-center h-[45px]">
+                                Lần gọi
+                            </span>
+                        </div>
+                        <div class="p-3 w-auto border-b border-black">
+                            <span>10</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>2</span>
+                        </div>
+                        <div class="p-3 border-b border-black">
+                            <span>3</span>
+                        </div>
+                        <div class="p-3">
+                            <span>1</span>
+                        </div>
+                    </div>
+
+                    <!-- Trạng thái -->
+                    <div class="flex-1 text-black text-center border border-black">
+                        <div class="h-[auto] border-b border-black">
+                            <span class="bg-gray-400 flex items-center justify-center h-[45px]">
+                                Trạng thái
+                            </span>
+                        </div>
+                        <div class="pt-2 pb-2 w-auto border-b border-black">
+                            <div class="w-[100%] h-[32px] mx-auto">
+                                <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md ">
+                                    <option value="option1" class="text-center">Chưa tư vấn</option>
+                                    <option value="option2" class="text-center">Đã tư vấn</option>
+                                    <option value="option3" class="text-center">Không thể liên lạc</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="pt-2 pb-2 w-auto border-b border-black">
+                            <div class="w-[100%] h-[32px] mx-auto">
+                                <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md ">
+                                    <option value="option1" class="text-center">Chưa tư vấn</option>
+                                    <option value="option2" class="text-center">Đã tư vấn</option>
+                                    <option value="option3" class="text-center">Không thể liên lạc</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="pt-2 pb-2 w-auto border-b border-black">
+                            <div class="w-[100%] h-[32px] mx-auto">
+                                <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md ">
+                                    <option value="option1" class="text-center">Chưa tư vấn</option>
+                                    <option value="option2" class="text-center">Đã tư vấn</option>
+                                    <option value="option3" class="text-center">Không thể liên lạc</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="pt-2 pb-2 w-auto ">
+                            <div class="w-[100%] h-[32px] mx-auto">
+                                <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md ">
+                                    <option value="option1" class="text-center">Chưa tư vấn</option>
+                                    <option value="option2" class="text-center">Đã tư vấn</option>
+                                    <option value="option3" class="text-center">Không thể liên lạc</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</body>
+
+</html>

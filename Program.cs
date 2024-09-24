@@ -53,6 +53,16 @@ app.MapControllerRoute(
     defaults: new { controller = "Admin", action = "QLTruong" }
 );
 app.MapControllerRoute(
+    name: "QLTuvan",
+    pattern: "/qltuvan",
+    defaults: new { controller = "Admin", action = "QLTuvan" }
+);
+app.MapControllerRoute(
+    name: "TQuan",
+    pattern: "/tongquan",
+    defaults: new { controller = "Admin", action = "TQuan" }
+);
+app.MapControllerRoute(
     name: "Login",
     pattern: "/login",
     defaults: new { controller = "Account", action = "Login" }
