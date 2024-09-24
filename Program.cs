@@ -47,4 +47,19 @@ app.MapControllerRoute(
     pattern: "/dichvu",
     defaults: new { controller = "Home", action = "DichVu" }
 );
+app.MapControllerRoute(
+    name: "QLTruong",
+    pattern: "/qltruong",
+    defaults: new { controller = "Admin", action = "QLTruong" }
+);
+app.MapControllerRoute(
+    name: "Login",
+    pattern: "/login",
+    defaults: new { controller = "Account", action = "Login" }
+);
+app.MapControllerRoute(
+    name: "Register",
+    pattern: "/register",
+    defaults: new { controller = "Account", action = "Register" }
+);
 app.Run();
