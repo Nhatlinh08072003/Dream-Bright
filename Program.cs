@@ -52,4 +52,14 @@ app.MapControllerRoute(
     pattern: "/qltruong",
     defaults: new { controller = "Admin", action = "QLTruong" }
 );
+app.MapControllerRoute(
+    name: "Login",
+    pattern: "/login",
+    defaults: new { controller = "Account", action = "Login" }
+);
+app.MapControllerRoute(
+    name: "Register",
+    pattern: "/register",
+    defaults: new { controller = "Account", action = "Register" }
+);
 app.Run();

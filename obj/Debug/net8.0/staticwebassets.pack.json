@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\Images\\Malaysia.jpg"
     },
     {
+      "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\My.png",
+      "PackagePath": "staticwebassets\\Images\\My.png"
+    },
+    {
       "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Mỹ.jpg",
       "PackagePath": "staticwebassets\\Images\\Mỹ.jpg"
     },
@@ -73,6 +77,10 @@
       "PackagePath": "staticwebassets\\Images\\down-arrow.png"
     },
     {
+      "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\du học 1.png",
+      "PackagePath": "staticwebassets\\Images\\du học 1.png"
+    },
+    {
       "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\du học.png",
       "PackagePath": "staticwebassets\\Images\\du học.png"
     },
@@ -83,6 +91,10 @@
     {
       "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\edit.png",
       "PackagePath": "staticwebassets\\Images\\edit.png"
+    },
+    {
+      "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\gia hạn visa 1.png",
+      "PackagePath": "staticwebassets\\Images\\gia hạn visa 1.png"
     },
     {
       "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\he-thong-giao-duc-cua-my.webp",
@@ -121,8 +133,16 @@
       "PackagePath": "staticwebassets\\Images\\nhan-vien.webp"
     },
     {
+      "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\passport2.png",
+      "PackagePath": "staticwebassets\\Images\\passport2.png"
+    },
+    {
       "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\plus.png",
       "PackagePath": "staticwebassets\\Images\\plus.png"
+    },
+    {
+      "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\sing.png",
+      "PackagePath": "staticwebassets\\Images\\sing.png"
     },
     {
       "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\singapore.jpg",
@@ -135,6 +155,10 @@
     {
       "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\so-luong-sinh-vien-quoc-te-o-my.webp",
       "PackagePath": "staticwebassets\\Images\\so-luong-sinh-vien-quoc-te-o-my.webp"
+    },
+    {
+      "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\thuysy.png",
+      "PackagePath": "staticwebassets\\Images\\thuysy.png"
     },
     {
       "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\tin tức.png",
@@ -155,6 +179,14 @@
     {
       "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\tư vấn.png",
       "PackagePath": "staticwebassets\\Images\\tư vấn.png"
+    },
+    {
+      "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\uc.png",
+      "PackagePath": "staticwebassets\\Images\\uc.png"
+    },
+    {
+      "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\visa 2.png",
+      "PackagePath": "staticwebassets\\Images\\visa 2.png"
     },
     {
       "Id": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Úc.jpg",
