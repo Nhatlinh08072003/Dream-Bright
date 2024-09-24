@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Dream-Bridge.props" />
-</Project>
