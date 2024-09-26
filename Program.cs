@@ -63,6 +63,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Admin", action = "TQuan" }
 );
 app.MapControllerRoute(
+    name: "QLTaikhoan",
+    pattern: "/qltaikhoan",
+    defaults: new { controller = "Admin", action = "QLTaikhoan" }
+);
+app.MapControllerRoute(
     name: "Login",
     pattern: "/login",
     defaults: new { controller = "Account", action = "Login" }
