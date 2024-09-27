@@ -69,6 +69,35 @@ app.MapControllerRoute(
 ); app.MapControllerRoute(
     name: "ThuySy",
     pattern: "/thuysy",
-    defaults: new { controller = "Home", action = "ThuySy" }
+    defaults: new { controller = "Home", action = "ThuySy" });
+app.MapControllerRoute(
+   name: "QLTruong",
+   pattern: "/qltruong",
+   defaults: new { controller = "Admin", action = "QLTruong" }
+);
+app.MapControllerRoute(
+    name: "QLTuvan",
+    pattern: "/qltuvan",
+    defaults: new { controller = "Admin", action = "QLTuvan" }
+);
+app.MapControllerRoute(
+    name: "TQuan",
+    pattern: "/tongquan",
+    defaults: new { controller = "Admin", action = "TQuan" }
+);
+app.MapControllerRoute(
+    name: "QLTaikhoan",
+    pattern: "/qltaikhoan",
+    defaults: new { controller = "Admin", action = "QLTaikhoan" }
+);
+app.MapControllerRoute(
+    name: "Login",
+    pattern: "/login",
+    defaults: new { controller = "Account", action = "Login" }
+);
+app.MapControllerRoute(
+    name: "Register",
+    pattern: "/register",
+    defaults: new { controller = "Account", action = "Register" }
 );
 app.Run();

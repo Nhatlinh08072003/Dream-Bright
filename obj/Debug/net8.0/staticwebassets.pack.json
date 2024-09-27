@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\Images\\Philippines.jpg"
     },
     {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\QL doanh thu.png",
+      "PackagePath": "staticwebassets\\Images\\QL doanh thu.png"
+    },
+    {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Thái Lan.jpg",
       "PackagePath": "staticwebassets\\Images\\Thái Lan.jpg"
     },
@@ -77,8 +81,16 @@
       "PackagePath": "staticwebassets\\Images\\dieu-kien-du-hoc-thuy-si.webp"
     },
     {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\down-arrow.png",
+      "PackagePath": "staticwebassets\\Images\\down-arrow.png"
+    },
+    {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\du học 1.png",
       "PackagePath": "staticwebassets\\Images\\du học 1.png"
+    },
+    {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\du học.png",
+      "PackagePath": "staticwebassets\\Images\\du học.png"
     },
     {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\du-hoc-my-thinkedu.webp",
@@ -111,6 +123,10 @@
     {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\duhocuc.png",
       "PackagePath": "staticwebassets\\Images\\duhocuc.png"
+    },
+    {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\edit.png",
+      "PackagePath": "staticwebassets\\Images\\edit.png"
     },
     {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\gia hạn visa 1.png",
@@ -149,6 +165,10 @@
       "PackagePath": "staticwebassets\\Images\\hình 4.png"
     },
     {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\khuyến mãi.png",
+      "PackagePath": "staticwebassets\\Images\\khuyến mãi.png"
+    },
+    {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\lua-chon-du-hoc-thuy-si.webp",
       "PackagePath": "staticwebassets\\Images\\lua-chon-du-hoc-thuy-si.webp"
     },
@@ -167,6 +187,10 @@
     {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\passport2.png",
       "PackagePath": "staticwebassets\\Images\\passport2.png"
+    },
+    {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\plus.png",
+      "PackagePath": "staticwebassets\\Images\\plus.png"
     },
     {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\shool.png",
@@ -205,6 +229,10 @@
       "PackagePath": "staticwebassets\\Images\\thuysy.png"
     },
     {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\tin tức.png",
+      "PackagePath": "staticwebassets\\Images\\tin tức.png"
+    },
+    {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\tongquanuc.png",
       "PackagePath": "staticwebassets\\Images\\tongquanuc.png"
     },
@@ -219,6 +247,22 @@
     {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\tongquanuc4.png",
       "PackagePath": "staticwebassets\\Images\\tongquanuc4.png"
+    },
+    {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\trang chủ.png",
+      "PackagePath": "staticwebassets\\Images\\trang chủ.png"
+    },
+    {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\trường.png",
+      "PackagePath": "staticwebassets\\Images\\trường.png"
+    },
+    {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\tài khoản.png",
+      "PackagePath": "staticwebassets\\Images\\tài khoản.png"
+    },
+    {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\tư vấn.png",
+      "PackagePath": "staticwebassets\\Images\\tư vấn.png"
     },
     {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\uc.png",
