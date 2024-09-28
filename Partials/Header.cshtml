@@ -52,34 +52,51 @@
 
             <!-- Bảng danh sách du học sẽ hiển thị khi di chuột -->
             <div class=" absolute hidden  bg-gray-100 group-hover:block p-5 z-10 items-center "
-              style="left:-45px; top:40px;width: 153px" id="duhoc-list">
+              style="left:-45px; top:40px;width: 200px" id="duhoc-list">
               <table class="mx-auto w-full table-auto ">
                 <tbody>
-                  <tr class="flex flex-col w-full ">
-                    <td class="p-2 w-full text-center text-lg hover:bg-gray-300 cursor-pointer">Du học Mỹ</td>
-                    <td class="p-2 w-full  text-center text-lg hover:bg-gray-300 cursor-pointer">Du học Anh</td>
-                    <td class="p-2 w-full text-center text-lg hover:bg-gray-300 cursor-pointer">Du học Úc</td>
+                  <tr class="flex flex-col w-full">
+                    <td
+                      class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer whitespace-nowrap border-b border-gray-400">
+                      <a href="/my">Du học Mỹ</a>
+                    </td>
+                    <td
+                      class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer whitespace-nowrap border-b border-gray-400">
+                      <a href="/uc">Du học Úc</a>
+                    </td>
+                    <td
+                      class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer whitespace-nowrap border-b border-gray-400">
+                      <a href="/thuysy">Du học Thụy Sỹ</a>
+                    </td>
+                    <td
+                      class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer whitespace-nowrap border-b border-gray-400">
+                      <a href="/singapore">Du học Singapore</a>
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div class="relative group">
-            <a href="/dichvu" class="text-lg text-black transition hover:text-blue-500 " id="tuvan-link">Dịch Vụ</a>
+            <a href="/dichvu" class="text-lg text-black transition hover:text-blue-500 " id="tuvan-link">DỊCH VỤ</a>
             <!-- Bảng danh sách du học sẽ hiển thị khi di chuột -->
             <div class=" absolute hidden  bg-gray-100 group-hover:block p-5 z-10 items-center "
               style="left:-55px; top:40px;width: 180px" id="tuvan-list">
               <table class="mx-auto w-full table-auto ">
                 <tbody>
-                  <tr class="flex flex-col w-full ">
-                    <td class="p-2 w-full text-center text-lg hover:bg-gray-300 cursor-pointer">Tư vấn du học</td>
-                    <td class="p-2 w-full  text-center text-lg hover:bg-gray-300 cursor-pointer">Tư vấn Visa</td>
+                  <tr class="flex flex-col w-full">
+                    <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                      Tư vấn du học
+                    </td>
+                    <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                      Tư vấn Visa
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <li><a class="transition hover:text-blue-500" href="">TÌM TRƯỜNG</a></li>
+          <li><a class="transition hover:text-blue-500" href="/timtruong">TÌM TRƯỜNG</a></li>
           <li><a class="transition hover:text-blue-500" href="">TIN TỨC</a></li>
           <li><a class="transition hover:text-blue-500" href="lienhe">LIÊN HỆ</a></li>
           <li style="margin-top: -5px;">
@@ -95,31 +112,58 @@
   </div>
 </body>
 <script>
-  // Lấy các phần tử
+  // Lấy các phần tử cho DU HỌC
   const duhocLink = document.getElementById('duhoc-link');
   const duhocList = document.getElementById('duhoc-list');
+
+  // Lấy các phần tử cho DỊCH VỤ
   const tuvanLink = document.getElementById('tuvan-link');
   const tuvanList = document.getElementById('tuvan-list');
 
-  // Thêm sự kiện 'mouseenter' để hiển thị danh sách
+  // Hiển thị danh sách DU HỌC khi di chuột vào liên kết
   duhocLink.addEventListener('mouseenter', () => {
-    duhocList.classList.remove('hidden'); // Hiển thị danh sách
+    duhocList.classList.remove('hidden');
   });
 
-  // Thêm sự kiện 'mouseleave' để ẩn danh sách khi chuột rời khỏi liên kết
+  // Ẩn danh sách DU HỌC khi chuột rời khỏi cả liên kết và danh sách
   duhocLink.addEventListener('mouseleave', () => {
-    duhocList.classList.add('hidden'); // Ẩn danh sách
+    setTimeout(() => {
+      if (!duhocList.matches(':hover')) {
+        duhocList.classList.add('hidden');
+      }
+    }, 200);
   });
 
-  // Thêm sự kiện 'mouseenter' để hiển thị danh sách
+  duhocList.addEventListener('mouseenter', () => {
+    duhocList.classList.remove('hidden');
+  });
+
+  duhocList.addEventListener('mouseleave', () => {
+    duhocList.classList.add('hidden');
+  });
+
+  // Hiển thị danh sách DỊCH VỤ khi di chuột vào liên kết
   tuvanLink.addEventListener('mouseenter', () => {
-    tuvanList.classList.remove('hidden'); // Hiển thị danh sách
+    tuvanList.classList.remove('hidden');
   });
 
-  // Thêm sự kiện 'mouseleave' để ẩn danh sách khi chuột rời khỏi liên kết
+  // Ẩn danh sách DỊCH VỤ khi chuột rời khỏi cả liên kết và danh sách
   tuvanLink.addEventListener('mouseleave', () => {
-    tuvanList.classList.add('hidden'); // Ẩn danh sách
+    setTimeout(() => {
+      if (!tuvanList.matches(':hover')) {
+        tuvanList.classList.add('hidden');
+      }
+    }, 200);
   });
+
+  tuvanList.addEventListener('mouseenter', () => {
+    tuvanList.classList.remove('hidden');
+  });
+
+  tuvanList.addEventListener('mouseleave', () => {
+    tuvanList.classList.add('hidden');
+  });
+
 
 </script>
 

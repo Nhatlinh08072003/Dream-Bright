@@ -48,9 +48,32 @@ app.MapControllerRoute(
     defaults: new { controller = "Home", action = "DichVu" }
 );
 app.MapControllerRoute(
-    name: "QLTruong",
-    pattern: "/qltruong",
-    defaults: new { controller = "Admin", action = "QLTruong" }
+    name: "TimTruong",
+    pattern: "/timtruong",
+    defaults: new { controller = "Home", action = "TimTruong" }
+);
+app.MapControllerRoute(
+    name: "Uc",
+    pattern: "/uc",
+    defaults: new { controller = "Home", action = "Uc" }
+);
+app.MapControllerRoute(
+    name: "My",
+    pattern: "/my",
+    defaults: new { controller = "Home", action = "My" }
+);
+app.MapControllerRoute(
+    name: "Singapore",
+    pattern: "/singapore",
+    defaults: new { controller = "Home", action = "Singapore" }
+); app.MapControllerRoute(
+    name: "ThuySy",
+    pattern: "/thuysy",
+    defaults: new { controller = "Home", action = "ThuySy" });
+app.MapControllerRoute(
+   name: "QLTruong",
+   pattern: "/qltruong",
+   defaults: new { controller = "Admin", action = "QLTruong" }
 );
 app.MapControllerRoute(
     name: "QLTintuc",
