@@ -8,7 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <style>
         .active {
@@ -43,7 +42,6 @@
     <div class="flex w-[100%]">
         <!-- Div lớn chứa các icon -->
         <div
-
             class="group relative flex h-[900px] w-[50px] flex-col items-start bg-green-500 transition-all duration-500 ease-in-out hover:w-[200px]">
             <!-- Danh sách các icon -->
             <a href="/tongquan"
@@ -67,7 +65,6 @@
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
                     Khuyến mãi</span>
             </a>
-
             <a href="/qltintuc"
                 class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
                 <span class="material-icons text-2xl">announcement</span>
@@ -111,7 +108,7 @@
                 <!-- Bắt đầu table -->
                 <table class="min-w-full border-collapse border border-gray-500">
                     <thead>
-                        <tr class="bg-gray-400">
+                        <tr class="bg-green-500">
                             <th class="border border-gray-500 p-2">Họ và Tên</th>
                             <th class="border border-gray-500 p-2">Email</th>
                             <th class="border border-gray-500 p-2">Số điện thoại</th>
@@ -129,7 +126,7 @@
                                     <input id="password-1" type="password" value="toibiNGU"
                                         class="border-none bg-transparent focus:outline-none" readonly />
                                     <i id="icon-password-1" class="fas fa-eye ml-2 cursor-pointer"
-                                        onclick="togglePassword('password-1')"></i>
+                                        onclick="togglePassword('password-1', 'icon-password-1')"></i>
                                 </div>
                             </td>
                             <td class="border border-gray-500 p-2">110 Đ. Nguyễn Thị Minh Khai, Phường 6, Quận 3, Hồ Chí
@@ -144,7 +141,7 @@
                                     <input id="password-2" type="password" value="huudeptrai"
                                         class="border-none bg-transparent focus:outline-none" readonly />
                                     <i id="icon-password-2" class="fas fa-eye ml-2 cursor-pointer"
-                                        onclick="togglePassword('password-2')"></i>
+                                        onclick="togglePassword('password-2', 'icon-password-2')"></i>
                                 </div>
                             </td>
                             <td class="border border-gray-500 p-2">110 Đ. Nguyễn Thị Minh Khai, Phường 6, Quận 3, Hồ Chí
@@ -159,22 +156,22 @@
                                     <input id="password-3" type="password" value="anhquandeptrai"
                                         class="border-none bg-transparent focus:outline-none" readonly />
                                     <i id="icon-password-3" class="fas fa-eye ml-2 cursor-pointer"
-                                        onclick="togglePassword('password-3')"></i>
+                                        onclick="togglePassword('password-3', 'icon-password-3')"></i>
                                 </div>
                             </td>
                             <td class="border border-gray-500 p-2">110 Đ. Nguyễn Thị Minh Khai, Phường 6, Quận 3, Hồ Chí
                                 Minh</td>
                         </tr>
                         <tr>
-                            <td class="border border-gray-500 p-2">Nguyễn Lê Kim Lân</td>
-                            <td class="border border-gray-500 p-2">nguyenlekimlandeptrai@gmail.com</td>
+                            <td class="border border-gray-500 p-2">Trần Minh Đạt</td>
+                            <td class="border border-gray-500 p-2">datdinh@gmail.com</td>
                             <td class="border border-gray-500 p-2">0923663654</td>
                             <td class="border border-gray-500 p-2">
                                 <div class="flex items-center">
-                                    <input id="password-4" type="password" value="kimlandeptrai"
+                                    <input id="password-4" type="password" value="minhdat"
                                         class="border-none bg-transparent focus:outline-none" readonly />
                                     <i id="icon-password-4" class="fas fa-eye ml-2 cursor-pointer"
-                                        onclick="togglePassword('password-4')"></i>
+                                        onclick="togglePassword('password-4', 'icon-password-4')"></i>
                                 </div>
                             </td>
                             <td class="border border-gray-500 p-2">110 Đ. Nguyễn Thị Minh Khai, Phường 6, Quận 3, Hồ Chí
@@ -182,20 +179,21 @@
                         </tr>
                     </tbody>
                 </table>
+                <!-- Kết thúc table -->
             </div>
         </div>
     </div>
+
     <script>
         function togglePassword(inputId, iconId) {
-            const passwordField = document.getElementById(inputId);
+            const input = document.getElementById(inputId);
             const icon = document.getElementById(iconId);
-
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
+            if (input.type === "password") {
+                input.type = "text";
                 icon.classList.remove('fa-eye');
                 icon.classList.add('fa-eye-slash');
             } else {
-                passwordField.type = 'password';
+                input.type = "password";
                 icon.classList.remove('fa-eye-slash');
                 icon.classList.add('fa-eye');
             }
