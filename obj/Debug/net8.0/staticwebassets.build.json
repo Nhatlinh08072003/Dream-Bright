@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< Updated upstream
   "Hash": "GWTPApJK+bJzZj7cv71s/JU1cg8Dp/UEz9KQ0Pht+0w=",
+=======
+  "Hash": "/oq3rs/qyAvEbgZANIkThHal86xSE7Au4YUF7ZOKKWg=",
+>>>>>>> Stashed changes
   "Source": "Dream-Bridge",
   "BasePath": "_content/Dream-Bridge",
   "Mode": "Default",
@@ -226,6 +230,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\danh-gia.webp"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\down-arrow.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
@@ -287,6 +292,12 @@
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\du-hoc-my-thinkedu.webp",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Images/du-hoc-my-thinkedu.webp",
       "AssetKind": "All",
@@ -302,6 +313,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\du-hoc-my-thinkedu.webp"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\edit.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
@@ -344,6 +356,12 @@
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\he-thong-giao-duc-cua-my.webp",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Images/he-thong-giao-duc-cua-my.webp",
       "AssetKind": "All",
@@ -492,6 +510,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\Ireland.jpg"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\khuyến mãi.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
@@ -515,6 +534,12 @@
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Malaysia.jpg",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Images/Malaysia.jpg",
       "AssetKind": "All",
@@ -549,6 +574,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\Mỹ.jpg"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\My.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
@@ -572,6 +598,12 @@
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\New Zealand.jpg",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Images/New Zealand.jpg",
       "AssetKind": "All",
@@ -606,6 +638,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\nhan-vien.webp"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\passport2.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
@@ -629,6 +662,12 @@
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Philippines.jpg",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Images/Philippines.jpg",
       "AssetKind": "All",
@@ -644,6 +683,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\Philippines.jpg"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\plus.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
@@ -705,6 +745,12 @@
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\singapore.jpg",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Images/singapore.jpg",
       "AssetKind": "All",
@@ -758,6 +804,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\so-luong-sinh-vien-quoc-te-o-my.webp"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\tài khoản.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
@@ -781,6 +828,12 @@
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Thái Lan.jpg",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Images/Thái Lan.jpg",
       "AssetKind": "All",
@@ -815,6 +868,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\Thụy Sĩ.jpg"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\thuysy.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
@@ -914,6 +968,12 @@
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Úc.jpg",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Images/Úc.jpg",
       "AssetKind": "All",
@@ -929,6 +989,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\Úc.jpg"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\uc.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
@@ -952,6 +1013,12 @@
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Untitled.png",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Images/Untitled.png",
       "AssetKind": "All",
@@ -986,6 +1053,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\Vanguard.png"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\visa 2.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
@@ -1009,6 +1077,12 @@
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Visa-du-hoc-my-1024x536.webp",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Images/Visa-du-hoc-my-1024x536.webp",
       "AssetKind": "All",

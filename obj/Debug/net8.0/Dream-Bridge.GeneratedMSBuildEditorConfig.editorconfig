@@ -26,6 +26,7 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFydGlhbHNcSGVhZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< Updated upstream
 [C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,6 +55,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVFF1YW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+=======
+>>>>>>> Stashed changes
 [C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/DichVu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEaWNoVnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
