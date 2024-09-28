@@ -3223,3 +3223,21 @@ div {
   z-index: 10;
   /* Đảm bảo chữ hiển thị trên lớp mờ */
 }
+
+.shadow-box {
+  background-color: white;
+  /* Màu nền của div */
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+  /* Tạo bóng */
+  border-radius: 10px;
+  /* Làm tròn góc nếu cần */
+}
+
+.text-shadow {
+  font-size: 17px;
+  /* Kích thước chữ */
+  color: #333;
+  /* Màu chữ */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  /* Tạo bóng chữ */
+}

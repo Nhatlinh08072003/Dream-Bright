@@ -13,7 +13,14 @@ public class AdminController : Controller
     {
         _logger = logger;
     }
-
+    public IActionResult QLTaikhoan()
+    {
+        return View();
+    }
+    public IActionResult QLTintuc()
+    {
+        return View();
+    }
 
     public IActionResult QLTruong()
     {

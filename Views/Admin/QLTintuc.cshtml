@@ -15,6 +15,10 @@
             /* Thêm hiệu ứng chuyển màu nền */
         }
 
+        input::placeholder {
+            font-weight: bold;
+        }
+
         a {
             transition: background-color 0.3s ease;
             /* Thêm hiệu ứng chuyển màu cho tất cả các thẻ a */
@@ -107,7 +111,7 @@
 
         <!-- thẻ div chứa nội dung -->
         <div class="w-[100%] h-[900px] mx-auto w-[calc(100%-200px)]">
-            <h1 class="w-[98%] font-bold text-center text-2xl mt-[2%] text-shadow">Quản lý trường</h1>
+            <h1 class="w-[98%] font-bold text-center text-2xl mt-[2%] text-shadow">Quản lý tin tức</h1>
             <div class="w-[97.5%] h-[8.5%] mt-[2%] rounded-md border border-black flex items-center">
                 <div class=" w-[12%] h-[55%] ml-[1%] rounded-lg shadow-box flex text-center justify-center
                     items-center cursor-pointer" data-country="all" onclick="filterNews('all')">
@@ -118,18 +122,18 @@
                 <div class=" w-[12%] h-[55%] ml-[1%] rounded-lg shadow-box flex text-center justify-center
                     items-center cursor-pointer" data-country="Úc" onclick="filterNews('Úc')">
                     <div>
-                        <span class="text-shadow">Trường ở Úc</span>
+                        <span class="text-shadow">Tin tức du học Úc</span>
                     </div>
                 </div>
                 <div class=" w-[12%] h-[55%] ml-[1%] rounded-lg shadow-box flex text-center justify-center
                     items-center cursor-pointer" data-country="Mỹ" onclick="filterNews('Mỹ')">
                     <div>
-                        <span class="text-shadow">Trường ở Mỹ</span>
+                        <span class="text-shadow">Tin tức du học Mỹ</span>
                     </div>
                 </div>
 
                 <div
-                    class="w-[5%] mt-[1.5%] mr-2 h-[50%] shadow-box ml-auto mb-[1.5%] rounded-lg bg-green-500 text-center">
+                    class="w-[5%] mt-[1.5%] mr-2 h-[50%] ml-auto mb-[1.5%] shadow-box rounded-lg bg-green-500 text-center">
                     <div id="addIcon" class="cursor-pointer flex justify-center items-center h-full">
                         <i class="fas fa-plus mt-2"></i>
                     </div>
@@ -145,25 +149,18 @@
                         <div class="w-[95%] h-[85%] flex">
                             <img class="w-[50%] h-[100%]" src="~/Images/Albert Einstein.png" alt=""
                                 class="w-auto h-[100%] flex items-center justify-center border border-black">
-                            <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col justify-between">
-                                <h1 class="font-bold">Trường Trung học The Storm King School – New York, Mỹ</h1>
-                                <h1 class="font-bold flex">Quốc gia: <p
-                                        class="pl-1 font-bold text-blue-700 font-normal">Mỹ</p>
+                            <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col">
+                                <h1 class="font-bold">CẬP NHẬT HỌC BỔNG 2024 TỪ TRUNG HỌC HYDE
+                                    SCHOOL, MỸ </h1>
+                                <h1 class=" text-[13px] mt-[2%] flex items-end justify-between">Học bổng Trung
+                                    học
+                                    Hyde School là cơ hội quý báu
+                                    dành cho các
+                                    bạn học sinh có kết quả học tập vượt trội,mong muốn tiếp cận với chương ..
                                 </h1>
-                                <h1 class="font-bold flex">Tỉnh bang/ Thành phố: <p
-                                        class="pl-1 font-bold text-blue-700 font-normal">New York</p>
-                                </h1>
-                                <h1 class="font-bold flex">Bậc học: <p class="pl-1 font-bold text-blue-700 font-normal">
-                                        ĐẠI HỌC</p>
-                                </h1>
-                                <h1 class="font-bold flex items-center justify-between">
-                                    <span class="mr-2">Học phí trung bình:
-                                        <p class="inline pl-1 font-bold text-black-700 font-normal">74,100$</p>
-                                    </span>
-                                    <span class="cursor-pointer editIcon">
-                                        <i class="fas fa-edit" style="font-size: 20px;"></i> <!-- Icon sửa -->
-                                    </span>
-                                </h1>
+                                <span class="cursor-pointer editIcon h-full flex items-end ml-auto">
+                                    <i class="fas fa-edit" style="font-size: 20px;"></i> <!-- Icon sửa -->
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -175,25 +172,18 @@
                         <div class="w-[95%] h-[85%] flex">
                             <img class="w-[50%] h-[100%]" src="~/Images/Albert Einstein.png" alt=""
                                 class="w-auto h-[100%] flex items-center justify-center border border-black">
-                            <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col justify-between">
-                                <h1 class="font-bold">Đại học James Cook Brisbane</h1>
-                                <h1 class="font-bold flex">Quốc gia: <p
-                                        class="pl-1 font-bold text-blue-700 font-normal">Úc</p>
+                            <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col">
+                                <h1 class="font-bold">CẬP NHẬT HỌC BỔNG 2024 TỪ TRUNG HỌC HYDE
+                                    SCHOOL, Úc </h1>
+                                <h1 class=" text-[13px] mt-[2%] flex items-end justify-between">Học bổng Trung
+                                    học
+                                    Hyde School là cơ hội quý báu
+                                    dành cho các
+                                    bạn học sinh có kết quả học tập vượt trội,mong muốn tiếp cận với chương ..
                                 </h1>
-                                <h1 class="font-bold flex">Tỉnh bang/ Thành phố: <p
-                                        class="pl-1 font-bold text-blue-700 font-normal">Brisbane</p>
-                                </h1>
-                                <h1 class="font-bold flex">Bậc học: <p class="pl-1 font-bold text-blue-700 font-normal">
-                                        ĐẠI HỌC</p>
-                                </h1>
-                                <h1 class="font-bold flex items-center justify-between">
-                                    <span class="mr-2">Học phí trung bình:
-                                        <p class="inline pl-1 font-bold text-black-700 font-normal">74,100$</p>
-                                    </span>
-                                    <span class="cursor-pointer editIcon">
-                                        <i class="fas fa-edit" style="font-size: 20px;"></i> <!-- Icon sửa -->
-                                    </span>
-                                </h1>
+                                <span class="cursor-pointer editIcon h-full flex items-end ml-auto">
+                                    <i class="fas fa-edit" style="font-size: 20px;"></i> <!-- Icon sửa -->
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -211,18 +201,14 @@
                         <img id="uploadedImage" class="w-[50%] h-[100%]" src="~/Images/Albert Einstein.png"
                             alt="Hình ảnh" class="w-auto h-[100%] flex items-center justify-center border border-black">
 
-                        <div class="ml-[4%] h-[100%] text-[14px] flex flex-col justify-between">
+                        <div class="ml-[4%] h-[100%] text-[14px] mt-[2%] flex flex-col justify-between">
                             <!-- Input để cập nhật thông tin -->
-                            <input type="text" id="schoolName" class="border p-2 rounded mb-2 w-full"
-                                placeholder="Tên trường">
-                            <input type="text" id="country" class="border p-2 rounded mb-2 w-full"
-                                placeholder="Quốc gia">
-                            <input type="text" id="city" class="border p-2 rounded mb-2 w-full"
-                                placeholder="Tỉnh bang/Thành phố">
-                            <input type="text" id="educationLevel" class="border p-2 rounded mb-2 w-full"
-                                placeholder="Bậc học">
-                            <input type="number" id="tuitionFee" class="border p-2 rounded mb-2 w-full"
-                                placeholder="Học phí trung bình ($)">
+                            <input type="text" id="tieude" class="border p-2 border-black rounded mb-2 w-full"
+                                placeholder="Tiêu đề: ">
+                            <input type="text" id="noidung" class="border p-2 border-black rounded mb-2 w-full"
+                                placeholder="Nội dung: ">
+                            <input type="text" id="link" class="border p-2 rounded border-black mb-2 w-full"
+                                placeholder="URL: ">
 
                             <!-- Nút chọn hình ảnh -->
                             <input type="file" id="imageInput" class="mt-4" accept="image/*">
@@ -279,6 +265,7 @@
                 });
             };
         });
+
 
     </script>
 </body>
