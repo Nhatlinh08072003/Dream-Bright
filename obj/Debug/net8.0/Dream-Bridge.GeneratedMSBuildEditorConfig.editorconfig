@@ -9,87 +9,87 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Dream_Bridge
 build_property.RootNamespace = Dream_Bridge
-build_property.ProjectDir = C:\Users\laptop\OneDrive\Máy tính\HK1_năm 3\Do-an-cong-nghe-phan-mem-nang-cao\
+build_property.ProjectDir = D:\Dream-Bright\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\laptop\OneDrive\Máy tính\HK1_năm 3\Do-an-cong-nghe-phan-mem-nang-cao
+build_property.MSBuildProjectDirectory = D:\Dream-Bright
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Partials/Footer.cshtml]
+[D:/Dream-Bright/Partials/Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFydGlhbHNcRm9vdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Partials/Header.cshtml]
+[D:/Dream-Bright/Partials/Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFydGlhbHNcSGVhZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Account/Login.cshtml]
+[D:/Dream-Bright/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Account/Register.cshtml]
+[D:/Dream-Bright/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Admin/QLTaikhoan.cshtml]
+[D:/Dream-Bright/Views/Admin/QLTaikhoan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUUxUYWlraG9hbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Admin/QLTruong.cshtml]
+[D:/Dream-Bright/Views/Admin/QLTruong.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUUxUcnVvbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Admin/QLTuvan.cshtml]
+[D:/Dream-Bright/Views/Admin/QLTuvan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUUxUdXZhbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Admin/TQuan.cshtml]
+[D:/Dream-Bright/Views/Admin/TQuan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVFF1YW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/DichVu.cshtml]
+[D:/Dream-Bright/Views/Home/DichVu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEaWNoVnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/DuHoc.cshtml]
+[D:/Dream-Bright/Views/Home/DuHoc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEdUhvYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/Index.cshtml]
+[D:/Dream-Bright/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/LienHe.cshtml]
+[D:/Dream-Bright/Views/Home/LienHe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaWVuSGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/Privacy.cshtml]
+[D:/Dream-Bright/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/VeChungToi.cshtml]
+[D:/Dream-Bright/Views/Home/VeChungToi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWZUNodW5nVG9pLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Shared/Error.cshtml]
+[D:/Dream-Bright/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Dream-Bright/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/_ViewImports.cshtml]
+[D:/Dream-Bright/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/_ViewStart.cshtml]
+[D:/Dream-Bright/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Do-an-cong-nghe-phan-mem-nang-cao/Views/Shared/_Layout.cshtml]
+[D:/Dream-Bright/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-kklww8b81f
