@@ -18,6 +18,10 @@ public class AdminController : Controller
         return View();
     }
 
+    public IActionResult QLTintuc()
+    {
+        return View();
+    }
     public IActionResult QLTruong()
     {
         return View();

@@ -53,9 +53,19 @@ app.MapControllerRoute(
     defaults: new { controller = "Admin", action = "QLTruong" }
 );
 app.MapControllerRoute(
+    name: "QLTintuc",
+    pattern: "/qltintuc",
+    defaults: new { controller = "Admin", action = "QLTintuc" }
+);
+app.MapControllerRoute(
     name: "QLTuvan",
     pattern: "/qltuvan",
     defaults: new { controller = "Admin", action = "QLTuvan" }
+);
+app.MapControllerRoute(
+    name: "QLTaikhoan",
+    pattern: "/qltaikhoan",
+    defaults: new { controller = "Admin", action = "QLTaikhoan" }
 );
 app.MapControllerRoute(
     name: "TQuan",
