@@ -48,6 +48,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Home", action = "DichVu" }
 );
 app.MapControllerRoute(
+    name: "TinTuc",
+    pattern: "/tintuc",
+    defaults: new { controller = "Home", action = "TinTuc" }
+);
+app.MapControllerRoute(
     name: "TimTruong",
     pattern: "/timtruong",
     defaults: new { controller = "Home", action = "TimTruong" }
@@ -55,21 +60,44 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "Uc",
     pattern: "/uc",
-    defaults: new { controller = "Home", action = "Uc" }
+    defaults: new { controller = "DuHoc", action = "Uc" }
 );
 app.MapControllerRoute(
     name: "My",
     pattern: "/my",
-    defaults: new { controller = "Home", action = "My" }
+    defaults: new { controller = "DuHoc", action = "My" }
 );
 app.MapControllerRoute(
     name: "Singapore",
     pattern: "/singapore",
-    defaults: new { controller = "Home", action = "Singapore" }
+    defaults: new { controller = "DuHoc", action = "Singapore" }
 ); app.MapControllerRoute(
     name: "ThuySy",
     pattern: "/thuysy",
-    defaults: new { controller = "Home", action = "ThuySy" });
+    defaults: new { controller = "DuHoc", action = "ThuySy" });
+
+// dich vu
+app.MapControllerRoute(
+name: "VisaUc",
+pattern: "/visauc",
+defaults: new { controller = "DichVu", action = "VisaUc" }
+);
+app.MapControllerRoute(
+    name: "VisaMy",
+    pattern: "/visamy",
+    defaults: new { controller = "DichVu", action = "VisaMy" }
+);
+app.MapControllerRoute(
+    name: "VisaSingapore",
+    pattern: "/visasingapore",
+    defaults: new { controller = "DichVu", action = "VisaSingapore" }
+);
+app.MapControllerRoute(
+    name: "VisaThuySy",
+    pattern: "/viasathusy",
+    defaults: new { controller = "DichVu", action = "VisaThuySy" }
+);
+
 app.MapControllerRoute(
    name: "QLTruong",
    pattern: "/qltruong",

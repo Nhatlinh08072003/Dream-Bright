@@ -77,6 +77,14 @@
       "PackagePath": "staticwebassets\\Images\\danh-gia.webp"
     },
     {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\dich-vu-visa-my.webp",
+      "PackagePath": "staticwebassets\\Images\\dich-vu-visa-my.webp"
+    },
+    {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\dich-vu-visa-singapore.webp",
+      "PackagePath": "staticwebassets\\Images\\dich-vu-visa-singapore.webp"
+    },
+    {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\dieu-kien-du-hoc-thuy-si.webp",
       "PackagePath": "staticwebassets\\Images\\dieu-kien-du-hoc-thuy-si.webp"
     },
@@ -111,6 +119,10 @@
     {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\du-hoc-thuy-si-thanh-pho-nao.webp",
       "PackagePath": "staticwebassets\\Images\\du-hoc-thuy-si-thanh-pho-nao.webp"
+    },
+    {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\du-hoc-thuy-si.jpg",
+      "PackagePath": "staticwebassets\\Images\\du-hoc-thuy-si.jpg"
     },
     {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\du-hoc-thuy-si.webp",
@@ -271,6 +283,10 @@
     {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\visa 2.png",
       "PackagePath": "staticwebassets\\Images\\visa 2.png"
+    },
+    {
+      "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\visa-du-hoc-uc.jpg",
+      "PackagePath": "staticwebassets\\Images\\visa-du-hoc-uc.jpg"
     },
     {
       "Id": "D:\\Git\\Do-an-cong-nghe-phan-mem-nang-cao\\wwwroot\\Images\\Úc.jpg",

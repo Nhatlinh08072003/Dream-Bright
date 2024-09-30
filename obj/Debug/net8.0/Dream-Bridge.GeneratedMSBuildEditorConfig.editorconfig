@@ -50,6 +50,38 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVFF1YW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/DichVu/VisaMy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGljaFZ1XFZpc2FNeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/DichVu/VisaSingapore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGljaFZ1XFZpc2FTaW5nYXBvcmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/DichVu/VisaThuySy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGljaFZ1XFZpc2FUaHV5U3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/DichVu/VisaUc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGljaFZ1XFZpc2FVYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/DuHoc/My.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVIb2NcTXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/DuHoc/Singapore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVIb2NcU2luZ2Fwb3JlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/DuHoc/ThuySy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVIb2NcVGh1eVN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/DuHoc/Uc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVIb2NcVWMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/DichVu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEaWNoVnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -66,28 +98,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaWVuSGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/My.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/Singapore.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaW5nYXBvcmUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/ThuySy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaHV5U3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/TimTruong.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaW1UcnVvbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/Uc.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVYy5jc2h0bWw=
+[D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/TinTuc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaW5UdWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Git/Do-an-cong-nghe-phan-mem-nang-cao/Views/Home/VeChungToi.cshtml]
