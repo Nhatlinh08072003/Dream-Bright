@@ -28,20 +28,53 @@
       padding-top: 200px;
       /* Điều chỉnh cho phù hợp với chiều cao của header */
     }
+
+    /* CSS cho menu dọc */
+    #small-menu ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    #small-menu li {
+      margin: 5px 0;
+    }
+
+    #small-menu a {
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+    }
+
+    #small-menu a:hover {
+      background-color: #f3f4f6;
+      /* Màu nền khi hover */
+    }
+
+    /* Ẩn các danh sách con mặc định */
+    #small-menu ul ul {
+      display: none;
+      /* Ẩn các danh sách con */
+    }
+
+    /* Hiện các danh sách con khi ở chế độ hiện */
+    #small-menu li:hover>ul {
+      display: block;
+      /* Hiện các danh sách con */
+    }
   </style>
 </head>
 
 <body>
-
   <!-- Phần Hotline và Menu sẽ được cố định -->
   <div class="fixed-header">
     <!-- Phần Hotline -->
-    <div class="border-b border-gray-300 bg-white header-hotline">
+    <div class="header-hotline border-b border-gray-300 bg-white">
       <div class="container mx-auto flex items-center justify-end gap-3">
         <!-- Thêm phần đăng nhập -->
         <a href="/login">
           <div>
-            <button class="border border-black text-black font-bold py-1 px-3 rounded">Đăng nhập</button>
+            <button class="rounded border border-black px-3 py-1 font-bold text-black">Đăng nhập</button>
           </div>
         </a>
         <div>
@@ -56,37 +89,44 @@
     </div>
 
     <!-- Phần Logo và Menu -->
-    <div class="bg-white header-menu">
+    <div class="header-menu bg-white">
       <div class="container mx-auto flex items-center justify-between">
         <!-- Logo -->
         <div class="logo">
           <img class="w-28" src="~/Images/Vanguard.png" alt="Logo" />
         </div>
 
+        <!-- Nút Hamburger -->
+        <button id="menu-toggle" class="focus:outline-none lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
         <!-- Menu -->
-        <div class="menu">
+        <div class="menu hidden lg:flex">
           <ul class="flex gap-5 text-lg font-medium">
             <li><a class="transition hover:text-blue-500" href="/home">TRANG CHỦ</a></li>
             <li><a class="transition hover:text-blue-500" href="/vechungtoi">VỀ CHÚNG TÔI</a></li>
-            <div class="relative group">
+            <div class="group relative">
               <a href="/duhoc" class="text-lg text-black transition hover:text-blue-500" id="duhoc-link">DU HỌC</a>
 
               <!-- Bảng danh sách du học sẽ hiển thị khi di chuột -->
-              <div class="absolute hidden bg-gray-100 group-hover:block p-3 z-10"
+              <div class="absolute z-10 hidden bg-gray-100 p-3 group-hover:block"
                 style="left:-45px; top:40px; width: 200px;" id="duhoc-list">
                 <table class="w-full table-auto">
                   <tbody>
                     <tr class="flex flex-col">
-                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                      <td class="cursor-pointer border-b border-gray-400 p-2 text-left text-lg hover:bg-gray-300">
                         <a href="/my">Du học Mỹ</a>
                       </td>
-                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                      <td class="cursor-pointer border-b border-gray-400 p-2 text-left text-lg hover:bg-gray-300">
                         <a href="/uc">Du học Úc</a>
                       </td>
-                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                      <td class="cursor-pointer border-b border-gray-400 p-2 text-left text-lg hover:bg-gray-300">
                         <a href="/thuysy">Du học Thụy Sĩ</a>
                       </td>
-                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                      <td class="cursor-pointer border-b border-gray-400 p-2 text-left text-lg hover:bg-gray-300">
                         <a href="/singapore">Du học Singapore</a>
                       </td>
                     </tr>
@@ -94,24 +134,24 @@
                 </table>
               </div>
             </div>
-            <div class="relative group">
+            <div class="group relative">
               <a href="/dichvu" class="text-lg text-black transition hover:text-blue-500" id="tuvan-link">DỊCH VỤ</a>
               <!-- Bảng danh sách dịch vụ sẽ hiển thị khi di chuột -->
-              <div class="absolute hidden bg-gray-100 group-hover:block p-3 z-10"
+              <div class="absolute z-10 hidden bg-gray-100 p-3 group-hover:block"
                 style="left:-55px; top:40px; width: 250px;" id="tuvan-list">
                 <table class="w-full table-auto">
                   <tbody>
                     <tr class="flex flex-col">
-                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                      <td class="cursor-pointer border-b border-gray-400 p-2 text-left text-lg hover:bg-gray-300">
                         <a href="/visamy">Dịch vụ visa Mỹ</a>
                       </td>
-                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                      <td class="cursor-pointer border-b border-gray-400 p-2 text-left text-lg hover:bg-gray-300">
                         <a href="/visauc">Dịch vụ visa Úc</a>
                       </td>
-                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                      <td class="cursor-pointer border-b border-gray-400 p-2 text-left text-lg hover:bg-gray-300">
                         <a href="/visasingapore">Dịch vụ visa Singapore</a>
                       </td>
-                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                      <td class="cursor-pointer border-b border-gray-400 p-2 text-left text-lg hover:bg-gray-300">
                         <a href="/viasathusy">Dịch vụ visa Thụy Sĩ</a>
                       </td>
                     </tr>
@@ -125,64 +165,157 @@
             <li>
               <form class="flex items-center">
                 <input type="text" placeholder="Tìm kiếm..."
-                  class="border rounded-l px-2 py-1 focus:outline-none focus:ring focus:ring-blue-300">
-                <button class="bg-blue-500 text-white px-3 py-1 rounded-r hover:bg-blue-600 transition">Tìm</button>
+                  class="rounded-l border px-2 py-1 focus:outline-none focus:ring focus:ring-blue-300" />
+                <button class="rounded-r bg-blue-500 px-3 py-1 text-white transition hover:bg-blue-600">Tìm</button>
               </form>
             </li>
           </ul>
         </div>
       </div>
     </div>
+
+    <!-- Menu dọc cho màn hình nhỏ -->
+    <div id="small-menu" class="bg-white lg:hidden hidden p-4">
+      <ul class="flex flex-col text-lg font-medium">
+        <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/home">TRANG CHỦ</a></li>
+        <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/vechungtoi">VỀ CHÚNG TÔI</a>
+        </li>
+
+        <!-- Mục Du Học -->
+        <li class="border-b border-gray-300">
+          <a class="transition hover:text-blue-500 p-2" href="/duhoc">DU HỌC</a>
+          <ul class="flex flex-col pl-4">
+            <li><a class="hover:text-blue-500" href="/my">Du học Mỹ</a></li>
+            <li><a class="hover:text-blue-500" href="/uc">Du học Úc</a></li>
+            <li><a class="hover:text-blue-500" href="/thuysy">Du học Thụy Sĩ</a></li>
+            <li><a class="hover:text-blue-500" href="/singapore">Du học Singapore</a></li>
+          </ul>
+        </li>
+
+        <!-- Mục Dịch Vụ -->
+        <li class="border-b border-gray-300">
+          <a class="transition hover:text-blue-500 p-2" href="/dichvu">DỊCH VỤ</a>
+          <ul class="flex flex-col pl-4">
+            <li><a class="hover:text-blue-500" href="/visamy">Dịch vụ visa Mỹ</a></li>
+            <li><a class="hover:text-blue-500" href="/visauc">Dịch vụ visa Úc</a></li>
+            <li><a class="hover:text-blue-500" href="/visasingapore">Dịch vụ visa Singapore</a></li>
+            <li><a class="hover:text-blue-500" href="/viasathusy">Dịch vụ visa Thụy Sĩ</a></li>
+          </ul>
+        </li>
+
+        <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/timtruong">TÌM TRƯỜNG</a></li>
+        <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/tintuc">TIN TỨC</a></li>
+        <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="lienhe">LIÊN HỆ</a></li>
+        <li>
+          <form class="flex items-center p-2">
+            <input type="text" placeholder="Tìm kiếm..."
+              class="border rounded-l px-2 py-1 focus:outline-none focus:ring focus:ring-blue-300">
+            <button class="bg-blue-500 text-white px-3 py-1 rounded-r hover:bg-blue-600 transition">Tìm</button>
+          </form>
+        </li>
+      </ul>
+    </div>
   </div>
 
+  <script>
+    // JavaScript cho phần menu
+    const duhocLink = document.getElementById('duhoc-link');
+    const duhocList = document.getElementById('duhoc-list');
+    const tuvanLink = document.getElementById('tuvan-link');
+    const tuvanList = document.getElementById('tuvan-list');
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const smallMenu = document.getElementById('small-menu');
+    const duhocLinkSmall = document.getElementById('duhoc-link-small');
+    const duhocListSmall = document.getElementById('duhoc-list-small');
+    const tuvanLinkSmall = document.getElementById('tuvan-link-small');
+    const tuvanListSmall = document.getElementById('tuvan-list-small');
+
+    duhocLink.addEventListener('mouseenter', () => {
+      duhocList.classList.remove('hidden');
+    });
+
+    duhocLink.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!duhocList.matches(':hover')) {
+          duhocList.classList.add('hidden');
+        }
+      }, 200);
+    });
+
+    duhocList.addEventListener('mouseenter', () => {
+      duhocList.classList.remove('hidden');
+    });
+
+    duhocList.addEventListener('mouseleave', () => {
+      duhocList.classList.add('hidden');
+    });
+
+    tuvanLink.addEventListener('mouseenter', () => {
+      tuvanList.classList.remove('hidden');
+    });
+
+    tuvanLink.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!tuvanList.matches(':hover')) {
+          tuvanList.classList.add('hidden');
+        }
+      }, 200);
+    });
+
+    tuvanList.addEventListener('mouseenter', () => {
+      tuvanList.classList.remove('hidden');
+    });
+
+    tuvanList.addEventListener('mouseleave', () => {
+      tuvanList.classList.add('hidden');
+    });
+
+    // Xử lý nút hamburger
+    menuToggle.addEventListener('click', () => {
+      smallMenu.classList.toggle('hidden');
+    });
+
+    duhocLinkSmall.addEventListener('mouseenter', () => {
+      duhocListSmall.classList.remove('hidden');
+    });
+
+    duhocLinkSmall.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!duhocListSmall.matches(':hover')) {
+          duhocListSmall.classList.add('hidden');
+        }
+      }, 200);
+    });
+
+    duhocListSmall.addEventListener('mouseenter', () => {
+      duhocListSmall.classList.remove('hidden');
+    });
+
+    duhocListSmall.addEventListener('mouseleave', () => {
+      duhocListSmall.classList.add('hidden');
+    });
+
+    tuvanLinkSmall.addEventListener('mouseenter', () => {
+      tuvanListSmall.classList.remove('hidden');
+    });
+
+    tuvanLinkSmall.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!tuvanListSmall.matches(':hover')) {
+          tuvanListSmall.classList.add('hidden');
+        }
+      }, 200);
+    });
+
+    tuvanListSmall.addEventListener('mouseenter', () => {
+      tuvanListSmall.classList.remove('hidden');
+    });
+
+    tuvanListSmall.addEventListener('mouseleave', () => {
+      tuvanListSmall.classList.add('hidden');
+    });
+  </script>
 </body>
-
-<script>
-  // JavaScript cho phần menu
-  const duhocLink = document.getElementById('duhoc-link');
-  const duhocList = document.getElementById('duhoc-list');
-  const tuvanLink = document.getElementById('tuvan-link');
-  const tuvanList = document.getElementById('tuvan-list');
-
-  duhocLink.addEventListener('mouseenter', () => {
-    duhocList.classList.remove('hidden');
-  });
-
-  duhocLink.addEventListener('mouseleave', () => {
-    setTimeout(() => {
-      if (!duhocList.matches(':hover')) {
-        duhocList.classList.add('hidden');
-      }
-    }, 200);
-  });
-
-  duhocList.addEventListener('mouseenter', () => {
-    duhocList.classList.remove('hidden');
-  });
-
-  duhocList.addEventListener('mouseleave', () => {
-    duhocList.classList.add('hidden');
-  });
-
-  tuvanLink.addEventListener('mouseenter', () => {
-    tuvanList.classList.remove('hidden');
-  });
-
-  tuvanLink.addEventListener('mouseleave', () => {
-    setTimeout(() => {
-      if (!tuvanList.matches(':hover')) {
-        tuvanList.classList.add('hidden');
-      }
-    }, 200);
-  });
-
-  tuvanList.addEventListener('mouseenter', () => {
-    tuvanList.classList.remove('hidden');
-  });
-
-  tuvanList.addEventListener('mouseleave', () => {
-    tuvanList.classList.add('hidden');
-  });
-</script>
 
 </html>
