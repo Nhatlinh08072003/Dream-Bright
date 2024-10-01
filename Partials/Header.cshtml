@@ -6,126 +6,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
   <title>DREAM BRIDGE</title>
+  <style>
+    /* Cố định phần header */
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+    }
+
+    /* Điều chỉnh chiều cao của header */
+    .header-hotline,
+    .header-menu {
+      padding: 0.5rem 1rem;
+      /* Giảm padding */
+    }
+
+    /* Đảm bảo body có đủ không gian khi header cố định */
+    body {
+      padding-top: 200px;
+      /* Điều chỉnh cho phù hợp với chiều cao của header */
+    }
+  </style>
 </head>
 
-<body class="">
+<body>
 
-  <!-- Phần Hotline -->
-  <div class="border-b border-gray-300 bg-white pr-4">
-    <div class="container mx-auto flex items-center justify-end gap-3 p-3">
-      <!-- Thêm phần đăng nhập -->
-      <a href="/login">
-        <div class="ml-5">
-          <button class=" border border-black text-black font-bold py-2 px-4 rounded">
-            Đăng nhập
-          </button>
+  <!-- Phần Hotline và Menu sẽ được cố định -->
+  <div class="fixed-header">
+    <!-- Phần Hotline -->
+    <div class="border-b border-gray-300 bg-white header-hotline">
+      <div class="container mx-auto flex items-center justify-end gap-3">
+        <!-- Thêm phần đăng nhập -->
+        <a href="/login">
+          <div>
+            <button class="border border-black text-black font-bold py-1 px-3 rounded">Đăng nhập</button>
+          </div>
+        </a>
+        <div>
+          <img class="w-6" src="https://classic.vn/wp-content/uploads/2022/07/phone-icon-800x800.png"
+            alt="Phone Icon" />
         </div>
-      </a>
-      <div class="mt-1">
-        <img class="w-8" src="https://classic.vn/wp-content/uploads/2022/07/phone-icon-800x800.png" alt="Phone Icon" />
+        <div>
+          <h4 class="text-lg font-bold">DREAM BRIDGE</h4>
+          <p>Hotline: <span class="text-red-500">083 8686 8686</span></p>
+        </div>
       </div>
-      <div>
-        <h4 class="text-xl font-bold">DREAM BRIDGE</h4>
-        <p>Hotline: <span class="text-red-500">083 8686 8686</span></p>
-      </div>
+    </div>
 
+    <!-- Phần Logo và Menu -->
+    <div class="bg-white header-menu">
+      <div class="container mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="logo">
+          <img class="w-28" src="~/Images/Vanguard.png" alt="Logo" />
+        </div>
+
+        <!-- Menu -->
+        <div class="menu">
+          <ul class="flex gap-5 text-lg font-medium">
+            <li><a class="transition hover:text-blue-500" href="/home">TRANG CHỦ</a></li>
+            <li><a class="transition hover:text-blue-500" href="/vechungtoi">VỀ CHÚNG TÔI</a></li>
+            <div class="relative group">
+              <a href="/duhoc" class="text-lg text-black transition hover:text-blue-500" id="duhoc-link">DU HỌC</a>
+
+              <!-- Bảng danh sách du học sẽ hiển thị khi di chuột -->
+              <div class="absolute hidden bg-gray-100 group-hover:block p-3 z-10"
+                style="left:-45px; top:40px; width: 200px;" id="duhoc-list">
+                <table class="w-full table-auto">
+                  <tbody>
+                    <tr class="flex flex-col">
+                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                        <a href="/my">Du học Mỹ</a>
+                      </td>
+                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                        <a href="/uc">Du học Úc</a>
+                      </td>
+                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                        <a href="/thuysy">Du học Thụy Sĩ</a>
+                      </td>
+                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                        <a href="/singapore">Du học Singapore</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="relative group">
+              <a href="/dichvu" class="text-lg text-black transition hover:text-blue-500" id="tuvan-link">DỊCH VỤ</a>
+              <!-- Bảng danh sách dịch vụ sẽ hiển thị khi di chuột -->
+              <div class="absolute hidden bg-gray-100 group-hover:block p-3 z-10"
+                style="left:-55px; top:40px; width: 250px;" id="tuvan-list">
+                <table class="w-full table-auto">
+                  <tbody>
+                    <tr class="flex flex-col">
+                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                        <a href="/visamy">Dịch vụ visa Mỹ</a>
+                      </td>
+                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                        <a href="/visauc">Dịch vụ visa Úc</a>
+                      </td>
+                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                        <a href="/visasingapore">Dịch vụ visa Singapore</a>
+                      </td>
+                      <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
+                        <a href="/viasathusy">Dịch vụ visa Thụy Sĩ</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <li><a class="transition hover:text-blue-500" href="/timtruong">TÌM TRƯỜNG</a></li>
+            <li><a class="transition hover:text-blue-500" href="/tintuc">TIN TỨC</a></li>
+            <li><a class="transition hover:text-blue-500" href="lienhe">LIÊN HỆ</a></li>
+            <li>
+              <form class="flex items-center">
+                <input type="text" placeholder="Tìm kiếm..."
+                  class="border rounded-l px-2 py-1 focus:outline-none focus:ring focus:ring-blue-300">
+                <button class="bg-blue-500 text-white px-3 py-1 rounded-r hover:bg-blue-600 transition">Tìm</button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
-
-  <!-- Phần Logo và Menu -->
-  <div class="bg-white">
-    <div class="container mx-auto flex items-center justify-between">
-      <!-- Logo -->
-      <div class="logo">
-        <img class="w-36" src="~/Images/Vanguard.png" alt="Logo" />
-      </div>
-
-      <!-- Menu -->
-      <div class="menu ">
-        <ul class="flex gap-7 text-lg font-medium pr-5 pb-7">
-          <li><a class="transition hover:text-blue-500" href="/home">TRANG CHỦ</a></li>
-          <li><a class="transition hover:text-blue-500" href="/vechungtoi">VỀ CHÚNG TÔI</a></li>
-          <div class="relative group">
-            <a href="/duhoc" class="text-lg text-black transition hover:text-blue-500 " id="duhoc-link">DU
-              HỌC</a>
-
-            <!-- Bảng danh sách du học sẽ hiển thị khi di chuột -->
-            <div class=" absolute hidden  bg-gray-100 group-hover:block p-5 z-10 items-center "
-              style="left:-45px; top:40px;width: 200px" id="duhoc-list">
-              <table class="mx-auto w-full table-auto ">
-                <tbody>
-                  <tr class="flex flex-col w-full">
-                    <td
-                      class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer whitespace-nowrap border-b border-gray-400">
-                      <a href="/my">Du học Mỹ</a>
-                    </td>
-                    <td
-                      class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer whitespace-nowrap border-b border-gray-400">
-                      <a href="/uc">Du học Úc</a>
-                    </td>
-                    <td
-                      class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer whitespace-nowrap border-b border-gray-400">
-                      <a href="/thuysy">Du học Thụy Sỹ</a>
-                    </td>
-                    <td
-                      class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer whitespace-nowrap border-b border-gray-400">
-                      <a href="/singapore">Du học Singapore</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="relative group">
-            <a href="/dichvu" class="text-lg text-black transition hover:text-blue-500 " id="tuvan-link">DỊCH VỤ</a>
-            <!-- Bảng danh sách du học sẽ hiển thị khi di chuột -->
-            <div class=" absolute hidden  bg-gray-100 group-hover:block p-5 z-10 items-center "
-              style="left:-55px; top:40px;width: 180px" id="tuvan-list">
-              <table class="mx-auto w-full table-auto ">
-                <tbody>
-                  <tr class="flex flex-col w-full">
-                    <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
-                      Tư vấn du học
-                    </td>
-                    <td class="p-2 text-left text-lg hover:bg-gray-300 cursor-pointer border-b border-gray-400">
-                      Tư vấn Visa
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <li><a class="transition hover:text-blue-500" href="/timtruong">TÌM TRƯỜNG</a></li>
-          <li><a class="transition hover:text-blue-500" href="">TIN TỨC</a></li>
-          <li><a class="transition hover:text-blue-500" href="lienhe">LIÊN HỆ</a></li>
-          <li style="margin-top: -5px;">
-            <form class="flex items-center">
-              <input type="text" placeholder="Tìm kiếm..."
-                class="border rounded-l px-3 py-1 focus:outline-none focus:ring focus:ring-blue-300">
-              <button class="bg-blue-500 text-white px-3 py-1 rounded-r hover:bg-blue-600 transition">Tìm</button>
-            </form>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </body>
+
 <script>
-  // Lấy các phần tử cho DU HỌC
+  // JavaScript cho phần menu
   const duhocLink = document.getElementById('duhoc-link');
   const duhocList = document.getElementById('duhoc-list');
-
-  // Lấy các phần tử cho DỊCH VỤ
   const tuvanLink = document.getElementById('tuvan-link');
   const tuvanList = document.getElementById('tuvan-list');
 
-  // Hiển thị danh sách DU HỌC khi di chuột vào liên kết
   duhocLink.addEventListener('mouseenter', () => {
     duhocList.classList.remove('hidden');
   });
 
-  // Ẩn danh sách DU HỌC khi chuột rời khỏi cả liên kết và danh sách
   duhocLink.addEventListener('mouseleave', () => {
     setTimeout(() => {
       if (!duhocList.matches(':hover')) {
@@ -142,12 +164,10 @@
     duhocList.classList.add('hidden');
   });
 
-  // Hiển thị danh sách DỊCH VỤ khi di chuột vào liên kết
   tuvanLink.addEventListener('mouseenter', () => {
     tuvanList.classList.remove('hidden');
   });
 
-  // Ẩn danh sách DỊCH VỤ khi chuột rời khỏi cả liên kết và danh sách
   tuvanLink.addEventListener('mouseleave', () => {
     setTimeout(() => {
       if (!tuvanList.matches(':hover')) {
@@ -163,8 +183,6 @@
   tuvanList.addEventListener('mouseleave', () => {
     tuvanList.classList.add('hidden');
   });
-
-
 </script>
 
 </html>

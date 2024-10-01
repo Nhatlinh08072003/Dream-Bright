@@ -43,22 +43,11 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult Uc()
+    public IActionResult TinTuc()
     {
         return View();
     }
-    public IActionResult My()
-    {
-        return View();
-    }
-    public IActionResult Singapore()
-    {
-        return View();
-    }
-    public IActionResult ThuySy()
-    {
-        return View();
-    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
