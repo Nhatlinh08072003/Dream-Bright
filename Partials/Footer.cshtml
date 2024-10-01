@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8" />
@@ -9,14 +9,17 @@
 </head>
 
 <body>
-    <div class="flex items-start justify-center gap-20 bg-gray-900" style="margin-bottom: 10px;">
-        <div class="mt-5">
-            <p class="font-semibold text-xl text-white">Thông tin liên hệ</p><br>
-            <p class="text-white">Website của Công Ty TNHH Đầu Tư Và Phát Triển Giáo Dục <br>
-                Thành lập ngày 15/08/2017 có mã số thuế là 0314573481. Giấy <br>
-                chứng nhận đăng ký dịch vụ tư vấn du học được cấp bởi Sở Giáo <br>
-                dục & Đào tạo Tp.HCM theo số 1585/GDĐT-TC. <br>
-                Người đại diện: Nguyễn Lê Kim Lân</p>
+    <div class="relative flex flex-col items-start justify-center gap-10 bg-gray-900 p-5 md:flex-row">
+        <div class="mt-5 max-w-md">
+            <p class="text-xl font-semibold text-white">Thông tin liên hệ</p>
+            <br />
+            <p class="text-white">
+                Website của Công Ty TNHH Đầu Tư Và Phát Triển Giáo Dục <br />
+                Thành lập ngày 15/08/2017 có mã số thuế là 0314573481. Giấy <br />
+                chứng nhận đăng ký dịch vụ tư vấn du học được cấp bởi Sở Giáo <br />
+                dục & Đào tạo Tp.HCM theo số 1585/GDĐT-TC. <br />
+                Người đại diện: Nguyễn Lê Kim Lân
+            </p>
 
             <p class="text-white">Địa chỉ: 806 QL22, ấp Mỹ Hoà 3, Hóc Môn, Hồ Chí Minh</p>
             <p class="text-white">Hotline: 0886 007 589</p>
@@ -24,23 +27,103 @@
             <p class="text-white">Website: https://hllq.edu.vn</p>
         </div>
 
-        <div class="mt-5">
-            <p class="font-semibold text-xl text-white">Quốc gia du học</p><br>
+        <div class="mt-5 max-w-md">
+            <p class="text-xl font-semibold text-white">Quốc gia du học</p>
+            <br />
             <p class="text-white">Du học Mỹ</p>
             <p class="text-white">Du học Úc</p>
             <p class="text-white">Du học Thụy Sĩ</p>
             <p class="text-white">Du học Singapore</p>
         </div>
 
-        <div class="mt-5">
-            <p class="font-semibold text-xl text-white mb-5">Bản đồ đến DREAMBRIDGE</p>
-            <iframe style="width:400px;height:250px"
+        <div class="mt-5 max-w-md">
+            <p class="mb-5 text-xl font-semibold text-white">Bản đồ đến DREAMBRIDGE</p>
+            <iframe style="width:100%; height:250px"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.2901094780163!2d106.59805157480629!3d10.865525089288733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b088de30f3b%3A0xd2140740d360f705!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBOZ2_huqFpIG5n4buvIC0gVGluIGjhu41jIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCAoSFVGTElUKSBDxqEgc-G7nyBIw7NjIE3DtG4!5e0!3m2!1svi!2s!4v1726823865983!5m2!1svi!2s"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <button class="fixed flex items-center rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+            style="bottom: 20px; right: 20px; z-index:99" id="openPopup"><i class="fa fa-hand-pointer-o mr-2"></i> Đăng
+            ký tư vấn</button>
+    </div>
+
+    <!-- Overlay -->
+    <div class="fixed inset-0 hidden bg-black opacity-50" id="overlay"></div>
+
+    <!-- Popup Form -->
+    <div class="fixed inset-0 z-50 flex hidden items-center justify-center" id="formPopup">
+        <div class="w-full max-w-lg rounded-lg bg-white p-6 shadow-2xl">
+            <span class="float-right cursor-pointer text-xl text-red-600" id="closePopup">&times;</span>
+            <h3 class="mb-4 text-lg font-semibold">Đăng ký tư vấn miễn phí</h3>
+            <form id="registrationForm" class="space-y-4">
+                <input type="text" name="your-name" placeholder="Họ và tên(*)" required
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                <input type="email" name="your-email" placeholder="Email (*)" required
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                <input type="tel" name="your-phone" placeholder="Số điện thoại (*)" required
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                <select name="type" required
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="Tư vấn du học" selected>Tư vấn du học</option>
+                    <option value="Dịch vụ visa">Dịch vụ visa</option>
+                </select>
+                <select name="country" required
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="Du học Mỹ">Du học Mỹ</option>
+                    <option value="Du học Canada">Du học Canada</option>
+                    <option value="Du học Anh">Du học Anh</option>
+                    <option value="Du học Úc">Du học Úc</option>
+                    <option value="Du học Singapore">Du học Singapore</option>
+                    <option value="Du học Ireland">Du học Ireland</option>
+                    <option value="Du học New Zealand">Du học New Zealand</option>
+                    <option value="Du học Thụy Sĩ">Du học Thụy Sĩ</option>
+                    <option value="Du học Pháp">Du học Pháp</option>
+                    <option value="Du học Malaysia">Du học Malaysia</option>
+                    <option value="Du học Thái Lan">Du học Thái Lan</option>
+                    <option value="Du học Philippines">Du học Philippines</option>
+                </select>
+                <textarea name="your-message" placeholder="Nội dung cần tư vấn" rows="5"
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                <button type="submit" class="w-full rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Đăng
+                    ký</button>
+                <p class="text-sm text-gray-500">*Sau khi nhận được thông tin, chúng tôi sẽ tư vấn cho bạn hoàn toàn
+                    miễn phí</p>
+            </form>
         </div>
     </div>
 
+    <script>
+        const openPopup = document.getElementById('openPopup');
+        const closePopup = document.getElementById('closePopup');
+        const formPopup = document.getElementById('formPopup');
+        const overlay = document.getElementById('overlay');
+
+        openPopup.addEventListener('click', () => {
+            formPopup.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+        });
+
+        closePopup.addEventListener('click', () => {
+            formPopup.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            formPopup.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
+
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Xử lý gửi form ở đây
+            alert('Đăng ký thành công!');
+            formPopup.classList.add('hidden');
+            overlay.classList.add('hidden');
+            this.reset();
+        });
+    </script>
 </body>
 
 </html>
