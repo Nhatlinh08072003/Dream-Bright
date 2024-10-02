@@ -4296,19 +4296,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\THUY_DUNG\\.nuget\\packages\\": {}
+    "C:\\Users\\letie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NHATLINH\\Dream-Bright\\Dream-Bridge.csproj",
+      "projectUniqueName": "D:\\Dream-Bright\\Dream-Bridge.csproj",
       "projectName": "Dream-Bridge",
-      "projectPath": "D:\\NHATLINH\\Dream-Bright\\Dream-Bridge.csproj",
-      "packagesPath": "C:\\Users\\THUY_DUNG\\.nuget\\packages\\",
-      "outputPath": "D:\\NHATLINH\\Dream-Bright\\obj\\",
+      "projectPath": "D:\\Dream-Bright\\Dream-Bridge.csproj",
+      "packagesPath": "C:\\Users\\letie\\.nuget\\packages\\",
+      "outputPath": "D:\\Dream-Bright\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\THUY_DUNG\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\letie\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4371,7 +4371,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
