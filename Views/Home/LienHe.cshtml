@@ -94,9 +94,12 @@
                     </div>
                     <!-- Button -->
                     <div>
-                        <button class="w-full rounded-md bg-blue-700 py-3 text-white hover:bg-blue-800">ĐĂNG KÝ TƯ
+                        <!-- Thêm id cho nút đăng ký -->
+                        <button id="registerButton"
+                            class="w-full rounded-md bg-blue-700 py-3 text-white hover:bg-blue-800">ĐĂNG KÝ TƯ
                             VẤN</button>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -114,3 +117,36 @@
         </div>
     </div>
 </div>
+<script>
+    document.getElementById('registerButton').addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const name = document.querySelector('input[placeholder="Nhập họ và tên"]').value;
+        const email = document.querySelector('input[placeholder="Nhập email"]').value;
+        const phone = document.querySelector('input[placeholder="Nhập số điện thoại"]').value;
+        const service = document.querySelector('input[name="service"]:checked').nextSibling.textContent.trim();
+        const message = document.querySelector('textarea[placeholder="Nội dung cần tư vấn"]').value;
+
+        const emailRequest = {
+            ToEmail: email,
+            Subject: `Đăng ký tư vấn từ ${name}`,
+            Body: `Tên: ${name}\nSố điện thoại: ${phone}\nDịch vụ: ${service}\nNội dung: ${message}`
+        };
+
+        fetch('/api/email/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(emailRequest),
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message || 'Đã gữi email này!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Đã gửi email thành công!');
+            });
+    });
+</script>
