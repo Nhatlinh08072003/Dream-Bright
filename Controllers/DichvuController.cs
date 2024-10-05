@@ -28,6 +28,10 @@ public class DichvuController : Controller
     {
         return View();
     }
+    public IActionResult ChiTiet()
+    {
+        return View();
+    }
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

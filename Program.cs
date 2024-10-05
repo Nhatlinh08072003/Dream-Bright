@@ -97,7 +97,11 @@ app.MapControllerRoute(
     pattern: "/viasathusy",
     defaults: new { controller = "DichVu", action = "VisaThuySy" }
 );
-
+app.MapControllerRoute(
+    name: "ChiTiet",
+    pattern: "/chitiet",
+    defaults: new { controller = "DichVu", action = "ChiTiet" }
+);
 app.MapControllerRoute(
    name: "QLTruong",
    pattern: "/qltruong",
