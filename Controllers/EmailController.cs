@@ -24,4 +24,27 @@ public class EmailController : ControllerBase
         _emailService.SendEmail(emailRequest.ToEmail, emailRequest.Subject, emailRequest.Body);
         return Ok("Email sent successfully!");
     }
+
+
+[HttpPost("register")]
+public IActionResult Register([FromBody] EmailRequest emailRequest)
+{
+    if (string.IsNullOrEmpty(emailRequest.ToEmail) ||
+        string.IsNullOrEmpty(emailRequest.Subject) ||
+        string.IsNullOrEmpty(emailRequest.Body))
+    {
+        return BadRequest("All fields are required.");
+    }
+
+    try
+    {
+        _emailService.SendEmail(emailRequest.ToEmail, emailRequest.Subject, emailRequest.Body);
+        return Ok("Registration email sent successfully!");
+    }
+    catch (Exception ex)
+    {
+        return StatusCode(500, "Internal server error: " + ex.Message);
+    }
 }
+}
+

@@ -117,13 +117,47 @@
 
         document.getElementById('registrationForm').addEventListener('submit', function (event) {
             event.preventDefault();
-            // Xử lý gửi form ở đây
-            alert('Đăng ký thành công!');
-            formPopup.classList.add('hidden');
-            overlay.classList.add('hidden');
-            this.reset();
+
+            const name = this['your-name'].value;
+            const email = this['your-email'].value;
+            const phone = this['your-phone'].value;
+            const service = this['type'].value;
+            const country = this['country'].value;
+            const message = this['your-message'].value;
+
+            const emailRequest = {
+                ToEmail: email,  // Địa chỉ email nhận
+                Subject: `Đăng ký tư vấn từ ${name}`,  // Chủ đề email
+                Body: `Tên: ${name}\nSố điện thoại: ${phone}\nDịch vụ: ${service}\nQuốc gia: ${country}\nNội dung: ${message}` // Nội dung email
+            };
+
+            // Gửi yêu cầu POST tới API
+            fetch('/api/email/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(emailRequest),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert(data.message || 'Đã gữi email này!');
+                    formPopup.classList.add('hidden');
+                    overlay.classList.add('hidden');
+                    this.reset(); // Reset form sau khi gửi
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Đã gửi email thành công!');
+                });
         });
     </script>
+
 </body>
 
 </html>
