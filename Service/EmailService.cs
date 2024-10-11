@@ -7,7 +7,7 @@
         public void SendEmail(string toEmail, string subject, string body)
     {
         var message = new MimeMessage();
-        message.From.Add(new MailboxAddress("King", "letiennhatlinh08072003@gmail.com"));
+        message.From.Add(new MailboxAddress("DREAM-BRIGHT TƯ VẤN DU HỌC ", "letiennhatlinh08072003@gmail.com"));
         message.To.Add(new MailboxAddress("", toEmail));
         message.Subject = subject;
         message.Body = new TextPart("plain") { Text = body };

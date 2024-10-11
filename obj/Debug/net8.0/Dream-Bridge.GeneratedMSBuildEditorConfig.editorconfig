@@ -9,142 +9,139 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Dream_Bridge
 build_property.RootNamespace = Dream_Bridge
-build_property.ProjectDir = D:\Git\Dream-Bright\
+build_property.ProjectDir = D:\Dream-Bright\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Git\Dream-Bright
+build_property.MSBuildProjectDirectory = D:\Dream-Bright
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Git/Dream-Bright/Partials/Footer.cshtml]
+[D:/Dream-Bright/Partials/Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFydGlhbHNcRm9vdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Partials/Header.cshtml]
+[D:/Dream-Bright/Partials/Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFydGlhbHNcSGVhZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Account/Login.cshtml]
+[D:/Dream-Bright/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Account/Register.cshtml]
+[D:/Dream-Bright/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Admin/QLTaikhoan.cshtml]
+[D:/Dream-Bright/Views/Admin/QLTaikhoan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUUxUYWlraG9hbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Admin/QLTintuc.cshtml]
+[D:/Dream-Bright/Views/Admin/QLTintuc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUUxUaW50dWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Admin/QLTruong.cshtml]
+[D:/Dream-Bright/Views/Admin/QLTruong.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUUxUcnVvbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Admin/QLTuvan.cshtml]
+[D:/Dream-Bright/Views/Admin/QLTuvan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUUxUdXZhbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Admin/TQuan.cshtml]
+[D:/Dream-Bright/Views/Admin/TQuan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVFF1YW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-<<<<<<< HEAD
-=======
-[D:/Git/Dream-Bright/Views/DichVu/ChiTiet.cshtml]
+[D:/Dream-Bright/Views/DichVu/ChiTiet.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGljaFZ1XENoaVRpZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
->>>>>>> origin/Quan-chitiet
-[D:/Git/Dream-Bright/Views/DichVu/VisaMy.cshtml]
+[D:/Dream-Bright/Views/DichVu/VisaMy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGljaFZ1XFZpc2FNeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/DichVu/VisaSingapore.cshtml]
+[D:/Dream-Bright/Views/DichVu/VisaSingapore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGljaFZ1XFZpc2FTaW5nYXBvcmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/DichVu/VisaThuySy.cshtml]
+[D:/Dream-Bright/Views/DichVu/VisaThuySy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGljaFZ1XFZpc2FUaHV5U3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/DichVu/VisaUc.cshtml]
+[D:/Dream-Bright/Views/DichVu/VisaUc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGljaFZ1XFZpc2FVYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/DuHoc/My.cshtml]
+[D:/Dream-Bright/Views/DuHoc/My.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVIb2NcTXkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/DuHoc/Singapore.cshtml]
+[D:/Dream-Bright/Views/DuHoc/Singapore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVIb2NcU2luZ2Fwb3JlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/DuHoc/ThuySy.cshtml]
+[D:/Dream-Bright/Views/DuHoc/ThuySy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVIb2NcVGh1eVN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/DuHoc/Uc.cshtml]
+[D:/Dream-Bright/Views/DuHoc/Uc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVIb2NcVWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Home/DichVu.cshtml]
+[D:/Dream-Bright/Views/Home/DichVu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEaWNoVnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Home/DuHoc.cshtml]
+[D:/Dream-Bright/Views/Home/DuHoc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEdUhvYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Home/Index.cshtml]
+[D:/Dream-Bright/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Home/LienHe.cshtml]
+[D:/Dream-Bright/Views/Home/LienHe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaWVuSGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Home/Privacy.cshtml]
+[D:/Dream-Bright/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Home/TimTruong.cshtml]
+[D:/Dream-Bright/Views/Home/TimTruong.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaW1UcnVvbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Home/TinTuc.cshtml]
+[D:/Dream-Bright/Views/Home/TinTuc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaW5UdWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Home/VeChungToi.cshtml]
+[D:/Dream-Bright/Views/Home/VeChungToi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWZUNodW5nVG9pLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Shared/Error.cshtml]
+[D:/Dream-Bright/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Shared/_AdminLayout.cshtml]
+[D:/Dream-Bright/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Dream-Bright/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/_ViewImports.cshtml]
+[D:/Dream-Bright/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/_ViewStart.cshtml]
+[D:/Dream-Bright/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git/Dream-Bright/Views/Shared/_Layout.cshtml]
+[D:/Dream-Bright/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-kklww8b81f
