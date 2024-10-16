@@ -1,6 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
 using Dream_Bridge.Models.Main;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Authentication.Cookies;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,6 +12,44 @@ builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("localDB"));
     options.EnableSensitiveDataLogging(false);
 });
+
+
+// Cấu hình xác thực
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.Cookie.HttpOnly = true;
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // Ví dụ: Thiết lập thời gian hết hạn
+        options.Cookie.SameSite = SameSiteMode.Strict;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+        options.LoginPath = "/Account/Login";
+        options.LogoutPath = "/Account/Logout";
+        options.AccessDeniedPath = "/Account/AccessDenied";
+        options.SlidingExpiration = true; // Ví dụ: Bật thời gian hết hạn trượt
+    });
+
+// Cấu hình phân quyền
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+});
+
+
+// Cấu hình session
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true; // Cần thiết cho tuân thủ GDPR
+});
+
+JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+{
+    Formatting = Formatting.Indented,
+    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+};
 builder.Services.AddControllers();
 builder.Services.AddSingleton<EmailService>();
 var app = builder.Build();

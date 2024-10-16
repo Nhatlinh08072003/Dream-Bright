@@ -4,7 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Dream_Bridge.Models;
 using Dream_Bridge.Models.Main;
 using Microsoft.EntityFrameworkCore;
-using BCrypt.Net;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Dream_Bridge.ViewModels;
 
 namespace Dream_Bridge.Controllers;
 
@@ -22,6 +25,48 @@ public class AccountController : Controller
     public IActionResult Login()
     {
         return View();
+    }
+    [HttpPost]
+    public async Task<IActionResult> Login(LoginViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
+
+            if (user != null && user.Email != null && user.Email != null)
+            {
+                var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.NameIdentifier, user.IdUser.ToString()),
+
+            };
+                // Chỉ thêm Claim cho Role nếu Role không phải là null
+                if (!string.IsNullOrEmpty(user.Role))
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, user.Role));
+                }
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+
+                ViewBag.Email = user.Email;
+
+                if (user.Role == "Admin")
+                {
+                    return RedirectToAction("Index", "Admin"); // Chuyển hướng đến trang admin
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home"); // Chuyển hướng đến trang chủ
+                }
+            }
+
+            ModelState.AddModelError(string.Empty, "Tên đăng nhập hoặc mật khẩu không chính xác. Vui lòng thử lại.");
+        }
+
+        return View(model);
     }
     [HttpGet]
     public IActionResult Register()
@@ -55,7 +100,7 @@ public class AccountController : Controller
                 Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
                 Address = model.Address,
-                Password = BCrypt.Net.BCrypt.HashPassword(model.Password), // Mã hóa mật khẩu
+                Password = model.Password, // Mã hóa mật khẩu
                 Role = "User", // Hoặc bất kỳ vai trò nào bạn muốn
                 IsConsultant = false,
                 ConsultingStatus = "Chưa tư vấn", // Tùy chọn, có thể thay đổi
@@ -72,7 +117,15 @@ public class AccountController : Controller
 
         return View(model);
     }
-
+    public async Task<IActionResult> Logout()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction("Login", "Account"); // Chuyển hướng về trang Login
+    }
+    public IActionResult AccessDenied()
+    {
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
