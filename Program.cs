@@ -1,8 +1,15 @@
 
+using Microsoft.EntityFrameworkCore;
+using Dream_Bridge.Models.Main;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("localDB"));
+    options.EnableSensitiveDataLogging(false);
+});
 builder.Services.AddControllers();
 builder.Services.AddSingleton<EmailService>();
 var app = builder.Build();
