@@ -1,31 +1,60 @@
+@model Dream_Bridge.ViewModels.LoginViewModel
+
 @{
     ViewData["Title"] = "Login";
 }
-<div class="bg-gray-100 flex items-center justify-center p-10">
-    <div class="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
-        <form>
+
+<div class="bg-gray-100 flex items-center justify-center min-h-screen p-10">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6 text-center">Đăng Nhập</h2>
+        <form asp-action="Login" asp-controller="Account" method="post">
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                    role="alert">
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <p>@error.ErrorMessage</p>
+                    }
+                </div>
+            }
+
             <div class="mb-4">
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" placeholder="Nhập Email của bạn..." id="email" name="email" required
-                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:bg-gray-200 focus:border-gray-200 sm:text-sm">
+                <div class="flex items-center border border-gray-300 rounded-md overflow-hidden">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" alt="Email Icon"
+                        class="w-6 h-6 p-2">
+                    <input asp-for="Email"
+                        class="py-2 px-3 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        placeholder="Email" required>
+                </div>
+                <span asp-validation-for="Email" class="text-red-500 text-sm"></span>
             </div>
+
             <div class="mb-6">
-                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" placeholder="Nhập Password của bạn" id="password" name="password" required
-                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:bg-gray-200 focus:border-gray-200 sm:text-sm">
+                <div class="flex items-center border border-gray-300 rounded-md overflow-hidden">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3064/3064155.png" alt="Password Icon"
+                        class="w-6 h-6 p-2">
+                    <input asp-for="Password" type="password"
+                        class="py-2 px-3 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        placeholder="Mật khẩu" required>
+                </div>
+                <span asp-validation-for="Password" class="text-red-500 text-sm"></span>
             </div>
+
             <button type="submit"
-                class="w-full py-2 px-4 bg-black text-white font-bold rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500">
-                Login
+                class="w-full py-2 px-4 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                Đăng Nhập
             </button>
         </form>
+
         <div class="mt-4 text-center">
-            <a href="/forgotpassword" class="text-sm text-gray-600 hover:text-gray-800">Forgot your password?</a>
+            <a href="/forgotpassword" class="text-sm text-gray-600 hover:text-gray-800">Quên mật khẩu?</a>
         </div>
-        <div class="mt-4 text-center justify-center flex gap-1 ">
-            <p class="text-sm text-gray-600">Don't have an account?</p>
-            <a href="/register" class="text-sm  text-black font-bold hover:text-indigo-800">Sign up</a>
+
+        <div class="mt-4 text-center">
+            <p class="text-sm text-gray-600">Bạn chưa có tài khoản?</p>
+            <a href="/register" class="text-sm text-indigo-600 font-bold hover:text-indigo-800">Đăng ký</a>
         </div>
     </div>
 </div>
