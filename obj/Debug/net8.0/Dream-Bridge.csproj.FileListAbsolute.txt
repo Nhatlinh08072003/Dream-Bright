@@ -141,3 +141,4 @@ D:\Dream-Bright\obj\Debug\net8.0\refint\Dream-Bridge.dll
 D:\Dream-Bright\obj\Debug\net8.0\Dream-Bridge.pdb
 D:\Dream-Bright\obj\Debug\net8.0\Dream-Bridge.genruntimeconfig.cache
 D:\Dream-Bright\obj\Debug\net8.0\ref\Dream-Bridge.dll
+D:\Dream-Bright\bin\Debug\net8.0\BCrypt.Net-Next.dll
