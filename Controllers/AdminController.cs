@@ -55,7 +55,10 @@ namespace Dream_Bridge.Controllers
         {
             return View();
         }
-
+ public IActionResult QLChat()
+        {
+            return View();
+        }
         public IActionResult QLDuHoc()
         {
             // Nếu là Staff, chuyển hướng về QLTuvan
