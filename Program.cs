@@ -179,7 +179,11 @@ app.MapControllerRoute(
     pattern: "/qltaikhoan",
     defaults: new { controller = "Admin", action = "QLTaikhoan" }
 );
-
+app.MapControllerRoute(
+    name: "QLChat",
+    pattern: "/qlchat",
+    defaults: new { controller = "Admin", action = "QLChat" }
+);
 app.MapControllerRoute(
     name: "Login",
     pattern: "/login",
