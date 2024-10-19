@@ -1,4 +1,4 @@
-@model List<Dream_Bridge.Models.Main.User>;
+@model Dream_Bridge.Models.Main.CombinedViewModel
 @{
     Layout = "_AdminLayout"; // Sử dụng layout admin
 }
@@ -24,6 +24,10 @@
             width: 100%;
         }
 
+        #addAccountModal {
+            z-index: 100;
+        }
+
         .container.mx-auto.flex.items-center.justify-end.gap-3.p-3 {
             display: none;
         }
@@ -47,21 +51,12 @@
         <!-- Div lớn chứa các icon -->
         <div
             class="group relative flex h-[900px] w-[50px] flex-col items-start bg-green-500 transition-all duration-500 ease-in-out hover:w-[200px]">
-            <!-- Danh sách các icon -->
             <a href="/Admin"
                 class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
                 <span class="material-icons text-2xl">home</span>
                 <span
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Tổng
                     Quan</span>
-            </a>
-
-            <a href="/qltintuc"
-                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
-                <span class="material-icons text-2xl">announcement</span>
-                <span
-                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
-                    Tin tức</span>
             </a>
             <a href="/qltruong"
                 class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
@@ -77,7 +72,20 @@
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
                     Tư vấn</span>
             </a>
-
+            <a href="/qlduhoc"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">public</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Danh
+                    mục du học</span>
+            </a>
+            <a href="/qltintuc"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">announcement</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Tin tức</span>
+            </a>
             <a href="/qltaikhoan"
                 class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
                 <span class="material-icons text-2xl">account_circle</span>
@@ -85,10 +93,114 @@
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
                     Tài khoản</span>
             </a>
+            <a href="/qlchat"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">chat</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Chat</span>
+            </a>
         </div>
 
         <div class="mx-auto h-[900px]">
             <h1 class="w-[98%] font-bold text-center text-2xl mt-[2%] text-shadow">Quản lý tài khoản</h1>
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div id="error-message" class="bg-red-500 text-white p-2 rounded">
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div id="success-message" class="bg-green-500 text-white p-2 rounded">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+            <div class="w-[98%] flex justify-end mt-4">
+                <div id="Add_product_icon">
+                    <img src="https://cdn-icons-png.flaticon.com/128/9641/9641897.png"
+                        data-src="https://cdn-icons-png.flaticon.com/128/9641/9641897.png" alt="Plus" title="Plus"
+                        width="40" height="40" class="lzy lazyload--done cursor-pointer"
+                        srcset="https://cdn-icons-png.flaticon.com/128/9641/9641897.png 4x">
+                </div>
+            </div>
+
+            <!-- Modal thêm tài khoản -->
+            <div class="overlay fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center hidden"
+                id="addAccountModal">
+                <div class="modal bg-white p-10 rounded-lg shadow-lg text-center">
+                    <h2 class="text-xl font-bold mb-4">Thêm tài khoản</h2>
+                    <form asp-action="QLTaikhoan" method="post">
+                        <!-- Name -->
+                        <div class="mb-4">
+                            <label for="FullName" class="block text-sm font-medium text-gray-700"
+                                asp-for="FullName"></label>
+                            <input type="text" id="FullName" name="FullName" placeholder="Enter your full name"
+                                asp-for="FullName" required
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:bg-gray-200 focus:border-gray-200 sm:text-sm">
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-4">
+                            <label for="Email" class="block text-sm font-medium text-gray-700" asp-for="Email"></label>
+                            <input type="email" id="Email" name="Email" placeholder="Enter your email" required
+                                asp-for="Email"
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:bg-gray-200 focus:border-gray-200 sm:text-sm">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="mb-4">
+                            <label for="PhoneNumber" class="block text-sm font-medium text-gray-700"
+                                asp-for="PhoneNumber"></label>
+                            <input type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="Enter your phone number"
+                                required asp-for="PhoneNumber"
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:bg-gray-200 focus:border-gray-200 sm:text-sm">
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="mb-4">
+                            <label for="Address" class="block text-sm font-medium text-gray-700"
+                                asp-for="Address"></label>
+                            <input type="text" id="Address" name="Address" placeholder="Enter your address" required
+                                asp-for="Address"
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:bg-gray-200 focus:border-gray-200 sm:text-sm">
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-4">
+                            <label for="Password" class="block text-sm font-medium text-gray-700"
+                                asp-for="Password"></label>
+                            <input type="password" id="Password" name="Password" placeholder="Enter your password"
+                                required asp-for="Password"
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:bg-gray-200 focus:border-gray-200 sm:text-sm">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <select id="addRole" name="Role" class="border p-2 rounded mb-2 w-full">
+                            <!-- Thêm thuộc tính name -->
+                            <option value="" disabled selected>Chọn vai trò</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Staff">Staff</option>
+                        </select>
+                        <div class="justify-center flex mt-2">
+                            <!-- Nút Đóng -->
+                            <div id="closeAddAccountModal"
+                                class="bg-red-500 w-[65px] h-[40px] text-white px-4 py-2 rounded mr-5">
+                                Đóng
+                            </div>
+                            <!-- Nút Lưu -->
+                            <button id="createNewAccount" type="submit"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">
+                                Tạo
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="w-[100%] mx-auto mt-[2%]">
                 <!-- Bắt đầu table -->
                 <table class="w-full border-collapse mx-auto p-6  border border-gray-500">
@@ -105,7 +217,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.Users)
                         {
                             <tr>
                                 <td class="border border-gray-500 p-2">@item.IdUser</td>
@@ -129,6 +241,7 @@
             </div>
         </div>
     </div>
+    </div>
 
     <script>
         function togglePassword(inputId, iconId) {
@@ -145,6 +258,34 @@
             }
         }
 
+        // Bắt sự kiện click vào nút Add_product_icon
+        document.getElementById('Add_product_icon').addEventListener('click', function () {
+            // Hiển thị div addAccountModal bằng cách loại bỏ class 'hidden'
+            document.getElementById('addAccountModal').classList.remove('hidden');
+        });
+        // Bắt sự kiện click vào nút closeAddAccountModal
+        document.getElementById('closeAddAccountModal').addEventListener('click', function () {
+            // Ẩn thẻ div addAccountModal bằng cách thêm lại class 'hidden'
+            document.getElementById('addAccountModal').classList.add('hidden');
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Tự động ẩn thông báo lỗi sau 3 giây
+            const errorMessage = document.getElementById('error-message');
+            if (errorMessage) {
+                setTimeout(function () {
+                    errorMessage.style.display = 'none';
+                }, 3000); // 3 giây
+            }
+
+            // Tự động ẩn thông báo thành công sau 3 giây
+            const successMessage = document.getElementById('success-message');
+            if (successMessage) {
+                setTimeout(function () {
+                    successMessage.style.display = 'none';
+                }, 3000); // 3 giây
+            }
+        });
     </script>
 </body>
 
