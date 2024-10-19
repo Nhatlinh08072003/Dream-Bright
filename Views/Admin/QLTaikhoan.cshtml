@@ -1,3 +1,4 @@
+@model List<Dream_Bridge.Models.Main.User>;
 @{
     Layout = "_AdminLayout"; // Sử dụng layout admin
 }
@@ -87,83 +88,44 @@
         </div>
 
         <div class="mx-auto h-[900px]">
-            <h1 class="w-[100%] font-bold text-center mx-auto text-2xl mt-[2%]">Quản lý tài khoản</h1>
+            <h1 class="w-[98%] font-bold text-center text-2xl mt-[2%] text-shadow">Quản lý tài khoản</h1>
             <div class="w-[100%] mx-auto mt-[2%]">
                 <!-- Bắt đầu table -->
                 <table class="w-full border-collapse mx-auto p-6  border border-gray-500">
                     <thead>
                         <tr class="bg-green-500">
+                            <th class="border border-gray-500 p-2">ID</th>
                             <th class="border border-gray-500 p-2">Họ và Tên</th>
                             <th class="border border-gray-500 p-2">Email</th>
                             <th class="border border-gray-500 p-2">Số điện thoại</th>
                             <th class="border border-gray-500 p-2">Mật khẩu</th>
                             <th class="border border-gray-500 p-2">Địa chỉ</th>
+                            <th class="border border-gray-500 p-2">Vai trò</th>
+
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="border border-gray-500 p-2">Lê Tiên Nhất Linh</td>
-                            <td class="border border-gray-500 p-2">LinhStupid@gmail.com</td>
-                            <td class="border border-gray-500 p-2">0923663654</td>
-                            <td class="border border-gray-500 p-2">
-                                <div class="flex items-center">
-                                    <input id="password-1" type="password" value="toibiNGU"
-                                        class="border-none bg-transparent focus:outline-none" readonly />
-                                    <i id="icon-password-1" class="fas fa-eye ml-2 cursor-pointer"
-                                        onclick="togglePassword('password-1', 'icon-password-1')"></i>
-                                </div>
-                            </td>
-                            <td class="border border-gray-500 p-2">110 Đ. Nguyễn Thị Minh Khai, Phường 6, Quận 3, Hồ Chí
-                                Minh</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-500 p-2">Lưu Hồng Hữu</td>
-                            <td class="border border-gray-500 p-2">honghuudeptrai@gmail.com</td>
-                            <td class="border border-gray-500 p-2">0923663654</td>
-                            <td class="border border-gray-500 p-2">
-                                <div class="flex items-center">
-                                    <input id="password-2" type="password" value="huudeptrai"
-                                        class="border-none bg-transparent focus:outline-none" readonly />
-                                    <i id="icon-password-2" class="fas fa-eye ml-2 cursor-pointer"
-                                        onclick="togglePassword('password-2', 'icon-password-2')"></i>
-                                </div>
-                            </td>
-                            <td class="border border-gray-500 p-2">110 Đ. Nguyễn Thị Minh Khai, Phường 6, Quận 3, Hồ Chí
-                                Minh</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-500 p-2">Trần Anh Quân</td>
-                            <td class="border border-gray-500 p-2">trananhquandeptrai@gmail.com</td>
-                            <td class="border border-gray-500 p-2">0923663654</td>
-                            <td class="border border-gray-500 p-2">
-                                <div class="flex items-center">
-                                    <input id="password-3" type="password" value="anhquandeptrai"
-                                        class="border-none bg-transparent focus:outline-none" readonly />
-                                    <i id="icon-password-3" class="fas fa-eye ml-2 cursor-pointer"
-                                        onclick="togglePassword('password-3', 'icon-password-3')"></i>
-                                </div>
-                            </td>
-                            <td class="border border-gray-500 p-2">110 Đ. Nguyễn Thị Minh Khai, Phường 6, Quận 3, Hồ Chí
-                                Minh</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-500 p-2">Trần Minh Đạt</td>
-                            <td class="border border-gray-500 p-2">datdinh@gmail.com</td>
-                            <td class="border border-gray-500 p-2">0923663654</td>
-                            <td class="border border-gray-500 p-2">
-                                <div class="flex items-center">
-                                    <input id="password-4" type="password" value="minhdat"
-                                        class="border-none bg-transparent focus:outline-none" readonly />
-                                    <i id="icon-password-4" class="fas fa-eye ml-2 cursor-pointer"
-                                        onclick="togglePassword('password-4', 'icon-password-4')"></i>
-                                </div>
-                            </td>
-                            <td class="border border-gray-500 p-2">110 Đ. Nguyễn Thị Minh Khai, Phường 6, Quận 3, Hồ Chí
-                                Minh</td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="border border-gray-500 p-2">@item.IdUser</td>
+                                <td class="border border-gray-500 p-2">@item.FullName</td>
+                                <td class="border border-gray-500 p-2">@item.Email</td>
+                                <td class="border border-gray-500 p-2">@item.PhoneNumber</td>
+                                <td class="border border-gray-500 p-2">
+                                    <div class="flex items-center">
+                                        <input id="password-@item.IdUser" type="password" value="@item.Password"
+                                            class="border-none bg-transparent focus:outline-none" readonly />
+                                        <i id="icon-password-@item.IdUser" class="fas fa-eye ml-2 cursor-pointer"
+                                            onclick="togglePassword('password-@item.IdUser', 'icon-password-@item.IdUser')"></i>
+                                    </div>
+                                </td>
+                                <td class="border border-gray-500 p-2">@item.Address</td>
+                                <td class="border border-gray-500 p-2">@item.Role</td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
-                <!-- Kết thúc table -->
             </div>
         </div>
     </div>
@@ -182,6 +144,7 @@
                 icon.classList.add('fa-eye');
             }
         }
+
     </script>
 </body>
 

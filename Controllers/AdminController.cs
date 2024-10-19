@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Dream_Bridge.Models;
+using Dream_Bridge.Models.Main;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Dream_Bridge.Controllers
@@ -8,11 +9,13 @@ namespace Dream_Bridge.Controllers
     [Authorize(Roles = "Admin, Staff")] // Cho phép cả Admin và Staff truy cập
     public class AdminController : Controller
     {
+        private readonly StudyAbroadDbContext _studyAbroadDbContext;
         private readonly ILogger<AdminController> _logger;
 
-        public AdminController(ILogger<AdminController> logger)
+        public AdminController(ILogger<AdminController> logger, StudyAbroadDbContext studyAbroadDbContext)
         {
             _logger = logger;
+            _studyAbroadDbContext = studyAbroadDbContext;
         }
 
         public IActionResult QLTaikhoan()
@@ -23,7 +26,8 @@ namespace Dream_Bridge.Controllers
                 // Nếu là Staff, chuyển hướng về QLTuvan
                 return RedirectToAction("QLTuvan");
             }
-            return View();
+            var users = _studyAbroadDbContext.Users.ToList();
+            return View(users);
         }
 
         public IActionResult QLTintuc()
@@ -55,7 +59,7 @@ namespace Dream_Bridge.Controllers
         {
             return View();
         }
- public IActionResult QLChat()
+        public IActionResult QLChat()
         {
             return View();
         }
