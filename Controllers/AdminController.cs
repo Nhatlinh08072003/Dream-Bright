@@ -5,6 +5,7 @@ using Dream_Bridge.Models.Main;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Data.SqlClient;
 
 namespace Dream_Bridge.Controllers
 {
@@ -13,11 +14,16 @@ namespace Dream_Bridge.Controllers
     {
         private readonly StudyAbroadDbContext _studyAbroadDbContext;
         private readonly ILogger<AdminController> _logger;
+        private readonly IConfiguration _configuration;
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public AdminController(ILogger<AdminController> logger, StudyAbroadDbContext studyAbroadDbContext)
+
+        public AdminController(ILogger<AdminController> logger, StudyAbroadDbContext studyAbroadDbContext, IConfiguration configuration, IWebHostEnvironment hostingEnvironment)
         {
             _logger = logger;
             _studyAbroadDbContext = studyAbroadDbContext;
+            _configuration = configuration;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         [HttpGet]
@@ -92,6 +98,7 @@ namespace Dream_Bridge.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult QLTruong()
         {
             // Nếu là Staff, chuyển hướng về QLTuvan
@@ -99,7 +106,131 @@ namespace Dream_Bridge.Controllers
             {
                 return RedirectToAction("QLTuvan");
             }
+            // ViewBag.Categories = _studyAbroadDbContext.StudyAbroadCatalogs.ToList(); // Giả sử bạn có bảng StudyAbroadCatalogs
+            var categories = _studyAbroadDbContext.StudyAbroadCatalogs.ToList();
+            ViewBag.Categories = categories;
+
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddCatalog([FromForm] string name)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(name))
+                {
+                    return Json(new { success = false, message = "Tên danh mục không được để trống" });
+                }
+
+                // Tạo danh mục mới
+                var newCatalog = new StudyAbroadCatalog
+                {
+                    NamecategoryStab = name,
+                    IdUser = GetCurrentUserId() // Lấy ID của người dùng hiện tại
+                };
+
+                // Thêm vào cơ sở dữ liệu
+                _studyAbroadDbContext.StudyAbroadCatalogs.Add(newCatalog);
+                await _studyAbroadDbContext.SaveChangesAsync();
+
+                return Json(new { success = true, message = "Danh mục đã được thêm thành công" });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = $"Lỗi: {ex.Message}" });
+            }
+        }
+
+        private int GetCurrentUserId()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPost("/admin/AddSchool")]
+        public async Task<IActionResult> AddSchool(
+[FromForm] int school_id,
+[FromForm] string school_title,
+[FromForm] string school_nation,
+[FromForm] string school_statecity,
+[FromForm] string school_description,
+[FromForm] string school_level,
+[FromForm] decimal school_tuition,
+[FromForm] IFormFile image,
+[FromForm] int studyAbroadCatalog)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    string imageUrl = await SaveImageAsync(image); // Lưu ảnh và nhận URL
+
+                    using (SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("localDB")))
+                    {
+                        await connection.OpenAsync();
+
+                        string sql = @"
+                INSERT INTO School (IdcategoryStab, TitleSchool, Nation, StateCity, SchoolDescription, ImageSchool, Level, AverageTuition)
+                VALUES (@IdcategoryStab, @TitleSchool, @Nation, @StateCity, @SchoolDescription, @ImageSchool, @Level, @AverageTuition)";
+
+                        using (SqlCommand command = new SqlCommand(sql, connection))
+                        {
+                            command.Parameters.AddWithValue("@IdcategoryStab", studyAbroadCatalog);
+                            command.Parameters.AddWithValue("@TitleSchool", school_title);
+                            command.Parameters.AddWithValue("@Nation", school_nation);
+                            command.Parameters.AddWithValue("@StateCity", school_statecity);
+                            command.Parameters.AddWithValue("@SchoolDescription", school_description);
+                            command.Parameters.AddWithValue("@ImageSchool", imageUrl); // Sử dụng URL thay vì file
+                            command.Parameters.AddWithValue("@Level", school_level);
+                            command.Parameters.AddWithValue("@AverageTuition", school_tuition);
+                            await command.ExecuteNonQueryAsync();
+                        }
+                    }
+
+                    return Json(new { success = true, message = "Trường học đã được thêm thành công." });
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return Json(new { success = false, message = $"Lỗi khi lưu trường học: {ex.Message}" });
+                }
+            }
+            else
+            {
+                // Ghi lại các lỗi nếu có
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
+                {
+                    Console.WriteLine(error.ErrorMessage);
+                }
+            }
+
+            return Json(new { success = false, message = "Dữ liệu không hợp lệ." });
+        }
+
+        public async Task<string> SaveImageAsync(IFormFile image)
+        {
+            if (image != null && image.Length > 0)
+            {
+                // Kiểm tra định dạng tệp
+                var fileExtension = Path.GetExtension(image.FileName).ToLower();
+                if (fileExtension != ".png")
+                {
+                    throw new InvalidOperationException("Chỉ hỗ trợ tệp hình ảnh PNG.");
+                }
+
+                // Đường dẫn lưu hình ảnh
+                var fileName = Path.GetFileName(image.FileName);
+                var filePath = Path.Combine("wwwroot/images", fileName); // Thay đổi đường dẫn theo yêu cầu
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await image.CopyToAsync(stream);
+                }
+
+                return $"/images/{fileName}"; // Trả về URL để lưu vào cơ sở dữ liệu
+            }
+
+            throw new InvalidOperationException("Không có hình ảnh nào được tải lên.");
         }
 
         public IActionResult Index()

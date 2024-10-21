@@ -1,3 +1,4 @@
+@model List<Dream_Bridge.Models.Main.School>;
 @{
     Layout = "_AdminLayout"; // Sử dụng layout admin
 }
@@ -17,6 +18,8 @@
             transition: background-color 0.3s ease;
             /* Thêm hiệu ứng chuyển màu nền */
         }
+
+        using Dream_Bridge.Models.Main;
 
         a {
             transition: background-color 0.3s ease;
@@ -40,10 +43,15 @@
         .flex.items-start.justify-center.gap-20.bg-gray-900 {
             display: none;
         }
+
+        #formContainer {
+            z-index: 100;
+            ;
+        }
     </style>
 </head>
 
-<body class=" flex items-center justify-center">
+<body>
 
     <div class="flex w-[100%]">
         <!-- Div lớn chứa các icon -->
@@ -86,7 +94,7 @@
             </a>
             <a href="/qltaikhoan"
                 class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
-                <span class="material-icons text-2xl">account_circle</span>
+                <span class="material-icons text-2xl">accou nt_circle</span>
                 <span
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
                     Tài khoản</span>
@@ -123,48 +131,116 @@
                     </div>
                 </div>
 
+                @*icon thêm danh mục trường *@
+                <div class="w-[100%] h-[100%] mr-[10px]">
+                    <div
+                        class="w-[7%] mt-[2%] h-[50%] shadow-box ml-auto mb-[1.5%] rounded-lg bg-green-500 text-center">
+                        <div id="AddIcon" class="cursor-pointer flex justify-center items-center h-full">
+                            <i class="fas fa-plus mt-2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*icon thêm trường *@
+            <div class="w-[97.5%] h-[4%] ">
                 <div
-                    class="w-[5%] mt-[1.5%] mr-2 h-[50%] shadow-box ml-auto mb-[1.5%] rounded-lg bg-green-500 text-center">
+                    class="w-[5%] mt-[1.5%] mr-[10px] h-[100%] shadow-box ml-auto mb-[1.5%] rounded-lg bg-green-500 text-center">
                     <div id="addIcon" class="cursor-pointer flex justify-center items-center h-full">
                         <i class="fas fa-plus mt-2"></i>
                     </div>
                 </div>
             </div>
 
+            @* form thêm danh mục trường *@
+            <div id="formContainer"
+                class="hidden fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
+                <div class="bg-white p-4 rounded-lg shadow-lg w-[400px]">
+                    <h2 class="text-center text-lg font-bold mb-4">Nhập thông tin</h2>
+                    <form id="addForm">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700">Tên Danh Mục Trường:</label>
+                            <input type="text" id="name" name="name" class="w-full border p-2 rounded">
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="button" id="closeForm"
+                                class="bg-gray-300 text-gray-700 px-4 py-2 rounded mr-2">Đóng</button>
+                            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Lưu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
 
-            <div class="mx-auto grid grid-cols-2 mt-[1%] gap-4 w-[100%] h-[18%]" id="newsGrid">
+            <div class="mx-auto grid grid-cols-2 mt-[1%] gap-4 w-[full] h-[18%]" id="newsGrid">
                 <div data-country="Mỹ">
-                    <div class="w-[95%] h-[100%] border border-black flex items-center justify-between p-5">
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <div class="w-[95%] h-[100%] border border-black flex items-center justify-between p-5">
+                                @* @if (Model != null && Model.Count > 0)
+                        {
+                        @foreach (var item in Model)
+                        {
                         <div class="w-[95%] h-[85%] flex">
-                            <img class="w-[50%] h-[100%]" src="~/Images/Albert Einstein.png" alt=""
-                                class="w-auto h-[100%] flex items-center justify-center border border-black">
-                            <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col justify-between">
-                                <h1 class="font-bold">Trường Trung học The Storm King School – New York, Mỹ</h1>
-                                <h1 class="font-bold flex">Quốc gia: <p
-                                        class="pl-1 font-bold text-blue-700 font-normal">Mỹ</p>
-                                </h1>
-                                <h1 class="font-bold flex">Tỉnh bang/ Thành phố: <p
-                                        class="pl-1 font-bold text-blue-700 font-normal">New York</p>
-                                </h1>
-                                <h1 class="font-bold flex">Bậc học: <p class="pl-1 font-bold text-blue-700 font-normal">
-                                        ĐẠI HỌC</p>
-                                </h1>
-                                <h1 class="font-bold flex items-center justify-between">
-                                    <span class="mr-2">Học phí trung bình: <p
-                                            class="inline pl-1 font-bold text-black-700 font-normal">74,100$</p></span>
-                                </h1>
+                        <img class="w-[50%] h-[100%]" src="~/Images/Albert Einstein.png" alt=""
+                        class="w-auto h-[100%] flex items-center justify-center border border-black">
+                        <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col justify-between">
+                        <h1 class="font-bold">@item.TitleSchool</h1>
+                        <h1 class="font-bold flex">Quốc gia: <p
+                        class="pl-1 font-bold text-blue-700 font-normal">@item.Nation
+                        </p>
+                        </h1>
+                        <h1 class="font-bold flex">Tỉnh bang/ Thành phố: <p
+                        class="pl-1 font-bold text-blue-700 font-normal">@item.StateCity</p>
+                        </h1>
+                        <h1 class="font-bold flex">Bậc học: <p class="pl-1 font-bold text-blue-700 font-normal">
+                        @item.Level</p>
+                        </h1>
+                        <h1 class="font-bold flex items-center justify-between">
+                        <span class="mr-2">Học phí trung bình: <p
+                        class="inline pl-1 font-bold text-black-700 font-normal">
+                        @item.AverageTuition</p></span>
+                        </h1>
+                        </div>
+                        </div>
+                        }
+                        } *@
+
+                                <div class="w-[95%] h-[85%] flex">
+                                    <img class="w-[50%] h-[100%]" src="@item.ImageSchool" alt=""
+                                        class="w-auto h-[100%] flex items-center justify-center border border-black">
+                                    <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col justify-between">
+                                        <h1 class="font-bold">@item.TitleSchool</h1>
+                                        <h1 class="font-bold flex">Quốc gia: <p
+                                                class="pl-1 font-bold text-blue-700 font-normal">@item.Nation</p>
+                                        </h1>
+                                        <h1 class="font-bold flex">Tỉnh bang/ Thành phố: <p
+                                                class="pl-1 font-bold text-blue-700 font-normal">@item.StateCity</p>
+                                        </h1>
+                                        <h1 class="font-bold flex">Bậc học: <p class="pl-1 font-bold text-blue-700 font-normal">
+                                                @item.Level</p>
+                                        </h1>
+                                        <h1 class="font-bold flex items-center justify-between">
+                                            <span class="mr-2">Học phí trung bình: <p
+                                                    class="inline pl-1 font-bold text-black-700 font-normal">
+                                                    @item.AverageTuition</p></span>
+                                        </h1>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col items-center">
+                                    <span class="cursor-pointer editIcon">
+                                        <i class="fas fa-edit" style="font-size: 20px;"></i> <!-- Icon sửa -->
+                                    </span>
+                                    <span class="cursor-pointer deleteIcon mt-2">
+                                        <i class="fas fa-trash" style="font-size: 20px;"></i> <!-- Icon xoá -->
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <span class="cursor-pointer editIcon">
-                                <i class="fas fa-edit" style="font-size: 20px;"></i> <!-- Icon sửa -->
-                            </span>
-                            <span class="cursor-pointer deleteIcon mt-2">
-                                <i class="fas fa-trash" style="font-size: 20px;"></i> <!-- Icon xoá -->
-                            </span>
-                        </div>
-                    </div>
+                        }
+                    }
                 </div>
 
                 <!-- Repeat the above structure for the "Đại học James Cook Brisbane" section -->
@@ -176,7 +252,8 @@
                             <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col justify-between">
                                 <h1 class="font-bold">Đại học James Cook Brisbane</h1>
                                 <h1 class="font-bold flex">Quốc gia: <p
-                                        class="pl-1 font-bold text-blue-700 font-normal">Úc</p>
+                                        class="pl-1 font-bold text-blue-700 font-normal">Úc
+                                    </p>
                                 </h1>
                                 <h1 class="font-bold flex">Tỉnh bang/ Thành phố: <p
                                         class="pl-1 font-bold text-blue-700 font-normal">Brisbane</p>
@@ -203,126 +280,178 @@
 
             </div>
 
-            <!-- Div overlay, ban đầu ẩn -->
+            @* form thêm trường *@
             <div class="overlay fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center hidden"
                 id="overlay">
                 <div class="modal bg-white p-10 rounded-lg shadow-lg text-center">
-                    <div class="w-[95%] h-[100%] border border-black flex items-center justify-center">
-                        <div class="w-[95%] h-[85%] flex">
-                            <!-- Nơi hiển thị hình ảnh đã tải lên -->
-                            <img id="uploadedImage" class="w-[50%] h-[100%]" src="~/Images/Albert Einstein.png"
-                                alt="Hình ảnh"
-                                class="w-auto h-[100%] flex items-center justify-center border border-black">
+                    <form id="schoolForm" class="w-[95%] h-[100%]">
+                        <div class="border border-black flex items-center justify-center">
+                            <div class="w-[95%] h-[85%] flex pt-2 pb-2">
+                                <!-- Nơi hiển thị hình ảnh đã tải lên -->
+                                <img id="uploadedImage" class="w-[50%] h-[100%]" src="~/Images/Albert Einstein.png"
+                                    alt="Hình ảnh"
+                                    class="w-auto h-[100%] flex items-center justify-center border border-black">
+                                <div class="ml-[4%] h-[100%] text-[14px] flex flex-col justify-between">
+                                    <!-- Input để cập nhật thông tin -->
+                                    <input type="text" id="IDschool" name="IDschool"
+                                        class="border p-2 rounded mb-2 w-full" placeholder="ID trường" required>
+                                    <input type="text" id="schoolName" name="schoolName"
+                                        class="border p-2 rounded mb-2 w-full" placeholder="Tên trường" required>
+                                    <input type="text" id="country" name="country"
+                                        class="border p-2 rounded mb-2 w-full" placeholder="Quốc gia" required>
+                                    <input type="text" id="city" name="city" class="border p-2 rounded mb-2 w-full"
+                                        placeholder="Tỉnh bang/Thành phố" required>
+                                    <input type="text" id="educationLevel" name="educationLevel"
+                                        class="border p-2 rounded mb-2 w-full" placeholder="Bậc học" required>
+                                    <input type="number" id="tuitionFee" name="tuitionFee"
+                                        class="border p-2 rounded mb-2 w-full" placeholder="Học phí trung bình ($)"
+                                        required>
 
-                            <div class="ml-[4%] h-[100%] text-[14px] flex flex-col justify-between">
-                                <!-- Input để cập nhật thông tin -->
-                                <input type="text" id="schoolName" class="border p-2 rounded mb-2 w-full"
-                                    placeholder="Tên trường">
-                                <input type="text" id="country" class="border p-2 rounded mb-2 w-full"
-                                    placeholder="Quốc gia">
-                                <input type="text" id="city" class="border p-2 rounded mb-2 w-full"
-                                    placeholder="Tỉnh bang/Thành phố">
-                                <input type="text" id="educationLevel" class="border p-2 rounded mb-2 w-full"
-                                    placeholder="Bậc học">
-                                <input type="number" id="tuitionFee" class="border p-2 rounded mb-2 w-full"
-                                    placeholder="Học phí trung bình ($)">
-
-                                <!-- Nút chọn hình ảnh -->
-                                <input type="file" id="imageInput" class="mt-4" accept="image/*">
+                                    <!-- Nút chọn hình ảnh -->
+                                    <input type="file" id="imageInput" name="imageInput" class="mt-4" accept="image/*">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Icon Đóng và Lưu -->
-                    <div class="flex justify-end mt-2">
-                        <!-- Nút Đóng -->
-                        <button id="closeModal" class="bg-red-500 text-white px-4 py-2 rounded mr-5 flex items-center">
-                            <i class="fas fa-times mr-1"></i> Đóng
-                        </button>
+                        <!-- Icon Đóng và Lưu -->
+                        <div class="flex justify-end mt-2">
+                            <!-- Nút Đóng -->
+                            <button type="button" id="closeModal"
+                                class="bg-red-500 text-white px-4 py-2 rounded mr-5 flex items-center">
+                                <i class="fas fa-times mr-1"></i> Đóng
+                            </button>
 
-                        <!-- Nút Lưu -->
-                        <button id="saveButton"
-                            class="bg-blue-500 text-white px-4 py-2 mr-[5%] rounded flex items-center">
-                            <i class="fas fa-save mr-1"></i> Lưu
-                        </button>
-                    </div>
+                            <!-- Nút Lưu -->
+                            <button type="submit" id="saveButton"
+                                class="bg-blue-500 text-white px-4 py-2 mr-[5%] rounded flex items-center">
+                                <i class="fas fa-save mr-1"></i> Lưu
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
+
         </div>
 
         <script>
+            document.getElementById('addForm').addEventListener('submit', async (event) => {
+                event.preventDefault(); // Ngăn chặn việc submit mặc định
 
-            document.addEventListener('DOMContentLoaded', () => {
-                const overlay = document.getElementById('overlay'),
-                    modal = document.querySelector('.modal'),
-                    newsDivs = document.querySelectorAll('#newsGrid > div'),
-                    closeModal = () => overlay.style.display = 'none';
+                const formData = new FormData(event.target); // Lấy dữ liệu từ form
 
-                document.querySelectorAll('#addIcon, .editIcon').forEach(icon => {
-                    icon.addEventListener('click', () => overlay.style.display = 'flex');
-                });
-
-                document.getElementById('closeModal').addEventListener('click', closeModal);
-
-                overlay.addEventListener('click', e => !modal.contains(e.target) && closeModal());
-
-                // Hàm filterNews gộp lại
-                window.filterNews = country => {
-                    var countries = ['all', 'Mỹ', 'Úc'];
-
-                    countries.forEach(c => {
-                        var div = document.querySelector(`div[data-country="${c}"]`);
-                        if (country === c) {
-                            div.classList.add('bg-green-500'); // Thêm màu nền khi nhấn
-                            newsDivs.forEach(n => {
-                                n.style.display = (country === 'all' || n.getAttribute('data-country') === country) ? 'flex' : 'none';
-                            });
-                        } else {
-                            div.classList.remove('bg-green-500'); // Xóa màu nền khi không nhấn
-                        }
+                try {
+                    const response = await fetch('/Admin/AddCatalog', {
+                        method: 'POST',
+                        body: formData
                     });
-                };
+
+                    const result = await response.json();
+                    if (result.success) {
+                        alert('Danh mục đã được thêm thành công');
+                        // Có thể cập nhật giao diện bằng cách reload hoặc thêm mới vào danh sách
+                        location.reload();
+                    } else {
+                        alert(result.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Đã xảy ra lỗi khi thêm danh mục.');
+                }
             });
 
             document.addEventListener('DOMContentLoaded', () => {
                 const overlay = document.getElementById('overlay'),
                     modal = document.querySelector('.modal'),
                     newsDivs = document.querySelectorAll('#newsGrid > div'),
+                    addIcon = document.getElementById('AddIcon'),
+                    formContainer = document.getElementById('formContainer'),
                     closeModal = () => overlay.style.display = 'none';
 
-                document.querySelectorAll('#addIcon, .editIcon').forEach(icon => {
-                    icon.addEventListener('click', () => overlay.style.display = 'flex');
-                });
+                // Mặc định thêm màu nền cho thẻ "Tất cả"
+                document.querySelector('div[data-country="all"]').classList.add('bg-green-500');
 
-                // Event listener for delete buttons
-                document.querySelectorAll('.deleteIcon').forEach(icon => {
-                    icon.addEventListener('click', function () {
-                        const institutionDiv = this.closest('[data-country]');
-                        institutionDiv.remove(); // Remove the institution div
-                    });
-                });
+                // Hiển thị modal khi nhấn add/edit icon
+                document.querySelectorAll('#addIcon, .editIcon').forEach(icon =>
+                    icon.addEventListener('click', () => overlay.style.display = 'flex'));
 
+                // Đóng modal khi nhấn nút Đóng hoặc ngoài modal
                 document.getElementById('closeModal').addEventListener('click', closeModal);
-
                 overlay.addEventListener('click', e => !modal.contains(e.target) && closeModal());
 
-                // Hàm filterNews gộp lại
-                window.filterNews = country => {
-                    var countries = ['all', 'Mỹ', 'Úc'];
+                // Xóa div khi nhấn icon delete
+                document.querySelectorAll('.deleteIcon').forEach(icon =>
+                    icon.addEventListener('click', function () { this.closest('[data-country]').remove(); }));
 
-                    countries.forEach(c => {
-                        var div = document.querySelector(`div[data-country="${c}"]`);
-                        if (country === c) {
-                            div.classList.add('bg-green-500'); // Thêm màu nền khi nhấn
-                            newsDivs.forEach(n => {
-                                n.style.display = (country === 'all' || n.getAttribute('data-country') === country) ? 'flex' : 'none';
-                            });
-                        } else {
-                            div.classList.remove('bg-green-500'); // Xóa màu nền khi không nhấn
-                        }
+                // Filter news theo country
+                window.filterNews = country => {
+                    ['all', 'Mỹ', 'Úc'].forEach(c => {
+                        const div = document.querySelector(`div[data-country="${c}"]`);
+                        div.classList.toggle('bg-green-500', c === country);
+                        newsDivs.forEach(n => n.style.display = (country === 'all' || n.getAttribute('data-country') === country) ? 'flex' : 'none');
                     });
                 };
+
+                // Hiển thị form khi nhấn AddIcon
+                addIcon.addEventListener('click', () => formContainer.classList.remove('hidden'));
+                document.getElementById('closeForm').addEventListener('click', () => formContainer.classList.add('hidden'));
+                document.getElementById('addForm').addEventListener('submit', e => {
+                    e.preventDefault();
+                    console.log('Form submitted');
+                    formContainer.classList.add('hidden');
+                });
             });
+
+
+            document.getElementById('schoolForm').addEventListener('submit', async (event) => {
+                event.preventDefault(); // Ngăn chặn gửi form mặc định
+
+                const formData = new FormData(event.target); // Lấy dữ liệu từ form
+
+                try {
+                    const response = await fetch('/admin/AddSchool', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const result = await response.json();
+                    if (result.success) {
+                        // Cập nhật giao diện với danh sách trường mới
+                        updateSchoolList(result.schools);
+                        // Đóng modal
+                        document.getElementById('overlay').classList.add('hidden');
+                    } else {
+                        alert(result.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Đã xảy ra lỗi khi thêm trường.');
+                }
+            });
+
+            // Cập nhật giao diện với danh sách trường
+            function updateSchoolList(schools) {
+                const container = document.getElementById('schoolListContainer'); // ID của phần chứa danh sách trường
+                container.innerHTML = ''; // Xóa danh sách cũ
+
+                schools.forEach(item => {
+                    const schoolDiv = document.createElement('div');
+                    schoolDiv.className = 'w-[95%] h-[85%] flex';
+                    schoolDiv.innerHTML = `
+                            <img class="w-[50%] h-[100%]" src="${item.ImageUrl}" alt=""
+                                class="w-auto h-[100%] flex items-center justify-center border border-black">
+                            <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col justify-between">
+                                <h1 class="font-bold">${item.TitleSchool}</h1>
+                                <h1 class="font-bold flex">Quốc gia: <p class="pl-1 font-bold text-blue-700 font-normal">${item.Nation}</p></h1>
+                                <h1 class="font-bold flex">Tỉnh bang/ Thành phố: <p class="pl-1 font-bold text-blue-700 font-normal">${item.StateCity}</p></h1>
+                                <h1 class="font-bold flex">Bậc học: <p class="pl-1 font-bold text-blue-700 font-normal">${item.Level}</p></h1>
+                                <h1 class="font-bold flex items-center justify-between">
+                                    <span class="mr-2">Học phí trung bình: <p class="inline pl-1 font-bold text-black-700 font-normal">${item.AverageTuition}</p></span>
+                                </h1>
+                            </div>
+                        `;
+                    container.appendChild(schoolDiv); // Thêm trường mới vào danh sách
+                });
+            }
 
         </script>
 </body>
