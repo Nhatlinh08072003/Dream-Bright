@@ -26,12 +26,11 @@ public partial class StudyAbroadDbContext : DbContext
     public virtual DbSet<School> Schools { get; set; }
 
     public virtual DbSet<StudyAbroadCatalog> StudyAbroadCatalogs { get; set; }
-
+    public DbSet<EmailHistory> EmailHistories { get; set; }
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-C8F8CM6;Database=StudyAbroad;MultipleActiveResultSets=true;User ID=admin;Password=asdasd;Trusted_Connection=True;TrustServerCertificate=Yes");
+        => optionsBuilder.UseSqlServer("Server=NHATLINH\\NHATLINH;Database=StudyAbroad;MultipleActiveResultSets=true;User ID=admin;Password=asdasd;Trusted_Connection=True;TrustServerCertificate=Yes");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

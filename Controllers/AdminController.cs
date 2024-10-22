@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
+
 namespace Dream_Bridge.Controllers
 {
     [Authorize(Roles = "Admin, Staff")] // Cho phép cả Admin và Staff truy cập
@@ -102,10 +103,20 @@ namespace Dream_Bridge.Controllers
             return View();
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+public IActionResult Index()
+{
+    var users = _studyAbroadDbContext.Users.ToList(); // Lấy danh sách người dùng
+    var emailHistories = _studyAbroadDbContext.EmailHistories.ToList(); // Lấy danh sách email đã gửi
+
+    var viewModel = new IndexViewModel
+    {
+        Users = users,
+        EmailHistories = emailHistories, // Truyền danh sách EmailHistory vào view model
+        Message = "Dữ liệu người dùng đã được tải thành công!" // Thông điệp tùy chọn
+    };
+
+    return View(viewModel); // Truyền mô hình đến view
+}
 
         public IActionResult QLTuvan()
         {

@@ -1,3 +1,4 @@
+using Dream_Bridge.Models.Main;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -6,13 +7,13 @@ public class EmailController : ControllerBase
 {
     private readonly EmailService _emailService;
 
-    public EmailController()
+    public EmailController(StudyAbroadDbContext dbContext) // Nhận dbContext qua constructor
     {
-        _emailService = new EmailService();
+        _emailService = new EmailService(dbContext); // Truyền dbContext vào EmailService
     }
 
     [HttpPost("send")]
-    public IActionResult SendEmail([FromBody] EmailRequest emailRequest)
+    public async Task<IActionResult> SendEmail([FromBody] EmailRequest emailRequest) // Đổi thành Task<IActionResult>
     {
         if (string.IsNullOrEmpty(emailRequest.ToEmail) ||
             string.IsNullOrEmpty(emailRequest.Subject) ||
@@ -21,30 +22,35 @@ public class EmailController : ControllerBase
             return BadRequest("All fields are required.");
         }
 
-        _emailService.SendEmail(emailRequest.ToEmail, emailRequest.Subject, emailRequest.Body);
-        return Ok("Email sent successfully!");
+        try
+        {
+            await _emailService.SendEmailAsync(emailRequest.ToEmail, emailRequest.Subject, emailRequest.Body); // Chờ kết quả từ SendEmailAsync
+            return Ok("Email sent successfully!");
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, "Internal server error: " + ex.Message);
+        }
     }
 
+    [HttpPost("register")]
+    public async Task<IActionResult> Register([FromBody] EmailRequest emailRequest) // Đổi thành Task<IActionResult>
+    {
+        if (string.IsNullOrEmpty(emailRequest.ToEmail) ||
+            string.IsNullOrEmpty(emailRequest.Subject) ||
+            string.IsNullOrEmpty(emailRequest.Body))
+        {
+            return BadRequest("All fields are required.");
+        }
 
-[HttpPost("register")]
-public IActionResult Register([FromBody] EmailRequest emailRequest)
-{
-    if (string.IsNullOrEmpty(emailRequest.ToEmail) ||
-        string.IsNullOrEmpty(emailRequest.Subject) ||
-        string.IsNullOrEmpty(emailRequest.Body))
-    {
-        return BadRequest("All fields are required.");
-    }
-
-    try
-    {
-        _emailService.SendEmail(emailRequest.ToEmail, emailRequest.Subject, emailRequest.Body);
-        return Ok("Registration email sent successfully!");
-    }
-    catch (Exception ex)
-    {
-        return StatusCode(500, "Internal server error: " + ex.Message);
+        try
+        {
+            await _emailService.SendEmailAsync(emailRequest.ToEmail, emailRequest.Subject, emailRequest.Body); // Chờ kết quả từ SendEmailAsync
+            return Ok("Registration email sent successfully!");
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, "Internal server error: " + ex.Message);
+        }
     }
 }
-}
-
