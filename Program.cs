@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Dream_Bridge.Models.Main;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.Configuration;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -13,6 +14,12 @@ builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
     options.EnableSensitiveDataLogging(false);
 });
 
+// Thêm cấu hình vào services
+builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Thay đổi từ AddSingleton sang AddScoped
+builder.Services.AddScoped<EmailService>();
 
 // Cấu hình xác thực
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -51,7 +58,7 @@ JsonConvert.DefaultSettings = () => new JsonSerializerSettings
     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
 };
 builder.Services.AddControllers();
-builder.Services.AddSingleton<EmailService>();
+builder.Services.AddScoped<EmailService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

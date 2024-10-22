@@ -1,6 +1,6 @@
 public class EmailRequest
 {
-    public string ToEmail { get; set; }
-    public string Subject { get; set; }
-    public string Body { get; set; }
+    public string? ToEmail { get; set; }  // Thay đổi thành nullable
+    public string? Subject { get; set; }   // Thay đổi thành nullable
+    public string? Body { get; set; }      // Thay đổi thành nullable
 }
