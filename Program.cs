@@ -192,6 +192,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Admin", action = "QLChat" }
 );
 app.MapControllerRoute(
+    name: "QLDanhMuc",
+    pattern: "/qlduhoc",
+    defaults: new { controller = "Admin", action = "QLDanhMuc" }
+);
+app.MapControllerRoute(
     name: "Login",
     pattern: "/login",
     defaults: new { controller = "Account", action = "Login" }
