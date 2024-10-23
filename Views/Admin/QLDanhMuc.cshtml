@@ -1,0 +1,28 @@
+@model StudyAbroadCategoryViewModel
+
+<h2>Tạo danh mục du học</h2>
+
+<form asp-action="QLDanhMuc" method="post">
+    <div class="form-group">
+        <label asp-for="NamecategoryStab" class="control-label"></label>
+        <input asp-for="NamecategoryStab" class="form-control" placeholder="Nhập tên danh mục du học" />
+        <span asp-validation-for="NamecategoryStab" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Tạo mới</button>
+</form>
+
+<div>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+</div>
