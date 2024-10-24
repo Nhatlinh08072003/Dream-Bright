@@ -4,6 +4,8 @@ using Dream_Bridge.Models.Main;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Configuration;
+using Dream_Bridge.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -14,11 +16,10 @@ builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
     options.EnableSensitiveDataLogging(false);
 });
 
-// Thêm cấu hình vào services
-builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Cấu hình SignalR
+builder.Services.AddSignalR();
 
-// Thay đổi từ AddSingleton sang AddScoped
+// Thay đổi từ AddSingleton sang AddScoped cho EmailService
 builder.Services.AddScoped<EmailService>();
 
 // Cấu hình xác thực
@@ -26,13 +27,13 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     .AddCookie(options =>
     {
         options.Cookie.HttpOnly = true;
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // Ví dụ: Thiết lập thời gian hết hạn
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // Thiết lập thời gian hết hạn
         options.Cookie.SameSite = SameSiteMode.Strict;
         options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
         options.LoginPath = "/Account/Login";
         options.LogoutPath = "/Account/Logout";
         options.AccessDeniedPath = "/Account/AccessDenied";
-        options.SlidingExpiration = true; // Ví dụ: Bật thời gian hết hạn trượt
+        options.SlidingExpiration = true; // Bật thời gian hết hạn trượt
     });
 
 // Cấu hình phân quyền
@@ -40,7 +41,6 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
 });
-
 
 // Cấu hình session
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -51,14 +51,16 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true; // Cần thiết cho tuân thủ GDPR
 });
-
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
+});
 JsonConvert.DefaultSettings = () => new JsonSerializerSettings
 {
     Formatting = Formatting.Indented,
     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
 };
-builder.Services.AddControllers();
-builder.Services.AddScoped<EmailService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -66,11 +68,18 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
+
 app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseRouting();
-app.MapControllers();
+
+// Thêm xác thực và phân quyền
+app.UseAuthentication();
 app.UseAuthorization();
+app.UseSession();
+
+// Thêm endpoint cho SignalR
+app.MapHub<Dream_Bridge.Hubs.ChatHub>("/chatHub");
 
 app.MapControllerRoute(
     name: "default",
@@ -92,9 +101,9 @@ app.MapControllerRoute(
     defaults: new { controller = "Home", action = "DuHoc" }
 );
 app.MapControllerRoute(
-    name: "LienHe",
-    pattern: "/lienhe",
-    defaults: new { controller = "Home", action = "LienHe" }
+    name: "Chat",
+    pattern: "/chat",
+    defaults: new { controller = "Home", action = "Chat" }
 );
 app.MapControllerRoute(
     name: "DichVu",

@@ -4,10 +4,8 @@ using Dream_Bridge.Models;
 using Dream_Bridge.Models.Main;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Dream_Bridge.ViewModels;
 using System.Security.Claims;
-
 
 namespace Dream_Bridge.Controllers
 {
@@ -26,41 +24,38 @@ namespace Dream_Bridge.Controllers
         [HttpGet]
         public IActionResult QLTaikhoan()
         {
-            // Kiểm tra xem người dùng có vai trò Staff không
             if (User.IsInRole("Staff"))
             {
-                // Nếu là Staff, chuyển hướng về QLTuvan
                 return RedirectToAction("QLTuvan");
             }
-            var users = _studyAbroadDbContext.Users.ToList(); // Lấy danh sách người dùng
 
+            var users = _studyAbroadDbContext.Users.ToList();
             var viewModel = new CombinedViewModel
             {
-                Users = users // Giả sử bạn có thuộc tính Users trong CombinedViewModel
+                Users = users
             };
 
             return View(viewModel);
         }
+
         [HttpPost]
         public async Task<IActionResult> QLTaikhoan(QLTKViewModel model)
         {
             if (ModelState.IsValid)
             {
-                // Kiểm tra nếu email đã tồn tại
                 if (await _studyAbroadDbContext.Users.AnyAsync(u => u.Email == model.Email))
                 {
                     TempData["ErrorMessage"] = "Email đã được sử dụng.";
-                    var users = _studyAbroadDbContext.Users.ToList();
+                    var users = await _studyAbroadDbContext.Users.ToListAsync();
                     var viewModel = new CombinedViewModel
                     {
                         Users = users,
-                        QLTKViewModel = model // Đưa model hiện tại vào CombinedViewModel
+                        QLTKViewModel = model
                     };
 
                     return View(viewModel);
                 }
 
-                // Tạo mới người dùng
                 var user = new User
                 {
                     FullName = model.FullName,
@@ -68,18 +63,17 @@ namespace Dream_Bridge.Controllers
                     PhoneNumber = model.PhoneNumber,
                     Address = model.Address,
                     Password = model.Password, // Mã hóa mật khẩu
-                    Role = model.Role, // Hoặc bất kỳ vai trò nào bạn muốn
+                    Role = model.Role,
                     IsConsultant = false,
-                    ConsultingStatus = "Chưa tư vấn", // Tùy chọn, có thể thay đổi
+                    ConsultingStatus = "Chưa tư vấn",
                     CreatedAt = DateTime.Now
                 };
 
-                // Thêm người dùng vào cơ sở dữ liệu
                 _studyAbroadDbContext.Users.Add(user);
                 await _studyAbroadDbContext.SaveChangesAsync();
 
                 TempData["SuccessMessage"] = "Tạo tài khoản thành công!";
-                return RedirectToAction("QLTaiKhoan"); // Điều hướng đến trang đăng nhập
+                return RedirectToAction("QLTaikhoan");
             }
 
             return View(model);
@@ -87,78 +81,125 @@ namespace Dream_Bridge.Controllers
 
         public IActionResult QLTintuc()
         {
-            // Nếu là Staff, chuyển hướng về QLTuvan
             if (User.IsInRole("Staff"))
             {
                 return RedirectToAction("QLTuvan");
             }
+
             return View();
         }
 
         public IActionResult QLTruong()
         {
-            // Nếu là Staff, chuyển hướng về QLTuvan
             if (User.IsInRole("Staff"))
             {
                 return RedirectToAction("QLTuvan");
             }
+
             return View();
         }
 
         public IActionResult Index()
         {
-            var users = _studyAbroadDbContext.Users.ToList(); // Lấy danh sách người dùng
-            var emailHistories = _studyAbroadDbContext.EmailHistories.ToList(); // Lấy danh sách email đã gửi
+            var users = _studyAbroadDbContext.Users.ToList();
+            var emailHistories = _studyAbroadDbContext.EmailHistories.ToList();
 
             var viewModel = new IndexViewModel
             {
                 Users = users,
-                EmailHistories = emailHistories, // Truyền danh sách EmailHistory vào view model
-                Message = "Dữ liệu người dùng đã được tải thành công!" // Thông điệp tùy chọn
+                EmailHistories = emailHistories,
+                Message = "Dữ liệu người dùng đã được tải thành công!"
             };
 
-            return View(viewModel); // Truyền mô hình đến view
+            return View(viewModel);
         }
 
         public IActionResult QLTuvan()
         {
             return View();
         }
-        public IActionResult QLChat()
+ [Authorize(Roles = "Admin")]
+public IActionResult QLChat()
+{
+    // Kiểm tra nếu người dùng đã đăng nhập và có vai trò Admin
+    if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
+    {
+        return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+    }
+
+    // Lấy danh sách tin nhắn chat từ cơ sở dữ liệu
+    var chatMessages = _studyAbroadDbContext.ChatMessages
+        .Include(m => m.Sender)
+        .Include(m => m.Receiver)
+        .ToList();
+
+    return View(chatMessages);
+}
+
+[HttpPost("api/chat/send")]
+public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)
+{
+    if (!string.IsNullOrEmpty(messageText))
+    {
+        var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+        int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;
+
+        var chatMessage = new ChatMessage
         {
-            return View();
-        }
+            SenderId = senderId,
+            ReceiverId = receiverId,
+            MessageText = messageText,
+            CreatedAt = DateTime.Now
+        };
+
+        _studyAbroadDbContext.ChatMessages.Add(chatMessage);
+        await _studyAbroadDbContext.SaveChangesAsync();
+
+        return Json(new { success = true, message = chatMessage }); // Trả về JSON
+    }
+
+    return Json(new { success = false });
+}
+       public IActionResult GetChatMessages(int userId)
+{
+    var messages = _studyAbroadDbContext.ChatMessages
+        .Include(cm => cm.Sender)
+        .Include(cm => cm.Receiver)
+        .Where(cm => cm.SenderId == userId || cm.ReceiverId == userId)
+        .ToList();
+
+    return Json(messages);
+}
+ [Authorize(Roles = "Admin")]
         public IActionResult QLDanhMuc()
         {
-            // Nếu là Staff, chuyển hướng về QLTuvan
             if (User.IsInRole("Staff"))
             {
                 return RedirectToAction("QLTuvan");
             }
+
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> QLDanhMuc(StudyAbroadCategoryViewModel model)
         {
             if (ModelState.IsValid)
             {
-                // Lấy IdUser từ claim
                 var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
                 if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
                 {
-                    // Tạo mới danh mục du học
                     var category = new StudyAbroadCatalog
                     {
                         NamecategoryStab = model.NamecategoryStab,
-                        IdUser = userId, // Gán IdUser từ claim
+                        IdUser = userId,
                     };
 
-                    // Thêm danh mục vào cơ sở dữ liệu
                     _studyAbroadDbContext.StudyAbroadCatalogs.Add(category);
                     await _studyAbroadDbContext.SaveChangesAsync();
 
                     TempData["SuccessMessage"] = "Tạo danh mục du học thành công!";
-                    return RedirectToAction("QLDanhMuc"); // Hoặc đến trang danh sách danh mục
+                    return RedirectToAction("QLDanhMuc");
                 }
                 else
                 {

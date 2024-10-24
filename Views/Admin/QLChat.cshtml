@@ -1,185 +1,112 @@
-@{
-    Layout = "_AdminLayout"; // Sử dụng layout admin
-}
-<!doctype html>
-<html lang="en">
+@using Dream_Bridge.Models.Main
+@model IEnumerable<ChatMessage>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        .active {
-            background-color: rgba(255, 255, 255, 0.2);
-            transition: background-color 0.3s ease;
-        }
+<h2>Quản Lý Chat</h2>
 
-        a {
-            transition: background-color 0.3s ease;
-            width: 100%;
-        }
-    </style>
-</head>
-
-<body class="bg-gray-100 flex min-h-screen w-screen">
-    <div class="flex w-full bg-white shadow-lg rounded-lg overflow-hidden">
-        <!-- Div lớn chứa các icon -->
-        <div
-            class="group relative flex h-[900px] w-[50px] flex-col items-start bg-green-500 transition-all duration-500 ease-in-out hover:w-[200px]">
-            <a href="/Admin"
-                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
-                <span class="material-icons text-2xl">home</span>
-                <span
-                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Tổng
-                    Quan</span>
-            </a>
-            <a href="/qltruong"
-                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
-                <span class="material-icons text-2xl">school</span>
-                <span
-                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
-                    Trường</span>
-            </a>
-            <a href="/qltuvan"
-                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
-                <span class="material-icons text-2xl">help_outline</span>
-                <span
-                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
-                    Tư vấn</span>
-            </a>
-            <a href="/qlduhoc"
-                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
-                <span class="material-icons text-2xl">public</span>
-                <span
-                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Danh
-                    mục du học</span>
-            </a>
-            <a href="/qltintuc"
-                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
-                <span class="material-icons text-2xl">announcement</span>
-                <span
-                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
-                    Tin tức</span>
-            </a>
-            <a href="/qltaikhoan"
-                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
-                <span class="material-icons text-2xl">account_circle</span>
-                <span
-                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
-                    Tài khoản</span>
-            </a>
-            <a href="/qlchat"
-                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
-                <span class="material-icons text-2xl">chat</span>
-                <span
-                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
-                    Chat</span>
-            </a>
-        </div>
-
-        <!-- Nội dung quản lý chat -->
-        <div class="flex flex-grow mx-auto  p-5 h-[900px]">
-            <!-- Danh sách người dùng -->
-            <div class="w-1/4 bg-gray-200 p-3 rounded-lg overflow-y-auto">
-                <h2 class="font-bold text-lg mb-3">Danh sách người dùng</h2>
-                <!-- Danh sách người dùng, có thể thay thế bằng dữ liệu từ backend -->
-                <ul id="user-list" class="space-y-2">
-                    <li class="cursor-pointer p-2 bg-white rounded-lg hover:bg-gray-300" data-user-id="1">Người dùng
-                        1
-                    </li>
-                    <li class="cursor-pointer p-2 bg-white rounded-lg hover:bg-gray-300" data-user-id="2">Người dùng
-                        2
-                    </li>
-                    <li class="cursor-pointer p-2 bg-white rounded-lg hover:bg-gray-300" data-user-id="3">Người dùng
-                        3
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Khu vực tin nhắn -->
-            <div class="flex-grow mx-5 w-[1200px] bg-gray-100 p-5 rounded-lg flex flex-col h-[500px]">
-                <h1 class="font-bold text-2xl text-center mb-5">Quản lý Chat</h1>
-
-                <!-- Khung chat -->
-                <div id="chat-container" class="flex flex-col bg-white p-5 rounded-lg flex-grow overflow-y-auto">
-                    <!-- Nội dung tin nhắn sẽ được thêm vào đây -->
-                </div>
-
-                <!-- Ô nhập tin nhắn và nút gửi -->
-                <div class="flex mt-4">
-                    <input type="text" id="message-input" class="flex-grow p-3 border border-gray-300 rounded-lg"
-                        placeholder="Nhập tin nhắn...">
-                    <button id="send-button"
-                        class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Gửi</button>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            // Giả lập dữ liệu tin nhắn từ backend
-            const chatData = {
-                1: [
-                    { sender: 'User', message: 'Xin chào, tôi cần hỗ trợ!' },
-                    { sender: 'Admin', message: 'Chào bạn, tôi có thể giúp gì cho bạn?' }
-                ],
-                2: [
-                    { sender: 'User', message: 'Tôi cần tư vấn về khóa học.' },
-                    { sender: 'Admin', message: 'Bạn muốn tư vấn về khóa học nào?' }
-                ],
-                3: [
-                    { sender: 'User', message: 'Làm sao để liên hệ với tư vấn viên?' },
-                    { sender: 'Admin', message: 'Bạn có thể liên hệ qua số điện thoại 123456789.' }
-                ]
-            };
-
-            // Xử lý khi người dùng chọn từ danh sách
-            document.querySelectorAll('#user-list li').forEach(user => {
-                user.addEventListener('click', () => {
-                    const userId = user.getAttribute('data-user-id');
-                    loadChatMessages(userId);
-                });
-            });
-
-            // Hàm tải tin nhắn từ người dùng đã chọn
-            function loadChatMessages(userId) {
-                const chatContainer = document.getElementById('chat-container');
-                chatContainer.innerHTML = ''; // Xóa tin nhắn cũ
-
-                const messages = chatData[userId] || [];
-                messages.forEach(msg => {
-                    const messageDiv = document.createElement('div');
-                    messageDiv.classList.add('message', 'mb-4', 'p-3', 'rounded-lg');
-                    messageDiv.classList.add(msg.sender === 'Admin' ? 'bg-green-200' : 'bg-blue-200');
-                    messageDiv.classList.add(msg.sender === 'Admin' ? 'self-end' : 'self-start');
-                    messageDiv.innerHTML = `<p class="font-semibold">${msg.sender}:</p><p>${msg.message}</p>`;
-
-                    chatContainer.appendChild(messageDiv);
-                });
-
-                chatContainer.scrollTop = chatContainer.scrollHeight;
+<div class="d-flex">
+    <div class="me-3">
+        <h4>Danh Sách Người Dùng</h4>
+        <ul id="userList" class="list-group">
+            @foreach (var user in Model.Select(m => m.Receiver).Distinct())
+            {
+                <li class="list-group-item user-item" data-user-id="@user.IdUser">
+                    @user.FullName
+                </li>
             }
-
-            // Xử lý gửi tin nhắn
-            document.getElementById('send-button').addEventListener('click', () => {
-                const input = document.getElementById('message-input');
-                const message = input.value.trim();
-                const chatContainer = document.getElementById('chat-container');
-
-                if (message !== '') {
-                    const messageDiv = document.createElement('div');
-                    messageDiv.classList.add('message', 'mb-4', 'p-3', 'rounded-lg', 'bg-green-200', 'self-end');
-                    messageDiv.innerHTML = `<p class="font-semibold">You:</p><p>${message}</p>`;
-
-                    chatContainer.appendChild(messageDiv);
-                    input.value = ''; // Xóa ô nhập
-                    chatContainer.scrollTop = chatContainer.scrollHeight; // Cuộn xuống
-                }
-            });
-        </script>
+        </ul>
     </div>
-</body>
 
-</html>
+    <div>
+        <h4>Các Tin Nhắn</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sender</th>
+                    <th>Receiver</th>
+                    <th>Message</th>
+                    <th>Sent At</th>
+                </tr>
+            </thead>
+            <tbody id="messageTable">
+                @foreach (var message in Model)
+                {
+                    <tr class="message-row" data-user-id="@message.ReceiverId">
+                        <td>@message.Sender.FullName</td>
+                        <td>@message.Receiver.FullName</td>
+                        <td>@message.MessageText</td>
+                        <td>@(message.CreatedAt.HasValue ? message.CreatedAt.Value.ToString("g") : "N/A")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <form id="messageForm">
+            <div class="mb-3">
+                <label for="messageText" class="form-label">Tin Nhắn:</label>
+                <input type="text" class="form-control" id="messageText" required />
+            </div>
+            <input type="hidden" id="receiverId" />
+            <button type="submit" class="btn btn-primary">Gửi Tin Nhắn</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Khi nhấp vào một người dùng trong danh sách
+        document.querySelectorAll('.user-item').forEach(item => {
+            item.addEventListener('click', function () {
+                const userId = this.dataset.userId;
+                document.getElementById('receiverId').value = userId;
+
+                // Hiển thị tin nhắn giữa admin và người dùng đã chọn
+                const messageRows = document.querySelectorAll('.message-row');
+                messageRows.forEach(row => {
+                    if (row.dataset.userId === userId) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Gửi tin nhắn khi form được submit
+        document.getElementById('messageForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const messageText = document.getElementById('messageText').value;
+            const receiverId = document.getElementById('receiverId').value;
+
+            // Gửi yêu cầu đến API để gửi tin nhắn (cần phải điều chỉnh URL và cấu hình API)
+            fetch('/api/chat/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('token') // Hoặc cookie nếu cần
+                },
+                body: JSON.stringify({
+                    messageText: messageText,
+                    receiverId: receiverId
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Cập nhật giao diện với tin nhắn mới
+                        const newRow = document.createElement('tr');
+                        newRow.innerHTML = `
+                                <td>${data.message.sender.FullName}</td>
+                                <td>${data.message.receiver.FullName}</td>
+                                <td>${data.message.MessageText}</td>
+                                <td>${new Date(data.message.CreatedAt).toLocaleString()}</td>
+                            `;
+                        document.getElementById('messageTable').appendChild(newRow);
+                        document.getElementById('messageText').value = ''; // Xóa ô nhập
+                    } else {
+                        alert('Có lỗi xảy ra khi gửi tin nhắn.');
+                    }
+                });
+        });
+    </script>
+}
