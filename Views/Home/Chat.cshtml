@@ -1,0 +1,42 @@
+@model List<Dream_Bridge.Models.Main.ChatMessage>
+@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "Chat";
+    var adminId = (int)(ViewData["AdminId"] ?? 0); // Ép kiểu adminId sang int
+}
+
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Chat with Admin</h1>
+
+    <div id="chat-messages" class="border border-gray-300 rounded-lg p-4 mb-4 h-80 overflow-y-auto">
+        @foreach (var message in Model)
+        {
+            <div class="mb-2">
+                <strong>
+                    @(message.SenderId.ToString() == User.FindFirst(ClaimTypes.NameIdentifier)?.Value ? "You" :
+                        message.SenderId == adminId ? "Admin" : "User " + message.SenderId):
+                </strong>
+                <span>@message.MessageText</span>
+                <span class="text-gray-500 text-sm ml-2">@message.CreatedAt?.ToString("hh:mm tt")</span>
+            </div>
+        }
+    </div>
+
+    <form id="chat-form" method="post" action="@Url.Action("SendChatMessage", "Home")">
+        <div class="flex">
+            <input type="text" name="messageText" id="messageText"
+                class="border border-gray-300 rounded-lg p-2 flex-grow" placeholder="Type your message..." required />
+            <input type="hidden" name="receiverId" value="@adminId" /> <!-- ID của admin -->
+            <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 ml-2">Send</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        const chatMessages = document.getElementById("chat-messages");
+        // Scroll to the bottom of the chat
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    </script>
+}
