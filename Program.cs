@@ -211,8 +211,28 @@ app.MapControllerRoute(
     defaults: new { controller = "Account", action = "Login" }
 );
 app.MapControllerRoute(
+    name: "Profile",
+    pattern: "/profile",
+    defaults: new { controller = "Account", action = "Profile" }
+);
+app.MapControllerRoute(
     name: "Register",
     pattern: "/register",
     defaults: new { controller = "Account", action = "Register" }
+);
+app.MapControllerRoute(
+    name: "HistoryOrder",
+    pattern: "/historyorder",
+    defaults: new { controller = "Account", action = "HistoryOrder" }
+);
+app.MapControllerRoute(
+    name: "Resetpassword",
+    pattern: "/resetpassword",
+    defaults: new { controller = "Account", action = "Resetpassword" }
+);
+app.MapControllerRoute(
+    name: "UpdateProfile",
+    pattern: "/updateprofile",
+    defaults: new { controller = "Account", action = "UpdateProfile" }
 );
 app.Run();

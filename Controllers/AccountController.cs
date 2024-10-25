@@ -8,6 +8,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Dream_Bridge.ViewModels;
+using Dream_Bright.Models;
 
 namespace Dream_Bridge.Controllers;
 
@@ -126,10 +127,159 @@ public class AccountController : Controller
     {
         return View();
     }
+    // public IActionResult Profile()
+    // {
+    //     return View();
+    // }
+    public IActionResult Profile()
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if (userId == null)
+        {
+            return RedirectToAction("Login");
+        }
+
+        var user = _context.Users.Find(int.Parse(userId));
+
+        if (user == null)
+        {
+            return NotFound();
+        }
+
+        return View(user); // Trả về view với thông tin người dùng
+    }
+
+    public IActionResult HistoryOrder()
+    {
+        return View();
+    }
+    public IActionResult ResetPassword()
+    {
+        var model = new ResetPasswordModel(); // Tạo một instance của ResetPasswordModel
+        return View(model); // Truyền đúng model vào view
+    }
+
+    // Phương thức xử lý yêu cầu đổi mật khẩu
+    [HttpPost]
+    public async Task<IActionResult> ResetPassword(ResetPasswordModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = await _context.Users.FindAsync(int.Parse(userId));
+
+            if (user == null)
+            {
+                return NotFound("Người dùng không tồn tại.");
+            }
+
+            // Kiểm tra mật khẩu hiện tại
+            if (user.Password != model.CurrentPassword)
+            {
+                ModelState.AddModelError("CurrentPassword", "Mật khẩu hiện tại không chính xác.");
+                return View(model); // Trả về view để cho phép nhập lại mật khẩu
+            }
+
+            // Kiểm tra mật khẩu mới và xác nhận
+            if (model.NewPassword != model.ConfirmNewPassword)
+            {
+                ModelState.AddModelError("ConfirmNewPassword", "Mật khẩu mới và xác nhận mật khẩu không giống nhau.");
+                return View(model);
+            }
+
+            // Cập nhật mật khẩu mới
+            user.Password = model.NewPassword;
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Đổi mật khẩu thành công!";
+            return RedirectToAction("Index", "Home");
+        }
+
+        return View(model);
+    }
+
+
+    [HttpGet]
+    public IActionResult UpdateProfile()
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if (userId == null)
+        {
+            return RedirectToAction("Login");
+        }
+
+        var user = _context.Users.Find(int.Parse(userId));
+
+        if (user == null)
+        {
+            return NotFound();
+        }
+
+        // Tạo ViewModel để đẩy dữ liệu người dùng hiện tại vào form
+        var model = new UpdateProfileViewModel
+        {
+            FullName = user.FullName,
+            Email = user.Email,
+            PhoneNumber = user.PhoneNumber,
+            Address = user.Address
+        };
+
+        return View(model);
+    }
+
+
+    // Xử lý việc cập nhật thông tin:
+    [HttpPost]
+    public async Task<IActionResult> UpdateProfile(UpdateProfileViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = await _context.Users.FindAsync(int.Parse(userId));
+
+            if (user == null)
+            {
+                return NotFound("Người dùng không tồn tại.");
+            }
+
+            // Kiểm tra email đã tồn tại hay chưa (ngoại trừ email của người dùng hiện tại)
+            if (await _context.Users.AnyAsync(u => u.Email == model.Email && u.IdUser != user.IdUser))
+            {
+                ModelState.AddModelError("Email", "Email đã được sử dụng bởi người dùng khác.");
+                return View(model);
+            }
+
+            // Cập nhật thông tin người dùng
+            user.FullName = model.FullName;
+            user.Email = model.Email;
+            user.PhoneNumber = model.PhoneNumber;
+            user.Address = model.Address;
+
+            // Lưu thay đổi
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Cập nhật thông tin cá nhân thành công!";
+            return RedirectToAction("Profile");
+        }
+
+        return View(model);
+    }
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+}
+
+internal class ResetPassword
+{
+    public ResetPassword()
+    {
     }
 }

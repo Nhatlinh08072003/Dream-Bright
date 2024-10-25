@@ -3220,7 +3220,7 @@ video {
 
 div {
   position: relative;
-  z-index: 10;
+  
   /* Đảm bảo chữ hiển thị trên lớp mờ */
 }
 
