@@ -141,9 +141,11 @@ public async Task<IActionResult> SendChatMessage(string messageText, int receive
 {
     if (!string.IsNullOrEmpty(messageText))
     {
+        // Lấy ID của admin (người gửi)
         var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
         int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;
 
+        // Tạo tin nhắn mới
         var chatMessage = new ChatMessage
         {
             SenderId = senderId,
@@ -155,11 +157,13 @@ public async Task<IActionResult> SendChatMessage(string messageText, int receive
         _studyAbroadDbContext.ChatMessages.Add(chatMessage);
         await _studyAbroadDbContext.SaveChangesAsync();
 
-        return Json(new { success = true, message = chatMessage }); // Trả về JSON
+        // Trả về JSON chứa thông tin của tin nhắn mới
+        return Json(new { success = true, message = chatMessage });
     }
 
     return Json(new { success = false });
 }
+
        public IActionResult GetChatMessages(int userId)
 {
     var messages = _studyAbroadDbContext.ChatMessages
