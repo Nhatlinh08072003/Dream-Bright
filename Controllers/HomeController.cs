@@ -33,24 +33,52 @@ public class HomeController : Controller
     }
 
 
-    // Thêm phương thức Chat
-    public IActionResult Chat()
+    // // Thêm phương thức Chat
+    // public IActionResult Chat()
+    // {
+
+    //     // Kiểm tra nếu người dùng đã đăng nhập
+    //     if (!User.Identity.IsAuthenticated)
+    //     {
+    //         return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+    //     }
+
+    //     ViewData["AdminId"] = 1;
+    //     var chatMessages = _context.ChatMessages
+    //         .Include(m => m.Sender)
+    //         .Include(m => m.Receiver)
+    //         .ToList();
+
+    //     return View(chatMessages);
+    // }// Thêm phương thức Chat
+public IActionResult Chat()
+{
+    // Kiểm tra nếu người dùng đã đăng nhập
+    if (!User.Identity.IsAuthenticated)
     {
-
-        // Kiểm tra nếu người dùng đã đăng nhập
-        if (!User.Identity.IsAuthenticated)
-        {
-            return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
-        }
-
-        ViewData["AdminId"] = 1;
-        var chatMessages = _context.ChatMessages
-            .Include(m => m.Sender)
-            .Include(m => m.Receiver)
-            .ToList();
-
-        return View(chatMessages);
+        return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
     }
+
+    // Lấy ID của người dùng hiện tại
+    var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+    if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+    {
+        return Unauthorized("User not authenticated.");
+    }
+
+    ViewData["AdminId"] = 1;
+
+    // Chỉ lấy những tin nhắn mà người dùng hiện tại là người gửi hoặc người nhận
+    var chatMessages = _context.ChatMessages
+        .Include(m => m.Sender)
+        .Include(m => m.Receiver)
+        .Where(m => (m.SenderId == userId && m.ReceiverId == 1) || (m.SenderId == 1 && m.ReceiverId == userId))
+        .OrderBy(m => m.CreatedAt) // Sắp xếp tin nhắn theo thời gian
+        .ToList();
+
+    return View(chatMessages);
+}
+
 
     [HttpPost]
     public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)
