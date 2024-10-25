@@ -109,7 +109,7 @@ public class AccountController : Controller
 
             // Thêm người dùng vào cơ sở dữ liệu
             _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
 
             TempData["SuccessMessage"] = "Đăng ký thành công! Bạn có thể đăng nhập.";
             return RedirectToAction("Login"); // Điều hướng đến trang đăng nhập

@@ -1,6 +1,23 @@
 @{
     Layout = "_AdminLayout"; // Sử dụng layout admin
 }
+@model List<Dream_Bridge.Models.Main.ChatMessage>
+@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "Chat";
+    var adminId = (int)(ViewData["AdminId"] ?? 0); // Ép kiểu adminId sang int
+    var users = Model
+    .Select(m => new
+    {
+        UserId = m.SenderId,
+        UserName = (m.SenderId == adminId ? "Admin" : m.Sender?.FullName ?? "User " + m.SenderId) // Sử dụng FullName nếu có,
+
+    })
+    .Distinct()
+    .ToList(); // Danh sách người dùng
+}
+
 <!doctype html>
 <html lang="en">
 
@@ -24,8 +41,10 @@
     </style>
 </head>
 
-<body class="bg-gray-100 flex min-h-screen w-screen">
-    <div class="flex w-full bg-white shadow-lg rounded-lg overflow-hidden">
+<body class="bg-gray-100 flex min-h-screen">
+
+
+    <div class="flex w-[90%] bg-white shadow-lg rounded-lg overflow-hidden">
         <!-- Div lớn chứa các icon -->
         <div
             class="group relative flex h-[900px] w-[50px] flex-col items-start bg-green-500 transition-all duration-500 ease-in-out hover:w-[200px]">
@@ -80,106 +99,79 @@
             </a>
         </div>
 
-        <!-- Nội dung quản lý chat -->
-        <div class="flex flex-grow mx-auto  p-5 h-[900px]">
-            <!-- Danh sách người dùng -->
-            <div class="w-1/4 bg-gray-200 p-3 rounded-lg overflow-y-auto">
-                <h2 class="font-bold text-lg mb-3">Danh sách người dùng</h2>
-                <!-- Danh sách người dùng, có thể thay thế bằng dữ liệu từ backend -->
-                <ul id="user-list" class="space-y-2">
-                    <li class="cursor-pointer p-2 bg-white rounded-lg hover:bg-gray-300" data-user-id="1">Người dùng
-                        1
-                    </li>
-                    <li class="cursor-pointer p-2 bg-white rounded-lg hover:bg-gray-300" data-user-id="2">Người dùng
-                        2
-                    </li>
-                    <li class="cursor-pointer p-2 bg-white rounded-lg hover:bg-gray-300" data-user-id="3">Người dùng
-                        3
-                    </li>
+
+        <div class="flex-grow p-4 w-screen h-[600px]">
+            <h1 class="text-2xl font-bold mb-4">Chat with Users</h1>
+
+            <div class="mb-4">
+                <h2 class="text-lg font-semibold">Select User:</h2>
+                <ul id="userList" class="list-none mb-3">
+                    @foreach (var user in users)
+                    {
+                        <li class="cursor-pointer p-2 hover:bg-gray-200 user-item" data-user-id="@user.UserId">
+                            @user.UserName
+                        </li>
+                    }
                 </ul>
             </div>
 
-            <!-- Khu vực tin nhắn -->
-            <div class="flex-grow mx-5 w-[1200px] bg-gray-100 p-5 rounded-lg flex flex-col h-[500px]">
-                <h1 class="font-bold text-2xl text-center mb-5">Quản lý Chat</h1>
+            <div id="chat-messages" class="border border-gray-300 rounded-lg p-4 mb-4 h-[450px] overflow-y-auto">
+                @foreach (var message in Model)
+                {
+                    var senderName = users.FirstOrDefault(u => u.UserId == message.SenderId)?.UserName ?? "User " +
+                    message.SenderId;
 
-                <!-- Khung chat -->
-                <div id="chat-container" class="flex flex-col bg-white p-5 rounded-lg flex-grow overflow-y-auto">
-                    <!-- Nội dung tin nhắn sẽ được thêm vào đây -->
-                </div>
-
-                <!-- Ô nhập tin nhắn và nút gửi -->
-                <div class="flex mt-4">
-                    <input type="text" id="message-input" class="flex-grow p-3 border border-gray-300 rounded-lg"
-                        placeholder="Nhập tin nhắn...">
-                    <button id="send-button"
-                        class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Gửi</button>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            // Giả lập dữ liệu tin nhắn từ backend
-            const chatData = {
-                1: [
-                    { sender: 'User', message: 'Xin chào, tôi cần hỗ trợ!' },
-                    { sender: 'Admin', message: 'Chào bạn, tôi có thể giúp gì cho bạn?' }
-                ],
-                2: [
-                    { sender: 'User', message: 'Tôi cần tư vấn về khóa học.' },
-                    { sender: 'Admin', message: 'Bạn muốn tư vấn về khóa học nào?' }
-                ],
-                3: [
-                    { sender: 'User', message: 'Làm sao để liên hệ với tư vấn viên?' },
-                    { sender: 'Admin', message: 'Bạn có thể liên hệ qua số điện thoại 123456789.' }
-                ]
-            };
-
-            // Xử lý khi người dùng chọn từ danh sách
-            document.querySelectorAll('#user-list li').forEach(user => {
-                user.addEventListener('click', () => {
-                    const userId = user.getAttribute('data-user-id');
-                    loadChatMessages(userId);
-                });
-            });
-
-            // Hàm tải tin nhắn từ người dùng đã chọn
-            function loadChatMessages(userId) {
-                const chatContainer = document.getElementById('chat-container');
-                chatContainer.innerHTML = ''; // Xóa tin nhắn cũ
-
-                const messages = chatData[userId] || [];
-                messages.forEach(msg => {
-                    const messageDiv = document.createElement('div');
-                    messageDiv.classList.add('message', 'mb-4', 'p-3', 'rounded-lg');
-                    messageDiv.classList.add(msg.sender === 'Admin' ? 'bg-green-200' : 'bg-blue-200');
-                    messageDiv.classList.add(msg.sender === 'Admin' ? 'self-end' : 'self-start');
-                    messageDiv.innerHTML = `<p class="font-semibold">${msg.sender}:</p><p>${msg.message}</p>`;
-
-                    chatContainer.appendChild(messageDiv);
-                });
-
-                chatContainer.scrollTop = chatContainer.scrollHeight;
-            }
-
-            // Xử lý gửi tin nhắn
-            document.getElementById('send-button').addEventListener('click', () => {
-                const input = document.getElementById('message-input');
-                const message = input.value.trim();
-                const chatContainer = document.getElementById('chat-container');
-
-                if (message !== '') {
-                    const messageDiv = document.createElement('div');
-                    messageDiv.classList.add('message', 'mb-4', 'p-3', 'rounded-lg', 'bg-green-200', 'self-end');
-                    messageDiv.innerHTML = `<p class="font-semibold">You:</p><p>${message}</p>`;
-
-                    chatContainer.appendChild(messageDiv);
-                    input.value = ''; // Xóa ô nhập
-                    chatContainer.scrollTop = chatContainer.scrollHeight; // Cuộn xuống
+                    <div class="mb-2 message-row flex items-center" data-user-id="@message.SenderId">
+                        <strong class="mr-2">
+                            @(message.SenderId.ToString() == User.FindFirst(ClaimTypes.NameIdentifier)?.Value ? "You" :
+                                message.SenderId == adminId ? "Admin" : senderName):
+                        </strong>
+                        <span>@message.MessageText</span>
+                        <span class="text-gray-500 text-sm ml-2">@message.CreatedAt?.ToString("hh:mm tt")</span>
+                    </div>
                 }
+            </div>
+
+            <form id="chat-form" method="post" action="@Url.Action("SendChatMessage", "Home")">
+                <div class="flex">
+                    <input type="text" name="messageText" id="messageText"
+                        class="border border-gray-300 rounded-lg p-2 flex-grow" placeholder="Type your message..."
+                        required />
+                    <input type="hidden" name="receiverId" id="receiverId" value="@adminId" /> <!-- ID của admin -->
+                    <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 ml-2">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script>
+            const chatMessages = document.getElementById("chat-messages");
+
+            // Scroll to the bottom of the chat
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Chọn người dùng
+            document.querySelectorAll('.user-item').forEach(item => {
+                item.addEventListener('click', function () {
+                    const userId = this.dataset.userId;
+
+                    // Cập nhật ID người nhận
+                    document.getElementById('receiverId').value = userId;
+
+                    // Hiển thị tin nhắn giữa admin và người dùng đã chọn
+                    const messageRows = document.querySelectorAll('.message-row');
+                    messageRows.forEach(row => {
+                        if (row.dataset.userId === userId) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
             });
         </script>
-    </div>
+    }
 </body>
 
 </html>

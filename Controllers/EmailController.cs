@@ -85,7 +85,7 @@ public class EmailController : ControllerBase
         {
             // Save registration to the database
             await _context.ConsultingRegistrations.AddAsync(consultingRegistration);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
 
             // Send the email
             await _emailService.SendEmailAsync(registrationRequest.Email, $"Đăng ký tư vấn từ {registrationRequest.FullName}", $"Tên: {registrationRequest.FullName}\nSố điện thoại: {registrationRequest.PhoneNumber}\nDịch vụ: {registrationRequest.ConsultingType}\nQuốc gia: {registrationRequest.ContentConsulting}\nNội dung: {registrationRequest.Note}");
