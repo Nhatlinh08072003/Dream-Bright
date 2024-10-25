@@ -118,59 +118,59 @@ namespace Dream_Bridge.Controllers
         {
             return View();
         }
- [Authorize(Roles = "Admin")]
-public IActionResult QLChat()
-{
-    // Kiểm tra nếu người dùng đã đăng nhập và có vai trò Admin
-    if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
-    {
-        return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
-    }
-
-    // Lấy danh sách tin nhắn chat từ cơ sở dữ liệu
-    var chatMessages = _studyAbroadDbContext.ChatMessages
-        .Include(m => m.Sender)
-        .Include(m => m.Receiver)
-        .ToList();
-
-    return View(chatMessages);
-}
-
-[HttpPost("api/chat/send")]
-public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)
-{
-    if (!string.IsNullOrEmpty(messageText))
-    {
-        var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-        int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;
-
-        var chatMessage = new ChatMessage
+        [Authorize(Roles = "Admin")]
+        public IActionResult QLChat()
         {
-            SenderId = senderId,
-            ReceiverId = receiverId,
-            MessageText = messageText,
-            CreatedAt = DateTime.Now
-        };
+            // Kiểm tra nếu người dùng đã đăng nhập và có vai trò Admin
+            if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+            }
 
-        _studyAbroadDbContext.ChatMessages.Add(chatMessage);
-        await _studyAbroadDbContext.SaveChangesAsync();
+            // Lấy danh sách tin nhắn chat từ cơ sở dữ liệu
+            var chatMessages = _studyAbroadDbContext.ChatMessages
+                .Include(m => m.Sender)
+                .Include(m => m.Receiver)
+                .ToList();
 
-        return Json(new { success = true, message = chatMessage }); // Trả về JSON
-    }
+            return View(chatMessages);
+        }
 
-    return Json(new { success = false });
-}
-       public IActionResult GetChatMessages(int userId)
-{
-    var messages = _studyAbroadDbContext.ChatMessages
-        .Include(cm => cm.Sender)
-        .Include(cm => cm.Receiver)
-        .Where(cm => cm.SenderId == userId || cm.ReceiverId == userId)
-        .ToList();
+        [HttpPost("api/chat/send")]
+        public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)
+        {
+            if (!string.IsNullOrEmpty(messageText))
+            {
+                var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+                int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;
 
-    return Json(messages);
-}
- [Authorize(Roles = "Admin")]
+                var chatMessage = new ChatMessage
+                {
+                    SenderId = senderId,
+                    ReceiverId = receiverId,
+                    MessageText = messageText,
+                    CreatedAt = DateTime.Now
+                };
+
+                _studyAbroadDbContext.ChatMessages.Add(chatMessage);
+                await _studyAbroadDbContext.SaveChangesAsync();
+
+                return Json(new { success = true, message = chatMessage }); // Trả về JSON
+            }
+
+            return Json(new { success = false });
+        }
+        public IActionResult GetChatMessages(int userId)
+        {
+            var messages = _studyAbroadDbContext.ChatMessages
+                .Include(cm => cm.Sender)
+                .Include(cm => cm.Receiver)
+                .Where(cm => cm.SenderId == userId || cm.ReceiverId == userId)
+                .ToList();
+
+            return Json(messages);
+        }
+        [Authorize(Roles = "Admin")]
         public IActionResult QLDanhMuc()
         {
             if (User.IsInRole("Staff"))
@@ -178,7 +178,15 @@ public async Task<IActionResult> SendChatMessage(string messageText, int receive
                 return RedirectToAction("QLTuvan");
             }
 
-            return View();
+            // Lấy danh sách danh mục từ cơ sở dữ liệu
+            var categories = _studyAbroadDbContext.StudyAbroadCatalogs.ToList();
+
+            var viewModel = new StudyAbroadCategoryViewModel
+            {
+                StudyAbroadCatalogs = categories
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]

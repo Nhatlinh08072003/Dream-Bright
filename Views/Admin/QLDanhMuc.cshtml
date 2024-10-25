@@ -1,4 +1,4 @@
-@model StudyAbroadCategoryViewModel
+@model Dream_Bridge.Models.Main.StudyAbroadCategoryViewModel
 
 <h2>Tạo danh mục du học</h2>
 
@@ -26,3 +26,21 @@
         </div>
     }
 </div>
+<h3>Danh sách danh mục du học</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tên danh mục</th>
+            <th>Người tạo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model.StudyAbroadCatalogs)
+        {
+            <tr>
+                <td>@category.NamecategoryStab</td>
+                <td>@category.IdUser</td>
+            </tr>
+        }
+    </tbody>
+</table>
