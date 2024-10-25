@@ -173,5 +173,10 @@ public partial class StudyAbroadDbContext : DbContext
         OnModelCreatingPartial(modelBuilder);
     }
 
+    internal async Task SaveChangesAsync()
+    {
+        throw new NotImplementedException();
+    }
+
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
