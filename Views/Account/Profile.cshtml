@@ -1,0 +1,45 @@
+@model Dream_Bridge.Models.Main.User
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="bg-gray-100 flex items-center justify-center p-10">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6 text-center">Thông Tin Cá Nhân</h2>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Họ và tên:</label>
+            <p class="mt-1 text-gray-600">@Model.FullName</p>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Email:</label>
+            <p class="mt-1 text-gray-600">@Model.Email</p>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Số điện thoại:</label>
+            <p class="mt-1 text-gray-600">@Model.PhoneNumber</p>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Địa chỉ:</label>
+            <p class="mt-1 text-gray-600">@Model.Address</p>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Vai trò:</label>
+            <p class="mt-1 text-gray-600">@Model.Role</p>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Trạng thái tư vấn:</label>
+            <p class="mt-1 text-gray-600">@Model.ConsultingStatus</p>
+        </div>
+
+        <div class="mt-4 text-center">
+            <a href="@Url.Action("Logout", "Account")" class="text-sm text-red-600 hover:text-red-800">Đăng xuất</a>
+        </div>
+    </div>
+</div>
