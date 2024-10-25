@@ -1,46 +1,213 @@
 @model Dream_Bridge.Models.Main.StudyAbroadCategoryViewModel
+@{
+    Layout = "_AdminLayout"; // Sử dụng layout admin
+}
+<!doctype html>
+<html lang="en">
 
-<h2>Tạo danh mục du học</h2>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Effect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-<form asp-action="QLDanhMuc" method="post">
-    <div class="form-group">
-        <label asp-for="NamecategoryStab" class="control-label"></label>
-        <input asp-for="NamecategoryStab" class="form-control" placeholder="Nhập tên danh mục du học" />
-        <span asp-validation-for="NamecategoryStab" class="text-danger"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Tạo mới</button>
-</form>
-
-<div>
-    @if (TempData["SuccessMessage"] != null)
-    {
-        <div class="alert alert-success">
-            @TempData["SuccessMessage"]
-        </div>
-    }
-    @if (TempData["ErrorMessage"] != null)
-    {
-        <div class="alert alert-danger">
-            @TempData["ErrorMessage"]
-        </div>
-    }
-</div>
-<h3>Danh sách danh mục du học</h3>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Tên danh mục</th>
-            <th>Người tạo</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var category in Model.StudyAbroadCatalogs)
-        {
-            <tr>
-                <td>@category.NamecategoryStab</td>
-                <td>@category.IdUser</td>
-            </tr>
+    <style>
+        .active {
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s ease;
         }
-    </tbody>
-</table>
+
+        a {
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        #addAccountModal {
+            z-index: 100;
+        }
+
+        .container.mx-auto.flex.items-center.justify-end.gap-3.p-3 {
+            display: none;
+        }
+
+        .flex.gap-7.text-lg.font-medium.pr-5.pb-7 {
+            display: none;
+        }
+
+        .w-36 {
+            display: none;
+        }
+
+        .flex.items-start.justify-center.gap-20.bg-gray-900 {
+            display: none;
+        }
+
+        /* CSS để điều chỉnh hiển thị các thẻ div */
+        .category-container {
+            display: flex;
+            /* Sử dụng flexbox để bố trí */
+            flex-wrap: wrap;
+            /* Cho phép các thẻ xuống hàng */
+        }
+
+        .category-item {
+            flex: 0 0 16%;
+            /* Mỗi thẻ sẽ chiếm 16% chiều rộng */
+            margin: 1%;
+            /* Khoảng cách giữa các thẻ */
+        }
+    </style>
+</head>
+
+<body class="w-[100%]">
+    <div class="flex w-[100%]">
+        <!-- Div lớn chứa các icon -->
+        <div
+            class="group relative flex h-[900px] w-[50px] flex-col items-start bg-green-500 transition-all duration-500 ease-in-out hover:w-[200px]">
+            <a href="/Admin"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">home</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Tổng
+                    Quan</span>
+            </a>
+            <a href="/qltruong"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">school</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Trường</span>
+            </a>
+            <a href="/qltuvan"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">help_outline</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Tư vấn</span>
+            </a>
+            <a href="/qlduhoc"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">public</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Danh
+                    mục du học</span>
+            </a>
+            <a href="/qltintuc"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">announcement</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Tin tức</span>
+            </a>
+            <a href="/qltaikhoan"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">account_circle</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Tài khoản</span>
+            </a>
+            <a href="/qlchat"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">chat</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Chat</span>
+            </a>
+        </div>
+
+        <!-- thẻ div chứa nội dung -->
+        <div class="w-[calc(100%-200px)] h-[900px] pt-[1%] mx-auto">
+            <div class="m-auto h-[5%] w-[1000px]">
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div id="successMessage"
+                        class="alert alert-success text-center text-2xl font-bold opacity-100 transition-opacity duration-500">
+                        @TempData["SuccessMessage"]
+                    </div>
+                }
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div id="errorMessage"
+                        class="alert alert-success text-center text-2xl font-bold opacity-100 transition-opacity duration-500">
+                        @TempData["ErrorMessage"]
+                    </div>
+                }
+            </div>
+            <h1 class="w-[98%] font-bold text-center text-2xl mt-[1%] text-shadow">Quản lý danh mục du học
+            </h1>
+            <div class="category-container h-[100px] mt-[2%] rounded-md border border-black">
+                @foreach (var item in Model.StudyAbroadCatalogs)
+                {
+                    <div class="category-item shadow-box flex text-center justify-center items-center cursor-pointer p-2"
+                        data-country="@item.NamecategoryStab" onclick="filterNews('@item.NamecategoryStab')">
+                        <div>
+                            <span class="text-shadow">@item.NamecategoryStab</span>
+                        </div>
+                    </div>
+                }
+
+                <div
+                    class="absolute top-0 right-0 mt-[1%] mr-2 w-[5%] h-[40px] shadow-box rounded-lg bg-green-500 text-center">
+                    <div id="addIcon" class="cursor-pointer flex justify-center items-center w-[auto] h-full">
+                        <i class="fas fa-plus mt-2"></i>
+                    </div>
+                </div>
+
+                <div id="addAccountModal"
+                    class="hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+                    <div class="bg-white p-5 rounded-lg w-[50%] border border-black">
+                        <form asp-action="QLDanhMuc" method="post" id="addCategoryForm">
+                            <div class="form-group w-[auto] p-4">
+                                <label asp-for="NamecategoryStab" class="control-label w-[auto]"></label>
+                                <input asp-for="NamecategoryStab" class="form-control w-[50%] p-4"
+                                    placeholder="Nhập tên danh mục du học" />
+                                <span asp-validation-for="NamecategoryStab" class="text-danger w-[auto]"></span>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit"
+                                    class="btn btn-primary w-[30%] h-[10%] p-2 rounded-xl mt-[20px] bg-green-500">Tạo
+                                    mới</button>
+                                <button type="button" id="closeAddAccountModal"
+                                    class="btn btn-secondary w-[20%] h-[10%] p-2 rounded-xl mt-[20px] bg-red-500">Đóng</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            // Thêm sự kiện click cho icon dấu cộng
+            document.getElementById('addIcon').addEventListener('click', function () {
+                // Hiển thị hoặc ẩn div addAccountModal
+                const modal = document.getElementById('addAccountModal');
+                modal.classList.toggle('hidden');
+            });
+
+            // Thêm sự kiện click cho nút đóng
+            document.getElementById('closeAddAccountModal').addEventListener('click', function () {
+                const modal = document.getElementById('addAccountModal');
+                modal.classList.add('hidden'); // Ẩn form khi nhấn nút đóng
+            });
+
+            // Thêm sự kiện submit cho form
+            document.getElementById('addCategoryForm').addEventListener('submit', function (event) {
+                const inputField = this.elements['NamecategoryStab'];
+                if (!inputField.value.trim()) {
+                    event.preventDefault(); // Ngăn chặn gửi form
+                    alert('Vui lòng nhập tên danh mục du học!'); // Hiển thị thông báo
+                }
+            });
+
+            // Ẩn thông báo sau 3 giây
+            setTimeout(function () {
+                document.getElementById("successMessage")?.classList.add("hidden");
+                document.getElementById("errorMessage")?.classList.add("hidden");
+            }, 1000);
+        </script>
+</body>
+
+</html>

@@ -180,7 +180,6 @@ namespace Dream_Bridge.Controllers
 
             // Lấy danh sách danh mục từ cơ sở dữ liệu
             var categories = _studyAbroadDbContext.StudyAbroadCatalogs.ToList();
-
             var viewModel = new StudyAbroadCategoryViewModel
             {
                 StudyAbroadCatalogs = categories
@@ -188,6 +187,7 @@ namespace Dream_Bridge.Controllers
 
             return View(viewModel);
         }
+
 
         [HttpPost]
         public async Task<IActionResult> QLDanhMuc(StudyAbroadCategoryViewModel model)
@@ -217,6 +217,8 @@ namespace Dream_Bridge.Controllers
 
             return View(model);
         }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
