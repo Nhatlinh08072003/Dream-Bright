@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Dream_Bridge.ViewModels;
 using System.Security.Claims;
-
+using BCrypt.Net;
 namespace Dream_Bridge.Controllers
 {
     [Authorize(Roles = "Admin, Staff")] // Cho phép cả Admin và Staff truy cập
     public class AdminController : Controller
-    {
+    { 
         private readonly StudyAbroadDbContext _studyAbroadDbContext;
         private readonly ILogger<AdminController> _logger;
 
@@ -119,26 +119,34 @@ namespace Dream_Bridge.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
-        public IActionResult QLChat()
-        {
-            if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
-            {
-                return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
-            }
+       [Authorize(Roles = "Admin")]
+public IActionResult QLChat()
+{
+    if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
+    {
+        return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+    }
 
-            var chatMessages = _studyAbroadDbContext.ChatMessages
-                .Include(m => m.Sender)
-                .Include(m => m.Receiver)
-                .ToList();
+    var chatMessages = _studyAbroadDbContext.ChatMessages
+        .Include(m => m.Sender)
+        .Include(m => m.Receiver)
+        .ToList();
 
-            return View(chatMessages);
-        }
+    var users = _studyAbroadDbContext.Users
+        .Select(u => new { u.IdUser, u.FullName })
+        .ToList();
+
+    ViewData["Users"] = users;
+
+    return View(chatMessages);
+}
+
 
         [HttpPost("api/chat/send")]
         public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)
         {
             if (!string.IsNullOrEmpty(messageText))
+        
             {
                 var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
                 int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;
@@ -155,6 +163,7 @@ namespace Dream_Bridge.Controllers
                 await _studyAbroadDbContext.SaveChangesAsync();
 
                 return Json(new { success = true, message = chatMessage });
+               
             }
 
             return Json(new { success = false });
