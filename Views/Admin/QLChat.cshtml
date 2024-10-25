@@ -18,7 +18,6 @@
     .ToList(); // Danh sách người dùng
 }
 
-
 <!doctype html>
 <html lang="en">
 
@@ -133,7 +132,7 @@
                 }
             </div>
 
-            <form id="chat-form" onsubmit="return sendMessage(event)">
+            <form id="chat-form" method="post" action="@Url.Action("SendChatMessage", "Home")">
                 <div class="flex">
                     <input type="text" name="messageText" id="messageText"
                         class="border border-gray-300 rounded-lg p-2 flex-grow" placeholder="Type your message..."
@@ -142,7 +141,6 @@
                     <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 ml-2">Send</button>
                 </div>
             </form>
-
         </div>
     </div>
 
@@ -172,47 +170,6 @@
                     });
                 });
             });
-            function sendMessage(event) {
-                event.preventDefault(); // Ngăn chặn việc gửi form thông thường
-
-                const messageText = document.getElementById('messageText').value;
-                const receiverId = document.getElementById('receiverId').value;
-
-                fetch('/api/chat/send', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '@Html.AntiForgeryToken()' // Nếu bạn sử dụng AntiForgeryToken
-                    },
-                    body: JSON.stringify({ messageText, receiverId })
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            // Tạo một phần tử mới cho tin nhắn
-                            const newMessage = document.createElement('div');
-                            newMessage.classList.add('mb-2', 'message-row', 'flex', 'items-center');
-                            newMessage.setAttribute('data-user-id', data.message.SenderId);
-                            newMessage.innerHTML = `
-                        <strong class="mr-2">You:</strong>
-                        <span>${data.message.MessageText}</span>
-                        <span class="text-gray-500 text-sm ml-2">${new Date(data.message.CreatedAt).toLocaleTimeString()}</span>
-                    `;
-
-                            // Thêm tin nhắn mới vào chat
-                            document.getElementById('chat-messages').appendChild(newMessage);
-
-                            // Xóa nội dung ô nhập
-                            document.getElementById('messageText').value = '';
-                            chatMessages.scrollTop = chatMessages.scrollHeight; // Cuộn xuống cuối cùng
-                        } else {
-                            console.error('Error sending message');
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
-
-                return false; // Ngăn không cho form thực hiện hành động mặc định
-            }
         </script>
     }
 </body>
