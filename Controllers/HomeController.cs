@@ -9,13 +9,14 @@ using System.Security.Claims;
 namespace Dream_Bridge.Controllers;
 
 public class HomeController : Controller
-{    private readonly StudyAbroadDbContext _context;
+{
+    private readonly StudyAbroadDbContext _context;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger,StudyAbroadDbContext context)
+    public HomeController(ILogger<HomeController> logger, StudyAbroadDbContext context)
     {
         _logger = logger;
-         _context = context;
+        _context = context;
     }
 
     public IActionResult Index()
@@ -30,12 +31,12 @@ public class HomeController : Controller
     {
         return View();
     }
-    
-    
+
+
     // Thêm phương thức Chat
     public IActionResult Chat()
     {
-   
+
         // Kiểm tra nếu người dùng đã đăng nhập
         if (!User.Identity.IsAuthenticated)
         {
@@ -51,7 +52,7 @@ public class HomeController : Controller
         return View(chatMessages);
     }
 
-[HttpPost]
+    [HttpPost]
     public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)
     {
         // Kiểm tra nếu người dùng đã đăng nhập
@@ -62,7 +63,7 @@ public class HomeController : Controller
 
         // Ghi log thông tin nhận được từ yêu cầu
         _logger.LogInformation("Received message: {MessageText}, ReceiverId: {ReceiverId}", messageText, receiverId);
-        
+
         // Kiểm tra nếu messageText rỗng
         if (string.IsNullOrEmpty(messageText))
         {
@@ -95,7 +96,7 @@ public class HomeController : Controller
 
         // Thêm tin nhắn vào cơ sở dữ liệu
         _context.ChatMessages.Add(chatMessage);
-        await _context.SaveChangesAsync();
+        _context.SaveChanges();
 
         // Chuyển hướng về trang chat
         return RedirectToAction("Chat");

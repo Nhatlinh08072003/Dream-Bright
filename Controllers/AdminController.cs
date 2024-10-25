@@ -70,7 +70,7 @@ namespace Dream_Bridge.Controllers
                 };
 
                 _studyAbroadDbContext.Users.Add(user);
-                await _studyAbroadDbContext.SaveChangesAsync();
+                _studyAbroadDbContext.SaveChanges();
 
                 TempData["SuccessMessage"] = "Tạo tài khoản thành công!";
                 return RedirectToAction("QLTaikhoan");
@@ -203,7 +203,7 @@ namespace Dream_Bridge.Controllers
                     };
 
                     _studyAbroadDbContext.StudyAbroadCatalogs.Add(category);
-                    await _studyAbroadDbContext.SaveChangesAsync();
+                    _studyAbroadDbContext.SaveChanges();
 
                     TempData["SuccessMessage"] = "Tạo danh mục du học thành công!";
                     return RedirectToAction("QLDanhMuc");

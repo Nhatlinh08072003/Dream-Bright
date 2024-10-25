@@ -173,10 +173,9 @@ public partial class StudyAbroadDbContext : DbContext
         OnModelCreatingPartial(modelBuilder);
     }
 
-    internal async Task SaveChangesAsync()
+    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        return await base.SaveChangesAsync(cancellationToken);
     }
-
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
