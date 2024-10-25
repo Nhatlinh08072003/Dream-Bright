@@ -1,112 +1,170 @@
-@using Dream_Bridge.Models.Main
-@model IEnumerable<ChatMessage>
+@{
+    Layout = "_AdminLayout"; // Sử dụng layout admin
+}
+@model List<Dream_Bridge.Models.Main.ChatMessage>
+@using System.Security.Claims
 
-<h2>Quản Lý Chat</h2>
+@{
+    ViewData["Title"] = "Chat";
+    var adminId = (int)(ViewData["AdminId"] ?? 0); // Ép kiểu adminId sang int
+    var users = Model.Select(m => m.SenderId).Distinct().Select(id => new
+    {
+        UserId = id,
+        UserName = (id == adminId ? "Admin" : "User " + id) // Thay đổi tên hiển thị cho admin và người dùng
+    }).ToList(); // Danh sách người dùng
+}
 
-<div class="d-flex">
-    <div class="me-3">
-        <h4>Danh Sách Người Dùng</h4>
-        <ul id="userList" class="list-group">
-            @foreach (var user in Model.Select(m => m.Receiver).Distinct())
-            {
-                <li class="list-group-item user-item" data-user-id="@user.IdUser">
-                    @user.FullName
-                </li>
-            }
-        </ul>
-    </div>
+<!doctype html>
+<html lang="en">
 
-    <div>
-        <h4>Các Tin Nhắn</h4>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Sender</th>
-                    <th>Receiver</th>
-                    <th>Message</th>
-                    <th>Sent At</th>
-                </tr>
-            </thead>
-            <tbody id="messageTable">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .active {
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        a {
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex min-h-screen">
+
+
+    <div class="flex w-[90%] bg-white shadow-lg rounded-lg overflow-hidden">
+        <!-- Div lớn chứa các icon -->
+        <div
+            class="group relative flex h-[900px] w-[50px] flex-col items-start bg-green-500 transition-all duration-500 ease-in-out hover:w-[200px]">
+            <a href="/Admin"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">home</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Tổng
+                    Quan</span>
+            </a>
+            <a href="/qltruong"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">school</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Trường</span>
+            </a>
+            <a href="/qltuvan"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">help_outline</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Tư vấn</span>
+            </a>
+            <a href="/qlduhoc"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">public</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Danh
+                    mục du học</span>
+            </a>
+            <a href="/qltintuc"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">announcement</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Tin tức</span>
+            </a>
+            <a href="/qltaikhoan"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">account_circle</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Tài khoản</span>
+            </a>
+            <a href="/qlchat"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">chat</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Chat</span>
+            </a>
+        </div>
+
+
+        <div class="flex-grow p-4 w-screen h-[600px]">
+            <h1 class="text-2xl font-bold mb-4">Chat with Users</h1>
+
+            <div class="mb-4">
+                <h2 class="text-lg font-semibold">Select User:</h2>
+                <ul id="userList" class="list-none mb-3">
+                    @foreach (var user in users)
+                    {
+                        <li class="cursor-pointer p-2 hover:bg-gray-200 user-item" data-user-id="@user.UserId">
+                            @user.UserName
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <div id="chat-messages" class="border border-gray-300 rounded-lg p-4 mb-4 h-[450px] overflow-y-auto">
                 @foreach (var message in Model)
                 {
-                    <tr class="message-row" data-user-id="@message.ReceiverId">
-                        <td>@message.Sender.FullName</td>
-                        <td>@message.Receiver.FullName</td>
-                        <td>@message.MessageText</td>
-                        <td>@(message.CreatedAt.HasValue ? message.CreatedAt.Value.ToString("g") : "N/A")</td>
-                    </tr>
+                    <div class="mb-2 message-row flex items-center" data-user-id="@message.SenderId">
+                        <strong class="mr-2">
+                            @(message.SenderId.ToString() == User.FindFirst(ClaimTypes.NameIdentifier)?.Value ? "You" :
+                                message.SenderId == adminId ? "Admin" : "User " + message.SenderId):
+                        </strong>
+                        <span>@message.MessageText</span>
+                        <span class="text-gray-500 text-sm ml-2">@message.CreatedAt?.ToString("hh:mm tt")</span>
+                    </div>
                 }
-            </tbody>
-        </table>
-
-        <form id="messageForm">
-            <div class="mb-3">
-                <label for="messageText" class="form-label">Tin Nhắn:</label>
-                <input type="text" class="form-control" id="messageText" required />
             </div>
-            <input type="hidden" id="receiverId" />
-            <button type="submit" class="btn btn-primary">Gửi Tin Nhắn</button>
-        </form>
+
+            <form id="chat-form" method="post" action="@Url.Action("SendChatMessage", "Home")">
+                <div class="flex">
+                    <input type="text" name="messageText" id="messageText"
+                        class="border border-gray-300 rounded-lg p-2 flex-grow" placeholder="Type your message..."
+                        required />
+                    <input type="hidden" name="receiverId" id="receiverId" value="@adminId" /> <!-- ID của admin -->
+                    <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 ml-2">Send</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-@section Scripts {
-    <script>
-        // Khi nhấp vào một người dùng trong danh sách
-        document.querySelectorAll('.user-item').forEach(item => {
-            item.addEventListener('click', function () {
-                const userId = this.dataset.userId;
-                document.getElementById('receiverId').value = userId;
+    @section Scripts {
+        <script>
+            const chatMessages = document.getElementById("chat-messages");
 
-                // Hiển thị tin nhắn giữa admin và người dùng đã chọn
-                const messageRows = document.querySelectorAll('.message-row');
-                messageRows.forEach(row => {
-                    if (row.dataset.userId === userId) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
+            // Scroll to the bottom of the chat
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Chọn người dùng
+            document.querySelectorAll('.user-item').forEach(item => {
+                item.addEventListener('click', function () {
+                    const userId = this.dataset.userId;
+
+                    // Cập nhật ID người nhận
+                    document.getElementById('receiverId').value = userId;
+
+                    // Hiển thị tin nhắn giữa admin và người dùng đã chọn
+                    const messageRows = document.querySelectorAll('.message-row');
+                    messageRows.forEach(row => {
+                        if (row.dataset.userId === userId) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
                 });
             });
-        });
+        </script>
+    }
+</body>
 
-        // Gửi tin nhắn khi form được submit
-        document.getElementById('messageForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            const messageText = document.getElementById('messageText').value;
-            const receiverId = document.getElementById('receiverId').value;
-
-            // Gửi yêu cầu đến API để gửi tin nhắn (cần phải điều chỉnh URL và cấu hình API)
-            fetch('/api/chat/send', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + localStorage.getItem('token') // Hoặc cookie nếu cần
-                },
-                body: JSON.stringify({
-                    messageText: messageText,
-                    receiverId: receiverId
-                })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Cập nhật giao diện với tin nhắn mới
-                        const newRow = document.createElement('tr');
-                        newRow.innerHTML = `
-                                <td>${data.message.sender.FullName}</td>
-                                <td>${data.message.receiver.FullName}</td>
-                                <td>${data.message.MessageText}</td>
-                                <td>${new Date(data.message.CreatedAt).toLocaleString()}</td>
-                            `;
-                        document.getElementById('messageTable').appendChild(newRow);
-                        document.getElementById('messageText').value = ''; // Xóa ô nhập
-                    } else {
-                        alert('Có lỗi xảy ra khi gửi tin nhắn.');
-                    }
-                });
-        });
-    </script>
-}
+</html>
