@@ -30,7 +30,7 @@ public partial class StudyAbroadDbContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=NHATLINH\\NHATLINH;Database=StudyAbroad;MultipleActiveResultSets=true;User ID=admin;Password=asdasd;Trusted_Connection=True;TrustServerCertificate=Yes");
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-C8F8CM6;Database=StudyAbroad;MultipleActiveResultSets=true;User ID=admin;Password=asdasd;Trusted_Connection=True;TrustServerCertificate=Yes");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -171,6 +171,11 @@ public partial class StudyAbroadDbContext : DbContext
         });
 
         OnModelCreatingPartial(modelBuilder);
+    }
+
+    internal async Task SaveChangesAsync()
+    {
+        throw new NotImplementedException();
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
