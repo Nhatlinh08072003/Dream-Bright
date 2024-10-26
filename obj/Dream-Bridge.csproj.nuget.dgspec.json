@@ -14,8 +14,7 @@
         "outputPath": "D:\\Git\\Dream-Bright\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\letie\\AppData\\Roaming\\NuGet\\NuGet.Config"
-          
+          "C:\\Users\\anhqu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
