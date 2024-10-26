@@ -108,29 +108,36 @@
                 <ul id="userList" class="list-none mb-3">
                     @foreach (var user in users)
                     {
-                        <li class="cursor-pointer p-2 hover:bg-gray-200 user-item" data-user-id="@user.UserId">
+                            <li class="cursor-pointer p-2 hover:bg-gray-200 user-item" data-user-id="@user.UserId">
                             @user.UserName
-                        </li>
+                            </li>
                     }
                 </ul>
             </div>
 
            <div id="chat-messages" class="border border-gray-300 rounded-lg p-4 mb-4 h-[450px] overflow-y-auto bg-gray-50">  
-        @foreach (var message in Model)  
-        {  
-            var senderName = users.FirstOrDefault(u => u.UserId == message.SenderId)?.UserName ?? "User " + message.SenderId;  
-            var isCurrentUser = message.SenderId.ToString() == User.FindFirst(ClaimTypes.NameIdentifier)?.Value;  
+                @foreach (var message in Model)
+                {
+                    var senderName = users.FirstOrDefault(u => u.UserId == message.SenderId)?.UserName ?? "User " + message.SenderId;
+                    var isCurrentUser = message.SenderId.ToString() == User.FindFirst(ClaimTypes.NameIdentifier)?.Value;  
 
-            <div class="mb-2 message-row flex items-center @if(isCurrentUser) { <text>justify-end</text> }" data-user-id="@message.SenderId">  
-                <strong class="mr-2 @if(isCurrentUser) { <text>text-blue-500</text> }">  
-                    @(isCurrentUser ? "You" : (message.SenderId == adminId ? "Admin" : senderName)):  
-                </strong>  
-                <span class="bg-white p-2 rounded-lg shadow @if(isCurrentUser) { <text>bg-blue-100</text> }">@message.MessageText</span>  
-                <span class="text-gray-500 text-sm ml-2">@message.CreatedAt?.ToString("hh:mm tt")</span>  
-            </div>  
-        }  
+                <div class="mb-2 message-row flex items-center @if(isCurrentUser) {
+                <text>justify-end</text>
+ }" data-user-id="@message.SenderId">  
+                    <strong class="mr-2 @if(isCurrentUser) {
+                    <text>text-blue-500</text>
+ }">  
+                            @(isCurrentUser ? "You" : (message.SenderId == adminId ? "Admin" : senderName)):  
+                    </strong>  
+                    <span class="bg-white p-2 rounded-lg shadow @if(isCurrentUser) {
+                    <text>bg-blue-100</text>
+ }">@message.MessageText</span>  
+                    <span class="text-gray-500 text-sm ml-2">@message.CreatedAt?.ToString("hh:mm tt")</span>  
+                </div>  
+                }  
     </div>  
-    <form id="chat-form" method="post" action="@Url.Action("SendChatMessage", "Home")">  
+    <form id="chat-form" method="post" action="@Url.Action("SendChatMessage", "Home")"> 
+                @Html.AntiForgeryToken() 
         <div class="flex">  
             <input type="text" name="messageText" id="messageText" class="border border-gray-300 rounded-lg p-2 flex-grow" placeholder="Type your message..." required />  
             <input type="hidden" name="receiverId" id="receiverId" value="@adminId" /> <!-- ID của admin -->  
@@ -143,7 +150,49 @@
     </div>
 
     @section Scripts {
-        <script>
+            <script>
+            @* $(document).ready(function () {
+        $('#chat-form').on('submit', function (e) {
+            e.preventDefault(); // Ngăn chặn form gửi dữ liệu mặc định
+
+            var messageText = $('#messageText').val();
+            var receiverId = $('#receiverId').val();
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/chat/send', // Địa chỉ API của bạn
+                data: { messageText: messageText, receiverId: receiverId },
+                success: function (response) {
+                    if (response.success) {
+                        // Thêm tin nhắn vào giao diện
+                        displayMessage(response.message);
+                        $('#messageText').val(''); // Xóa ô nhập tin nhắn
+                    } else {
+                        alert('Failed to send message.');
+                    }
+                },
+                error: function () {
+                    alert('Error occurred while sending message.');
+                }
+            });
+        });
+    });
+
+    function displayMessage(message) {
+        // Cập nhật giao diện để hiển thị tin nhắn mới
+        $('#chat-messages').append(
+            <div class="mb-2 message-row flex items-center justify-end" data-user-id="${message.SenderId}">
+                <strong class="mr-2 text-blue-500">You:</strong>
+                <span class="bg-blue-100 p-2 rounded-lg shadow">${message.MessageText}</span>
+                <span class="text-gray-500 text-sm ml-2">${new Date(message.CreatedAt).toLocaleTimeString()}</span>
+            </div>
+        );
+        // Cuộn xuống cuối
+        const chatMessages = document.getElementById("chat-messages");
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+
      const chatMessages = document.getElementById("chat-messages");  
         const chatForm = document.getElementById("chat-form");  
         const messageText = document.getElementById("messageText");  
@@ -169,37 +218,76 @@
                         }
                     });
                 });
+            }); *@
+                $(document).ready(function () {
+        $('#chat-form').on('submit', function (e) {
+            e.preventDefault(); // Ngăn chặn form gửi dữ liệu mặc định
+
+            var messageText = $('#messageText').val();
+            var receiverId = $('#receiverId').val();
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/chat/send', // Địa chỉ API của bạn
+                data: { messageText: messageText, receiverId: receiverId },
+                success: function (response) {
+                    if (response.success) {
+                        displayMessage(response.message);
+                        $('#messageText').val(''); // Xóa ô nhập tin nhắn
+                    } else {
+                        alert('Failed to send message.');
+                    }
+                },
+                error: function () {
+                    alert('Error occurred while sending message.');
+                }
             });
-            @* // Xử lý gửi tin nhắn  
-        chatForm.addEventListener('submit', function (event) {  
-            event.preventDefault(); // Ngăn chặn hành động mặc định của form  
+        });
 
-            const message = messageText.value;  
-            const userId = document.getElementById('receiverId').value;  
+        function displayMessage(message) {
+            $('#chat-messages').append(
+                `<div class="mb-2 message-row flex items-center justify-end" data-user-id="${message.SenderId}">
+                    <strong class="mr-2 text-blue-500">You:</strong>
+                    <span class="bg-blue-100 p-2 rounded-lg shadow">${message.MessageText}</span>
+                    <span class="text-gray-500 text-sm ml-2">${new Date(message.CreatedAt).toLocaleTimeString()}</span>
+                </div>`
+            );
+            const chatMessages = document.getElementById("chat-messages");
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Cuộn xuống cuối
+        }
 
-            // Tạo phần tử tin nhắn mới  
-            const messageRow = document.createElement('div');  
-            messageRow.className = 'mb-2 message-row flex items-center justify-end';  
-            messageRow.setAttribute('data-user-id', userId);  
-            messageRow.innerHTML = `  
-                <strong class="mr-2 text-blue-500">You:</strong>  
-                <span class="bg-white p-2 rounded-lg shadow bg-blue-100">${message}</span>  
-                <span class="text-gray-500 text-sm ml-2">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>  
-            `;  
+        // Scroll to the bottom of the chat
+        const chatMessages = document.getElementById("chat-messages");  
+        chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            // Thêm tin nhắn mới vào chat  
-            chatMessages.appendChild(messageRow);  
-            chatMessages.scrollTop = chatMessages.scrollHeight; // Cuộn xuống dưới  
+        // Chọn người dùng
+        document.querySelectorAll('.user-item').forEach(item => {
+            item.addEventListener('click', function () {
+                const userId = this.dataset.userId;
 
-            // Xóa nội dung ô nhập tin nhắn  
-            messageText.value = '';  
+                // Cập nhật ID người nhận
+                document.getElementById('receiverId').value = userId;
 
-            // Gửi tin nhắn đến server (nếu cần)  
-             
-        });  *@
-         
+                // Thêm highlight cho người dùng đã chọn
+                document.querySelectorAll('.user-item').forEach(userItem => {
+                    userItem.classList.remove('bg-gray-200'); // Xóa highlight khỏi tất cả
+                });
+                this.classList.add('bg-gray-200'); // Thêm highlight cho người được chọn
 
-        </script>
+                // Hiển thị tin nhắn giữa admin và người dùng đã chọn
+                const messageRows = document.querySelectorAll('.message-row');
+                messageRows.forEach(row => {
+                    if (row.dataset.userId === userId) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+
+            </script>
     }
 </body>
 

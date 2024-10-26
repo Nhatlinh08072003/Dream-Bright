@@ -142,31 +142,61 @@ namespace Dream_Bridge.Controllers
             return View(chatMessages);  
         }  
 
-        [HttpPost("api/chat/send")]  
-        public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)  
-        {  
-            if (!string.IsNullOrEmpty(messageText))  
-            {  
-                var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);  
-                int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;  
+        // [HttpPost("api/chat/send")]  
+        // public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)  
+        // {  
+        //     if (!string.IsNullOrEmpty(messageText))  
+        //     {  
+        //         var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);  
+        //         int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;  
 
-                var chatMessage = new ChatMessage  
-                {  
-                    SenderId = senderId,  
-                    ReceiverId = receiverId,  
-                    MessageText = messageText,  
-                    CreatedAt = DateTime.Now  
-                };  
+        //         var chatMessage = new ChatMessage  
+        //         {  
+        //             SenderId = senderId,  
+        //             ReceiverId = receiverId,  
+        //             MessageText = messageText,  
+        //             CreatedAt = DateTime.Now  
+        //         };  
 
-                _studyAbroadDbContext.ChatMessages.Add(chatMessage);  
-                await _studyAbroadDbContext.SaveChangesAsync();  
+        //         _studyAbroadDbContext.ChatMessages.Add(chatMessage);  
+        //         await _studyAbroadDbContext.SaveChangesAsync();  
 
-                // Trả về tin nhắn đã gửi  
-                return Json(new { success = true, message = chatMessage });  
-            }  
+        //         // Trả về tin nhắn đã gửi  
+        //         return Json(new { success = true, message = chatMessage });  
+        //     }  
 
-            return Json(new { success = false });  
-        }  
+        //     return Json(new { success = false });  
+        // }  
+[HttpPost("api/chat/send")]
+public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)
+{
+    if (!string.IsNullOrEmpty(messageText))
+    {
+        var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+        int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;
+
+        var chatMessage = new ChatMessage
+        {
+            SenderId = senderId,
+            ReceiverId = receiverId,
+            MessageText = messageText,
+            CreatedAt = DateTime.Now
+        };
+
+        _studyAbroadDbContext.ChatMessages.Add(chatMessage);
+        await _studyAbroadDbContext.SaveChangesAsync();
+
+        // Trả về tin nhắn đã gửi
+        return Json(new { success = true, message = new { 
+            SenderId = chatMessage.SenderId,
+            ReceiverId = chatMessage.ReceiverId,
+            MessageText = chatMessage.MessageText,
+            CreatedAt = chatMessage.CreatedAt
+        } });
+    }
+
+    return Json(new { success = false });
+}
 
         [HttpGet("api/chat/messages/{userId}")]  
         public IActionResult GetChatMessages(int userId)  
