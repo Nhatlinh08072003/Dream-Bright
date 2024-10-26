@@ -6,30 +6,34 @@
     var adminId = (int)(ViewData["AdminId"] ?? 0); // Ép kiểu adminId sang int
 }
 
-<div class="container mx-auto p-4">
-    <h1 class="text-2xl font-bold mb-4">Chat with Admin</h1>
+<div class="container mx-auto p-6 bg-gray-50 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">Chat with Admin</h1>
 
-    <div id="chat-messages" class="border border-gray-300 rounded-lg p-4 mb-4 h-80 overflow-y-auto">
+    <div id="chat-messages" class="border border-gray-300 rounded-lg p-4 mb-4 h-80 overflow-y-auto bg-white">
         @foreach (var message in Model)
         {
-            <div class="mb-2">
-                <strong>
-                    @(message.SenderId.ToString() == User.FindFirst(ClaimTypes.NameIdentifier)?.Value ? "You" :
-                        message.SenderId == adminId ? "Admin" : "User " + message.SenderId):
-                </strong>
-                <span>@message.MessageText</span>
-                <span class="text-gray-500 text-sm ml-2">@message.CreatedAt?.ToString("hh:mm tt")</span>
+            <div class="mb-4 flex @((message.SenderId == adminId) ? "justify-start" : "justify-end")">
+                <div class="flex items-center">
+                    <span class="text-gray-500 text-sm mr-2">
+                        @(message.SenderId.ToString() == User.FindFirst(ClaimTypes.NameIdentifier)?.Value ? "You" :
+                            message.SenderId == adminId ? "Admin" : "User " + message.SenderId):
+                    </span>
+                    <div class="rounded-lg px-4 py-2 @((message.SenderId == adminId) ? "bg-blue-100" : "bg-green-100")">
+                        <span>@message.MessageText</span>
+                        <span class="text-gray-400 text-xs ml-2">@message.CreatedAt?.ToString("hh:mm tt")</span>
+                    </div>
+                </div>
             </div>
         }
     </div>
 
-    <form id="chat-form" method="post" action="@Url.Action("SendChatMessage", "Home")">
-        <div class="flex">
-            <input type="text" name="messageText" id="messageText"
-                class="border border-gray-300 rounded-lg p-2 flex-grow" placeholder="Type your message..." required />
-            <input type="hidden" name="receiverId" value="@adminId" /> <!-- ID của admin -->
-            <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 ml-2">Send</button>
-        </div>
+    <form id="chat-form" method="post" action="@Url.Action("SendChatMessage", "Home")" class="flex">
+        <input type="text" name="messageText" id="messageText"
+            class="border border-gray-300 rounded-lg p-3 flex-grow focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Type your message..." required />
+        <input type="hidden" name="receiverId" value="@adminId" /> <!-- ID của admin -->
+        <button type="submit"
+            class="bg-blue-500 text-white rounded-lg px-6 ml-2 transition duration-200 hover:bg-blue-600">Send</button>
     </form>
 </div>
 
