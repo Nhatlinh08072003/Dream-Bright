@@ -11,7 +11,7 @@ namespace Dream_Bridge.Controllers
 {
     [Authorize(Roles = "Admin, Staff")] // Cho phép cả Admin và Staff truy cập
     public class AdminController : Controller
-    { 
+    {
         private readonly StudyAbroadDbContext _studyAbroadDbContext;
         private readonly ILogger<AdminController> _logger;
 
@@ -88,16 +88,114 @@ namespace Dream_Bridge.Controllers
 
             return View();
         }
-
+        [HttpGet]
         public IActionResult QLTruong()
         {
+            // Check user role
             if (User.IsInRole("Staff"))
             {
                 return RedirectToAction("QLTuvan");
             }
 
-            return View();
+            // Fetch School data from database context (_studyAbroadDbContext)
+            var schoolViewModel = new SchoolViewModel
+            {
+                Schools = _studyAbroadDbContext.Schools.ToList() // Assuming _studyAbroadDbContext is your DbContext
+            };
+
+            // Return the populated ViewModel to the view
+            return View(schoolViewModel);
         }
+
+
+        [HttpPost]
+        public IActionResult QLTruong(SchoolViewModel model)
+        {
+            // Check if the file is selected
+            if (model.ImageFile == null || model.ImageFile.Length == 0)
+            {
+                ModelState.AddModelError("ImageFile", "Please select an image file.");
+            }
+
+            // Debugging information
+            Console.WriteLine($"File selected: {model.ImageFile?.FileName}");
+            Console.WriteLine($"File length: {model.ImageFile?.Length}");
+
+            // Validate IdcategoryStab
+            var categoryExists = _studyAbroadDbContext.StudyAbroadCatalogs
+                .Any(c => c.IdcategoryStab == model.IdcategoryStab);
+
+            if (!categoryExists)
+            {
+                ModelState.AddModelError("IdcategoryStab", "The selected category does not exist.");
+            }
+
+            if (ModelState.IsValid)
+            {
+                string? imagePath = null;
+
+                // Process the uploaded file
+                if (model.ImageFile != null && model.ImageFile.Length > 0)
+                {
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                    Directory.CreateDirectory(uploadsFolder); // Ensure directory exists
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ImageFile.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    try
+                    {
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            model.ImageFile.CopyTo(fileStream); // Save the uploaded file
+                        }
+                        imagePath = "/images/" + uniqueFileName; // Set the image path for the database
+                    }
+                    catch (Exception ex)
+                    {
+                        ModelState.AddModelError("ImageFile", "Error uploading image: " + ex.Message);
+                        Console.WriteLine($"Error uploading image: {ex}");
+                    }
+                }
+
+                // Create a new school object
+                var school = new School
+                {
+                    ImageSchool = imagePath,
+                    TitleSchool = model.TitleSchool,
+                    SchoolDescription = model.SchoolDescription,
+                    Nation = model.Nation,
+                    StateCity = model.StateCity,
+                    AverageTuition = model.AverageTuition,
+                    Level = model.Level,
+                    IdcategoryStab = model.IdcategoryStab,
+                };
+
+                // Save the new school to the database
+                try
+                {
+                    _studyAbroadDbContext.Schools.Add(school);
+                    _studyAbroadDbContext.SaveChanges();
+                    TempData["SuccessMessage"] = "School added successfully.";
+                    return RedirectToAction("QLTruong"); // Redirect to an index page or another action
+                }
+                catch (DbUpdateException dbEx)
+                {
+                    ModelState.AddModelError("", "Database error: " + dbEx.InnerException?.Message);
+                    Console.WriteLine($"Database error: {dbEx}");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Error saving school: " + ex.Message);
+                    Console.WriteLine($"Error saving school: {ex}");
+                }
+            }
+
+            // Return to the view with model errors if validation fails
+            return View(model);
+        }
+
+
 
         public IActionResult Index()
         {
@@ -119,34 +217,34 @@ namespace Dream_Bridge.Controllers
             return View();
         }
 
-       [Authorize(Roles = "Admin")]
-public IActionResult QLChat()
-{
-    if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
-    {
-        return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
-    }
+        [Authorize(Roles = "Admin")]
+        public IActionResult QLChat()
+        {
+            if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+            }
 
-    var chatMessages = _studyAbroadDbContext.ChatMessages
-        .Include(m => m.Sender)
-        .Include(m => m.Receiver)
-        .ToList();
+            var chatMessages = _studyAbroadDbContext.ChatMessages
+                .Include(m => m.Sender)
+                .Include(m => m.Receiver)
+                .ToList();
 
-    var users = _studyAbroadDbContext.Users
-        .Select(u => new { u.IdUser, u.FullName })
-        .ToList();
+            var users = _studyAbroadDbContext.Users
+                .Select(u => new { u.IdUser, u.FullName })
+                .ToList();
 
-    ViewData["Users"] = users;
+            ViewData["Users"] = users;
 
-    return View(chatMessages);
-}
+            return View(chatMessages);
+        }
 
 
         [HttpPost("api/chat/send")]
         public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)
         {
             if (!string.IsNullOrEmpty(messageText))
-        
+
             {
                 var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
                 int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;
@@ -163,7 +261,7 @@ public IActionResult QLChat()
                 await _studyAbroadDbContext.SaveChangesAsync();
 
                 return Json(new { success = true, message = chatMessage });
-               
+
             }
 
             return Json(new { success = false });
