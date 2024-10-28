@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Fg92iwpZBqgGS4HWfe3ltQv4XyF6Wtqib33A2+b1lU0=",
+  "Hash": "pSkl0qfs2nO1fX5vlMd9NPV9/TXlpNq2Uk3KftGdsmE=",
   "Source": "Dream-Bridge",
   "BasePath": "_content/Dream-Bridge",
   "Mode": "Default",
@@ -340,6 +340,25 @@
       "OriginalItemSpec": "wwwroot\\Images\\3a3233dc-a326-43e7-a749-14faecdeffe1.png"
     },
     {
+      "Identity": "D:\\Dream-Bright\\wwwroot\\Images\\48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Dream-Bright\\wwwroot\\",
+      "BasePath": "_content/Dream-Bridge",
+      "RelativePath": "Images/48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif"
+    },
+    {
       "Identity": "D:\\Dream-Bright\\wwwroot\\Images\\5d8ce68a-7b19-4048-9ca0-3db8ef3cddc6.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
@@ -528,6 +547,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\960ca558-f03c-4dae-93cd-cf59f6fe1742.jpg"
+    },
+    {
+      "Identity": "D:\\Dream-Bright\\wwwroot\\Images\\97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Dream-Bright\\wwwroot\\",
+      "BasePath": "_content/Dream-Bridge",
+      "RelativePath": "Images/97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif"
     },
     {
       "Identity": "D:\\Dream-Bright\\wwwroot\\Images\\9e30114a-18f4-4031-a061-50fac46949d6.png",

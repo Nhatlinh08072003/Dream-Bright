@@ -2,6 +2,7 @@ using Dream_Bridge.Models.Main;
 
 public class SchoolViewModel
 {
+    public int IdSchool { get; set; }
     public IFormFile? ImageFile { get; set; } // For the uploaded image
     public string? TitleSchool { get; set; } // School name
     public string? SchoolDescription { get; set; } // Description

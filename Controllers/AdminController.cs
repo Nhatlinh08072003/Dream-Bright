@@ -193,6 +193,71 @@ namespace Dream_Bridge.Controllers
             // Return to the view with model errors if validation fails
             return View(model);
         }
+        [HttpPost]
+        public IActionResult UpdateSchool(SchoolViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Fetch the existing school from the database using the ID
+                var school = _studyAbroadDbContext.Schools.Find(model.IdSchool);
+                if (school != null)
+                {
+                    // Update the school's properties with the form data
+                    school.TitleSchool = model.TitleSchool;
+                    school.SchoolDescription = model.SchoolDescription;
+                    school.Nation = model.Nation;
+                    school.StateCity = model.StateCity;
+                    school.AverageTuition = model.AverageTuition;
+                    school.Level = model.Level;
+
+                    if (model.ImageFile != null)
+                    {
+                        try
+                        {
+                            // Validate the image file (optional: add file size/type checks)
+                            var fileExtension = Path.GetExtension(model.ImageFile.FileName);
+                            if (fileExtension == ".jpg" || fileExtension == ".png" || fileExtension == ".jpeg")
+                            {
+                                // Handle the image upload
+                                var fileName = Path.GetFileNameWithoutExtension(model.ImageFile.FileName) + "_" + Guid.NewGuid() + fileExtension;
+                                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images", fileName);
+
+                                using (var stream = new FileStream(filePath, FileMode.Create))
+                                {
+                                    model.ImageFile.CopyTo(stream);
+                                }
+
+                                // Update the ImageSchool property
+                                school.ImageSchool = "/Images/" + fileName;
+                            }
+                            else
+                            {
+                                TempData["ErrorMessage"] = "Invalid image format. Only .jpg, .jpeg, and .png are allowed.";
+                                return View(model);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            // Log the error (not shown here)
+                            TempData["ErrorMessage"] = "Image upload failed: " + ex.Message;
+                            return View(model);
+                        }
+                    }
+
+                    _studyAbroadDbContext.SaveChanges(); // Save the changes to the database
+                    TempData["SuccessMessage"] = "Cập nhật thông tin trường thành công!";
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Không tìm thấy thông tin trường!";
+                }
+
+                return RedirectToAction("QLTruong"); // Redirect to the list view after updating
+            }
+
+            // If model state is invalid, return the same view with the model data
+            return View(model);
+        }
         public IActionResult Index()
         {
             var users = _studyAbroadDbContext.Users.ToList();
