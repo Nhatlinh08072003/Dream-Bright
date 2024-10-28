@@ -48,214 +48,184 @@
             style="bottom: 20px; right: 20px; z-index:99" id="openPopup"><i class="fa fa-hand-pointer-o mr-2"></i> Đăng
             ký tư vấn</button>
 
+        <!-- Nút mở chat hỗ trợ -->
+        <button class="fixed flex items-center rounded-md bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+            style="bottom: 80px; right: 20px; z-index:99" id="openChatPopup"><i class="fa fa-comments-o mr-2"></i> Hỗ
+            trợ trực tuyến</button>
+    </div>
 
+    <!-- Overlay -->
+    <div class="fixed inset-0 hidden bg-black opacity-50" id="overlay"></div>
 
-        <!-- Overlay -->
-        <div class="fixed inset-0 hidden bg-black opacity-50" id="overlay"></div>
+    <!-- Popup Form -->
+    <div class="fixed inset-0 z-50 flex hidden items-center justify-center" id="formPopup">
+        <div class="w-full max-w-lg rounded-lg bg-white p-6 shadow-2xl">
+            <span class="float-right cursor-pointer text-xl text-red-600" id="closePopup">&times;</span>
+            <h3 class="mb-4 text-lg font-semibold">Đăng ký tư vấn miễn phí</h3>
+            <form id="registrationForm" class="space-y-4">
+                <input type="text" name="your-name" placeholder="Họ và tên(*)" required
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                <input type="email" name="your-email" placeholder="Email (*)" required
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                <input type="tel" name="your-phone" placeholder="Số điện thoại (*)" required
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                <select name="type" required
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="Tư vấn du học" selected>Tư vấn du học</option>
+                    <option value="Dịch vụ visa">Dịch vụ visa</option>
+                </select>
+                <select name="country" required
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="Du học Mỹ">Du học Mỹ</option>
+                    <option value="Du học Canada">Du học Canada</option>
+                    <option value="Du học Anh">Du học Anh</option>
+                    <option value="Du học Úc">Du học Úc</option>
+                    <option value="Du học Singapore">Du học Singapore</option>
+                    <option value="Du học Ireland">Du học Ireland</option>
+                    <option value="Du học New Zealand">Du học New Zealand</option>
+                    <option value="Du học Thụy Sĩ">Du học Thụy Sĩ</option>
+                    <option value="Du học Pháp">Du học Pháp</option>
+                    <option value="Du học Malaysia">Du học Malaysia</option>
+                    <option value="Du học Thái Lan">Du học Thái Lan</option>
+                    <option value="Du học Philippines">Du học Philippines</option>
+                </select>
+                <textarea name="your-message" placeholder="Nội dung cần tư vấn" rows="5"
+                    class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                <button type="submit" class="w-full rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Đăng
+                    ký</button>
+                <p class="text-sm text-gray-500">*Sau khi nhận được thông tin, chúng tôi sẽ tư vấn cho bạn hoàn toàn
+                    miễn phí</p>
+            </form>
+        </div>
+    </div>
 
-        <!-- Popup Form -->
-        <div class="fixed inset-0 z-50 flex hidden items-center justify-center" id="formPopup">
-            <div class="w-full max-w-lg rounded-lg bg-white p-6 shadow-2xl">
-                <span class="float-right cursor-pointer text-xl text-red-600" id="closePopup">&times;</span>
-                <h3 class="mb-4 text-lg font-semibold">Đăng ký tư vấn miễn phí</h3>
-                <form id="registrationForm" class="space-y-4">
-                    <input type="text" name="your-name" placeholder="Họ và tên(*)" required
-                        class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    <input type="email" name="your-email" placeholder="Email (*)" required
-                        class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    <input type="tel" name="your-phone" placeholder="Số điện thoại (*)" required
-                        class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    <select name="type" required
-                        class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="Tư vấn du học" selected>Tư vấn du học</option>
-                        <option value="Dịch vụ visa">Dịch vụ visa</option>
-                    </select>
-                    <select name="country" required
-                        class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="Du học Mỹ">Du học Mỹ</option>
-                        <option value="Du học Canada">Du học Canada</option>
-                        <option value="Du học Anh">Du học Anh</option>
-                        <option value="Du học Úc">Du học Úc</option>
-                        <option value="Du học Singapore">Du học Singapore</option>
-                        <option value="Du học Ireland">Du học Ireland</option>
-                        <option value="Du học New Zealand">Du học New Zealand</option>
-                        <option value="Du học Thụy Sĩ">Du học Thụy Sĩ</option>
-                        <option value="Du học Pháp">Du học Pháp</option>
-                        <option value="Du học Malaysia">Du học Malaysia</option>
-                        <option value="Du học Thái Lan">Du học Thái Lan</option>
-                        <option value="Du học Philippines">Du học Philippines</option>
-                    </select>
-                    <textarea name="your-message" placeholder="Nội dung cần tư vấn" rows="5"
-                        class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                    <button type="submit"
-                        class="w-full rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Đăng
-                        ký</button>
-                    <p class="text-sm text-gray-500">*Sau khi nhận được thông tin, chúng tôi sẽ tư vấn cho bạn hoàn toàn
-                        miễn phí</p>
-                </form>
+    <!-- Popup Chat Support -->
+    <div class="fixed inset-0 z-50 flex hidden items-center justify-center" id="chatPopup">
+        <div class="w-full max-w-lg rounded-lg bg-white p-6 shadow-2xl">
+            <span class="float-right cursor-pointer text-xl text-red-600" id="closeChatPopup">&times;</span>
+            <h3 class="mb-4 text-lg font-semibold">Hỗ trợ trực tuyến</h3>
+            <div class="space-y-4">
+                <div class="w-full h-64 bg-gray-200 p-4 overflow-y-auto" id="chatWindow">
+                    <!-- Nội dung chat -->
+                </div>
+                <div class="flex items-center space-x-2">
+                    <input type="text" id="chatInput" placeholder="Nhập tin nhắn..."
+                        class="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
+                    <button id="sendChat"
+                        class="rounded-md bg-green-600 px-4 py-2 text-white hover:bg-green-700">Gửi</button>
+                </div>
             </div>
         </div>
+    </div>
 
+    <script>
+        // Popup đăng ký tư vấn
+        const formPopup = document.getElementById('formPopup');
+        const overlay = document.getElementById('overlay');
+        const openPopup = document.getElementById('openPopup');
+        const closePopup = document.getElementById('closePopup');
 
+        openPopup.addEventListener('click', () => {
+            formPopup.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+        });
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const typeSelect = document.querySelector('select[name="type"]');
-                const countrySelect = document.querySelector('select[name="country"]');
+        closePopup.addEventListener('click', () => {
+            formPopup.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
 
-                // Options for "Dịch vụ visa"
-                const visaOptions = [
-                    { value: 'Visa Mỹ', text: 'Visa Mỹ' },
-                    { value: 'Visa Canada', text: 'Visa Canada' },
-                    { value: 'Visa Anh', text: 'Visa Anh' },
-                    { value: 'Visa Úc', text: 'Visa Úc' },
-                    { value: 'Visa Ireland', text: 'Visa Ireland' },
-                    { value: 'Visa New Zealand', text: 'Visa New Zealand' }
-                ];
+        overlay.addEventListener('click', () => {
+            formPopup.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
 
-                // Options for "Tư vấn du học"
-                const studyOptions = [
-                    { value: 'Du học Mỹ', text: 'Du học Mỹ' },
-                    { value: 'Du học Canada', text: 'Du học Canada' },
-                    { value: 'Du học Anh', text: 'Du học Anh' },
-                    { value: 'Du học Úc', text: 'Du học Úc' },
-                    { value: 'Du học Singapore', text: 'Du học Singapore' },
-                    { value: 'Du học Ireland', text: 'Du học Ireland' },
-                    { value: 'Du học New Zealand', text: 'Du học New Zealand' },
-                    { value: 'Du học Thụy Sĩ', text: 'Du học Thụy Sĩ' },
-                    { value: 'Du học Pháp', text: 'Du học Pháp' },
-                    { value: 'Du học Malaysia', text: 'Du học Malaysia' },
-                    { value: 'Du học Thái Lan', text: 'Du học Thái Lan' },
-                    { value: 'Du học Philippines', text: 'Du học Philippines' }
-                ];
+        // Popup chat hỗ trợ
+        const chatPopup = document.getElementById('chatPopup');
+        const openChatPopup = document.getElementById('openChatPopup');
+        const closeChatPopup = document.getElementById('closeChatPopup');
 
-                typeSelect.addEventListener('change', function () {
-                    // Clear current options
-                    countrySelect.innerHTML = '';
+        openChatPopup.addEventListener('click', () => {
+            chatPopup.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+        });
 
-                    // Determine which options to show based on the selected type
-                    const selectedType = typeSelect.value;
-                    const options = selectedType === 'Dịch vụ visa' ? visaOptions : studyOptions;
+        closeChatPopup.addEventListener('click', () => {
+            chatPopup.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
 
-                    // Populate the country select with the appropriate options
-                    options.forEach(function (option) {
-                        const opt = document.createElement('option');
-                        opt.value = option.value;
-                        opt.textContent = option.text;
-                        countrySelect.appendChild(opt);
-                    });
-                });
+        overlay.addEventListener('click', () => {
+            chatPopup.classList.add('hidden');
+            overlay.classList.add('hidden');
+        });
 
-                // Trigger change to set initial options
-                typeSelect.dispatchEvent(new Event('change'));
-            });
-            // Popup đăng ký tư vấn
-            const formPopup = document.getElementById('formPopup');
-            const overlay = document.getElementById('overlay');
-            const openPopup = document.getElementById('openPopup');
-            const closePopup = document.getElementById('closePopup');
+        // Xử lý gửi tin nhắn trong ô chat
+        const chatWindow = document.getElementById('chatWindow');
+        const chatInput = document.getElementById('chatInput');
+        const sendChat = document.getElementById('sendChat');
 
-            openPopup.addEventListener('click', () => {
-                formPopup.classList.remove('hidden');
-                overlay.classList.remove('hidden');
-            });
+        sendChat.addEventListener('click', () => {
+            const message = chatInput.value;
+            if (message.trim() !== '') {
+                const chatBubble = document.createElement('div');
+                chatBubble.textContent = message;
+                chatBubble.classList.add('bg-blue-500', 'text-white', 'rounded-md', 'p-2', 'my-2', 'w-max');
+                chatWindow.appendChild(chatBubble);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+                chatInput.value = '';
+            }
+        });
 
-            closePopup.addEventListener('click', () => {
-                formPopup.classList.add('hidden');
-                overlay.classList.add('hidden');
-            });
+        // Gửi tin nhắn bằng phím Enter
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendChat.click();
+            }
+        });
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
 
-            overlay.addEventListener('click', () => {
-                formPopup.classList.add('hidden');
-                overlay.classList.add('hidden');
-            });
+            const name = this['your-name'].value;
+            const email = this['your-email'].value;
+            const phone = this['your-phone'].value;
+            const service = this['type'].value;
+            const country = this['country'].value;
+            const message = this['your-message'].value;
 
-            // Popup chat hỗ trợ
-            const chatPopup = document.getElementById('chatPopup');
-            const openChatPopup = document.getElementById('openChatPopup');
-            const closeChatPopup = document.getElementById('closeChatPopup');
+            const emailRequest = {
+                ToEmail: email,  // Địa chỉ email nhận
+                Subject: `Đăng ký tư vấn từ ${name}`,  // Chủ đề email
+                Body: `Tên: ${name}\nSố điện thoại: ${phone}\nDịch vụ: ${service}\nQuốc gia: ${country}\nNội dung: ${message}` // Nội dung email
+            };
 
-            openChatPopup.addEventListener('click', () => {
-                chatPopup.classList.remove('hidden');
-                overlay.classList.remove('hidden');
-            });
-
-            closeChatPopup.addEventListener('click', () => {
-                chatPopup.classList.add('hidden');
-                overlay.classList.add('hidden');
-            });
-
-            overlay.addEventListener('click', () => {
-                chatPopup.classList.add('hidden');
-                overlay.classList.add('hidden');
-            });
-
-            // Xử lý gửi tin nhắn trong ô chat
-            const chatWindow = document.getElementById('chatWindow');
-            const chatInput = document.getElementById('chatInput');
-            const sendChat = document.getElementById('sendChat');
-
-            sendChat.addEventListener('click', () => {
-                const message = chatInput.value;
-                if (message.trim() !== '') {
-                    const chatBubble = document.createElement('div');
-                    chatBubble.textContent = message;
-                    chatBubble.classList.add('bg-blue-500', 'text-white', 'rounded-md', 'p-2', 'my-2', 'w-max');
-                    chatWindow.appendChild(chatBubble);
-                    chatWindow.scrollTop = chatWindow.scrollHeight;
-                    chatInput.value = '';
-                }
-            });
-
-            // Gửi tin nhắn bằng phím Enter
-            chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    sendChat.click();
-                }
-            });
-            document.getElementById('registrationForm').addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                const name = this['your-name'].value;
-                const email = this['your-email'].value;
-                const phone = this['your-phone'].value;
-                const service = this['type'].value;
-                const country = this['country'].value;
-                const message = this['your-message'].value;
-                const registrationRequest = {
-                    FullName: name,
-                    Email: email,
-                    PhoneNumber: phone,
-                    ConsultingType: service,
-                    ContentConsulting: country,
-                    Note: message // Optional note
-                };
-                // Gửi yêu cầu POST tới API
-                fetch('/api/email/register', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(registrationRequest),
+            // Gửi yêu cầu POST tới API
+            fetch('/api/email/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(emailRequest),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
                 })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        alert(data.message || 'Đã gữi email này!');
-                        formPopup.classList.add('hidden');
-                        overlay.classList.add('hidden');
-                        this.reset(); // Reset form sau khi gửi
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('Đã gửi email thành công!');
-                    });
-            });
-        </script>
+                .then(data => {
+                    alert(data.message || 'Đã gữi email này!');
+                    formPopup.classList.add('hidden');
+                    overlay.classList.add('hidden');
+                    this.reset(); // Reset form sau khi gửi
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Đã gửi email thành công!');
+                });
+        });
+
+    </script>
 </body>
 
 </html>
