@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using System.Diagnostics;  
 using Microsoft.AspNetCore.Mvc;  
 using Dream_Bridge.Models;  
@@ -7,6 +8,24 @@ using Microsoft.EntityFrameworkCore;
 using Dream_Bridge.ViewModels;  
 using System.Security.Claims;  
 using BCrypt.Net;  
+=======
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using Dream_Bridge.Models;
+using Dream_Bridge.Models.Main;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using Dream_Bridge.ViewModels;
+using System.Security.Claims;
+using BCrypt.Net;
+namespace Dream_Bridge.Controllers
+{
+    [Authorize(Roles = "Admin, Staff")] // Cho phép cả Admin và Staff truy cập
+    public class AdminController : Controller
+    {
+        private readonly StudyAbroadDbContext _studyAbroadDbContext;
+        private readonly ILogger<AdminController> _logger;
+>>>>>>> origin/Huu-SCRUM-6
 
 namespace Dream_Bridge.Controllers  
 {  
@@ -80,6 +99,7 @@ namespace Dream_Bridge.Controllers
             return View(model);  
         }  
 
+<<<<<<< HEAD
         public IActionResult QLTintuc()  
         {  
             if (User.IsInRole("Staff"))  
@@ -99,6 +119,123 @@ namespace Dream_Bridge.Controllers
 
             return View();  
         }  
+=======
+            return View();
+        }
+        [HttpGet]
+        public IActionResult QLTruong()
+        {
+            // Check user role
+            if (User.IsInRole("Staff"))
+            {
+                return RedirectToAction("QLTuvan");
+            }
+
+            // Fetch School data from database context (_studyAbroadDbContext)
+            var schoolViewModel = new SchoolViewModel
+            {
+                Schools = _studyAbroadDbContext.Schools.ToList() // Assuming _studyAbroadDbContext is your DbContext
+            };
+
+            // Return the populated ViewModel to the view
+            return View(schoolViewModel);
+        }
+
+
+        [HttpPost]
+        public IActionResult QLTruong(SchoolViewModel model)
+        {
+            // Check if the file is selected
+            if (model.ImageFile == null || model.ImageFile.Length == 0)
+            {
+                ModelState.AddModelError("ImageFile", "Please select an image file.");
+            }
+
+            // Debugging information
+            Console.WriteLine($"File selected: {model.ImageFile?.FileName}");
+            Console.WriteLine($"File length: {model.ImageFile?.Length}");
+
+            // Validate IdcategoryStab
+            var categoryExists = _studyAbroadDbContext.StudyAbroadCatalogs
+                .Any(c => c.IdcategoryStab == model.IdcategoryStab);
+
+            if (!categoryExists)
+            {
+                ModelState.AddModelError("IdcategoryStab", "The selected category does not exist.");
+            }
+
+            if (ModelState.IsValid)
+            {
+                string? imagePath = null;
+
+                // Process the uploaded file
+                if (model.ImageFile != null && model.ImageFile.Length > 0)
+                {
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                    Directory.CreateDirectory(uploadsFolder); // Ensure directory exists
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ImageFile.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    try
+                    {
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            model.ImageFile.CopyTo(fileStream); // Save the uploaded file
+                        }
+                        imagePath = "/images/" + uniqueFileName; // Set the image path for the database
+                    }
+                    catch (Exception ex)
+                    {
+                        ModelState.AddModelError("ImageFile", "Error uploading image: " + ex.Message);
+                        Console.WriteLine($"Error uploading image: {ex}");
+                    }
+                }
+
+                // Create a new school object
+                var school = new School
+                {
+                    ImageSchool = imagePath,
+                    TitleSchool = model.TitleSchool,
+                    SchoolDescription = model.SchoolDescription,
+                    Nation = model.Nation,
+                    StateCity = model.StateCity,
+                    AverageTuition = model.AverageTuition,
+                    Level = model.Level,
+                    IdcategoryStab = model.IdcategoryStab,
+                };
+
+                // Save the new school to the database
+                try
+                {
+                    _studyAbroadDbContext.Schools.Add(school);
+                    _studyAbroadDbContext.SaveChanges();
+                    TempData["SuccessMessage"] = "School added successfully.";
+                    return RedirectToAction("QLTruong"); // Redirect to an index page or another action
+                }
+                catch (DbUpdateException dbEx)
+                {
+                    ModelState.AddModelError("", "Database error: " + dbEx.InnerException?.Message);
+                    Console.WriteLine($"Database error: {dbEx}");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Error saving school: " + ex.Message);
+                    Console.WriteLine($"Error saving school: {ex}");
+                }
+            }
+
+            // Return to the view with model errors if validation fails
+            return View(model);
+        }
+
+
+
+        public IActionResult Index()
+        {
+            var users = _studyAbroadDbContext.Users.ToList();
+            var emailHistories = _studyAbroadDbContext.EmailHistories.ToList();
+>>>>>>> origin/Huu-SCRUM-6
 
         public IActionResult Index()  
         {  
@@ -115,6 +252,7 @@ namespace Dream_Bridge.Controllers
             return View(viewModel);  
         }  
 
+<<<<<<< HEAD
         public IActionResult QLTuvan()  
         {  
             return View();  
@@ -138,10 +276,34 @@ namespace Dream_Bridge.Controllers
                 .ToList();  
 
             ViewData["Users"] = users;  
+=======
+        [Authorize(Roles = "Admin")]
+        public IActionResult QLChat()
+        {
+            if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+            }
+
+            var chatMessages = _studyAbroadDbContext.ChatMessages
+                .Include(m => m.Sender)
+                .Include(m => m.Receiver)
+                .ToList();
+
+            var users = _studyAbroadDbContext.Users
+                .Select(u => new { u.IdUser, u.FullName })
+                .ToList();
+
+            ViewData["Users"] = users;
+
+            return View(chatMessages);
+        }
+>>>>>>> origin/Huu-SCRUM-6
 
             return View(chatMessages);  
         }  
 
+<<<<<<< HEAD
         [HttpPost("api/chat/send")]  
         public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)  
         {  
@@ -149,6 +311,16 @@ namespace Dream_Bridge.Controllers
             {  
                 var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);  
                 int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;  
+=======
+        [HttpPost("api/chat/send")]
+        public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)
+        {
+            if (!string.IsNullOrEmpty(messageText))
+
+            {
+                var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+                int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;
+>>>>>>> origin/Huu-SCRUM-6
 
                 var chatMessage = new ChatMessage  
                 {  
@@ -161,9 +333,15 @@ namespace Dream_Bridge.Controllers
                 _studyAbroadDbContext.ChatMessages.Add(chatMessage);  
                 await _studyAbroadDbContext.SaveChangesAsync();  
 
+<<<<<<< HEAD
                 // Trả về tin nhắn đã gửi  
                 return Json(new { success = true, message = chatMessage });  
             }  
+=======
+                return Json(new { success = true, message = chatMessage });
+
+            }
+>>>>>>> origin/Huu-SCRUM-6
 
             return Json(new { success = false });  
         }  
