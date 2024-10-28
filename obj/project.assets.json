@@ -4385,7 +4385,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\letie\\.nuget\\packages\\": {}
+    "C:\\Users\\DELL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -4393,11 +4393,11 @@
       "projectUniqueName": "D:\\Dream-Bright\\Dream-Bridge.csproj",
       "projectName": "Dream-Bridge",
       "projectPath": "D:\\Dream-Bright\\Dream-Bridge.csproj",
-      "packagesPath": "C:\\Users\\letie\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "D:\\Dream-Bright\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\letie\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4468,16 +4468,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\Dream-Bright\\obj\\project.nuget.cache : After parsing a value an unexpected character was encountered: =. Path 'expectedPackageFiles[80]', line 91, position 0."
-    }
-  ]
+  }
 }
