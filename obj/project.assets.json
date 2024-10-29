@@ -4649,5 +4649,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\Git\\Dream-Bright\\obj\\project.nuget.cache : After parsing a value an unexpected character was encountered: =. Path 'expectedPackageFiles[80]', line 91, position 0."
+    }
+  ]
 }

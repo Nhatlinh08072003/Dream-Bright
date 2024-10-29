@@ -51,33 +51,33 @@ public class HomeController : Controller
 
     //     return View(chatMessages);
     // }// Thêm phương thức Chat
-public IActionResult Chat()
-{
-    // Kiểm tra nếu người dùng đã đăng nhập
-    if (!User.Identity.IsAuthenticated)
+    public IActionResult Chat()
     {
-        return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+        // Kiểm tra nếu người dùng đã đăng nhập
+        if (!User.Identity.IsAuthenticated)
+        {
+            return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+        }
+
+        // Lấy ID của người dùng hiện tại
+        var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+        if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+        {
+            return Unauthorized("User not authenticated.");
+        }
+
+        ViewData["AdminId"] = 1;
+
+        // Chỉ lấy những tin nhắn mà người dùng hiện tại là người gửi hoặc người nhận
+        var chatMessages = _context.ChatMessages
+            .Include(m => m.Sender)
+            .Include(m => m.Receiver)
+            .Where(m => (m.SenderId == userId && m.ReceiverId == 1) || (m.SenderId == 1 && m.ReceiverId == userId))
+            .OrderBy(m => m.CreatedAt) // Sắp xếp tin nhắn theo thời gian
+            .ToList();
+
+        return View(chatMessages);
     }
-
-    // Lấy ID của người dùng hiện tại
-    var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-    if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
-    {
-        return Unauthorized("User not authenticated.");
-    }
-
-    ViewData["AdminId"] = 1;
-
-    // Chỉ lấy những tin nhắn mà người dùng hiện tại là người gửi hoặc người nhận
-    var chatMessages = _context.ChatMessages
-        .Include(m => m.Sender)
-        .Include(m => m.Receiver)
-        .Where(m => (m.SenderId == userId && m.ReceiverId == 1) || (m.SenderId == 1 && m.ReceiverId == userId))
-        .OrderBy(m => m.CreatedAt) // Sắp xếp tin nhắn theo thời gian
-        .ToList();
-
-    return View(chatMessages);
-}
 
 
     [HttpPost]
@@ -142,11 +142,16 @@ public IActionResult Chat()
     }
     public IActionResult TimTruong()
     {
-        return View();
+        var schools = _context.Schools.Include(s => s.IdcategoryStabNavigation).ToList();
+        return View(schools);
     }
+
+
     public IActionResult TinTuc()
     {
-        return View();
+        // Lấy danh sách tin tức từ cơ sở dữ liệu
+        var newsList = _context.News.ToList(); // Thay đổi theo yêu cầu của bạn
+        return View(newsList); // Truyền danh sách vào view
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

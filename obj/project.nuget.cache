@@ -1,6 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "65L5ZWDC2gQ=",
+
+  "dgSpecHash": "zeVq2iIaidA=",
   "success": true,
   "projectFilePath": "D:\\Git\\Dream-Bright\\Dream-Bridge.csproj",
   "expectedPackageFiles": [
@@ -91,5 +92,12 @@
     "C:\\Users\\anhqu\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\anhqu\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\Git\\Dream-Bright\\obj\\project.nuget.cache : After parsing a value an unexpected character was encountered: =. Path 'expectedPackageFiles[80]', line 91, position 0."
+    }
+  ]
 }
