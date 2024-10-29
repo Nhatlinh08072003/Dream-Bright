@@ -115,38 +115,38 @@
                 </ul>
             </div>
 
-            <div id="chat-messages" class="border border-gray-300 rounded-lg p-4 mb-4 h-[450px] overflow-y-auto">
-                @foreach (var message in Model)
-                {
-                    var senderName = users.FirstOrDefault(u => u.UserId == message.SenderId)?.UserName ?? "User " +
-                    message.SenderId;
+           <div id="chat-messages" class="border border-gray-300 rounded-lg p-4 mb-4 h-[450px] overflow-y-auto bg-gray-50">  
+        @foreach (var message in Model)  
+        {  
+            var senderName = users.FirstOrDefault(u => u.UserId == message.SenderId)?.UserName ?? "User " + message.SenderId;  
+            var isCurrentUser = message.SenderId.ToString() == User.FindFirst(ClaimTypes.NameIdentifier)?.Value;  
 
-                    <div class="mb-2 message-row flex items-center" data-user-id="@message.SenderId">
-                        <strong class="mr-2">
-                            @(message.SenderId.ToString() == User.FindFirst(ClaimTypes.NameIdentifier)?.Value ? "You" :
-                                message.SenderId == adminId ? "Admin" : senderName):
-                        </strong>
-                        <span>@message.MessageText</span>
-                        <span class="text-gray-500 text-sm ml-2">@message.CreatedAt?.ToString("hh:mm tt")</span>
-                    </div>
-                }
-            </div>
+            <div class="mb-2 message-row flex items-center @if(isCurrentUser) { <text>justify-end</text> }" data-user-id="@message.SenderId">  
+                <strong class="mr-2 @if(isCurrentUser) { <text>text-blue-500</text> }">  
+                    @(isCurrentUser ? "You" : (message.SenderId == adminId ? "Admin" : senderName)):  
+                </strong>  
+                <span class="bg-white p-2 rounded-lg shadow @if(isCurrentUser) { <text>bg-blue-100</text> }">@message.MessageText</span>  
+                <span class="text-gray-500 text-sm ml-2">@message.CreatedAt?.ToString("hh:mm tt")</span>  
+            </div>  
+        }  
+    </div>  
+    <form id="chat-form" method="post" action="@Url.Action("SendChatMessage", "Home")">  
+        <div class="flex">  
+            <input type="text" name="messageText" id="messageText" class="border border-gray-300 rounded-lg p-2 flex-grow" placeholder="Type your message..." required />  
+            <input type="hidden" name="receiverId" id="receiverId" value="@adminId" /> <!-- ID của admin -->  
+            <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 ml-2">Send</button>  
+        </div>  
+    </form>  
+</div>
 
-            <form id="chat-form" method="post" action="@Url.Action("SendChatMessage", "Home")">
-                <div class="flex">
-                    <input type="text" name="messageText" id="messageText"
-                        class="border border-gray-300 rounded-lg p-2 flex-grow" placeholder="Type your message..."
-                        required />
-                    <input type="hidden" name="receiverId" id="receiverId" value="@adminId" /> <!-- ID của admin -->
-                    <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 ml-2">Send</button>
-                </div>
-            </form>
         </div>
     </div>
 
     @section Scripts {
         <script>
-            const chatMessages = document.getElementById("chat-messages");
+     const chatMessages = document.getElementById("chat-messages");  
+        const chatForm = document.getElementById("chat-form");  
+        const messageText = document.getElementById("messageText");  
 
             // Scroll to the bottom of the chat
             chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -170,6 +170,35 @@
                     });
                 });
             });
+            @* // Xử lý gửi tin nhắn  
+        chatForm.addEventListener('submit', function (event) {  
+            event.preventDefault(); // Ngăn chặn hành động mặc định của form  
+
+            const message = messageText.value;  
+            const userId = document.getElementById('receiverId').value;  
+
+            // Tạo phần tử tin nhắn mới  
+            const messageRow = document.createElement('div');  
+            messageRow.className = 'mb-2 message-row flex items-center justify-end';  
+            messageRow.setAttribute('data-user-id', userId);  
+            messageRow.innerHTML = `  
+                <strong class="mr-2 text-blue-500">You:</strong>  
+                <span class="bg-white p-2 rounded-lg shadow bg-blue-100">${message}</span>  
+                <span class="text-gray-500 text-sm ml-2">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>  
+            `;  
+
+            // Thêm tin nhắn mới vào chat  
+            chatMessages.appendChild(messageRow);  
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Cuộn xuống dưới  
+
+            // Xóa nội dung ô nhập tin nhắn  
+            messageText.value = '';  
+
+            // Gửi tin nhắn đến server (nếu cần)  
+             
+        });  *@
+         
+
         </script>
     }
 </body>

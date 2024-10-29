@@ -40,7 +40,7 @@ public class EmailService
                 };
 
                 _dbContext.EmailHistories.Add(emailHistory);
-                _dbContext.SaveChanges(); // Lưu thay đổi vào cơ sở dữ liệu
+                await _dbContext.SaveChangesAsync(); // Lưu thay đổi vào cơ sở dữ liệu
 
                 return true; // Trả về true nếu gửi và lưu thành công
             }
@@ -58,7 +58,7 @@ public class EmailService
                 };
 
                 _dbContext.EmailHistories.Add(emailHistory);
-                _dbContext.SaveChanges(); // Lưu thông tin lỗi vào cơ sở dữ liệu
+                await _dbContext.SaveChangesAsync(); // Lưu thông tin lỗi vào cơ sở dữ liệu
 
                 return false; // Trả về false nếu có lỗi xảy ra
             }

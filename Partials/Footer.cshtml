@@ -119,56 +119,6 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const typeSelect = document.querySelector('select[name="type"]');
-            const countrySelect = document.querySelector('select[name="country"]');
-
-            // Options for "Dịch vụ visa"
-            const visaOptions = [
-                { value: 'Visa Mỹ', text: 'Visa Mỹ' },
-                { value: 'Visa Canada', text: 'Visa Canada' },
-                { value: 'Visa Anh', text: 'Visa Anh' },
-                { value: 'Visa Úc', text: 'Visa Úc' },
-                { value: 'Visa Ireland', text: 'Visa Ireland' },
-                { value: 'Visa New Zealand', text: 'Visa New Zealand' }
-            ];
-
-            // Options for "Tư vấn du học"
-            const studyOptions = [
-                { value: 'Du học Mỹ', text: 'Du học Mỹ' },
-                { value: 'Du học Canada', text: 'Du học Canada' },
-                { value: 'Du học Anh', text: 'Du học Anh' },
-                { value: 'Du học Úc', text: 'Du học Úc' },
-                { value: 'Du học Singapore', text: 'Du học Singapore' },
-                { value: 'Du học Ireland', text: 'Du học Ireland' },
-                { value: 'Du học New Zealand', text: 'Du học New Zealand' },
-                { value: 'Du học Thụy Sĩ', text: 'Du học Thụy Sĩ' },
-                { value: 'Du học Pháp', text: 'Du học Pháp' },
-                { value: 'Du học Malaysia', text: 'Du học Malaysia' },
-                { value: 'Du học Thái Lan', text: 'Du học Thái Lan' },
-                { value: 'Du học Philippines', text: 'Du học Philippines' }
-            ];
-
-            typeSelect.addEventListener('change', function () {
-                // Clear current options
-                countrySelect.innerHTML = '';
-
-                // Determine which options to show based on the selected type
-                const selectedType = typeSelect.value;
-                const options = selectedType === 'Dịch vụ visa' ? visaOptions : studyOptions;
-
-                // Populate the country select with the appropriate options
-                options.forEach(function (option) {
-                    const opt = document.createElement('option');
-                    opt.value = option.value;
-                    opt.textContent = option.text;
-                    countrySelect.appendChild(opt);
-                });
-            });
-
-            // Trigger change to set initial options
-            typeSelect.dispatchEvent(new Event('change'));
-        });
         // Popup đăng ký tư vấn
         const formPopup = document.getElementById('formPopup');
         const overlay = document.getElementById('overlay');
@@ -242,21 +192,20 @@
             const service = this['type'].value;
             const country = this['country'].value;
             const message = this['your-message'].value;
-            const registrationRequest = {
-                FullName: name,
-                Email: email,
-                PhoneNumber: phone,
-                ConsultingType: service,
-                ContentConsulting: country,
-                Note: message // Optional note
+
+            const emailRequest = {
+                ToEmail: email,  // Địa chỉ email nhận
+                Subject: `Đăng ký tư vấn từ ${name}`,  // Chủ đề email
+                Body: `Tên: ${name}\nSố điện thoại: ${phone}\nDịch vụ: ${service}\nQuốc gia: ${country}\nNội dung: ${message}` // Nội dung email
             };
+
             // Gửi yêu cầu POST tới API
             fetch('/api/email/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(registrationRequest),
+                body: JSON.stringify(emailRequest),
             })
                 .then(response => {
                     if (!response.ok) {
@@ -275,6 +224,7 @@
                     alert('Đã gửi email thành công!');
                 });
         });
+
     </script>
 </body>
 

@@ -235,4 +235,5 @@ app.MapControllerRoute(
     pattern: "/updateprofile",
     defaults: new { controller = "Account", action = "UpdateProfile" }
 );
+
 app.Run();

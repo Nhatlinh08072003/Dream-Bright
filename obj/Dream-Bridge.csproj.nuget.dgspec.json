@@ -14,8 +14,7 @@
         "outputPath": "D:\\Git\\Dream-Bright\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\letie\\AppData\\Roaming\\NuGet\\NuGet.Config"
-          
+          "C:\\Users\\anhqu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -51,6 +50,10 @@
             "MailKit": {
               "target": "Package",
               "version": "[4.7.1.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
