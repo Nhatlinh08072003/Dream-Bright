@@ -1,3 +1,5 @@
+@model List<Dream_Bridge.Models.Main.School>
+
 <div class="mx-4 md:mx-14">
     <div class="container mx-auto p-4">
         <form class="flex flex-col gap-4">
@@ -47,201 +49,44 @@
     <div class="container mx-auto p-4">
         <h2 class="mb-4 text-2xl font-semibold">DANH SÁCH TRƯỜNG</h2>
         <div id="school-cards" class="-mx-2 flex flex-wrap">
-            <!-- Trường 1 -->
-            <div class="school-card mb-4 w-full px-2 md:w-1/2 lg:w-1/3">
-                <div class="flex items-center rounded-lg bg-white p-4 shadow-md">
-                    <img src="Images/shool.png" alt="Logo trường" class="mx-auto mb-4 h-28 w-1/3" />
-                    <div class="ml-4">
-                        <a href="/chitiet">
-                            <h2 class="mb-2 text-left text-xl font-bold">
-                                <span>Trường Trung học The Storm King School - New York, Mỹ</span>
-                            </h2>
-                            <ul class="list-inside list-disc text-sm text-gray-600">
-                                <li>Quốc gia: <span class="text-blue-600">Mỹ</span></li>
-                                <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">New York</span></li>
-                                <li>Bậc học: <span class="text-blue-600">ĐẠI HỌC</span></li>
-                                <li>Học phí trung bình: <span class="text-blue-600">74,100$</span></li>
-                            </ul>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var school in Model)
+                {
+                    <div class="school-card mb-4 w-full px-2 sm:w-1/2">
+                        <!-- Sử dụng flex-row để bố cục ảnh và nội dung nằm ngang -->
+                        <div class="flex h-full flex-row rounded-lg bg-white p-4 shadow-md">
+                            <!-- Ảnh cố định ở bên trái -->
+                            <img src="@school.ImageSchool" alt="@school.TitleSchool"
+                                class="h-32 w-32 object-cover rounded-md flex-shrink-0" />
 
-            <!-- Trường 2 -->
-            <div class="school-card mb-4 w-full px-2 md:w-1/2 lg:w-1/3">
-                <div class="flex items-center rounded-lg bg-white p-4 shadow-md">
-                    <img src="Images/shool.png" alt="Logo trường" class="mx-auto mb-4 h-28 w-1/3" />
-                    <div class="ml-4">
-                        <a href="/chitiet">
-                            <h2 class="mb-2 text-left text-xl font-bold">
-                                <span>Trường Trung học The Storm King School - New York, Mỹ</span>
-                            </h2>
-                            <ul class="list-inside list-disc text-sm text-gray-600">
-                                <li>Quốc gia: <span class="text-blue-600">Mỹ</span></li>
-                                <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">New York</span></li>
-                                <li>Bậc học: <span class="text-blue-600">ĐẠI HỌC</span></li>
-                                <li>Học phí trung bình: <span class="text-blue-600">74,100$</span></li>
-                            </ul>
-                        </a>
+                            <!-- Phần nội dung nằm bên phải ảnh -->
+                            <div class="flex flex-1 flex-col justify-between ml-4">
+                                <a href="/chitiet">
+                                    <h2 class="mb-2 text-left text-xl font-bold">@school.TitleSchool</h2>
+                                    <ul class="list-inside list-disc text-sm text-gray-600">
+                                        <li>Quốc gia: <span class="text-blue-600">@school.Nation</span></li>
+                                        <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">@school.StateCity</span></li>
+                                        <li>Bậc học: <span class="text-blue-600">@school.Level</span></li>
+                                        <li>Học phí trung bình: <span
+                                                class="text-blue-600">@school.AverageTuition.ToString("C")</span></li>
+                                    </ul>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Trường 3 -->
-            <div class="school-card mb-4 w-full px-2 md:w-1/2 lg:w-1/3">
-                <div class="flex items-center rounded-lg bg-white p-4 shadow-md">
-                    <img src="Images/shool.png" alt="Logo trường" class="mx-auto mb-4 h-28 w-1/3" />
-                    <div class="ml-4">
-                        <a href="/chitiet">
-                            <h2 class="mb-2 text-left text-xl font-bold">
-                                <span>Trường Trung học The Storm King School - New York, Mỹ</span>
-                            </h2>
-                            <ul class="list-inside list-disc text-sm text-gray-600">
-                                <li>Quốc gia: <span class="text-blue-600">Mỹ</span></li>
-                                <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">New York</span></li>
-                                <li>Bậc học: <span class="text-blue-600">ĐẠI HỌC</span></li>
-                                <li>Học phí trung bình: <span class="text-blue-600">74,100$</span></li>
-                            </ul>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trường 4 -->
-            <div class="school-card mb-4 w-full px-2 md:w-1/2 lg:w-1/3">
-                <div class="flex items-center rounded-lg bg-white p-4 shadow-md">
-                    <img src="Images/shool.png" alt="Logo trường" class="mx-auto mb-4 h-28 w-1/3" />
-                    <div class="ml-4">
-                        <a href="/chitiet">
-                            <h2 class="mb-2 text-left text-xl font-bold">
-                                <span>Trường Trung học The Storm King School - New York, Mỹ</span>
-                            </h2>
-                            <ul class="list-inside list-disc text-sm text-gray-600">
-                                <li>Quốc gia: <span class="text-blue-600">Mỹ</span></li>
-                                <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">New York</span></li>
-                                <li>Bậc học: <span class="text-blue-600">ĐẠI HỌC</span></li>
-                                <li>Học phí trung bình: <span class="text-blue-600">74,100$</span></li>
-                            </ul>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trường 5 -->
-            <div class="school-card mb-4 w-full px-2 md:w-1/2 lg:w-1/3">
-                <div class="flex items-center rounded-lg bg-white p-4 shadow-md">
-                    <img src="Images/shool.png" alt="Logo trường" class="mx-auto mb-4 h-28 w-1/3" />
-                    <div class="ml-4">
-                        <a href="/chitiet">
-                            <h2 class="mb-2 text-left text-xl font-bold">
-                                <span>Trường Trung học The Storm King School - New York, Mỹ</span>
-                            </h2>
-                            <ul class="list-inside list-disc text-sm text-gray-600">
-                                <li>Quốc gia: <span class="text-blue-600">Mỹ</span></li>
-                                <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">New York</span></li>
-                                <li>Bậc học: <span class="text-blue-600">ĐẠI HỌC</span></li>
-                                <li>Học phí trung bình: <span class="text-blue-600">74,100$</span></li>
-                            </ul>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- Trường 6 -->
-            <div class="school-card mb-4 w-full px-2 md:w-1/2 lg:w-1/3">
-                <div class="flex items-center rounded-lg bg-white p-4 shadow-md">
-                    <img src="Images/shool.png" alt="Logo trường" class="mx-auto mb-4 h-28 w-1/3" />
-                    <div class="ml-4">
-                        <a href="/chitiet">
-                            <h2 class="mb-2 text-left text-xl font-bold">
-                                <span>Trường Trung học The Storm King School - New York, Mỹ</span>
-                            </h2>
-                            <ul class="list-inside list-disc text-sm text-gray-600">
-                                <li>Quốc gia: <span class="text-blue-600">Mỹ</span></li>
-                                <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">New York</span></li>
-                                <li>Bậc học: <span class="text-blue-600">ĐẠI HỌC</span></li>
-                                <li>Học phí trung bình: <span class="text-blue-600">74,100$</span></li>
-                            </ul>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trường 7 -->
-            <div class="school-card mb-4 w-full px-2 md:w-1/2 lg:w-1/3">
-                <div class="flex items-center rounded-lg bg-white p-4 shadow-md">
-                    <img src="Images/shool.png" alt="Logo trường" class="mx-auto mb-4 h-28 w-1/3" />
-                    <div class="ml-4">
-                        <a href="/chitiet">
-                            <h2 class="mb-2 text-left text-xl font-bold">
-                                <span>Trường Trung học The Storm King School - New York, Mỹ</span>
-                            </h2>
-                            <ul class="list-inside list-disc text-sm text-gray-600">
-                                <li>Quốc gia: <span class="text-blue-600">Mỹ</span></li>
-                                <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">New York</span></li>
-                                <li>Bậc học: <span class="text-blue-600">ĐẠI HỌC</span></li>
-                                <li>Học phí trung bình: <span class="text-blue-600">74,100$</span></li>
-                            </ul>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                }
+            }
+            else
+            {
+                <p class="text-gray-600">Không có trường nào để hiển thị.</p>
+            }
         </div>
+
+
+
         <div class="mt-4 text-center">
             <button id="view-more-btn" class="rounded bg-blue-500 px-4 py-2 text-white">Xem thêm</button>
         </div>
     </div>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const cards = document.querySelectorAll('.school-card'); // Lấy tất cả các thẻ
-        const viewMoreBtn = document.getElementById('view-more-btn');
-
-        // Ẩn tất cả các thẻ sau thẻ thứ 6
-        if (cards.length > 6) {
-            cards.forEach((card, index) => {
-                if (index >= 6) {
-                    card.classList.add('hidden'); // Thêm class hidden để ẩn các thẻ
-                }
-            });
-        }
-
-        // Xử lý sự kiện khi nhấn vào nút "Xem thêm"
-        viewMoreBtn.addEventListener('click', () => {
-            cards.forEach((card) => {
-                card.classList.remove('hidden'); // Hiển thị tất cả các thẻ
-            });
-            viewMoreBtn.style.display = 'none'; // Ẩn nút sau khi hiển thị tất cả thẻ
-        });
-
-        // Thêm chức năng cho dropdown chọn quốc gia và tỉnh/thành phố
-        const countrySelect = document.getElementById('country');
-        const citySelect = document.getElementById('city');
-
-        const citiesByCountry = {
-            USA: ['California', 'Hawaii', 'New York', 'Texas'],
-            Australia: ['Sydney', 'Melbourne', 'Brisbane', 'Perth'],
-            Switzerland: ['Zurich', 'Geneva', 'Bern', 'Basel'],
-            Singapore: ['Central Region', 'North Region', 'East Region']
-        };
-
-        countrySelect.addEventListener('change', function () {
-            const selectedCountry = this.value;
-            citySelect.innerHTML = ''; // Xóa các tùy chọn cũ
-
-            if (selectedCountry) {
-                const cities = citiesByCountry[selectedCountry];
-                cities.forEach(city => {
-                    const option = document.createElement('option');
-                    option.value = city;
-                    option.textContent = city;
-                    citySelect.appendChild(option);
-                });
-            }
-
-            // Đặt giá trị mặc định cho dropdown thành phố
-            citySelect.insertAdjacentHTML('afterbegin', '<option value="">-- Chọn tỉnh/thành phố --</option>');
-            citySelect.value = ''; // Đặt giá trị mặc định cho dropdown thành phố
-        });
-    });
-</script>
