@@ -1,3 +1,5 @@
+@model IEnumerable<Dream_Bridge.Models.Main.ConsultingRegistration>
+
 @{
     Layout = "_AdminLayout"; // Sử dụng layout admin
 }
@@ -11,6 +13,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <style>
         .active {
             background-color: rgba(255, 255, 255, 0.2);
@@ -111,64 +115,95 @@
                             <th class="text-black text-center h-[45px] border border-black">Trạng thái</th>
                         </tr>
                     </thead>
+                    @* <tbody>
+                    <tr>
+                    <td class="text-black text-center border border-black p-3">Lê Tiên Nhất Linh</td>
+                    <td class="text-black text-center border border-black p-3">LinhStupid@gmail.com</td>
+                    <td class="text-black text-center border border-black p-3">Tư vấn du học</td>
+                    <td class="text-black text-center border border-black p-3">Du học Mỹ</td>
+                    <td class="text-black text-center border border-black p-3">0923663654</td>
+                    <td class="text-black text-center border border-black p-3">
+                    <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md">
+                    <option value="option1" class="text-center">Chưa tư vấn</option>
+                    <option value="option2" class="text-center">Đã tư vấn</option>
+                    <option value="option3" class="text-center">Không thể liên lạc</option>
+                    </select>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td class="text-black text-center border border-black p-3">Lưu Hồng Hữu</td>
+                    <td class="text-black text-center border border-black p-3">honghuudeptrai@gmail.com</td>
+                    <td class="text-black text-center border border-black p-3">Tư vấn VISA</td>
+                    <td class="text-black text-center border border-black p-3">VISA Thụy Sĩ</td>
+                    <td class="text-black text-center border border-black p-3">0923663654</td>
+                    <td class="text-black text-center border border-black p-3">
+                    <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md">
+                    <option value="option1" class="text-center">Chưa tư vấn</option>
+                    <option value="option2" class="text-center">Đã tư vấn</option>
+                    <option value="option3" class="text-center">Không thể liên lạc</option>
+                    </select>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td class="text-black text-center border border-black p-3">Trần Anh Quân</td>
+                    <td class="text-black text-center border border-black p-3">trananhquandeptrai@gmail.com</td>
+                    <td class="text-black text-center border border-black p-3">Tư vấn du học</td>
+                    <td class="text-black text-center border border-black p-3">Du học Singapore</td>
+                    <td class="text-black text-center border border-black p-3">0923663654</td>
+                    <td class="text-black text-center border border-black p-3">
+                    <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md">
+                    <option value="option1" class="text-center">Chưa tư vấn</option>
+                    <option value="option2" class="text-center">Đã tư vấn</option>
+                    <option value="option3" class="text-center">Không thể liên lạc</option>
+                    </select>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td class="text-black text-center border border-black p-3">Nguyễn Lê Kim Lân</td>
+                    <td class="text-black text-center border border-black p-3">nguyenlekimlandeptrai@gmail.com
+                    </td>
+                    <td class="text-black text-center border border-black p-3">Tư vấn VISA</td>
+                    <td class="text-black text-center border border-black p-3">VISA Úc</td>
+                    <td class="text-black text-center border border-black p-3">0923663654</td>
+                    <td class="text-black text-center border border-black p-3">
+                    <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md">
+                    <option value="option1" class="text-center">Chưa tư vấn</option>
+                    <option value="option2" class="text-center">Đã tư vấn</option>
+                    <option value="option3" class="text-center">Không thể liên lạc</option>
+                    </select>
+                    </td>
+                    </tr>
+                    </tbody> *@
+
                     <tbody>
-                        <tr>
-                            <td class="text-black text-center border border-black p-3">Lê Tiên Nhất Linh</td>
-                            <td class="text-black text-center border border-black p-3">LinhStupid@gmail.com</td>
-                            <td class="text-black text-center border border-black p-3">Tư vấn du học</td>
-                            <td class="text-black text-center border border-black p-3">Du học Mỹ</td>
-                            <td class="text-black text-center border border-black p-3">0923663654</td>
-                            <td class="text-black text-center border border-black p-3">
-                                <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md">
-                                    <option value="option1" class="text-center">Chưa tư vấn</option>
-                                    <option value="option2" class="text-center">Đã tư vấn</option>
-                                    <option value="option3" class="text-center">Không thể liên lạc</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-black text-center border border-black p-3">Lưu Hồng Hữu</td>
-                            <td class="text-black text-center border border-black p-3">honghuudeptrai@gmail.com</td>
-                            <td class="text-black text-center border border-black p-3">Tư vấn VISA</td>
-                            <td class="text-black text-center border border-black p-3">VISA Thụy Sĩ</td>
-                            <td class="text-black text-center border border-black p-3">0923663654</td>
-                            <td class="text-black text-center border border-black p-3">
-                                <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md">
-                                    <option value="option1" class="text-center">Chưa tư vấn</option>
-                                    <option value="option2" class="text-center">Đã tư vấn</option>
-                                    <option value="option3" class="text-center">Không thể liên lạc</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-black text-center border border-black p-3">Trần Anh Quân</td>
-                            <td class="text-black text-center border border-black p-3">trananhquandeptrai@gmail.com</td>
-                            <td class="text-black text-center border border-black p-3">Tư vấn du học</td>
-                            <td class="text-black text-center border border-black p-3">Du học Singapore</td>
-                            <td class="text-black text-center border border-black p-3">0923663654</td>
-                            <td class="text-black text-center border border-black p-3">
-                                <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md">
-                                    <option value="option1" class="text-center">Chưa tư vấn</option>
-                                    <option value="option2" class="text-center">Đã tư vấn</option>
-                                    <option value="option3" class="text-center">Không thể liên lạc</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-black text-center border border-black p-3">Nguyễn Lê Kim Lân</td>
-                            <td class="text-black text-center border border-black p-3">nguyenlekimlandeptrai@gmail.com
-                            </td>
-                            <td class="text-black text-center border border-black p-3">Tư vấn VISA</td>
-                            <td class="text-black text-center border border-black p-3">VISA Úc</td>
-                            <td class="text-black text-center border border-black p-3">0923663654</td>
-                            <td class="text-black text-center border border-black p-3">
-                                <select id="options" class="w-[90%] h-[32px] mx-auto bg-green-500 rounded-md">
-                                    <option value="option1" class="text-center">Chưa tư vấn</option>
-                                    <option value="option2" class="text-center">Đã tư vấn</option>
-                                    <option value="option3" class="text-center">Không thể liên lạc</option>
-                                </select>
-                            </td>
-                        </tr>
+                        @foreach (var registration in Model)
+                        {
+                            <tr>
+                                <td class="text-black text-center border border-black p-3">@registration.FullName</td>
+                                <td class="text-black text-center border border-black p-3">@registration.Email</td>
+                                <td class="text-black text-center border border-black p-3">@registration.ConsultingType</td>
+                                <td class="text-black text-center border border-black p-3">@registration.ContentConsulting
+                                </td>
+                                <td class="text-black text-center border border-black p-3">@registration.PhoneNumber</td>
+                                <td class="text-black text-center border border-black p-3">
+                                    <select onchange="updateStatus(this)" data-id="@registration.IdConsulting" class="w-[90%] h-[32px] mx-auto rounded-md 
+            @(registration.Status == "Chưa tư vấn" ? "bg-red-200" : 
+              registration.Status == "Đã tư vấn" ? "bg-green-500" : "bg-red-500")">>
+                                        <option value="Chưa tư vấn" selected="@(registration.Status == "Chưa tư vấn")"
+                                            class="bg-red-200">Chưa
+                                            tư vấn</option>
+                                        <option value="Đã tư vấn" selected="@(registration.Status == "Đã tư vấn")"
+                                            class="bg-green-500">Đã tư vấn
+                                        </option>
+                                        <option value="Không thể liên lạc"
+                                            selected="@(registration.Status == "Không thể liên lạc")" class="bg-red-500">
+                                            Không thể liên lạc
+                                        </option>
+                                    </select>
+
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
@@ -177,3 +212,35 @@
 </body>
 
 </html>
+<script>
+    function updateStatus(selectElement) {
+        var status = selectElement.value;
+        var id = $(selectElement).data('id');
+
+        $(selectElement).removeClass("bg-red-200 bg-green-500 bg-red-500");
+
+        // Apply the appropriate background color based on status
+        if (status === "Chưa tư vấn") {
+            $(selectElement).addClass("bg-red-200");
+        } else if (status === "Đã tư vấn") {
+            $(selectElement).addClass("bg-green-500");
+        } else if (status === "Không thể liên lạc") {
+            $(selectElement).addClass("bg-red-500");
+        }
+
+        $.ajax({
+            url: '/Admin/UpdateStatus',
+            type: 'POST',
+            data: {
+                id: id,
+                status: status
+            },
+            success: function (response) {
+                alert('Trạng thái đã được cập nhật');
+            },
+            error: function (error) {
+                alert('Cập nhật trạng thái thất bại');
+            }
+        });
+    }
+</script>

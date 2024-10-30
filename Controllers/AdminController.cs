@@ -11,7 +11,7 @@ namespace Dream_Bridge.Controllers
 {
     [Authorize(Roles = "Admin, Staff")] // Cho phép cả Admin và Staff truy cập
     public class AdminController : Controller
-    { 
+    {
         private readonly StudyAbroadDbContext _studyAbroadDbContext;
         private readonly ILogger<AdminController> _logger;
 
@@ -78,6 +78,24 @@ namespace Dream_Bridge.Controllers
 
             return View(model);
         }
+        public IActionResult QLTuvan()
+        {
+            var consultingRegistrations = _studyAbroadDbContext.ConsultingRegistrations.ToList();
+            return View(consultingRegistrations);
+            return View();
+        }
+        [HttpPost]
+        public IActionResult UpdateStatus(int id, string status)
+        {
+            var registration = _studyAbroadDbContext.ConsultingRegistrations.Find(id);
+            if (registration != null)
+            {
+                registration.Status = status;
+                _studyAbroadDbContext.SaveChanges();
+                return Ok();
+            }
+            return BadRequest();
+        }
 
         public IActionResult QLTintuc()
         {
@@ -114,39 +132,34 @@ namespace Dream_Bridge.Controllers
             return View(viewModel);
         }
 
-        public IActionResult QLTuvan()
+        [Authorize(Roles = "Admin")]
+        public IActionResult QLChat()
         {
-            return View();
+            if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+            }
+
+            var chatMessages = _studyAbroadDbContext.ChatMessages
+                .Include(m => m.Sender)
+                .Include(m => m.Receiver)
+                .ToList();
+
+            var users = _studyAbroadDbContext.Users
+                .Select(u => new { u.IdUser, u.FullName })
+                .ToList();
+
+            ViewData["Users"] = users;
+
+            return View(chatMessages);
         }
-
-       [Authorize(Roles = "Admin")]
-public IActionResult QLChat()
-{
-    if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
-    {
-        return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
-    }
-
-    var chatMessages = _studyAbroadDbContext.ChatMessages
-        .Include(m => m.Sender)
-        .Include(m => m.Receiver)
-        .ToList();
-
-    var users = _studyAbroadDbContext.Users
-        .Select(u => new { u.IdUser, u.FullName })
-        .ToList();
-
-    ViewData["Users"] = users;
-
-    return View(chatMessages);
-}
 
 
         [HttpPost("api/chat/send")]
         public async Task<IActionResult> SendChatMessage(string messageText, int receiverId)
         {
             if (!string.IsNullOrEmpty(messageText))
-        
+
             {
                 var adminIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
                 int senderId = adminIdClaim != null && int.TryParse(adminIdClaim.Value, out int id) ? id : 0;
@@ -163,7 +176,7 @@ public IActionResult QLChat()
                 await _studyAbroadDbContext.SaveChangesAsync();
 
                 return Json(new { success = true, message = chatMessage });
-               
+
             }
 
             return Json(new { success = false });
