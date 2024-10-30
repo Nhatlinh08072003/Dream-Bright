@@ -21,5 +21,6 @@ public partial class News
 
     public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
+
     public virtual User IdUserNavigation { get; set; } = null!;
 }
