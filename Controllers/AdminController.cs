@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Dream_Bridge.Models;
 using Dream_Bridge.Models.Main;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
+// using Microsoft.EntityFrameworkCore;
 using Dream_Bridge.ViewModels;
 using System.Security.Claims;
-using BCrypt.Net;
+using Microsoft.EntityFrameworkCore;
+// using BCrypt.Net;
 namespace Dream_Bridge.Controllers
 {
     [Authorize(Roles = "Admin, Staff")] // Cho phép cả Admin và Staff truy cập  
@@ -78,6 +79,25 @@ namespace Dream_Bridge.Controllers
 
             return View(model);
         }
+        public IActionResult QLTuvan()
+        {
+            var consultingRegistrations = _studyAbroadDbContext.ConsultingRegistrations.ToList();
+            return View(consultingRegistrations);
+            return View();
+        }
+        [HttpPost]
+        public IActionResult UpdateStatus(int id, string status)
+        {
+            var registration = _studyAbroadDbContext.ConsultingRegistrations.Find(id);
+            if (registration != null)
+            {
+                registration.Status = status;
+                _studyAbroadDbContext.SaveChanges();
+                return Ok();
+            }
+            return BadRequest();
+        }
+
         public IActionResult QLTintuc()
         {
             if (User.IsInRole("Staff"))
@@ -272,10 +292,7 @@ namespace Dream_Bridge.Controllers
 
             return View(viewModel);
         }
-        public IActionResult QLTuvan()
-        {
-            return View();
-        }
+
         [Authorize(Roles = "Admin")]
         public IActionResult QLChat()
         {
@@ -385,6 +402,22 @@ namespace Dream_Bridge.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+
+    [Serializable]
+    internal class DbUpdateException : Exception
+    {
+        public DbUpdateException()
+        {
+        }
+
+        public DbUpdateException(string? message) : base(message)
+        {
+        }
+
+        public DbUpdateException(string? message, Exception? innerException) : base(message, innerException)
+        {
         }
     }
 }
