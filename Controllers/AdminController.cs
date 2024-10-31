@@ -278,6 +278,25 @@ namespace Dream_Bridge.Controllers
             // If model state is invalid, return the same view with the model data
             return View(model);
         }
+
+        [HttpPost]
+        public IActionResult DeleteSchool(int id)
+        {
+            var school = _studyAbroadDbContext.Schools.Find(id);
+            if (school != null)
+            {
+                _studyAbroadDbContext.Schools.Remove(school);
+                _studyAbroadDbContext.SaveChanges();
+                TempData["SuccessMessage"] = "Xóa trường thành công!";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Không tìm thấy thông tin trường!";
+            }
+
+            return RedirectToAction("QLTruong");
+        }
+
         public IActionResult Index()
         {
             var users = _studyAbroadDbContext.Users.ToList();
