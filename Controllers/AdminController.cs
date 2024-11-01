@@ -21,6 +21,15 @@ namespace Dream_Bridge.Controllers
             _logger = logger;
             _studyAbroadDbContext = studyAbroadDbContext;
         }
+        private int GetCurrentUserId()
+        {
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+            if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
+            {
+                return userId; // Return the user ID if it was successfully parsed
+            }
+            return 0; // Or handle the case where the user ID is not available
+        }
 
         [HttpGet]
         public IActionResult QLTaikhoan()
@@ -98,6 +107,7 @@ namespace Dream_Bridge.Controllers
             return BadRequest();
         }
 
+        [HttpGet]
         public IActionResult QLTintuc()
         {
             if (User.IsInRole("Staff"))
@@ -105,8 +115,76 @@ namespace Dream_Bridge.Controllers
                 return RedirectToAction("QLTuvan");
             }
 
-            return View();
+            var newsList = _studyAbroadDbContext.News
+                .Select(n => new NewsViewModel
+                {
+                    TitleNews = n.TitleNews,
+                    NewsDescription = n.NewsDescription,
+                    NewsContent = n.NewsContent,
+                    NewsImage = n.NewsImage,
+                    CreatedAt = n.CreatedAt ?? DateTime.Now
+                }).ToList();
+
+            var viewModel = new NewsViewModel
+            {
+                NewsList = newsList // Assign the list of news items to the NewsList property
+            };
+
+            return View(viewModel); // Pass the NewsListViewModel to the view
         }
+
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> QLTintuc(NewsViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+                int userId = userIdClaim != null && int.TryParse(userIdClaim.Value, out int id) ? id : 0;
+
+                string? imagePath = null;
+
+                // Process the uploaded file
+                if (model.ImageFile != null && model.ImageFile.Length > 0)
+                {
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                    Directory.CreateDirectory(uploadsFolder); // Ensure directory exists
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ImageFile.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await model.ImageFile.CopyToAsync(fileStream); // Save the uploaded file
+                    }
+                    imagePath = "/images/" + uniqueFileName; // Set the image path for the database
+                }
+
+                // Create a new news object
+                var news = new News
+                {
+                    TitleNews = model.TitleNews,
+                    NewsDescription = model.NewsDescription,
+                    NewsContent = model.NewsContent,
+                    NewsImage = imagePath, // Assign the image path here
+                    IdUser = userId,
+                    CreatedAt = DateTime.Now // You can also use DateTime.UtcNow for UTC time
+                };
+
+                // Save the new news to the database
+                _studyAbroadDbContext.News.Add(news);
+                await _studyAbroadDbContext.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = "Tin tức đã được thêm thành công!";
+                return RedirectToAction("QLTintuc"); // Redirect to the same action or another action
+            }
+
+            // Return to the view with model errors if validation fails
+            return View(model);
+        }
+
         [HttpGet]
         public IActionResult QLTruong()
         {
