@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "buD/uLun+jDI5NRxWsuD3Huu4OX6QExk1pMALfSWWXc=",
+  "Hash": "T7kOaXnYhlBwL0+AgWqsHtyth4uYoAdFZJw5eJDSF6g=",
   "Source": "Dream-Bridge",
   "BasePath": "_content/Dream-Bridge",
   "Mode": "Default",
@@ -357,6 +357,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\Images\\5a19496d-fdfb-421e-958f-0911798c9e31.jpg",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "BasePath": "_content/Dream-Bridge",
+      "RelativePath": "Images/5a19496d-fdfb-421e-958f-0911798c9e31.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\5a19496d-fdfb-421e-958f-0911798c9e31.jpg"
     },
     {
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\Images\\5d8ce68a-7b19-4048-9ca0-3db8ef3cddc6.png",
@@ -1155,6 +1174,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\e6104711-8134-4ef9-9090-a611b0d56f98.png"
+    },
+    {
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\Images\\e8a5f8f3-d90d-4802-ad83-7f442392a669.jpg",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "BasePath": "_content/Dream-Bridge",
+      "RelativePath": "Images/e8a5f8f3-d90d-4802-ad83-7f442392a669.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\e8a5f8f3-d90d-4802-ad83-7f442392a669.jpg"
     },
     {
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\Images\\edit.png",
