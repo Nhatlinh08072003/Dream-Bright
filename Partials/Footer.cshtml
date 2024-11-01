@@ -265,14 +265,14 @@
                     return response.json();
                 })
                 .then(data => {
-                    alert(data.message || 'Đã gữi email này!');
+                    alert(data.message || 'Email đã được gửi tới bạn!');
                     formPopup.classList.add('hidden');
                     overlay.classList.add('hidden');
                     this.reset(); // Reset form sau khi gửi
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Đã gửi email thành công!');
+                    alert('Email đã được gửi tới bạn!');
                 });
         });
     </script>

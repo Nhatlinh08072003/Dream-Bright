@@ -89,7 +89,7 @@ public class EmailController : ControllerBase
             // Send the email
 await _emailService.SendEmailAsync(
     registrationRequest.Email,
-    $"Xác nhận đăng ký tư vấn từ {registrationRequest.FullName}",
+    $"DREAM BRIDGE GỬI MAIL ĐẾN {registrationRequest.FullName}",
     $"Kính gửi {registrationRequest.FullName},\n\n" +
     "Chúng tôi đã nhận được thông tin đăng ký tư vấn của bạn. Dưới đây là các thông tin chi tiết:\n\n" +
     $"- Họ và tên: {registrationRequest.FullName}\n" +
@@ -98,7 +98,7 @@ await _emailService.SendEmailAsync(
     $"- Quốc gia dự định: {registrationRequest.ContentConsulting}\n" +
     $"- Ghi chú bổ sung: {registrationRequest.Note}\n\n" +
     "Cảm ơn bạn đã quan tâm đến dịch vụ của chúng tôi. Đội ngũ tư vấn sẽ sớm liên hệ để hỗ trợ bạn.\n\n" +
-    "Trân trọng,\nĐội ngũ tư vấn Dream Bridge"
+    "Trân trọng,\nĐội ngũ tư vấn DREAM BRIDGE"
 );
 
             return Ok("Cảm ơn bạn! Chúng tôi đã nhận được thông tin đăng ký của bạn. Đội ngũ tư vấn sẽ sớm liên hệ và hỗ trợ bạn!");
