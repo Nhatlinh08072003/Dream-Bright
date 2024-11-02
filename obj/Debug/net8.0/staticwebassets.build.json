@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cGbDDEbR15UihxhjqtRBTULcBnneXutkDfVnxI2LPn4=",
+  "Hash": "hXeHTc4oZHAA/lOxbPw4IyCsYb/WC+fnxJCs1aWVdCs=",
   "Source": "Dream-Bridge",
   "BasePath": "_content/Dream-Bridge",
   "Mode": "Default",
@@ -1630,6 +1630,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\edit.png"
+    },
+    {
+      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\Images\\eeb68170-4841-4ae4-8b5d-4be4989f5ca8.jpg",
+      "SourceId": "Dream-Bridge",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "BasePath": "_content/Dream-Bridge",
+      "RelativePath": "Images/eeb68170-4841-4ae4-8b5d-4be4989f5ca8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\eeb68170-4841-4ae4-8b5d-4be4989f5ca8.jpg"
     },
     {
       "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\Images\\gia hạn visa 1.png",

@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="vi">
 
+
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,10 +50,11 @@
             style="bottom: 20px; right: 20px; z-index:99" id="openPopup"><i class="fa fa-hand-pointer-o mr-2"></i> Đăng
             ký tư vấn</button>
 
-        @* <!-- Nút mở chat hỗ trợ -->
+        <!-- Nút mở chat hỗ trợ -->
         <button class="fixed flex items-center rounded-md bg-green-600 px-4 py-2 text-white hover:bg-green-700"
-        style="bottom: 80px; right: 20px; z-index:99" id="openChatPopup"><i class="fa fa-comments-o mr-2"></i> Hỗ
-        trợ trực tuyến</button> *@
+            style="bottom: 80px; right: 20px; z-index:99 ;display:none;" id="openChatPopup"><i
+                class="fa fa-comments-o mr-2"></i> Hỗ
+            trợ trực tuyến</button>
     </div>
 
     <!-- Overlay -->
@@ -148,7 +151,6 @@
                 { value: 'Du học Thái Lan', text: 'Du học Thái Lan' },
                 { value: 'Du học Philippines', text: 'Du học Philippines' }
             ];
-
             typeSelect.addEventListener('change', function () {
                 // Clear current options
                 countrySelect.innerHTML = '';
@@ -265,14 +267,14 @@
                     return response.json();
                 })
                 .then(data => {
-                    alert(data.message || 'Email đã được gửi tới bạn!');
+                    alert(data.message || 'Đã gữi email này!');
                     formPopup.classList.add('hidden');
                     overlay.classList.add('hidden');
                     this.reset(); // Reset form sau khi gửi
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Email đã được gửi tới bạn!');
+                    alert('Đã gửi email thành công!');
                 });
         });
     </script>
