@@ -142,16 +142,114 @@ public class HomeController : Controller
     }
     public IActionResult TimTruong()
     {
-        var schools = _context.Schools.Include(s => s.IdcategoryStabNavigation).ToList();
+        var schools = _context.Schools.ToList(); // Lấy danh sách trường từ cơ sở dữ liệu
         return View(schools);
     }
+    [HttpPost]
+    public IActionResult SearchSchools(string nation, string city, string educationLevel)
+    {
+        // Lọc danh sách trường dựa trên các tiêu chí tìm kiếm
+        var filteredSchools = _context.Schools
+            .Where(s => (string.IsNullOrEmpty(nation) || s.Nation == nation) &&
+                        (string.IsNullOrEmpty(city) || s.StateCity == city) &&
+                        (string.IsNullOrEmpty(educationLevel) || s.Level == educationLevel))
+            .ToList();
 
+        return View("TimTruong", filteredSchools); // Trả về view với kết quả đã lọc
+    }
 
     public IActionResult TinTuc()
     {
         // Lấy danh sách tin tức từ cơ sở dữ liệu
         var newsList = _context.News.ToList(); // Thay đổi theo yêu cầu của bạn
         return View(newsList); // Truyền danh sách vào view
+    }
+
+    [HttpGet("api/schools")]
+    public IActionResult GetSchools(string country, string city, string educationLevel)
+    {
+
+        var schools = _context.Schools
+            .Where(s => s.Nation == country && s.StateCity == city && s.Level == educationLevel)
+            .ToList();
+
+        if (schools == null || !schools.Any())
+        {
+            return NotFound("No schools found.");
+        }
+
+        return Ok(schools);
+    }
+
+
+
+
+    // [HttpGet]
+    // [Route("schools")]
+    // public async Task<IActionResult> GetSchools(string country, string city, string educationLevel)
+    // {
+    //     var schools = await _context.Schools
+    //         .Where(s => s.Nation == country && s.StateCity == city && s.Level == educationLevel)
+    //         .ToListAsync();
+
+    //     if (schools == null || !schools.Any())
+    //     {
+    //         return NotFound(new { message = "No schools found for the given criteria." });
+    //     }
+
+    //     return Ok(schools);
+    // }
+
+
+    // Phương thức lấy danh sách quốc gia
+    [HttpGet("api/nations")]
+    public IActionResult GetNations()
+    {
+        try
+        {
+            var nations = _context.Schools
+                .Select(s => s.Nation)
+                .Distinct()
+                .ToList();
+
+            if (nations == null || !nations.Any())
+            {
+                return NotFound("No nations found.");
+            }
+
+            return Ok(nations);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error occurred while fetching nations.");
+            return StatusCode(500, "Internal server error.");
+        }
+    }
+
+    // Phương thức lấy danh sách thành phố theo quốc gia
+    [HttpGet("api/cities/{nation}")]
+    public IActionResult GetCities(string nation)
+    {
+        var cities = _context.Schools
+            .Where(s => s.Nation == nation)
+            .Select(s => s.StateCity)
+            .Distinct()
+            .ToList();
+
+        return Ok(cities);
+    }
+
+
+    [HttpGet("api/education-levels/{nation}")]
+    public IActionResult GetEducationLevels(string nation)
+    {
+        var levels = _context.Schools
+            .Where(s => s.Nation == nation)
+            .Select(s => s.Level)
+            .Distinct()
+            .ToList();
+
+        return Ok(levels);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

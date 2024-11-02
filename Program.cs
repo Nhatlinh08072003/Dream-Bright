@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using Dream_Bridge.Models.Main;
 using Newtonsoft.Json;
@@ -134,16 +133,17 @@ app.MapControllerRoute(
     name: "Singapore",
     pattern: "/singapore",
     defaults: new { controller = "DuHoc", action = "Singapore" }
-); app.MapControllerRoute(
+);
+app.MapControllerRoute(
     name: "ThuySy",
     pattern: "/thuysy",
     defaults: new { controller = "DuHoc", action = "ThuySy" });
 
 // dich vu
 app.MapControllerRoute(
-name: "VisaUc",
-pattern: "/visauc",
-defaults: new { controller = "DichVu", action = "VisaUc" }
+    name: "VisaUc",
+    pattern: "/visauc",
+    defaults: new { controller = "DichVu", action = "VisaUc" }
 );
 app.MapControllerRoute(
     name: "VisaMy",
@@ -164,6 +164,11 @@ app.MapControllerRoute(
     name: "ChiTiet",
     pattern: "/chitiet",
     defaults: new { controller = "DichVu", action = "ChiTiet" }
+);
+app.MapControllerRoute(
+    name: "ChiTietTruong",
+    pattern: "/chitietruong",
+    defaults: new { controller = "DichVu", action = "ChiTietTruong" }
 );
 app.MapControllerRoute(
    name: "QLTruong",

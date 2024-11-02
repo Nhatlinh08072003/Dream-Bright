@@ -8,11 +8,7 @@
                 <div class="flex-1">
                     <h3 class="mb-2 font-semibold">Quốc gia</h3>
                     <select id="country" class="w-full rounded-md border border-gray-300 px-4 py-2">
-                        <option value="">-- Chọn quốc gia --</option>
-                        <option value="USA">Mỹ</option>
-                        <option value="Australia">Úc</option>
-                        <option value="Switzerland">Thụy Sĩ</option>
-                        <option value="Singapore">Singapore</option>
+                        <option value="" disabled selected> -- Chọn quốc gia --</option>
                     </select>
                 </div>
 
@@ -20,29 +16,25 @@
                 <div class="flex-1">
                     <h3 class="mb-2 font-semibold">Tỉnh bang/Thành phố</h3>
                     <select id="city" class="w-full rounded-md border border-gray-300 px-4 py-2">
-                        <option value="">-- Chọn tỉnh/thành phố --</option>
+                        <option value="" disabled selected> -- Chọn tỉnh/thành phố --</option>
                     </select>
                 </div>
 
                 <!-- Chọn bậc học -->
                 <div class="flex-1">
                     <h3 class="mb-2 font-semibold">Bậc học</h3>
-                    <select class="w-full rounded-md border border-gray-300 px-4 py-2">
-                        <option value="">-- Chọn bậc học --</option>
-                        <option value="highschool">THPT</option>
-                        <option value="college">Cao đẳng</option>
-                        <option value="foundation">Dự bị đại học</option>
-                        <option value="university">Đại học</option>
-                        <option value="vocational">Học nghề</option>
-                        <option value="language">Học tiếng</option>
-                        <option value="postgraduate">Sau đại học</option>
+                    <select id="educationLevel" class="w-full rounded-md border border-gray-300 px-4 py-2">
+                        <option value="" disabled selected> -- Chọn bậc học --</option>
                     </select>
                 </div>
             </div>
 
-            <button
-                class="ml-auto w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 md:w-1/3">Tìm
-                trường</button>
+
+            <button id="search-btn" type="button"
+                class="ml-auto w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 md:w-1/3"
+                disabled>
+                Tìm trường
+            </button>
         </form>
     </div>
 
@@ -54,15 +46,13 @@
                 foreach (var school in Model)
                 {
                     <div class="school-card mb-4 w-full px-2 sm:w-1/2">
-                        <!-- Sử dụng flex-row để bố cục ảnh và nội dung nằm ngang -->
-                        <div class="flex h-full flex-row rounded-lg bg-white p-4 shadow-md">
-                            <!-- Ảnh cố định ở bên trái -->
+                        <div
+                            class="flex h-full flex-row rounded-lg bg-white p-4 shadow-md hover:shadow-lg transition-shadow duration-200">
                             <img src="@school.ImageSchool" alt="@school.TitleSchool"
-                                class="h-32 w-32 object-cover rounded-md flex-shrink-0" />
-
-                            <!-- Phần nội dung nằm bên phải ảnh -->
+                                class="h-32 w-32 object-cover rounded-md flex-shrink-0" loading="lazy" />
                             <div class="flex flex-1 flex-col justify-between ml-4">
-                                <a href="/chitiet">
+                                <a href="@Url.Action("ChiTietTruong", "DichVu", new { id = school.IdSchool })"
+                                    class="cursor-pointer">
                                     <h2 class="mb-2 text-left text-xl font-bold">@school.TitleSchool</h2>
                                     <ul class="list-inside list-disc text-sm text-gray-600">
                                         <li>Quốc gia: <span class="text-blue-600">@school.Nation</span></li>
@@ -83,10 +73,234 @@
             }
         </div>
 
-
-
         <div class="mt-4 text-center">
             <button id="view-more-btn" class="rounded bg-blue-500 px-4 py-2 text-white">Xem thêm</button>
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        loadNations();
+        setupEventListeners();
+    });
+
+    function setupEventListeners() {
+        const countrySelect = document.getElementById('country');
+        const citySelect = document.getElementById('city');
+        const educationLevelSelect = document.getElementById('educationLevel');
+        const searchBtn = document.getElementById('search-btn');
+
+        countrySelect.addEventListener('change', loadCitiesAndEducationLevels);
+        citySelect.addEventListener('change', checkFormValidityAndFilterSchools);
+        educationLevelSelect.addEventListener('change', checkFormValidityAndFilterSchools);
+        searchBtn.addEventListener('click', checkFormValidityAndFilterSchools); // Gắn sự kiện cho nút tìm trường
+    }
+
+    async function loadNations() {
+        try {
+            const response = await fetch('/api/nations');
+            if (!response.ok) throw new Error('Network response was not ok');
+            const nations = await response.json();
+            const countrySelect = document.getElementById('country');
+
+            nations.forEach(nation => {
+                const option = document.createElement('option');
+                option.value = nation;
+                option.textContent = nation;
+                countrySelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error fetching nations:', error);
+        }
+    }
+
+    @* async function loadCitiesAndEducationLevels() {
+        const country = document.getElementById("country").value;
+        const citySelect = document.getElementById("city");
+        const educationLevelSelect = document.getElementById("educationLevel");
+
+        citySelect.innerHTML = '<option value="" disabled selected>-- Chọn tỉnh/thành phố --</option>';
+        educationLevelSelect.innerHTML = '<option value="" disabled selected>-- Chọn bậc học --</option>';
+
+        if (country) {
+        try {
+                const cityResponse = await fetch(`/api/cities/${country}`);
+        if (!cityResponse.ok) throw new Error('Network response was not ok');
+                const cities = await cityResponse.json();
+                cities.forEach(city => {
+                    const option = document.createElement("option");
+                    option.value = city;
+                    option.textContent = city;
+        citySelect.appendChild(option);
+        });
+
+                const educationResponse = await fetch(`/api/education-levels/${country}`);
+        if (!educationResponse.ok) throw new Error('Network response was not ok');
+                const educationLevels = await educationResponse.json();
+                educationLevels.forEach(level => {
+                    const option = document.createElement('option');
+                    option.value = level;
+                    option.textContent = level;
+        educationLevelSelect.appendChild(option);
+        });
+        } catch (error) {
+        console.error('Error fetching data:', error);
+        }
+        }
+        checkFormValidityAndFilterSchools(); // Kiểm tra tính hợp lệ và lọc trường
+        } *@
+        async function loadCitiesAndEducationLevels() {
+            const country = document.getElementById("country").value;
+            const citySelect = document.getElementById("city");
+            const educationLevelSelect = document.getElementById("educationLevel");
+
+            // Xóa dữ liệu cũ trong dropdown
+            citySelect.innerHTML = '<option value="" disabled selected>-- Chọn tỉnh/thành phố --</option>';
+            educationLevelSelect.innerHTML = '<option value="" disabled selected>-- Chọn bậc học --</option>';
+
+            if (country) {
+                try {
+                    const cityResponse = await fetch(`/api/cities/${country}`);
+                    if (!cityResponse.ok) throw new Error('Network response was not ok');
+                    const cities = await cityResponse.json();
+                    cities.forEach(city => {
+                        const option = document.createElement("option");
+                        option.value = city;
+                        option.textContent = city;
+                        citySelect.appendChild(option);
+                    });
+
+                    const educationResponse = await fetch(`/api/education-levels/${country}`);
+                    if (!educationResponse.ok) throw new Error('Network response was not ok');
+                    const educationLevels = await educationResponse.json();
+                    educationLevels.forEach(level => {
+                        const option = document.createElement('option');
+                        option.value = level;
+                        option.textContent = level;
+                        educationLevelSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
+            }
+            // Gọi lại hàm để kiểm tra tính hợp lệ và lọc trường
+            checkFormValidityAndFilterSchools();
+        }
+    @*
+    async function checkFormValidityAndFilterSchools() {
+        const country = document.getElementById("country").value;
+        const city = document.getElementById("city").value;
+        const educationLevel = document.getElementById("educationLevel").value;
+        const searchBtn = document.getElementById("search-btn");
+
+        // Kích hoạt nút tìm trường chỉ khi có đủ thông tin
+        searchBtn.disabled = !(country && city && educationLevel);
+
+        if (country && city && educationLevel) {
+        try {
+                const response = await fetch(`/api/schools?country=${country}&city=${city}&educationLevel=${educationLevel}`);
+        if (!response.ok) {
+                    console.error('Error fetching schools:', response.statusText);
+                    return; // Dừng lại nếu có lỗi
+        }
+
+                const schools = await response.json();
+        renderSchoolCards(schools);
+        } catch (error) {
+        console.error('Error fetching schools:', error);
+        }
+        }
+        } *@
+        async function checkFormValidityAndFilterSchools() {
+            const country = document.getElementById("country").value;
+            const city = document.getElementById("city").value;
+            const educationLevel = document.getElementById("educationLevel").value;
+            const searchBtn = document.getElementById("search-btn");
+
+            // Kích hoạt nút tìm trường chỉ khi có đủ thông tin
+            searchBtn.disabled = !(country && city && educationLevel);
+
+            if (country && city && educationLevel) {
+                try {
+                    const response = await fetch(`/api/schools?country=${country}&city=${city}&educationLevel=${educationLevel}`);
+                    if (!response.ok) {
+                        console.error('Error fetching schools:', response.statusText);
+                        return; // Dừng lại nếu có lỗi
+                    }
+
+                    const schools = await response.json();
+                    renderSchoolCards(schools);
+                } catch (error) {
+                    console.error('Error fetching schools:', error);
+                }
+            }
+        }
+
+    @* function renderSchoolCards(schools) {
+        console.log('Schools data:', schools); // Kiểm tra dữ liệu
+        const schoolContainer = document.getElementById("school-cards"); // Sửa ID ở đây
+        schoolContainer.innerHTML = ""; // Xóa nội dung cũ
+
+        if (schools.length === 0) {
+            schoolContainer.innerHTML = "<p class='text-gray-600'>Không có trường nào để hiển thị.</p>";
+        return;
+        }
+
+        schools.forEach(school => {
+            const schoolCard = document.createElement("div");
+            schoolCard.className = "school-card mb-4 w-full px-2 sm:w-1/2";
+            schoolCard.innerHTML = `
+                <div class="flex h-full flex-row rounded-lg bg-white p-4 shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <img src="${school.ImageSchool}" alt="${school.TitleSchool}" class="h-32 w-32 object-cover rounded-md flex-shrink-0" loading="lazy" />
+        <div class="flex flex-1 flex-col justify-between ml-4">
+        <a href="/DichVu/ChiTietTruong?id=${school.IdSchool}" class="cursor-pointer">
+        <h2 class="mb-2 text-left text-xl font-bold">${school.TitleSchool}</h2>
+        <ul class="list-inside list-disc text-sm text-gray-600">
+                                <li>Quốc gia: <span class="text-blue-600">${school.Nation}</span></li>
+                                <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">${school.StateCity}</span></li>
+                                <li>Bậc học: <span class="text-blue-600">${school.Level}</span></li>
+                                <li>Học phí trung bình: <span class="text-blue-600">${school.AverageTuition}</span></li>
+        </ul>
+        </a>
+        </div>
+        </div>
+        `;
+        schoolContainer.appendChild(schoolCard);
+        });
+        } *@
+
+        function renderSchoolCards(schools) {
+            const schoolContainer = document.getElementById("school-cards");
+            schoolContainer.innerHTML = ""; // Xóa nội dung cũ
+
+            if (schools.length === 0) {
+                schoolContainer.innerHTML = "<p class='text-gray-600'>Không có trường nào để hiển thị.</p>";
+                return;
+            }
+
+            schools.forEach(school => {
+                const schoolCard = document.createElement("div");
+                schoolCard.className = "school-card mb-4 w-full px-2 sm:w-1/2";
+                schoolCard.innerHTML = `
+            <div class="flex h-full flex-row rounded-lg bg-white p-4 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <img src="${school.ImageSchool}" alt="${school.TitleSchool}" class="h-32 w-32 object-cover rounded-md flex-shrink-0" loading="lazy" />
+                <div class="flex flex-1 flex-col justify-between ml-4">
+                    <a href="/DichVu/ChiTietTruong?id=${school.IdSchool}" class="cursor-pointer">
+                        <h2 class="mb-2 text-left text-xl font-bold">${school.TitleSchool}</h2>
+                        <ul class="list-inside list-disc text-sm text-gray-600">
+                            <li>Quốc gia: <span class="text-blue-600">${school.Nation}</span></li>
+                            <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">${school.StateCity}</span></li>
+                            <li>Bậc học: <span class="text-blue-600">${school.Level}</span></li>
+                            <li>Học phí trung bình: <span class="text-blue-600">${school.AverageTuition}</span></li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        `;
+                schoolContainer.appendChild(schoolCard);
+            });
+        } loadNations
+
+
+</script>
