@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U21QMiBVafgHS8vI/7d4bFMvAYianTMzNjRMnGP0U10=",
+  "Hash": "ZJucEluVoC5VXFtRhB4QDHNUGhJN+mb0NmLVBHRRw1o=",
   "Source": "Dream-Bridge",
   "BasePath": "_content/Dream-Bridge",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Dream-Bridge\\wwwroot",
       "Source": "Dream-Bridge",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Dream-Bridge.styles.css",
+      "Identity": "D:\\Git\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Dream-Bridge.styles.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Dream-Bridge.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Dream-Bridge.styles.css"
+      "OriginalItemSpec": "D:\\Git\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Dream-Bridge.styles.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Dream-Bridge.bundle.scp.css",
+      "Identity": "D:\\Git\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Dream-Bridge.bundle.scp.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "Dream-Bridge.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Dream-Bridge.bundle.scp.css"
+      "OriginalItemSpec": "D:\\Git\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Dream-Bridge.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\css\\input.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\css\\input.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "css/input.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\input.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\css\\output.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\css\\output.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "css/output.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\css\\output.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\css\\site.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\css\\site.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\favicon.ico",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\favicon.ico",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -131,12 +131,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\01ee0a13-9074-4f0e-8f13-bba6a52ffeea.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\01ee0a13-9074-4f0e-8f13-bba6a52ffeea.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/01ee0a13-9074-4f0e-8f13-bba6a52ffeea.png",
+      "RelativePath": "Images/01ee0a13-9074-4f0e-8f13-bba6a52ffeea.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,15 +147,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\01ee0a13-9074-4f0e-8f13-bba6a52ffeea.png"
+      "OriginalItemSpec": "wwwroot\\Images\\01ee0a13-9074-4f0e-8f13-bba6a52ffeea.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\022e0167-4d2a-488d-b2a4-5270426d4e49.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\022e0167-4d2a-488d-b2a4-5270426d4e49.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/022e0167-4d2a-488d-b2a4-5270426d4e49.jpg",
+      "RelativePath": "Images/022e0167-4d2a-488d-b2a4-5270426d4e49.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -166,15 +166,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\022e0167-4d2a-488d-b2a4-5270426d4e49.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\022e0167-4d2a-488d-b2a4-5270426d4e49.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\091431d1-51ff-491e-afaa-30ab115927f8.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\091431d1-51ff-491e-afaa-30ab115927f8.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/091431d1-51ff-491e-afaa-30ab115927f8.png",
+      "RelativePath": "Images/091431d1-51ff-491e-afaa-30ab115927f8.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -185,15 +185,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\091431d1-51ff-491e-afaa-30ab115927f8.png"
+      "OriginalItemSpec": "wwwroot\\Images\\091431d1-51ff-491e-afaa-30ab115927f8.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\09327721-28a0-4cdd-b6b8-8817aa8bad87.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\09327721-28a0-4cdd-b6b8-8817aa8bad87.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/09327721-28a0-4cdd-b6b8-8817aa8bad87.jpg",
+      "RelativePath": "Images/09327721-28a0-4cdd-b6b8-8817aa8bad87.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -204,15 +204,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\09327721-28a0-4cdd-b6b8-8817aa8bad87.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\09327721-28a0-4cdd-b6b8-8817aa8bad87.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\1539abfb-07eb-494a-9ac4-9980a4a87f8a.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\1539abfb-07eb-494a-9ac4-9980a4a87f8a.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/1539abfb-07eb-494a-9ac4-9980a4a87f8a.png",
+      "RelativePath": "Images/1539abfb-07eb-494a-9ac4-9980a4a87f8a.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -223,15 +223,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\1539abfb-07eb-494a-9ac4-9980a4a87f8a.png"
+      "OriginalItemSpec": "wwwroot\\Images\\1539abfb-07eb-494a-9ac4-9980a4a87f8a.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\18d75892-0bbd-4496-a49e-c8213a5735ff.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\18d75892-0bbd-4496-a49e-c8213a5735ff.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/18d75892-0bbd-4496-a49e-c8213a5735ff.png",
+      "RelativePath": "Images/18d75892-0bbd-4496-a49e-c8213a5735ff.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -242,15 +242,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\18d75892-0bbd-4496-a49e-c8213a5735ff.png"
+      "OriginalItemSpec": "wwwroot\\Images\\18d75892-0bbd-4496-a49e-c8213a5735ff.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\2351a247-4dea-47b1-9b28-6abdbd130959.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\2351a247-4dea-47b1-9b28-6abdbd130959.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/2351a247-4dea-47b1-9b28-6abdbd130959.png",
+      "RelativePath": "Images/2351a247-4dea-47b1-9b28-6abdbd130959.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -261,15 +261,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\2351a247-4dea-47b1-9b28-6abdbd130959.png"
+      "OriginalItemSpec": "wwwroot\\Images\\2351a247-4dea-47b1-9b28-6abdbd130959.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\24852abb-cffd-4e31-9b09-7be4551975c3.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\24852abb-cffd-4e31-9b09-7be4551975c3.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/24852abb-cffd-4e31-9b09-7be4551975c3.png",
+      "RelativePath": "Images/24852abb-cffd-4e31-9b09-7be4551975c3.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -280,15 +280,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\24852abb-cffd-4e31-9b09-7be4551975c3.png"
+      "OriginalItemSpec": "wwwroot\\Images\\24852abb-cffd-4e31-9b09-7be4551975c3.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\27304eb0-4e9c-41c2-a372-b4f6d221a481.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\27304eb0-4e9c-41c2-a372-b4f6d221a481.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/27304eb0-4e9c-41c2-a372-b4f6d221a481.png",
+      "RelativePath": "Images/27304eb0-4e9c-41c2-a372-b4f6d221a481.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -299,15 +299,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\27304eb0-4e9c-41c2-a372-b4f6d221a481.png"
+      "OriginalItemSpec": "wwwroot\\Images\\27304eb0-4e9c-41c2-a372-b4f6d221a481.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\365a6f4e-9c03-4d1f-8fab-4820059f0e73.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\365a6f4e-9c03-4d1f-8fab-4820059f0e73.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/365a6f4e-9c03-4d1f-8fab-4820059f0e73.png",
+      "RelativePath": "Images/365a6f4e-9c03-4d1f-8fab-4820059f0e73.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -318,15 +318,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\365a6f4e-9c03-4d1f-8fab-4820059f0e73.png"
+      "OriginalItemSpec": "wwwroot\\Images\\365a6f4e-9c03-4d1f-8fab-4820059f0e73.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\3a3233dc-a326-43e7-a749-14faecdeffe1.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\3a3233dc-a326-43e7-a749-14faecdeffe1.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/3a3233dc-a326-43e7-a749-14faecdeffe1.png",
+      "RelativePath": "Images/3a3233dc-a326-43e7-a749-14faecdeffe1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -337,15 +337,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\3a3233dc-a326-43e7-a749-14faecdeffe1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\3a3233dc-a326-43e7-a749-14faecdeffe1.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif",
+      "RelativePath": "Images/48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -356,15 +356,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif"
+      "OriginalItemSpec": "wwwroot\\Images\\48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\5d8ce68a-7b19-4048-9ca0-3db8ef3cddc6.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\5d8ce68a-7b19-4048-9ca0-3db8ef3cddc6.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/5d8ce68a-7b19-4048-9ca0-3db8ef3cddc6.png",
+      "RelativePath": "Images/5d8ce68a-7b19-4048-9ca0-3db8ef3cddc6.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -375,15 +375,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\5d8ce68a-7b19-4048-9ca0-3db8ef3cddc6.png"
+      "OriginalItemSpec": "wwwroot\\Images\\5d8ce68a-7b19-4048-9ca0-3db8ef3cddc6.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\6806a6df-c8d8-48e0-af8c-2f0040f2135b.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\6806a6df-c8d8-48e0-af8c-2f0040f2135b.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/6806a6df-c8d8-48e0-af8c-2f0040f2135b.jpg",
+      "RelativePath": "Images/6806a6df-c8d8-48e0-af8c-2f0040f2135b.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -394,15 +394,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\6806a6df-c8d8-48e0-af8c-2f0040f2135b.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\6806a6df-c8d8-48e0-af8c-2f0040f2135b.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\6b1228cc-e6cd-44d4-8c77-65bf214e4b03.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\6b1228cc-e6cd-44d4-8c77-65bf214e4b03.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/6b1228cc-e6cd-44d4-8c77-65bf214e4b03.png",
+      "RelativePath": "Images/6b1228cc-e6cd-44d4-8c77-65bf214e4b03.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -413,15 +413,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\6b1228cc-e6cd-44d4-8c77-65bf214e4b03.png"
+      "OriginalItemSpec": "wwwroot\\Images\\6b1228cc-e6cd-44d4-8c77-65bf214e4b03.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\748844a9-c4c0-4553-a20d-0477a679f60e.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\748844a9-c4c0-4553-a20d-0477a679f60e.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/748844a9-c4c0-4553-a20d-0477a679f60e.jpg",
+      "RelativePath": "Images/748844a9-c4c0-4553-a20d-0477a679f60e.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -432,15 +432,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\748844a9-c4c0-4553-a20d-0477a679f60e.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\748844a9-c4c0-4553-a20d-0477a679f60e.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\763f03a1-31ab-41b3-84b6-b7f6ee9818dc.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\763f03a1-31ab-41b3-84b6-b7f6ee9818dc.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/763f03a1-31ab-41b3-84b6-b7f6ee9818dc.png",
+      "RelativePath": "Images/763f03a1-31ab-41b3-84b6-b7f6ee9818dc.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -451,15 +451,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\763f03a1-31ab-41b3-84b6-b7f6ee9818dc.png"
+      "OriginalItemSpec": "wwwroot\\Images\\763f03a1-31ab-41b3-84b6-b7f6ee9818dc.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\76d90c07-91d9-4142-baf0-d64e107490cb.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\76d90c07-91d9-4142-baf0-d64e107490cb.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/76d90c07-91d9-4142-baf0-d64e107490cb.png",
+      "RelativePath": "Images/76d90c07-91d9-4142-baf0-d64e107490cb.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -470,15 +470,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\76d90c07-91d9-4142-baf0-d64e107490cb.png"
+      "OriginalItemSpec": "wwwroot\\Images\\76d90c07-91d9-4142-baf0-d64e107490cb.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\827414f7-2c2f-41a5-96db-0d5fa28dced5.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\827414f7-2c2f-41a5-96db-0d5fa28dced5.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/827414f7-2c2f-41a5-96db-0d5fa28dced5.png",
+      "RelativePath": "Images/827414f7-2c2f-41a5-96db-0d5fa28dced5.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -489,15 +489,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\827414f7-2c2f-41a5-96db-0d5fa28dced5.png"
+      "OriginalItemSpec": "wwwroot\\Images\\827414f7-2c2f-41a5-96db-0d5fa28dced5.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\891f11f5-fbfe-4c01-8061-9753e6d0e336.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\891f11f5-fbfe-4c01-8061-9753e6d0e336.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/891f11f5-fbfe-4c01-8061-9753e6d0e336.png",
+      "RelativePath": "Images/891f11f5-fbfe-4c01-8061-9753e6d0e336.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -508,15 +508,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\891f11f5-fbfe-4c01-8061-9753e6d0e336.png"
+      "OriginalItemSpec": "wwwroot\\Images\\891f11f5-fbfe-4c01-8061-9753e6d0e336.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\8ebc88b0-6d48-4c2b-9932-3a870bffabd1.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\8ebc88b0-6d48-4c2b-9932-3a870bffabd1.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/8ebc88b0-6d48-4c2b-9932-3a870bffabd1.png",
+      "RelativePath": "Images/8ebc88b0-6d48-4c2b-9932-3a870bffabd1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -527,15 +527,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\8ebc88b0-6d48-4c2b-9932-3a870bffabd1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\8ebc88b0-6d48-4c2b-9932-3a870bffabd1.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\960ca558-f03c-4dae-93cd-cf59f6fe1742.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\960ca558-f03c-4dae-93cd-cf59f6fe1742.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/960ca558-f03c-4dae-93cd-cf59f6fe1742.jpg",
+      "RelativePath": "Images/960ca558-f03c-4dae-93cd-cf59f6fe1742.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -546,15 +546,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\960ca558-f03c-4dae-93cd-cf59f6fe1742.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\960ca558-f03c-4dae-93cd-cf59f6fe1742.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif",
+      "RelativePath": "Images/97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -565,15 +565,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif"
+      "OriginalItemSpec": "wwwroot\\Images\\97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\9e30114a-18f4-4031-a061-50fac46949d6.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\9e30114a-18f4-4031-a061-50fac46949d6.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/9e30114a-18f4-4031-a061-50fac46949d6.png",
+      "RelativePath": "Images/9e30114a-18f4-4031-a061-50fac46949d6.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -584,15 +584,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\9e30114a-18f4-4031-a061-50fac46949d6.png"
+      "OriginalItemSpec": "wwwroot\\Images\\9e30114a-18f4-4031-a061-50fac46949d6.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\a59170e8-3c34-4981-9fe0-3c024de57ea0.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\a59170e8-3c34-4981-9fe0-3c024de57ea0.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/a59170e8-3c34-4981-9fe0-3c024de57ea0.png",
+      "RelativePath": "Images/a59170e8-3c34-4981-9fe0-3c024de57ea0.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -603,15 +603,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\a59170e8-3c34-4981-9fe0-3c024de57ea0.png"
+      "OriginalItemSpec": "wwwroot\\Images\\a59170e8-3c34-4981-9fe0-3c024de57ea0.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\afe29d7c-c2c2-475a-8459-a9c1192582d2.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\afe29d7c-c2c2-475a-8459-a9c1192582d2.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/afe29d7c-c2c2-475a-8459-a9c1192582d2.png",
+      "RelativePath": "Images/afe29d7c-c2c2-475a-8459-a9c1192582d2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -622,15 +622,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\afe29d7c-c2c2-475a-8459-a9c1192582d2.png"
+      "OriginalItemSpec": "wwwroot\\Images\\afe29d7c-c2c2-475a-8459-a9c1192582d2.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Albert Einstein.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Albert Einstein.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Albert Einstein.png",
+      "RelativePath": "Images/Albert Einstein.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -641,15 +641,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Albert Einstein.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Albert Einstein.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Anh.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Anh.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Anh.jpg",
+      "RelativePath": "Images/Anh.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -660,15 +660,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Anh.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Anh.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\b23f02c8-2814-4956-bc57-aa83c33d4b1a.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\b23f02c8-2814-4956-bc57-aa83c33d4b1a.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/b23f02c8-2814-4956-bc57-aa83c33d4b1a.png",
+      "RelativePath": "Images/b23f02c8-2814-4956-bc57-aa83c33d4b1a.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -679,15 +679,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\b23f02c8-2814-4956-bc57-aa83c33d4b1a.png"
+      "OriginalItemSpec": "wwwroot\\Images\\b23f02c8-2814-4956-bc57-aa83c33d4b1a.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Canada.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Canada.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Canada.jpg",
+      "RelativePath": "Images/Canada.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -698,15 +698,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Canada.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Canada.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\cc95b384-39fd-403a-b46d-626b74609784.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\cc95b384-39fd-403a-b46d-626b74609784.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/cc95b384-39fd-403a-b46d-626b74609784.png",
+      "RelativePath": "Images/cc95b384-39fd-403a-b46d-626b74609784.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -717,15 +717,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cc95b384-39fd-403a-b46d-626b74609784.png"
+      "OriginalItemSpec": "wwwroot\\Images\\cc95b384-39fd-403a-b46d-626b74609784.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\chi-phi-du-hoc-my.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\chi-phi-du-hoc-my.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/chi-phi-du-hoc-my.webp",
+      "RelativePath": "Images/chi-phi-du-hoc-my.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -736,15 +736,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\chi-phi-du-hoc-my.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\chi-phi-du-hoc-my.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\chi-phi-du-hoc-thuy-si.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\chi-phi-du-hoc-thuy-si.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/chi-phi-du-hoc-thuy-si.webp",
+      "RelativePath": "Images/chi-phi-du-hoc-thuy-si.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -755,15 +755,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\chi-phi-du-hoc-thuy-si.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\chi-phi-du-hoc-thuy-si.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\d1dded05-c224-4406-a57d-999adcb419b7.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\d1dded05-c224-4406-a57d-999adcb419b7.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/d1dded05-c224-4406-a57d-999adcb419b7.png",
+      "RelativePath": "Images/d1dded05-c224-4406-a57d-999adcb419b7.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -774,15 +774,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\d1dded05-c224-4406-a57d-999adcb419b7.png"
+      "OriginalItemSpec": "wwwroot\\Images\\d1dded05-c224-4406-a57d-999adcb419b7.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\d93110f2-dacd-4e12-bbe5-2619f831123f.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\d93110f2-dacd-4e12-bbe5-2619f831123f.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/d93110f2-dacd-4e12-bbe5-2619f831123f.jpg",
+      "RelativePath": "Images/d93110f2-dacd-4e12-bbe5-2619f831123f.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -793,15 +793,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\d93110f2-dacd-4e12-bbe5-2619f831123f.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\d93110f2-dacd-4e12-bbe5-2619f831123f.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\danh-gia.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\danh-gia.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/danh-gia.webp",
+      "RelativePath": "Images/danh-gia.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -812,15 +812,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\danh-gia.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\danh-gia.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\dich-vu-visa-my.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\dich-vu-visa-my.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/dich-vu-visa-my.webp",
+      "RelativePath": "Images/dich-vu-visa-my.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -831,15 +831,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\dich-vu-visa-my.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\dich-vu-visa-my.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\dich-vu-visa-singapore.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\dich-vu-visa-singapore.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/dich-vu-visa-singapore.webp",
+      "RelativePath": "Images/dich-vu-visa-singapore.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -850,15 +850,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\dich-vu-visa-singapore.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\dich-vu-visa-singapore.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\dieu-kien-du-hoc-thuy-si.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\dieu-kien-du-hoc-thuy-si.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/dieu-kien-du-hoc-thuy-si.webp",
+      "RelativePath": "Images/dieu-kien-du-hoc-thuy-si.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -869,15 +869,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\dieu-kien-du-hoc-thuy-si.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\dieu-kien-du-hoc-thuy-si.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\down-arrow.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\down-arrow.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/down-arrow.png",
+      "RelativePath": "Images/down-arrow.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -888,15 +888,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\down-arrow.png"
+      "OriginalItemSpec": "wwwroot\\Images\\down-arrow.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\du học 1.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du học 1.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/du học 1.png",
+      "RelativePath": "Images/du học 1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -907,15 +907,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\du học 1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\du học 1.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\du học.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du học.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/du học.png",
+      "RelativePath": "Images/du học.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -926,15 +926,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\du học.png"
+      "OriginalItemSpec": "wwwroot\\Images\\du học.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\du-hoc-my-thinkedu.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-my-thinkedu.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/du-hoc-my-thinkedu.webp",
+      "RelativePath": "Images/du-hoc-my-thinkedu.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -945,15 +945,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\du-hoc-my-thinkedu.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\du-hoc-my-thinkedu.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\du-hoc-singapore.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-singapore.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/du-hoc-singapore.webp",
+      "RelativePath": "Images/du-hoc-singapore.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -964,15 +964,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\du-hoc-singapore.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\du-hoc-singapore.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\du-hoc-thuy-si-nganh-gi.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si-nganh-gi.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/du-hoc-thuy-si-nganh-gi.webp",
+      "RelativePath": "Images/du-hoc-thuy-si-nganh-gi.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -983,15 +983,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\du-hoc-thuy-si-nganh-gi.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\du-hoc-thuy-si-nganh-gi.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\du-hoc-thuy-si-Switzerland.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si-Switzerland.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/du-hoc-thuy-si-Switzerland.webp",
+      "RelativePath": "Images/du-hoc-thuy-si-Switzerland.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1002,15 +1002,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\du-hoc-thuy-si-Switzerland.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\du-hoc-thuy-si-Switzerland.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\du-hoc-thuy-si-thanh-pho-nao.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si-thanh-pho-nao.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/du-hoc-thuy-si-thanh-pho-nao.webp",
+      "RelativePath": "Images/du-hoc-thuy-si-thanh-pho-nao.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1021,15 +1021,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\du-hoc-thuy-si-thanh-pho-nao.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\du-hoc-thuy-si-thanh-pho-nao.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\du-hoc-thuy-si.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/du-hoc-thuy-si.jpg",
+      "RelativePath": "Images/du-hoc-thuy-si.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1040,15 +1040,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\du-hoc-thuy-si.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\du-hoc-thuy-si.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\du-hoc-thuy-si.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/du-hoc-thuy-si.webp",
+      "RelativePath": "Images/du-hoc-thuy-si.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1059,15 +1059,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\du-hoc-thuy-si.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\du-hoc-thuy-si.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\duhocmy.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\duhocmy.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/duhocmy.png",
+      "RelativePath": "Images/duhocmy.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1078,15 +1078,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\duhocmy.png"
+      "OriginalItemSpec": "wwwroot\\Images\\duhocmy.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\duhocuc.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\duhocuc.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/duhocuc.png",
+      "RelativePath": "Images/duhocuc.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1097,15 +1097,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\duhocuc.png"
+      "OriginalItemSpec": "wwwroot\\Images\\duhocuc.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\e577857e-5035-467d-bb4c-950c00ad75b6.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\e577857e-5035-467d-bb4c-950c00ad75b6.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/e577857e-5035-467d-bb4c-950c00ad75b6.png",
+      "RelativePath": "Images/e577857e-5035-467d-bb4c-950c00ad75b6.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1116,15 +1116,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\e577857e-5035-467d-bb4c-950c00ad75b6.png"
+      "OriginalItemSpec": "wwwroot\\Images\\e577857e-5035-467d-bb4c-950c00ad75b6.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\e6104711-8134-4ef9-9090-a611b0d56f98.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\e6104711-8134-4ef9-9090-a611b0d56f98.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/e6104711-8134-4ef9-9090-a611b0d56f98.png",
+      "RelativePath": "Images/e6104711-8134-4ef9-9090-a611b0d56f98.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1135,15 +1135,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\e6104711-8134-4ef9-9090-a611b0d56f98.png"
+      "OriginalItemSpec": "wwwroot\\Images\\e6104711-8134-4ef9-9090-a611b0d56f98.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\edit.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\edit.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/edit.png",
+      "RelativePath": "Images/edit.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1154,15 +1154,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\edit.png"
+      "OriginalItemSpec": "wwwroot\\Images\\edit.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\gia hạn visa 1.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\gia hạn visa 1.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/gia hạn visa 1.png",
+      "RelativePath": "Images/gia hạn visa 1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1173,15 +1173,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\gia hạn visa 1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\gia hạn visa 1.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\he-thong-giao-duc-cua-my.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\he-thong-giao-duc-cua-my.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/he-thong-giao-duc-cua-my.webp",
+      "RelativePath": "Images/he-thong-giao-duc-cua-my.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1192,15 +1192,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\he-thong-giao-duc-cua-my.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\he-thong-giao-duc-cua-my.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\hình 1.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hình 1.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/hình 1.png",
+      "RelativePath": "Images/hình 1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1211,15 +1211,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\hình 1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\hình 1.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\hình 2.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hình 2.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/hình 2.png",
+      "RelativePath": "Images/hình 2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1230,15 +1230,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\hình 2.png"
+      "OriginalItemSpec": "wwwroot\\Images\\hình 2.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\hình 3.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hình 3.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/hình 3.png",
+      "RelativePath": "Images/hình 3.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1249,15 +1249,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\hình 3.png"
+      "OriginalItemSpec": "wwwroot\\Images\\hình 3.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\hình 4.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hình 4.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/hình 4.png",
+      "RelativePath": "Images/hình 4.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1268,15 +1268,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\hình 4.png"
+      "OriginalItemSpec": "wwwroot\\Images\\hình 4.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\ho-tro-tu-van.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\ho-tro-tu-van.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/ho-tro-tu-van.webp",
+      "RelativePath": "Images/ho-tro-tu-van.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1287,15 +1287,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\ho-tro-tu-van.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\ho-tro-tu-van.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\hoc-bong.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hoc-bong.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/hoc-bong.webp",
+      "RelativePath": "Images/hoc-bong.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1306,15 +1306,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\hoc-bong.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\hoc-bong.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\hoc-tieng-anh-tai.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hoc-tieng-anh-tai.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/hoc-tieng-anh-tai.webp",
+      "RelativePath": "Images/hoc-tieng-anh-tai.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1325,15 +1325,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\hoc-tieng-anh-tai.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\hoc-tieng-anh-tai.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Ireland.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Ireland.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Ireland.jpg",
+      "RelativePath": "Images/Ireland.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1344,15 +1344,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Ireland.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Ireland.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\khuyến mãi.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\khuyến mãi.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/khuyến mãi.png",
+      "RelativePath": "Images/khuyến mãi.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1363,15 +1363,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\khuyến mãi.png"
+      "OriginalItemSpec": "wwwroot\\Images\\khuyến mãi.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\kinh-nghiem-xin-hoc-bong-du-hoc-my.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\kinh-nghiem-xin-hoc-bong-du-hoc-my.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/kinh-nghiem-xin-hoc-bong-du-hoc-my.jpg",
+      "RelativePath": "Images/kinh-nghiem-xin-hoc-bong-du-hoc-my.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1382,15 +1382,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\kinh-nghiem-xin-hoc-bong-du-hoc-my.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\kinh-nghiem-xin-hoc-bong-du-hoc-my.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\lua-chon-du-hoc-thuy-si.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\lua-chon-du-hoc-thuy-si.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/lua-chon-du-hoc-thuy-si.webp",
+      "RelativePath": "Images/lua-chon-du-hoc-thuy-si.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1401,15 +1401,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\lua-chon-du-hoc-thuy-si.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\lua-chon-du-hoc-thuy-si.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Malaysia.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Malaysia.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Malaysia.jpg",
+      "RelativePath": "Images/Malaysia.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1420,15 +1420,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Malaysia.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Malaysia.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\moi-truong-giao-duc-tai-thuy-si.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\moi-truong-giao-duc-tai-thuy-si.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/moi-truong-giao-duc-tai-thuy-si.webp",
+      "RelativePath": "Images/moi-truong-giao-duc-tai-thuy-si.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1439,15 +1439,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\moi-truong-giao-duc-tai-thuy-si.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\moi-truong-giao-duc-tai-thuy-si.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Mỹ.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Mỹ.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Mỹ.jpg",
+      "RelativePath": "Images/Mỹ.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1458,15 +1458,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Mỹ.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Mỹ.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\My.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\My.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/My.png",
+      "RelativePath": "Images/My.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1477,15 +1477,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\My.png"
+      "OriginalItemSpec": "wwwroot\\Images\\My.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\New Zealand.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\New Zealand.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/New Zealand.jpg",
+      "RelativePath": "Images/New Zealand.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1496,15 +1496,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\New Zealand.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\New Zealand.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\ngon-ngu-chinh-thuc-tai-thuy-si.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\ngon-ngu-chinh-thuc-tai-thuy-si.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/ngon-ngu-chinh-thuc-tai-thuy-si.webp",
+      "RelativePath": "Images/ngon-ngu-chinh-thuc-tai-thuy-si.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1515,15 +1515,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\ngon-ngu-chinh-thuc-tai-thuy-si.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\ngon-ngu-chinh-thuc-tai-thuy-si.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\nhan-vien.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\nhan-vien.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/nhan-vien.webp",
+      "RelativePath": "Images/nhan-vien.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1534,15 +1534,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\nhan-vien.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\nhan-vien.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\passport2.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\passport2.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/passport2.png",
+      "RelativePath": "Images/passport2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1553,15 +1553,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\passport2.png"
+      "OriginalItemSpec": "wwwroot\\Images\\passport2.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Philippines.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Philippines.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Philippines.jpg",
+      "RelativePath": "Images/Philippines.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1572,15 +1572,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Philippines.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Philippines.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\plus.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\plus.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/plus.png",
+      "RelativePath": "Images/plus.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1591,15 +1591,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\plus.png"
+      "OriginalItemSpec": "wwwroot\\Images\\plus.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\QL doanh thu.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\QL doanh thu.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/QL doanh thu.png",
+      "RelativePath": "Images/QL doanh thu.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1610,15 +1610,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\QL doanh thu.png"
+      "OriginalItemSpec": "wwwroot\\Images\\QL doanh thu.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\shool.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\shool.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/shool.png",
+      "RelativePath": "Images/shool.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1629,15 +1629,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\shool.png"
+      "OriginalItemSpec": "wwwroot\\Images\\shool.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\sing.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\sing.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/sing.png",
+      "RelativePath": "Images/sing.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1648,15 +1648,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\sing.png"
+      "OriginalItemSpec": "wwwroot\\Images\\sing.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\singapore.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\singapore.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/singapore.jpg",
+      "RelativePath": "Images/singapore.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1667,15 +1667,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\singapore.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\singapore.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\sinh-vien-singapore.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\sinh-vien-singapore.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/sinh-vien-singapore.webp",
+      "RelativePath": "Images/sinh-vien-singapore.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1686,15 +1686,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\sinh-vien-singapore.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\sinh-vien-singapore.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp",
+      "RelativePath": "Images/so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1705,15 +1705,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\so-luong-sinh-vien-quoc-te-o-my.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\so-luong-sinh-vien-quoc-te-o-my.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/so-luong-sinh-vien-quoc-te-o-my.webp",
+      "RelativePath": "Images/so-luong-sinh-vien-quoc-te-o-my.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1724,15 +1724,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\so-luong-sinh-vien-quoc-te-o-my.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\so-luong-sinh-vien-quoc-te-o-my.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\tài khoản.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tài khoản.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/tài khoản.png",
+      "RelativePath": "Images/tài khoản.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1743,15 +1743,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\tài khoản.png"
+      "OriginalItemSpec": "wwwroot\\Images\\tài khoản.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Thái Lan.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Thái Lan.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Thái Lan.jpg",
+      "RelativePath": "Images/Thái Lan.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1762,15 +1762,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Thái Lan.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Thái Lan.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\thanh-pho-melbourne-1024x512.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\thanh-pho-melbourne-1024x512.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/thanh-pho-melbourne-1024x512.webp",
+      "RelativePath": "Images/thanh-pho-melbourne-1024x512.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1781,15 +1781,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\thanh-pho-melbourne-1024x512.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\thanh-pho-melbourne-1024x512.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\thoi-tiet-o-thuy-si.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\thoi-tiet-o-thuy-si.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/thoi-tiet-o-thuy-si.webp",
+      "RelativePath": "Images/thoi-tiet-o-thuy-si.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1800,15 +1800,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\thoi-tiet-o-thuy-si.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\thoi-tiet-o-thuy-si.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Thụy Sĩ.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Thụy Sĩ.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Thụy Sĩ.jpg",
+      "RelativePath": "Images/Thụy Sĩ.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1819,15 +1819,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Thụy Sĩ.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Thụy Sĩ.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\thuysy.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\thuysy.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/thuysy.png",
+      "RelativePath": "Images/thuysy.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1838,15 +1838,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\thuysy.png"
+      "OriginalItemSpec": "wwwroot\\Images\\thuysy.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\tin tức.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tin tức.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/tin tức.png",
+      "RelativePath": "Images/tin tức.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1857,15 +1857,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\tin tức.png"
+      "OriginalItemSpec": "wwwroot\\Images\\tin tức.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\tongquanuc.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tongquanuc.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/tongquanuc.png",
+      "RelativePath": "Images/tongquanuc.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1876,15 +1876,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\tongquanuc.png"
+      "OriginalItemSpec": "wwwroot\\Images\\tongquanuc.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\tongquanuc2.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tongquanuc2.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/tongquanuc2.png",
+      "RelativePath": "Images/tongquanuc2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1895,15 +1895,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\tongquanuc2.png"
+      "OriginalItemSpec": "wwwroot\\Images\\tongquanuc2.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\tongquanuc3.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tongquanuc3.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/tongquanuc3.png",
+      "RelativePath": "Images/tongquanuc3.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1914,15 +1914,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\tongquanuc3.png"
+      "OriginalItemSpec": "wwwroot\\Images\\tongquanuc3.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\tongquanuc4.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tongquanuc4.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/tongquanuc4.png",
+      "RelativePath": "Images/tongquanuc4.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1933,15 +1933,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\tongquanuc4.png"
+      "OriginalItemSpec": "wwwroot\\Images\\tongquanuc4.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\trang chủ.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\trang chủ.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/trang chủ.png",
+      "RelativePath": "Images/trang chủ.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1952,15 +1952,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\trang chủ.png"
+      "OriginalItemSpec": "wwwroot\\Images\\trang chủ.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\trường.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\trường.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/trường.png",
+      "RelativePath": "Images/trường.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1971,15 +1971,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\trường.png"
+      "OriginalItemSpec": "wwwroot\\Images\\trường.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\tư vấn.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tư vấn.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/tư vấn.png",
+      "RelativePath": "Images/tư vấn.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1990,15 +1990,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\tư vấn.png"
+      "OriginalItemSpec": "wwwroot\\Images\\tư vấn.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Úc.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Úc.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Úc.jpg",
+      "RelativePath": "Images/Úc.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2009,15 +2009,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Úc.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Úc.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\uc.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\uc.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/uc.png",
+      "RelativePath": "Images/uc.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2028,15 +2028,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\uc.png"
+      "OriginalItemSpec": "wwwroot\\Images\\uc.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Untitled.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Untitled.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Untitled.png",
+      "RelativePath": "Images/Untitled.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2047,15 +2047,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Untitled.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Untitled.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Vanguard.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Vanguard.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Vanguard.png",
+      "RelativePath": "Images/Vanguard.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2066,15 +2066,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Vanguard.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Vanguard.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\visa 2.png",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\visa 2.png",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/visa 2.png",
+      "RelativePath": "Images/visa 2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2085,15 +2085,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\visa 2.png"
+      "OriginalItemSpec": "wwwroot\\Images\\visa 2.png"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\Visa-du-hoc-my.webp",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Visa-du-hoc-my.webp",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/Visa-du-hoc-my.webp",
+      "RelativePath": "Images/Visa-du-hoc-my.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2104,15 +2104,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Visa-du-hoc-my.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\Visa-du-hoc-my.webp"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\images\\visa-du-hoc-uc.jpg",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\visa-du-hoc-uc.jpg",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "images/visa-du-hoc-uc.jpg",
+      "RelativePath": "Images/visa-du-hoc-uc.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2123,13 +2123,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\visa-du-hoc-uc.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\visa-du-hoc-uc.jpg"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\js\\site.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\js\\site.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -2145,10 +2145,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -2164,10 +2164,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -2183,10 +2183,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -2202,10 +2202,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -2221,10 +2221,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -2240,10 +2240,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -2259,10 +2259,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -2297,10 +2297,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -2316,10 +2316,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -2335,10 +2335,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -2354,10 +2354,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -2373,10 +2373,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -2392,10 +2392,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -2411,10 +2411,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -2430,10 +2430,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -2449,10 +2449,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -2468,10 +2468,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -2487,10 +2487,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -2506,10 +2506,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -2525,10 +2525,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -2544,10 +2544,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -2563,10 +2563,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -2582,10 +2582,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -2620,10 +2620,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -2639,10 +2639,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -2658,10 +2658,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -2677,10 +2677,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -2696,10 +2696,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -2715,10 +2715,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -2734,10 +2734,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -2753,10 +2753,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -2772,10 +2772,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -2791,10 +2791,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -2810,10 +2810,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -2829,10 +2829,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -2848,10 +2848,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -2867,10 +2867,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -2886,10 +2886,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -2905,10 +2905,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -2924,10 +2924,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -2943,10 +2943,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -2962,10 +2962,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -2981,10 +2981,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -3000,10 +3000,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -3019,10 +3019,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -3038,10 +3038,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -3057,10 +3057,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -3076,10 +3076,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -3095,10 +3095,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -3114,10 +3114,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -3133,10 +3133,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -3152,10 +3152,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -3171,10 +3171,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -3190,10 +3190,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -3209,10 +3209,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Dream-Bridge",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\laptop\\OneDrive\\Máy tính\\HK1_năm 3\\Dream-Bright\\wwwroot\\",
+      "ContentRoot": "D:\\Git\\Dream-Bright\\wwwroot\\",
       "BasePath": "_content/Dream-Bridge",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",

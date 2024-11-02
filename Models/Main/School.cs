@@ -22,6 +22,7 @@ public partial class School
     public string Level { get; set; } = null!;
 
     public int IdcategoryStab { get; set; }
+    public string DetailedDescription { get; set; }
 
     public virtual StudyAbroadCatalog IdcategoryStabNavigation { get; set; } = null!;
 }
