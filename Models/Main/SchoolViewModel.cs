@@ -11,6 +11,8 @@ public class SchoolViewModel
     public decimal AverageTuition { get; set; } // Tuition fees
     public string? Level { get; set; } // School level
     public int IdcategoryStab { get; set; } // Category ID
+    public string? DetailedDescription { get; set; }
     public List<School> Schools { get; set; } = new List<School>();
+
 
 }

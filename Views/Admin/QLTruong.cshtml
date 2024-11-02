@@ -151,6 +151,10 @@ group-hover:w-[200px]">
                                 <h1 class="font-bold flex">Bậc học:
                                     <p class="school-level pl-1 font-bold text-blue-700 font-normal">@item.Level</p>
                                 </h1>
+                                <h1 class="font-bold flex">Nội dung trang chi tiết:
+                                    <p class="school-detailedDescription pl-1 font-bold text-blue-700 font-normal">
+                                        @item.DetailedDescription</p>
+                                </h1>
                                 <h1 class="font-bold flex items-center justify-between">
                                     <span class="mr-2">Học phí trung bình:
                                         <p class="school-averageTuition inline pl-1 font-bold text-black-700 font-normal">
@@ -214,6 +218,11 @@ group-hover:w-[200px]">
                                 <input asp-for="Level" class="w-[70%] p-2 border border-black rounded-lg" />
                             </div>
                             <div class="flex w-[90%] p-2 m-auto">
+                                <label class="w-[28%]">Nội dung trang chi tiết: </label>
+                                <input asp-for="DetailedDescription"
+                                    class="w-[70%] p-2 border border-black rounded-lg" />
+                            </div>
+                            <div class="flex w-[90%] p-2 m-auto">
                                 <label class="w-[28%]">ID danh mục: </label>
                                 <input asp-for="IdcategoryStab" type="number"
                                     class="w-[70%] p-2 border border-black rounded-lg" />
@@ -262,6 +271,11 @@ group-hover:w-[200px]">
                                 <label class="w-[28%]">Cấp độ: </label>
                                 <input asp-for="Level" class="w-[70%] p-2 border border-black rounded-lg" />
                             </div>
+                            <div class="flex w-[90%] p-2 m-auto">
+                                <label class="w-[28%]">Nội dung trang chi tiết: </label>
+                                <input asp-for="DetailedDescription"
+                                    class="w-[70%] p-2 border border-black rounded-lg" />
+                            </div>
                             <button id="CloseUpdateForm" type="button"
                                 class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
                             <button type="submit" class="w-[40%] p-2 bg-green-500 rounded-lg">Cập nhật trường</button>
@@ -296,6 +310,7 @@ group-hover:w-[200px]">
                     const stateCity = schoolDiv.querySelector('.school-stateCity').textContent.trim();
                     const averageTuition = schoolDiv.querySelector('.school-averageTuition').textContent.trim();
                     const level = schoolDiv.querySelector('.school-level').textContent.trim();
+                    const detailedDescription = schoolDiv.querySelector('.school-detailedDescription').textContent.trim();
 
                     // Populate the form fields with the school's data
                     document.querySelector('input[name="Id"]').value = schoolId;
@@ -305,6 +320,7 @@ group-hover:w-[200px]">
                     document.querySelector('input[name="StateCity"]').value = stateCity;
                     document.querySelector('input[name="AverageTuition"]').value = averageTuition;
                     document.querySelector('input[name="Level"]').value = level;
+                    document.querySelector('input[name="DetailedDescription"]').value = detailedDescription;
 
                     overlay.style.display = 'flex'; // Show the modal
                 });
@@ -343,6 +359,7 @@ group-hover:w-[200px]">
                     const stateCity = schoolDiv.querySelector('.school-stateCity')?.textContent.trim() || '';
                     const averageTuition = schoolDiv.querySelector('.school-averageTuition')?.textContent.trim() || '';
                     const level = schoolDiv.querySelector('.school-level')?.textContent.trim() || '';
+                    const detailedDescription = schoolDiv.querySelector('.school-detailedDescription')?.textContent.trim() || '';
 
                     // Populate form with retrieved data
                     updateForm.querySelector('input[name="Id"]').value = schoolId;
@@ -352,6 +369,7 @@ group-hover:w-[200px]">
                     updateForm.querySelector('input[name="StateCity"]').value = stateCity;
                     updateForm.querySelector('input[name="AverageTuition"]').value = averageTuition;
                     updateForm.querySelector('input[name="Level"]').value = level;
+                    updateForm.querySelector('input[name="DetailedDescription"]').value = detailedDescription;
 
                     // Display the form modal
                     updateForm.style.display = 'flex';
@@ -397,6 +415,8 @@ group-hover:w-[200px]">
                     const stateCity = schoolDiv.querySelector('.school-stateCity').textContent.trim();
                     const averageTuition = schoolDiv.querySelector('.school-averageTuition').textContent.trim().replace('$', '');
                     const level = schoolDiv.querySelector('.school-level').textContent.trim();
+                    const detailedDescription = schoolDiv.querySelector('.school-detailedDescription').textContent.trim();
+
 
                     // Populate the modal fields
                     modal.querySelector('input[name="IdSchool"]').value = schoolId;
@@ -406,6 +426,7 @@ group-hover:w-[200px]">
                     modal.querySelector('input[name="StateCity"]').value = stateCity;
                     modal.querySelector('input[name="AverageTuition"]').value = averageTuition;
                     modal.querySelector('input[name="Level"]').value = level;
+                    modal.querySelector('input[name="DetailedDescription"]').value = detailedDescription;
 
                     updateForm.style.display = 'flex'; // Show the modal
                 });
@@ -423,6 +444,8 @@ group-hover:w-[200px]">
                 modal.querySelector('input[name="StateCity"]').value = '';
                 modal.querySelector('input[name="AverageTuition"]').value = '';
                 modal.querySelector('input[name="Level"]').value = '';
+                modal.querySelector('input[name="DetailedDescription"]').value = '';
+
             };
         });
 

@@ -441,6 +441,7 @@ namespace Dream_Bridge.Controllers
                     AverageTuition = model.AverageTuition,
                     Level = model.Level,
                     IdcategoryStab = model.IdcategoryStab,
+                    DetailedDescription = model.DetailedDescription,
                 };
 
                 // Save the new school to the database
@@ -482,7 +483,7 @@ namespace Dream_Bridge.Controllers
                     school.StateCity = model.StateCity;
                     school.AverageTuition = model.AverageTuition;
                     school.Level = model.Level;
-
+                    school.DetailedDescription = model.DetailedDescription;
                     if (model.ImageFile != null)
                     {
                         try
