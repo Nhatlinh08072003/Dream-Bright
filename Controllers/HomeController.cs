@@ -53,6 +53,10 @@ public class HomeController : Controller
     // }// Thêm phương thức Chat
     public IActionResult Chat()
     {
+        if (User.IsInRole("Admin"))
+{
+    return RedirectToAction("QLChat", "Admin"); // Chuyển đến Admin/QLChat
+}
         // Kiểm tra nếu người dùng đã đăng nhập
         if (!User.Identity.IsAuthenticated)
         {

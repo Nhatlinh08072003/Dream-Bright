@@ -87,9 +87,22 @@ public class EmailController : ControllerBase
             await _context.SaveChangesAsync();
 
             // Send the email
-            await _emailService.SendEmailAsync(registrationRequest.Email, $"Đăng ký tư vấn từ {registrationRequest.FullName}", $"Tên: {registrationRequest.FullName}\nSố điện thoại: {registrationRequest.PhoneNumber}\nDịch vụ: {registrationRequest.ConsultingType}\nQuốc gia: {registrationRequest.ContentConsulting}\nNội dung: {registrationRequest.Note}");
+await _emailService.SendEmailAsync(
+    registrationRequest.Email,
+    $"DREAM BRIDGE GỬI MAIL ĐẾN {registrationRequest.FullName}",
+    $"Kính gửi {registrationRequest.FullName},\n\n" +
+    "Chúng tôi đã nhận được thông tin đăng ký tư vấn của bạn. Dưới đây là các thông tin chi tiết:\n\n" +
+    $"- Họ và tên: {registrationRequest.FullName}\n" +
+    $"- Số điện thoại: {registrationRequest.PhoneNumber}\n" +
+    $"- Dịch vụ tư vấn: {registrationRequest.ConsultingType}\n" +
+    $"- Quốc gia dự định: {registrationRequest.ContentConsulting}\n" +
+    $"- Ghi chú bổ sung: {registrationRequest.Note}\n\n" +
+    "Cảm ơn bạn đã quan tâm đến dịch vụ của chúng tôi. Đội ngũ tư vấn sẽ sớm liên hệ để hỗ trợ bạn.\n\n" +
+    "Trân trọng,\nĐội ngũ tư vấn DREAM BRIDGE"
+);
 
-            return Ok("Registration and email sent successfully!");
+            return Ok("Cảm ơn bạn! Chúng tôi đã nhận được thông tin đăng ký của bạn. Đội ngũ tư vấn sẽ sớm liên hệ và hỗ trợ bạn!");
+
         }
         catch (Exception ex)
         {
