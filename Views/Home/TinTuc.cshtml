@@ -12,7 +12,7 @@
                             <img src="@news.NewsImage" alt="Logo trường"
                                 class="h-32 w-32 object-cover rounded-md flex-shrink-0" />
                             <div class="ml-4">
-                                <a href="/chitiet/@news.IdNews">
+                                <a href="@Url.Action("Chitiet", "DichVu", new { id = news.IdNews })">
                                     <h2 class="mb-2 text-left text-xl font-bold">
                                         <span>@news.TitleNews</span>
                                     </h2> <br>
