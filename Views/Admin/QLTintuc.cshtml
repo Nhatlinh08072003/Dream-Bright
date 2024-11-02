@@ -113,7 +113,7 @@
                         <div class="w-[95%] h-[85%] flex">
                             <img class="w-[50%] h-[100%]" src="@item.NewsImage" alt="News Image" />
                             <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col justify-between">
-                                <h1 class="font-bold flex">Tên trường:
+                                <h1 class="font-bold flex">Tiêu đề:
                                     <p class="news-title pl-1 font-bold text-blue-700 font-normal">@item.TitleNews</p>
                                 </h1>
                                 <h1 class="font-bold flex">Mô tả:
@@ -122,6 +122,12 @@
                                 </h1>
                                 <h1 class="font-bold flex">Nội dung:
                                     <p class="news-NewsContent pl-1 font-bold text-blue-700 font-normal">@item.NewsContent
+                                    </p>
+                                </h1>
+                                <h1 class="font-bold flex">Ngày tạo:
+                                    <p class="news-NewsContent pl-1 font-bold text-blue-700 font-normal">
+                                        @DateTime.Now.ToString("dd/MM/yyyy")
+
                                     </p>
                                 </h1>
                             </div>
@@ -156,7 +162,7 @@
                             @* class=" mt-1 block border border-gray-300 rounded-md shadow-sm
                             focus:border-blue-500 focus:ring focus:ring-blue-200" *@
                             <div class="flex w-[90%] p-2 m-auto">
-                                <label class="w-[28%]">Tên trường: </label>
+                                <label class="w-[28%]">Tiêu đề: </label>
                                 <input asp-for=" TitleNews" class="w-[70%] p-2 border border-black rounded-lg">
                             </div>
                             <div class="flex w-[90%] p-2 m-auto">
@@ -187,21 +193,21 @@
                                 <span asp-validation-for="ImageFile"></span>
                             </div>
                             <div class="flex w-[90%] p-2 m-auto">
-                                <label class="w-[28%]">Tiêu đề tin tức: </label>
+                                <label class="w-[28%]">Tiêu đề: </label>
                                 <input asp-for="TitleNews" class="w-[70%] p-2 border border-black rounded-lg">
                             </div>
                             <div class="flex w-[90%] p-2 m-auto">
-                                <label class="w-[28%]">Mô tả tin tức: </label>
+                                <label class="w-[28%]">Mô tả: </label>
                                 <input asp-for="NewsDescription"
                                     class="w-[70%] p-2 border border-black rounded-lg"></input>
                             </div>
                             <div class="flex w-[90%] p-2 m-auto">
-                                <label class="w-[28%]">Nội dung tin tức: </label>
+                                <label class="w-[28%]">Nội dung: </label>
                                 <input asp-for="NewsContent" class="w-[70%] p-2 border border-black rounded-lg" />
                             </div>
                             <button id="closeModal" type="button"
                                 class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
-                            <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg">Cập nhật trường</button>
+                            <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg">Cập nhật tin tức</button>
                         </form>
                     </div>
                 </div>

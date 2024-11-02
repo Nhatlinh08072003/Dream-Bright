@@ -127,52 +127,6 @@ group-hover:w-[200px]">
                 </div>
             </div>
 
-
-            @* <div class="mx-auto grid grid-cols-2 mt-[1%] gap-4 w-[100%] h-[18%]" id="newsGrid">
-            @foreach (var item in Model.Schools) // Giả sử Model.Schools là danh sách các trường
-            {
-            <div class="w-[95%] h-[100%] border border-black flex items-center justify-between p-5 school-item"
-            data-id="@item.IdSchool">
-            <div class="w-[95%] h-[85%] flex">
-            <img class="w-[50%] h-[100%]" src="@item.ImageSchool" alt="School Image" />
-            <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col justify-between">
-            <h1 class="font-bold flex">Tên trường:
-            <p class="school-title pl-1 font-bold text-blue-700 font-normal">@item.TitleSchool</p>
-            </h1>
-            <h1 class="font-bold flex">Mô tả:
-            <p class="school-desciption pl-1 font-bold text-blue-700 font-normal">
-            @item.SchoolDescription</p>
-            </h1>
-            <h1 class="font-bold flex">Quốc gia:
-            <p class="school-nation pl-1 font-bold text-blue-700 font-normal">@item.Nation</p>
-            </h1>
-            <h1 class=" font-bold flex">Tỉnh bang/ Thành phố:
-            <p class="school-stateCity pl-1 font-bold text-blue-700 font-normal">@item.StateCity</p>
-            </h1>
-            <h1 class=" font-bold flex">Bậc học:
-            <p class="school-level pl-1 font-bold text-blue-700 font-normal">@item.Level</p>
-            </h1>
-            <h1 class=" font-bold flex items-center justify-between">
-            <span class="mr-2">Học phí trung bình:
-            <p class="school-averageTuition inline pl-1 font-bold text-black-700 font-normal">
-            @item.AverageTuition$</p>
-            </span>
-            </h1>
-            </div>
-            </div>
-            <div class="flex flex-col items-center">
-            <span class="cursor-pointer editIcon">
-            <i class="fas fa-edit" style="font-size: 20px;"></i> <!-- Icon sửa -->
-            </span>
-            <span class="cursor-pointer deleteIcon mt-2">
-            <i class="fas fa-trash" style="font-size: 20px;"></i> <!-- Icon xoá -->
-            </span>
-            </div>
-            </div>
-            }
-
-            </div> *@
-
             <div class="mx-auto grid grid-cols-2 mt-[1%] gap-4 w-[100%] h-[18%]" id="newsGrid">
                 @foreach (var item in Model.Schools)
                 {
@@ -308,9 +262,9 @@ group-hover:w-[200px]">
                                 <label class="w-[28%]">Cấp độ: </label>
                                 <input asp-for="Level" class="w-[70%] p-2 border border-black rounded-lg" />
                             </div>
-                            <button id="closeModal" type="button"
+                            <button id="CloseUpdateForm" type="button"
                                 class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
-                            <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg">Cập nhật trường</button>
+                            <button type="submit" class="w-[40%] p-2 bg-green-500 rounded-lg">Cập nhật trường</button>
                         </form>
                     </div>
                 </div>
@@ -424,7 +378,7 @@ group-hover:w-[200px]">
         document.addEventListener('DOMContentLoaded', () => {
             const updateForm = document.getElementById('UpdateForm');
             const modal = updateForm.querySelector('.modal');
-            const closeModalBtn = document.getElementById('closeModal');
+            const closeModalBtn = document.getElementById('CloseUpdateForm');
 
             // Utility function to close the modal
             const closeModal = () => {
@@ -484,12 +438,6 @@ group-hover:w-[200px]">
                 form.submit();
             }
         }
-
-        //đóng form cập nhật
-        document.getElementById("openModalButton").addEventListener("click", function () {
-            document.getElementById("UpdateForm").classList.remove("hidden"); // Shows the modal
-        });
-
 
     </script>
 </body>
