@@ -1,4 +1,4 @@
-@model Dream_Bridge.ViewModels.NewsViewModel
+@model NewsViewModel
 @{
     Layout = "_AdminLayout";
 }
@@ -106,21 +106,36 @@
                 </div>
             </div>
             <div class="mx-auto grid grid-cols-2 mt-[1%] gap-4 w-[100%] h-[18%]" id="newsGrid">
-                @foreach (var news in Model.NewsList) // Iterate over the list of news items
+                @foreach (var item in Model.NewsList)
                 {
-                    <div class="w-[95%] h-[100%] border border-black flex items-center justify-center">
+                    <div class="w-[95%] h-[100%] border border-black flex items-center justify-between p-5 news-item"
+                        data-id="@item.IdNews">
                         <div class="w-[95%] h-[85%] flex">
-                            <img class="w-[50%] h-[100%]" src="@news.NewsImage" alt=""
-                                class="w-auto h-[100%] flex items-center justify-center border border-black">
-                            <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col">
-                                <h1 class="font-bold">@news.TitleNews</h1>
-                                <h1 class="text-[13px] mt-[2%] flex items-end justify-between">@news.NewsDescription</h1>
-                                <h1 class="text-[13px] mt-[2%] flex items-end justify-between">Ngày tạo:
-                                    @news.CreatedAt.ToString("dd/MM/yyyy")</h1>
-                                <span class="cursor-pointer editIcon h-full flex items-end ml-auto">
-                                    <i class="fas fa-edit" style="font-size: 20px;"></i>
-                                </span>
+                            <img class="w-[50%] h-[100%]" src="@item.NewsImage" alt="News Image" />
+                            <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col justify-between">
+                                <h1 class="font-bold flex">Tên trường:
+                                    <p class="news-title pl-1 font-bold text-blue-700 font-normal">@item.TitleNews</p>
+                                </h1>
+                                <h1 class="font-bold flex">Mô tả:
+                                    <p class="news-description pl-1 font-bold text-blue-700 font-normal">
+                                        @item.NewsDescription</p>
+                                </h1>
+                                <h1 class="font-bold flex">Nội dung:
+                                    <p class="news-NewsContent pl-1 font-bold text-blue-700 font-normal">@item.NewsContent
+                                    </p>
+                                </h1>
                             </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="cursor-pointer editIcon">
+                                <i class="fas fa-edit" style="font-size: 20px;"></i> <!-- Icon sửa -->
+                            </span>
+                            <form asp-action="DeleteNews" method="post" class="delete-form mt-2" style="display:inline;">
+                                <input type="hidden" name="id" value="@item.IdNews" />
+                                <button type="button" class="cursor-pointer deleteIcon" onclick="confirmDelete(this)">
+                                    <i class="fas fa-trash" style="font-size: 20px;"></i> <!-- Icon xoá -->
+                                </button>
+                            </form>
                         </div>
                     </div>
                 }
@@ -129,66 +144,221 @@
             <!-- Div overlay, ban đầu ẩn -->
             <div class="overlay fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center hidden"
                 id="overlay">
-                <div class="modal bg-white p-10 rounded-lg shadow-lg text-center">
-                    <form id="myForm" action="QLTintuc" method="post" enctype="multipart/form-data">
-                        <div class="w-[400px] h-[100%] border border-black flex items-center justify-center">
-                            <div class="w-[100%] p-4 h-[90%] flex">
-                                <div class="m-[auto] h-[100%] text-[14px] mt-[2%] flex flex-col justify-between">
-                                    <input type="text" asp-for="TitleNews"
-                                        class="border p-2 border-black rounded mb-2 w-full" placeholder="Tiêu đề: "
-                                        required>
-                                    <input type="text" asp-for="NewsDescription"
-                                        class="border p-2 border-black rounded mb-2 w-full" placeholder="Mô tả: "
-                                        required>
-                                    <textarea asp-for="NewsContent" class="border p-2 border-black rounded mb-2 w-full"
-                                        placeholder="Nội dung: " required></textarea>
-                                    <input type="file" asp-for="ImageFile" id="imageInput" class="mt-4" accept="image/*"
-                                        required>
-                                </div>
+                <div class="w-[35%] h-[90%] modal bg-white p-10 rounded-lg shadow-lg text-center">
+                    <div class="w-[100%] h-[100%] border border-black flex items-center justify-center">
+
+                        <form asp-action="QLTinTuc" method="post" enctype="multipart/form-data" class="rounded-lg">
+                            <div class="flex w-[100%] p-2 m-auto">
+                                <label>Hình ảnh: </label>
+                                <input type="file" asp-for="ImageFile" class="ml-2" />
+                                <span asp-validation-for="ImageFile"></span>
                             </div>
-                        </div>
-                        <div class="flex justify-end mt-2">
-                            <button type="button" id="closeModal"
-                                class="bg-red-500 text-white px-4 py-2 rounded mr-5 flex items-center">
-                                <i class="fas fa-times mr-2"></i> Đóng
-                            </button>
-                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded flex items-center">
-                                <i class="fas fa-paper-plane mr-2"></i> Gửi
-                            </button>
-                        </div>
-                    </form>
+                            @* class=" mt-1 block border border-gray-300 rounded-md shadow-sm
+                            focus:border-blue-500 focus:ring focus:ring-blue-200" *@
+                            <div class="flex w-[90%] p-2 m-auto">
+                                <label class="w-[28%]">Tên trường: </label>
+                                <input asp-for=" TitleNews" class="w-[70%] p-2 border border-black rounded-lg">
+                            </div>
+                            <div class="flex w-[90%] p-2 m-auto">
+                                <label class="w-[28%]">Miêu tả: </label>
+                                <input asp-for="NewsDescription"
+                                    class="w-[70%] p-2 border border-black rounded-lg"></input>
+                            </div>
+                            <div class="flex w-[90%] p-2 m-auto">
+                                <label class="w-[28%]">Nội dung: </label>
+                                <input asp-for=" NewsContent" class="w-[70%] p-2 border border-black rounded-lg" />
+                            </div>
+                            <button id="closeModal" type="button"
+                                class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
+                            <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg">Thêm trường</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-
+            <div class="UpdateForm fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center hidden"
+                id="UpdateForm">
+                <div class="w-[35%] h-[90%] modal bg-white p-10 rounded-lg shadow-lg text-center">
+                    <div class="w-[100%] h-[100%] border border-black flex items-center justify-center">
+                        <form asp-action="UpdateNews" method="post" enctype="multipart/form-data" class="rounded-lg">
+                            <input type="hidden" name="IdNews" asp-for="IdNews" />
+                            <div class="flex w-[100%] p-2 m-auto">
+                                <label>Hình ảnh: </label>
+                                <input type="file" asp-for="ImageFile" class="ml-2" />
+                                <span asp-validation-for="ImageFile"></span>
+                            </div>
+                            <div class="flex w-[90%] p-2 m-auto">
+                                <label class="w-[28%]">Tiêu đề tin tức: </label>
+                                <input asp-for="TitleNews" class="w-[70%] p-2 border border-black rounded-lg">
+                            </div>
+                            <div class="flex w-[90%] p-2 m-auto">
+                                <label class="w-[28%]">Mô tả tin tức: </label>
+                                <input asp-for="NewsDescription"
+                                    class="w-[70%] p-2 border border-black rounded-lg"></input>
+                            </div>
+                            <div class="flex w-[90%] p-2 m-auto">
+                                <label class="w-[28%]">Nội dung tin tức: </label>
+                                <input asp-for="NewsContent" class="w-[70%] p-2 border border-black rounded-lg" />
+                            </div>
+                            <button id="closeModal" type="button"
+                                class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
+                            <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg">Cập nhật trường</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    </div>
-
     <script>
-        const addIcon = document.getElementById('addIcon');
-        const overlay = document.getElementById('overlay');
-        const closeModal = document.getElementById('closeModal');
-        const imageInput = document.getElementById('imageInput');
-        const uploadedImage = document.getElementById('uploadedImage');
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('overlay'),
+                modal = document.querySelector('.modal'),
+                newsDivs = document.querySelectorAll('#newsGrid > div'),
+                closeModal = () => overlay.style.display = 'none';
 
-        addIcon.addEventListener('click', () => {
-            overlay.classList.remove('hidden');
+            document.querySelectorAll('#addIcon').forEach(icon => {
+                icon.addEventListener('click', () => {
+                    // Clear the form fields for adding a new school
+                    document.querySelector('form').reset();
+                    overlay.style.display = 'flex';
+                });
+            });
+            // Event listener for edit buttons
+            document.querySelectorAll('.editIcon').forEach(icon => {
+                icon.addEventListener('click', function () {
+                    const newsDiv = this.closest('[data-id]');
+                    const newsId = newsDiv.getAttribute('data-id');
+                    const title = newsDiv.querySelector('.news-title').textContent.trim();
+                    const description = newsDiv.querySelector('.news-description').textContent.trim();
+                    const NewsContent = newsDiv.querySelector('.news-NewsContent').textContent.trim();
+
+                    // Populate the form fields with the school's data
+                    document.querySelector('input[name="Id"]').value = newsId;
+                    document.querySelector('input[name="TitleNews"]').value = title;
+                    document.querySelector('input[name="NewsDescription"]').value = description;
+                    document.querySelector('input[name="NewsContent"]').value = NewsContent;
+
+
+                    overlay.style.display = 'flex'; // Show the modal
+                });
+            });
+
+            document.getElementById('closeModal').addEventListener('click', () => {
+                overlay.style.display = 'none';
+            });
+            overlay.addEventListener('click', e => !modal.contains(e.target) && closeModal());
+        });
+        //chinh sua form
+        document.addEventListener('DOMContentLoaded', () => {
+            const updateForm = document.getElementById('UpdateForm');
+            const modal = updateForm.querySelector('.modal');
+
+            // Utility function to close the modal
+            const closeModal = () => {
+                updateForm.style.display = 'none';
+                clearFormFields();
+            };
+
+            // Event listener for edit buttons
+            document.querySelectorAll('.editIcon').forEach(icon => {
+                icon.addEventListener('click', function () {
+                    const newsDiv = this.closest('[data-id]');
+                    if (!newsDiv) {
+                        console.error("Không tìm thấy thông tin trường.");
+                        return;
+                    }
+
+                    // Retrieve school information from DOM
+                    const newsId = newsDiv.getAttribute('data-id');
+                    const title = newsDiv.querySelector('.news-title')?.textContent.trim() || '';
+                    const description = newsDiv.querySelector('.news-description')?.textContent.trim() || '';
+                    const NewsContent = newsDiv.querySelector('.news-NewsContent')?.textContent.trim() || '';
+
+
+                    // Populate form with retrieved data
+                    updateForm.querySelector('input[name="IdNews"]').value = newsId;
+                    updateForm.querySelector('input[name="TitleNews"]').value = title;
+                    updateForm.querySelector('input[name="NewsDescription"]').value = description;
+                    updateForm.querySelector('input[name="NewsContent"]').value = NewsContent;
+
+
+                    // Display the form modal
+                    updateForm.style.display = 'flex';
+                });
+            });
+
+            // Close modal event handlers
+            document.getElementById('closeModal').addEventListener('click', closeModal);
+            updateForm.addEventListener('click', e => {
+                if (!modal.contains(e.target)) {
+                    closeModal();
+                }
+            });
+            modal.addEventListener('click', e => {
+                e.stopPropagation();
+            });
+
+            // Utility to clear form fields
+            const clearFormFields = () => {
+                updateForm.querySelectorAll('input, input').forEach(field => field.value = '');
+            };
         });
 
-        closeModal.addEventListener('click', () => {
-            overlay.classList.add('hidden');
+        document.addEventListener('DOMContentLoaded', () => {
+            const updateForm = document.getElementById('UpdateForm');
+            const modal = updateForm.querySelector('.modal');
+            const closeModalBtn = document.getElementById('closeModal');
+
+            // Utility function to close the modal
+            const closeModal = () => {
+                updateForm.style.display = 'none';
+                clearFormFields();
+            };
+
+            // Event listener for edit buttons
+            document.querySelectorAll('.editIcon').forEach(icon => {
+                icon.addEventListener('click', function () {
+                    const newsDiv = this.closest('[data-id]');
+                    const newsId = newsDiv.getAttribute('data-id');
+                    const title = newsDiv.querySelector('.news-title').textContent.trim();
+                    const description = newsDiv.querySelector('.news-description').textContent.trim();
+                    const NewsContent = newsDiv.querySelector('.news-NewsContent').textContent.trim();
+
+                    // Populate the modal fields
+                    modal.querySelector('input[name="IdNews"]').value = newsId;
+                    modal.querySelector('input[name="TitleNews"]').value = title;
+                    modal.querySelector('input[name="NewsDescription"]').value = description;
+                    modal.querySelector('input[name="NewsContent"]').value = NewsContent;
+
+
+                    updateForm.style.display = 'flex'; // Show the modal
+                });
+            });
+
+            // Close the modal event listener
+            closeModalBtn.addEventListener('click', closeModal);
+
+            // Clear form fields after closing
+            const clearFormFields = () => {
+                modal.querySelector('input[name="IdNews"]').value = '';
+                modal.querySelector('input[name="TitleNews"]').value = '';
+                modal.querySelector('input[name="NewsDescription"]').value = '';
+                modal.querySelector('input[name="NewsContent"]').value = '';
+            };
         });
 
-        imageInput.addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    uploadedImage.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
+        function confirmDelete(button) {
+            const form = button.closest('form');
+            const schoolName = button.closest('.news-item').querySelector('.news-title').textContent.trim();
+
+            // Show confirmation dialog
+            const confirmAction = confirm(`Bạn có chắc chắn muốn xóa trường "${schoolName}"?`);
+
+            if (confirmAction) {
+                // If confirmed, submit the form
+                form.submit();
             }
-        });
+        }
+
     </script>
 </body>
 
