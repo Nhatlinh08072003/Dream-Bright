@@ -31,7 +31,7 @@ public partial class StudyAbroadDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-6MMRS9KB\\TAQUAN;Database=StudyAbroad;MultipleActiveResultSets=true;User ID=sa;Password=asdasd;Trusted_Connection=True;TrustServerCertificate=Yes");
+        => optionsBuilder.UseSqlServer("Server=UINLAN;Database=StudyAbroad;MultipleActiveResultSets=true;User ID=admin;Password=asdasd;Trusted_Connection=True;TrustServerCertificate=Yes");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
