@@ -2,9 +2,8 @@
 
 <div class="mx-4 md:mx-14">
     <div class="container mx-auto p-4">
-        <form class="flex flex-col gap-4">
+        <form class="flex flex-col gap-4" onsubmit="event.preventDefault(); searchSchools();">
             <div class="flex flex-col gap-4 md:flex-row">
-                <!-- Chọn quốc gia -->
                 <div class="flex-1">
                     <h3 class="mb-2 font-semibold">Quốc gia</h3>
                     <select id="country" class="w-full rounded-md border border-gray-300 px-4 py-2">
@@ -12,7 +11,6 @@
                     </select>
                 </div>
 
-                <!-- Chọn tỉnh bang/Thành phố -->
                 <div class="flex-1">
                     <h3 class="mb-2 font-semibold">Tỉnh bang/Thành phố</h3>
                     <select id="city" class="w-full rounded-md border border-gray-300 px-4 py-2">
@@ -20,7 +18,6 @@
                     </select>
                 </div>
 
-                <!-- Chọn bậc học -->
                 <div class="flex-1">
                     <h3 class="mb-2 font-semibold">Bậc học</h3>
                     <select id="educationLevel" class="w-full rounded-md border border-gray-300 px-4 py-2">
@@ -28,7 +25,6 @@
                     </select>
                 </div>
             </div>
-
 
             <button id="search-btn" type="button"
                 class="ml-auto w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 md:w-1/3"
@@ -86,221 +82,102 @@
     });
 
     function setupEventListeners() {
-        const countrySelect = document.getElementById('country');
-        const citySelect = document.getElementById('city');
-        const educationLevelSelect = document.getElementById('educationLevel');
-        const searchBtn = document.getElementById('search-btn');
-
-        countrySelect.addEventListener('change', loadCitiesAndEducationLevels);
-        citySelect.addEventListener('change', checkFormValidityAndFilterSchools);
-        educationLevelSelect.addEventListener('change', checkFormValidityAndFilterSchools);
-        searchBtn.addEventListener('click', checkFormValidityAndFilterSchools); // Gắn sự kiện cho nút tìm trường
+        document.getElementById('country').addEventListener('change', loadCitiesAndEducationLevels);
+        document.getElementById('city').addEventListener('change', checkFormValidity);
+        document.getElementById('educationLevel').addEventListener('change', checkFormValidity);
+        document.getElementById('search-btn').addEventListener('click', searchSchools);
     }
 
     async function loadNations() {
         try {
             const response = await fetch('/api/nations');
-            if (!response.ok) throw new Error('Network response was not ok');
             const nations = await response.json();
-            const countrySelect = document.getElementById('country');
-
-            nations.forEach(nation => {
-                const option = document.createElement('option');
-                option.value = nation;
-                option.textContent = nation;
-                countrySelect.appendChild(option);
-            });
+            populateDropdown('country', nations);
         } catch (error) {
             console.error('Error fetching nations:', error);
         }
     }
 
-    @* async function loadCitiesAndEducationLevels() {
+    async function loadCitiesAndEducationLevels() {
         const country = document.getElementById("country").value;
-        const citySelect = document.getElementById("city");
-        const educationLevelSelect = document.getElementById("educationLevel");
-
-        citySelect.innerHTML = '<option value="" disabled selected>-- Chọn tỉnh/thành phố --</option>';
-        educationLevelSelect.innerHTML = '<option value="" disabled selected>-- Chọn bậc học --</option>';
-
         if (country) {
-        try {
-                const cityResponse = await fetch(`/api/cities/${country}`);
-        if (!cityResponse.ok) throw new Error('Network response was not ok');
-                const cities = await cityResponse.json();
-                cities.forEach(city => {
-                    const option = document.createElement("option");
-                    option.value = city;
-                    option.textContent = city;
-        citySelect.appendChild(option);
-        });
-
-                const educationResponse = await fetch(`/api/education-levels/${country}`);
-        if (!educationResponse.ok) throw new Error('Network response was not ok');
-                const educationLevels = await educationResponse.json();
-                educationLevels.forEach(level => {
-                    const option = document.createElement('option');
-                    option.value = level;
-                    option.textContent = level;
-        educationLevelSelect.appendChild(option);
-        });
-        } catch (error) {
-        console.error('Error fetching data:', error);
-        }
-        }
-        checkFormValidityAndFilterSchools(); // Kiểm tra tính hợp lệ và lọc trường
-        } *@
-        async function loadCitiesAndEducationLevels() {
-            const country = document.getElementById("country").value;
-            const citySelect = document.getElementById("city");
-            const educationLevelSelect = document.getElementById("educationLevel");
-
-            // Xóa dữ liệu cũ trong dropdown
-            citySelect.innerHTML = '<option value="" disabled selected>-- Chọn tỉnh/thành phố --</option>';
-            educationLevelSelect.innerHTML = '<option value="" disabled selected>-- Chọn bậc học --</option>';
-
-            if (country) {
-                try {
-                    const cityResponse = await fetch(`/api/cities/${country}`);
-                    if (!cityResponse.ok) throw new Error('Network response was not ok');
-                    const cities = await cityResponse.json();
-                    cities.forEach(city => {
-                        const option = document.createElement("option");
-                        option.value = city;
-                        option.textContent = city;
-                        citySelect.appendChild(option);
-                    });
-
-                    const educationResponse = await fetch(`/api/education-levels/${country}`);
-                    if (!educationResponse.ok) throw new Error('Network response was not ok');
-                    const educationLevels = await educationResponse.json();
-                    educationLevels.forEach(level => {
-                        const option = document.createElement('option');
-                        option.value = level;
-                        option.textContent = level;
-                        educationLevelSelect.appendChild(option);
-                    });
-                } catch (error) {
-                    console.error('Error fetching data:', error);
-                }
+            try {
+                const [cities, educationLevels] = await Promise.all([
+                    fetch(`/api/cities/${country}`).then(res => res.json()),
+                    fetch(`/api/education-levels/${country}`).then(res => res.json())
+                ]);
+                populateDropdown('city', cities);
+                populateDropdown('educationLevel', educationLevels);
+            } catch (error) {
+                console.error('Error fetching data:', error);
             }
-            // Gọi lại hàm để kiểm tra tính hợp lệ và lọc trường
-            checkFormValidityAndFilterSchools();
         }
-    @*
-    async function checkFormValidityAndFilterSchools() {
+        checkFormValidity();
+    }
+
+    function populateDropdown(id, items) {
+        const select = document.getElementById(id);
+        select.innerHTML = `<option value="" disabled selected>-- Chọn --</option>`;
+        items.forEach(item => {
+            const option = document.createElement("option");
+            option.value = item;
+            option.textContent = item;
+            select.appendChild(option);
+        });
+    }
+
+    function checkFormValidity() {
         const country = document.getElementById("country").value;
         const city = document.getElementById("city").value;
         const educationLevel = document.getElementById("educationLevel").value;
-        const searchBtn = document.getElementById("search-btn");
+        document.getElementById("search-btn").disabled = !(country && city && educationLevel);
+    }
 
-        // Kích hoạt nút tìm trường chỉ khi có đủ thông tin
-        searchBtn.disabled = !(country && city && educationLevel);
+    async function searchSchools() {
+        const country = document.getElementById("country").value;
+        const city = document.getElementById("city").value;
+        const educationLevel = document.getElementById("educationLevel").value;
 
-        if (country && city && educationLevel) {
         try {
-                const response = await fetch(`/api/schools?country=${country}&city=${city}&educationLevel=${educationLevel}`);
-        if (!response.ok) {
-                    console.error('Error fetching schools:', response.statusText);
-                    return; // Dừng lại nếu có lỗi
-        }
-
-                const schools = await response.json();
-        renderSchoolCards(schools);
-        } catch (error) {
-        console.error('Error fetching schools:', error);
-        }
-        }
-        } *@
-        async function checkFormValidityAndFilterSchools() {
-            const country = document.getElementById("country").value;
-            const city = document.getElementById("city").value;
-            const educationLevel = document.getElementById("educationLevel").value;
-            const searchBtn = document.getElementById("search-btn");
-
-            // Kích hoạt nút tìm trường chỉ khi có đủ thông tin
-            searchBtn.disabled = !(country && city && educationLevel);
-
-            if (country && city && educationLevel) {
-                try {
-                    const response = await fetch(`/api/schools?country=${country}&city=${city}&educationLevel=${educationLevel}`);
-                    if (!response.ok) {
-                        console.error('Error fetching schools:', response.statusText);
-                        return; // Dừng lại nếu có lỗi
-                    }
-
-                    const schools = await response.json();
-                    renderSchoolCards(schools);
-                } catch (error) {
-                    console.error('Error fetching schools:', error);
-                }
-            }
-        }
-
-    @* function renderSchoolCards(schools) {
-        console.log('Schools data:', schools); // Kiểm tra dữ liệu
-        const schoolContainer = document.getElementById("school-cards"); // Sửa ID ở đây
-        schoolContainer.innerHTML = ""; // Xóa nội dung cũ
-
-        if (schools.length === 0) {
-            schoolContainer.innerHTML = "<p class='text-gray-600'>Không có trường nào để hiển thị.</p>";
-        return;
-        }
-
-        schools.forEach(school => {
-            const schoolCard = document.createElement("div");
-            schoolCard.className = "school-card mb-4 w-full px-2 sm:w-1/2";
-            schoolCard.innerHTML = `
-                <div class="flex h-full flex-row rounded-lg bg-white p-4 shadow-md hover:shadow-lg transition-shadow duration-200">
-                    <img src="${school.ImageSchool}" alt="${school.TitleSchool}" class="h-32 w-32 object-cover rounded-md flex-shrink-0" loading="lazy" />
-        <div class="flex flex-1 flex-col justify-between ml-4">
-        <a href="/DichVu/ChiTietTruong?id=${school.IdSchool}" class="cursor-pointer">
-        <h2 class="mb-2 text-left text-xl font-bold">${school.TitleSchool}</h2>
-        <ul class="list-inside list-disc text-sm text-gray-600">
-                                <li>Quốc gia: <span class="text-blue-600">${school.Nation}</span></li>
-                                <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">${school.StateCity}</span></li>
-                                <li>Bậc học: <span class="text-blue-600">${school.Level}</span></li>
-                                <li>Học phí trung bình: <span class="text-blue-600">${school.AverageTuition}</span></li>
-        </ul>
-        </a>
-        </div>
-        </div>
-        `;
-        schoolContainer.appendChild(schoolCard);
-        });
-        } *@
-
-        function renderSchoolCards(schools) {
-            const schoolContainer = document.getElementById("school-cards");
-            schoolContainer.innerHTML = ""; // Xóa nội dung cũ
-
-            if (schools.length === 0) {
-                schoolContainer.innerHTML = "<p class='text-gray-600'>Không có trường nào để hiển thị.</p>";
-                return;
-            }
-
-            schools.forEach(school => {
-                const schoolCard = document.createElement("div");
-                schoolCard.className = "school-card mb-4 w-full px-2 sm:w-1/2";
-                schoolCard.innerHTML = `
-            <div class="flex h-full flex-row rounded-lg bg-white p-4 shadow-md hover:shadow-lg transition-shadow duration-200">
-                <img src="${school.ImageSchool}" alt="${school.TitleSchool}" class="h-32 w-32 object-cover rounded-md flex-shrink-0" loading="lazy" />
-                <div class="flex flex-1 flex-col justify-between ml-4">
-                    <a href="/DichVu/ChiTietTruong?id=${school.IdSchool}" class="cursor-pointer">
-                        <h2 class="mb-2 text-left text-xl font-bold">${school.TitleSchool}</h2>
-                        <ul class="list-inside list-disc text-sm text-gray-600">
-                            <li>Quốc gia: <span class="text-blue-600">${school.Nation}</span></li>
-                            <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">${school.StateCity}</span></li>
-                            <li>Bậc học: <span class="text-blue-600">${school.Level}</span></li>
-                            <li>Học phí trung bình: <span class="text-blue-600">${school.AverageTuition}</span></li>
-                        </ul>
-                    </a>
-                </div>
-            </div>
-        `;
-                schoolContainer.appendChild(schoolCard);
+            const response = await fetch(`/api/schools`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ country, city, educationLevel })
             });
-        } loadNations
 
+            if (response.ok) {
+                const schools = await response.json();
+                renderSchoolCards(schools);
+            } else {
+                console.error("Failed to fetch schools:", response.statusText);
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    }
 
+    function renderSchoolCards(schools) {
+        const schoolContainer = document.getElementById("school-cards");
+        schoolContainer.innerHTML = schools.length
+            ? schools.map(school => `
+                <div class="school-card mb-4 w-full px-2 sm:w-1/2">
+                    <div class="flex h-full flex-row rounded-lg bg-white p-4 shadow-md hover:shadow-lg transition-shadow duration-200">
+                        <img src="${school.imageSchool}" alt="${school.titleSchool}" class="h-32 w-32 object-cover rounded-md flex-shrink-0" loading="lazy" />
+                        <div class="flex flex-1 flex-col justify-between ml-4">
+                            <a href="/DichVu/ChiTietTruong/${school.idSchool}" class="cursor-pointer">
+                                <h2 class="mb-2 text-left text-xl font-bold">${school.titleSchool}</h2>
+                                <ul class="list-inside list-disc text-sm text-gray-600">
+                                    <li>Quốc gia: <span class="text-blue-600">${school.nation}</span></li>
+                                    <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">${school.stateCity}</span></li>
+                                    <li>Bậc học: <span class="text-blue-600">${school.level}</span></li>
+                                    <li>Học phí trung bình: <span class="text-blue-600">${parseFloat(school.averageTuition).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span></li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div>`).join('')
+            : `<p class="text-gray-600">Không có trường nào để hiển thị.</p>`;
+    }
 </script>
