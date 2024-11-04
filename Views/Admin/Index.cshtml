@@ -25,9 +25,9 @@
     </style>
 </head>
 
-<body class="bg-gray-100 flex min-h-screen">
+<body class="bg-gray-100 min-h-screen">
 
-    <div class="flex w-[90%] bg-white shadow-lg rounded-lg overflow-hidden">
+    <div class="flex w-[90%] bg-white shadow-lg overflow-hidden">
         <!-- Div lớn chứa các icon -->
         <div
             class="group relative flex h-[900px] w-[50px] flex-col items-start bg-green-500 transition-all duration-500 ease-in-out hover:w-[200px]">
@@ -90,82 +90,79 @@
             <div class="grid grid-cols-3 gap-6 mb-6">
                 <!-- Số lượt truy cập -->
                 <div class="bg-blue-100 shadow-md rounded-lg p-6 text-center">
-                    <h2 class="text-xl font-bold text-blue-600">Số lượt truy cập</h2>
-                    <p class="text-3xl text-blue-500 mt-2">1500</p>
+                    <h2 class="text-xl font-bold text-blue-600">Số lượt đăng ký tài khoản</h2>
+                    <p class="text-3xl text-blue-500 mt-2">@Model.Users?.Count()</p>
                 </div>
 
                 <!-- Số lượt gửi email tư vấn -->
                 <div class="bg-green-100 shadow-md rounded-lg p-6 text-center">
-                    <h2 class="text-xl font-bold text-green-600">Số lượt gửi email tư vấn</h2>
-                    <p class="text-3xl text-green-500 mt-2">300</p>
+                    <h2 class="text-xl font-bold text-green-600">Số lượt đăng ký tư vấn</h2>
+                    <p class="text-3xl text-green-500 mt-2">@Model.ConsultingRegistrations?.Count()</p>
                 </div>
 
                 <!-- Danh sách các trường -->
-                <div class="bg-purple-100 shadow-md rounded-lg p-6">
-                    <h2 class="text-xl font-bold text-purple-600 mb-2">Danh sách các trường</h2>
-                    <ul class="list-disc pl-6 text-purple-700">
-                        <li>Trường Đại học A</li>
-                        <li>Trường Đại học B</li>
-                        <li>Trường Đại học C</li>
-                    </ul>
+                <div class="bg-purple-100 shadow-md rounded-lg p-6 text-center">
+                    <h2 class="text-xl font-bold text-purple-600 mb-2">Số lượng trường</h2>
+                    <p class="text-3xl text-green-500 mt-2">@Model.Schools?.Count()</p>
+
                 </div>
             </div>
 
             <!-- Bảng thông tin chi tiết các trường -->
-            <div class="overflow-x-auto mt-4">
-                <h2 class="text-xl font-bold mb-4">Chi tiết các trường</h2>
-                <table class="min-w-full bg-white shadow-md rounded-lg">
-                    <thead>
-                        <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                            <th class="py-3 px-6 text-left">STT</th>
-                            <th class="py-3 px-6 text-left">Tên Trường</th>
-                            <th class="py-3 px-6 text-left">Số lượng sinh viên</th>
-                            <th class="py-3 px-6 text-left">Quản lý</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-gray-600 text-sm font-light">
-                        <tr class="border-b border-gray-300 hover:bg-gray-100">
-                            <td class="py-3 px-6">1</td>
-                            <td class="py-3 px-6">Trường Đại học A</td>
-                            <td class="py-3 px-6">1000</td>
-                            <td class="py-3 px-6">
-                                <button class="text-blue-500 hover:text-blue-600 mx-2">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="text-red-500 hover:text-red-600 mx-2">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="border-b border-gray-300 hover:bg-gray-100">
-                            <td class="py-3 px-6">2</td>
-                            <td class="py-3 px-6">Trường Đại học B</td>
-                            <td class="py-3 px-6">800</td>
-                            <td class="py-3 px-6">
-                                <button class="text-blue-500 hover:text-blue-600 mx-2">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="text-red-500 hover:text-red-600 mx-2">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="border-b border-gray-300 hover:bg-gray-100">
-                            <td class="py-3 px-6">3</td>
-                            <td class="py-3 px-6">Trường Đại học C</td>
-                            <td class="py-3 px-6">1200</td>
-                            <td class="py-3 px-6">
-                                <button class="text-blue-500 hover:text-blue-600 mx-2">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="text-red-500 hover:text-red-600 mx-2">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            @* <div class="overflow-x-auto mt-4">
+            <h2 class="text-xl font-bold mb-4">Chi tiết các trường</h2>
+            <table class="min-w-full bg-white shadow-md rounded-lg">
+            <thead>
+            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+            <th class="py-3 px-6 text-left">STT</th>
+            <th class="py-3 px-6 text-left">Tên Trường</th>
+            <th class="py-3 px-6 text-left">Số lượng sinh viên</th>
+            <th class="py-3 px-6 text-left">Quản lý</th>
+            </tr>
+            </thead>
+            <tbody class="text-gray-600 text-sm font-light">
+            <tr class="border-b border-gray-300 hover:bg-gray-100">
+            <td class="py-3 px-6">1</td>
+            <td class="py-3 px-6">Trường Đại học A</td>
+            <td class="py-3 px-6">1000</td>
+            <td class="py-3 px-6">
+            <button class="text-blue-500 hover:text-blue-600 mx-2">
+            <i class="fas fa-edit"></i>
+            </button>
+            <button class="text-red-500 hover:text-red-600 mx-2">
+            <i class="fas fa-trash"></i>
+            </button>
+            </td>
+            </tr>
+            <tr class="border-b border-gray-300 hover:bg-gray-100">
+            <td class="py-3 px-6">2</td>
+            <td class="py-3 px-6">Trường Đại học B</td>
+            <td class="py-3 px-6">800</td>
+            <td class="py-3 px-6">
+            <button class="text-blue-500 hover:text-blue-600 mx-2">
+            <i class="fas fa-edit"></i>
+            </button>
+            <button class="text-red-500 hover:text-red-600 mx-2">
+            <i class="fas fa-trash"></i>
+            </button>
+            </td>
+            </tr>
+            <tr class="border-b border-gray-300 hover:bg-gray-100">
+            <td class="py-3 px-6">3</td>
+            <td class="py-3 px-6">Trường Đại học C</td>
+            <td class="py-3 px-6">1200</td>
+            <td class="py-3 px-6">
+            <button class="text-blue-500 hover:text-blue-600 mx-2">
+            <i class="fas fa-edit"></i>
+            </button>
+            <button class="text-red-500 hover:text-red-600 mx-2">
+            <i class="fas fa-trash"></i>
+            </button>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div> *@
 
             <!-- Danh sách Người dùng -->
             <h1 class="text-xl font-bold mb-4">Danh sách Email đã gửi</h1>

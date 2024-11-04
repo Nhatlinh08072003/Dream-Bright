@@ -90,6 +90,7 @@ namespace Dream_Bridge.Controllers
 
             return View(model);
         }
+
         public IActionResult QLTuvan()
         {
             var consultingRegistrations = _studyAbroadDbContext.ConsultingRegistrations.ToList();
@@ -554,11 +555,16 @@ namespace Dream_Bridge.Controllers
         public IActionResult Index()
         {
             var users = _studyAbroadDbContext.Users.ToList();
+            var consultingregistration = _studyAbroadDbContext.ConsultingRegistrations.ToList();
+            var school = _studyAbroadDbContext.Schools.ToList();
+
             var emailHistories = _studyAbroadDbContext.EmailHistories.ToList();
 
             var viewModel = new IndexViewModel
             {
                 Users = users,
+                ConsultingRegistrations = consultingregistration,
+                Schools = school,
                 EmailHistories = emailHistories,
                 Message = "Dữ liệu người dùng đã được tải thành công!"
             };
