@@ -130,7 +130,11 @@ public class HomeController : Controller
         return RedirectToAction("Chat");
     }
 
-
+    public IActionResult TinTuc()
+    {
+        var news = _context.News.ToList(); // Lấy danh sách trường từ cơ sở dữ liệu
+        return View(news);
+    }
 
     public IActionResult Privacy()
     {
