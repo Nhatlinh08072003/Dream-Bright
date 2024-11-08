@@ -3168,21 +3168,5 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\lPPFJzi-6CVll0gh5rhzVfLQf5uGGeGsZ0WQiJQmtIetCQsd96R-KrR1pZljiFCkawQTntLms869zz5tCiVrKgUBEogcSS7ny_NpFFby7RjxZ4FAHH9le9HZFWMLKuPe1K06iW6usW3oxp_WHUfn6tX-07PsJevsTrMaNjU20n77FaoGbFXdJgzzwFIgMwrMJOVT1E9uEIOJdQRujK1PCYKx6PCK-I8P8cgActaU9ue.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>Dream-Bridge</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Dream-Bridge</BasePath>
-      <RelativePath>uploads/lPPFJzi-6CVll0gh5rhzVfLQf5uGGeGsZ0WQiJQmtIetCQsd96R-KrR1pZljiFCkawQTntLms869zz5tCiVrKgUBEogcSS7ny_NpFFby7RjxZ4FAHH9le9HZFWMLKuPe1K06iW6usW3oxp_WHUfn6tX-07PsJevsTrMaNjU20n77FaoGbFXdJgzzwFIgMwrMJOVT1E9uEIOJdQRujK1PCYKx6PCK-I8P8cgActaU9ue.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\lPPFJzi-6CVll0gh5rhzVfLQf5uGGeGsZ0WQiJQmtIetCQsd96R-KrR1pZljiFCkawQTntLms869zz5tCiVrKgUBEogcSS7ny_NpFFby7RjxZ4FAHH9le9HZFWMLKuPe1K06iW6usW3oxp_WHUfn6tX-07PsJevsTrMaNjU20n77FaoGbFXdJgzzwFIgMwrMJOVT1E9uEIOJdQRujK1PCYKx6PCK-I8P8cgActaU9ue.png))</OriginalItemSpec>
-    </StaticWebAsset>
   </ItemGroup>
 </Project>

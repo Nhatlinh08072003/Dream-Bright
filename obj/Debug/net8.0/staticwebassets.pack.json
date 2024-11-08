@@ -793,10 +793,6 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\Dream-Bright\\wwwroot\\uploads\\lPPFJzi-6CVll0gh5rhzVfLQf5uGGeGsZ0WQiJQmtIetCQsd96R-KrR1pZljiFCkawQTntLms869zz5tCiVrKgUBEogcSS7ny_NpFFby7RjxZ4FAHH9le9HZFWMLKuPe1K06iW6usW3oxp_WHUfn6tX-07PsJevsTrMaNjU20n77FaoGbFXdJgzzwFIgMwrMJOVT1E9uEIOJdQRujK1PCYKx6PCK-I8P8cgActaU9ue.png",
-      "PackagePath": "staticwebassets\\uploads\\lPPFJzi-6CVll0gh5rhzVfLQf5uGGeGsZ0WQiJQmtIetCQsd96R-KrR1pZljiFCkawQTntLms869zz5tCiVrKgUBEogcSS7ny_NpFFby7RjxZ4FAHH9le9HZFWMLKuPe1K06iW6usW3oxp_WHUfn6tX-07PsJevsTrMaNjU20n77FaoGbFXdJgzzwFIgMwrMJOVT1E9uEIOJdQRujK1PCYKx6PCK-I8P8cgActaU9ue.png"
-    },
-    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Dream-Bridge.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

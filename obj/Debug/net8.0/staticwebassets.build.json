@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8LUkRMmXQ5HBThDRyt+sSDK2ZTCRy8ycOSx2iAKA2hA=",
+  "Hash": "uBOPHV8/KR23KfbwJqu9RFBN7Rn7chQNHlQeT2OEyD8=",
   "Source": "Dream-Bridge",
   "BasePath": "_content/Dream-Bridge",
   "Mode": "Default",
@@ -3796,25 +3796,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
-    },
-    {
-      "Identity": "D:\\Dream-Bright\\wwwroot\\uploads\\lPPFJzi-6CVll0gh5rhzVfLQf5uGGeGsZ0WQiJQmtIetCQsd96R-KrR1pZljiFCkawQTntLms869zz5tCiVrKgUBEogcSS7ny_NpFFby7RjxZ4FAHH9le9HZFWMLKuPe1K06iW6usW3oxp_WHUfn6tX-07PsJevsTrMaNjU20n77FaoGbFXdJgzzwFIgMwrMJOVT1E9uEIOJdQRujK1PCYKx6PCK-I8P8cgActaU9ue.png",
-      "SourceId": "Dream-Bridge",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Dream-Bright\\wwwroot\\",
-      "BasePath": "_content/Dream-Bridge",
-      "RelativePath": "uploads/lPPFJzi-6CVll0gh5rhzVfLQf5uGGeGsZ0WQiJQmtIetCQsd96R-KrR1pZljiFCkawQTntLms869zz5tCiVrKgUBEogcSS7ny_NpFFby7RjxZ4FAHH9le9HZFWMLKuPe1K06iW6usW3oxp_WHUfn6tX-07PsJevsTrMaNjU20n77FaoGbFXdJgzzwFIgMwrMJOVT1E9uEIOJdQRujK1PCYKx6PCK-I8P8cgActaU9ue.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\lPPFJzi-6CVll0gh5rhzVfLQf5uGGeGsZ0WQiJQmtIetCQsd96R-KrR1pZljiFCkawQTntLms869zz5tCiVrKgUBEogcSS7ny_NpFFby7RjxZ4FAHH9le9HZFWMLKuPe1K06iW6usW3oxp_WHUfn6tX-07PsJevsTrMaNjU20n77FaoGbFXdJgzzwFIgMwrMJOVT1E9uEIOJdQRujK1PCYKx6PCK-I8P8cgActaU9ue.png"
     }
   ]
 }
