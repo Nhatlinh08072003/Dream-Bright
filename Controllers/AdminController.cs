@@ -571,14 +571,14 @@ namespace Dream_Bridge.Controllers
 
             return View(viewModel);
         }
-
-        [Authorize(Roles = "Admin")]
         public IActionResult QLChat()
         {
-            if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin"))
-            {
-                return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
-            }
+            // if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin")||!User.IsInRole("Staff") )
+            // {
+            //     return RedirectToAction("qlchat", "admin"); 
+            //     return RedirectToAction("qlchat", "staff"); 
+            // }
+
 
             var chatMessages = _studyAbroadDbContext.ChatMessages
                 .Include(m => m.Sender)

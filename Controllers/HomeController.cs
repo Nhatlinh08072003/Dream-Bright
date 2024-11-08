@@ -54,11 +54,10 @@ public class HomeController : Controller
    
      public IActionResult Chat()
     {
-        // Kiểm tra nếu người dùng đã đăng nhập
-        if (!User.Identity.IsAuthenticated)
-        {
-            return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
-        }
+       if (User.IsInRole("Admin") || User.IsInRole("Staff"))
+{
+    return RedirectToAction("qlchat", "Admin"); // Chuyển hướng đến trang quản lý chat
+}
 
         // Lấy ID của người dùng hiện tại
         var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
