@@ -27,11 +27,12 @@ public partial class StudyAbroadDbContext : DbContext
 
     public virtual DbSet<StudyAbroadCatalog> StudyAbroadCatalogs { get; set; }
     public DbSet<EmailHistory> EmailHistories { get; set; }
-    public virtual DbSet<User> Users { get; set; }
 
+    public virtual DbSet<User> Users { get; set; }
+     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-C8F8CM6;Database=StudyAbroad;MultipleActiveResultSets=true;User ID=admin;Password=asdasd;Trusted_Connection=True;TrustServerCertificate=Yes");
+        => optionsBuilder.UseSqlServer("Server=NHATLINH\\NHATLINH;Database=StudyAbroad;MultipleActiveResultSets=true;User ID=admin;Password=asdasd;Trusted_Connection=True;TrustServerCertificate=Yes");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dream-Bridge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18aacf3fe46c5199ebdac8811ba5cfc15bd7a5fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1c3598839ee5430a53e3a42db4b4db18129f0ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dream-Bridge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dream-Bridge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
