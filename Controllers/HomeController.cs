@@ -52,7 +52,7 @@ public class HomeController : Controller
     //     return View(chatMessages);
     // }// Thêm phương thức Chat
    
-    public IActionResult Chat()
+     public IActionResult Chat()
     {
         // Kiểm tra nếu người dùng đã đăng nhập
         if (!User.Identity.IsAuthenticated)
@@ -67,9 +67,9 @@ public class HomeController : Controller
             return Unauthorized("User not authenticated.");
         }
 
-        ViewData["AdminId"] = 1;
+        ViewData["AdminId"] = 1; // Assuming 1 is the Admin's ID, change it if needed
 
-        // Chỉ lấy những tin nhắn mà người dùng hiện tại là người gửi hoặc người nhận
+        // Lấy các tin nhắn mà người dùng hiện tại là người gửi hoặc người nhận
         var chatMessages = _context.ChatMessages
             .Include(m => m.Sender)
             .Include(m => m.Receiver)
@@ -79,71 +79,105 @@ public class HomeController : Controller
 
         return View(chatMessages);
     }
-
-
-    [HttpPost]
-public async Task<IActionResult> SendChatMessage(string messageText, int receiverId, IFormFile? attachment)
+[HttpPost]
+public async Task<IActionResult> DeleteChatMessage(int messageId)
 {
-    // Kiểm tra nếu người dùng đã đăng nhập
-    if (!User.Identity.IsAuthenticated)
+    // Retrieve the message
+    var message = await _context.ChatMessages.FindAsync(messageId);
+    if (message == null)
     {
-        return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+        return NotFound("Message not found.");
     }
 
-    // Ghi log thông tin nhận được từ yêu cầu
-    _logger.LogInformation("Received message: {MessageText}, ReceiverId: {ReceiverId}, Attachment: {Attachment}", messageText, receiverId, attachment?.FileName);
-
-    // Kiểm tra nếu messageText rỗng
-    if (string.IsNullOrEmpty(messageText))
-    {
-        return BadRequest("Message text cannot be empty.");
-    }
-
-    // Kiểm tra xem người dùng đã xác thực chưa
+    // Ensure only the sender can delete their own messages
     var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-    if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int senderId))
+    if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId) || message.SenderId != userId)
     {
-        _logger.LogWarning("User is not authenticated. Claims: {Claims}", User.Claims);
-        return Unauthorized("User not authenticated.");
+        return Unauthorized("You can only delete your own messages.");
     }
 
-    // Kiểm tra receiverId có hợp lệ không
-    var receiver = await _context.Users.FindAsync(receiverId);
-    if (receiver == null)
-    {
-        return NotFound("Receiver not found.");
-    }
-
-    string attachmentUrl = null;
-
-    // Nếu có tệp đính kèm, lưu tệp lên thư mục
-    if (attachment != null)
-    {
-        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", attachment.FileName);
-        using (var stream = new FileStream(filePath, FileMode.Create))
-        {
-            await attachment.CopyToAsync(stream);
-        }
-        attachmentUrl = "/uploads/" + attachment.FileName; // Đường dẫn tới tệp trong thư mục wwwroot
-    }
-
-    // Tạo một đối tượng ChatMessage mới
-    var chatMessage = new ChatMessage
-    {
-        SenderId = senderId,
-        ReceiverId = receiverId,
-        MessageText = messageText,
-        CreatedAt = DateTime.Now,
-        AttachmentUrl = attachmentUrl // Gán URL tệp đính kèm
-    };
-
-    // Thêm tin nhắn vào cơ sở dữ liệu
-    _context.ChatMessages.Add(chatMessage);
+    // Remove the message
+    _context.ChatMessages.Remove(message);
     await _context.SaveChangesAsync();
 
-    // Chuyển hướng về trang chat
-    return RedirectToAction("Chat");
+    return RedirectToAction("Chat"); // Or you can return a JSON response for AJAX handling
 }
+
+    [HttpPost]
+    public async Task<IActionResult> SendChatMessage(string messageText, int receiverId, IFormFile? attachment)
+    {
+        // Kiểm tra nếu người dùng đã đăng nhập
+        if (!User.Identity.IsAuthenticated)
+        {
+            return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
+        }
+
+        // Ghi log thông tin nhận được từ yêu cầu
+        _logger.LogInformation("Received message: {MessageText}, ReceiverId: {ReceiverId}, Attachment: {Attachment}", messageText, receiverId, attachment?.FileName);
+
+        // Kiểm tra nếu messageText rỗng
+        if (string.IsNullOrEmpty(messageText))
+        {
+            return BadRequest("Message text cannot be empty.");
+        }
+
+        // Kiểm tra xem người dùng đã xác thực chưa
+        var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+        if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int senderId))
+        {
+            _logger.LogWarning("User is not authenticated. Claims: {Claims}", User.Claims);
+            return Unauthorized("User not authenticated.");
+        }
+
+        // Kiểm tra receiverId có hợp lệ không
+        var receiver = await _context.Users.FindAsync(receiverId);
+        if (receiver == null)
+        {
+            return NotFound("Receiver not found.");
+        }
+
+        string attachmentUrl = null;
+
+        // Nếu có tệp đính kèm, lưu tệp lên thư mục
+        if (attachment != null)
+        {
+            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+
+            // Tạo thư mục nếu chưa tồn tại
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+
+            // Tránh ghi đè tệp nếu có tên trùng nhau
+            var uniqueFileName = $"{Guid.NewGuid()}_{Path.GetFileName(attachment.FileName)}";
+            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await attachment.CopyToAsync(stream);
+            }
+
+            attachmentUrl = "/uploads/" + uniqueFileName; // Đường dẫn tới tệp trong thư mục wwwroot
+        }
+
+        // Tạo một đối tượng ChatMessage mới
+        var chatMessage = new ChatMessage
+        {
+            SenderId = senderId,
+            ReceiverId = receiverId,
+            MessageText = messageText,
+            CreatedAt = DateTime.Now,
+            AttachmentUrl = attachmentUrl // Gán URL tệp đính kèm
+        };
+
+        // Thêm tin nhắn vào cơ sở dữ liệu
+        _context.ChatMessages.Add(chatMessage);
+        await _context.SaveChangesAsync();
+
+        // Chuyển hướng về trang chat
+        return RedirectToAction("Chat");
+    }
 
     public IActionResult TinTuc()
     {

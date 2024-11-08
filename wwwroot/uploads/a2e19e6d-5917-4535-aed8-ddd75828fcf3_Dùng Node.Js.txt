@@ -1,0 +1,214 @@
+Dùng Node.Js
+I)KHỞI TẠO DỰ ÁN
+
+1.Tạo một thư mục cho dự án
+
+2.Khởi tạo dự án Node.js
+- Trong thư mục dự án, khởi tạo một file package.json bằng lệnh : npm init -y
+
+3.Cài đặt Express 
+- Tiếp theo, cài đặt Express bằng cách chạy:npm install express
+
+4. Tạo file server
+- Trong thư mục dự án, tạo một file có tên là server.js: server.js 
+- Mở server.js và thêm đoạn mã sau để tạo một server đơn giản: 
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello, Express!');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+5. Khởi động server
+- Chạy server bằng cách thực hiện lệnh sau trong Terminal:node server.js
+
+
+II) CÀI ĐẶT THƯ VIỆN 
+
+1. Nodemon - Tự động khởi động lại server khi có thay đổi
+- Nodemon giúp tự động khởi động lại server mỗi khi bạn lưu thay đổi trong code.
+- Cài đặt bằng lệnh:npm install --save-dev nodemon
+- Để sử dụng Nodemon, bạn có thể thay đổi script trong package.json để chạy nodemon server.js thay vì node server.js:
+"scripts": {
+  "start": "nodemon server.js"
+}
+
+2. Dotenv - Quản lý biến môi trường
+- dotenv giúp bạn quản lý các biến môi trường một cách bảo mật, lưu trữ trong file .env (như PORT, DB_URL, v.v.).
+- Cài đặt:npm install dotenv
+- Tạo một file .env trong thư mục dự án và thêm các biến môi trường vào, ví dụ: PORT=3000
+- Trong server.js, load biến môi trường với:
+require('dotenv').config();
+const PORT = process.env.PORT || 3000;
+
+3. Express.js Middleware - Xử lý yêu cầu JSON và URL-encoded
+- Express có các middleware để xử lý dữ liệu JSON và URL-encoded, cần thiết khi bạn nhận dữ liệu từ form hoặc API.
+- Thêm đoạn mã này vào server.js:
+app.use(express.json()); // Xử lý JSON
+app.use(express.urlencoded({ extended: true })); // Xử lý URL-encoded
+
+4. Mongoose - Kết nối và tương tác với MongoDB
+- Nếu bạn sử dụng MongoDB, Mongoose là một ORM (Object-Relational Mapping) phổ biến để quản lý cơ sở dữ liệu.
+- Cài đặt:npm install mongoose
+- Sau đó, thiết lập kết nối trong server.js: const mongoose = require('mongoose');
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((error) => console.error('MongoDB connection error:', error));
+
+5. Body-Parser - Xử lý yêu cầu HTTP
+- body-parser giúp bạn lấy dữ liệu từ POST request một cách dễ dàng (dù express.json() có thể thay thế cho nhiều trường hợp).
+- Cài đặt:npm install body-parser
+- Thêm vào server.js:
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+6. CORS - Bảo mật và hỗ trợ giao tiếp giữa các domain
+- cors giúp bạn cho phép hoặc từ chối các yêu cầu từ các domain khác.
+- Cài đặt: npm install cors
+- Thêm vào server.js
+const cors = require('cors');
+app.use(cors());
+
+7. bcryptjs - Mã hóa mật khẩu
+- bcryptjs là thư viện giúp mã hóa và xác thực mật khẩu khi bạn làm việc với thông tin người dùng.
+- Cài đặt:npm install bcryptjs
+- Bạn có thể sử dụng bcrypt để mã hóa mật khẩu người dùng trước khi lưu vào cơ sở dữ liệu.
+
+8. jsonwebtoken - Xác thực và tạo token cho người dùng
+- jsonwebtoken được sử dụng để tạo và xác thực JSON Web Token (JWT), rất phổ biến trong các ứng dụng yêu cầu xác thực.
+- Cài đặt: npm install jsonwebtoken
+
+9.Sử dụng Template Engine (như EJS, Pug, hoặc Handlebars)
+- Express hỗ trợ các template engine để bạn có thể tạo giao diện phía server và render HTML động từ backend.
+- EJS (Embedded JavaScript) là một lựa chọn phổ biến vì nó dễ sử dụng và linh hoạt.
+Thiết lập Template Engine EJS
+9.1 
+- Cài đặt EJS:npm install ejs
+9.2
+- Cấu hình EJS trong Express: Thêm cấu hình trong server.js hoặc file cấu hình của bạn:
+const express = require('express');
+const app = express();
+
+app.set('view engine', 'ejs');  // Thiết lập EJS làm view engine
+app.set('views', './src/views');  // Thư mục chứa các file giao diện EJS
+
+10.tạo file gitignore 
+- Cấu hình như sau 
+/node_modules
+/vendor
+/.idea
+.idea/
+.env
+
+
+
+my-express-app/
+├── server.js
+├── config/
+│   └── database.js
+├── models/
+│   └── User.js
+├── routes/
+│   └── userRoutes.js
+├── controllers/
+│   └── userController.js
+└── .env
+
+11 Thiết lập Kết nối Cơ sở Dữ liệu
+Trong file config/database.js, thiết lập kết nối đến cơ sở dữ liệu (ví dụ: MongoDB)
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.DB_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
+    process.exit(1); // Dừng ứng dụng nếu không thể kết nối
+  }
+};
+
+module.exports = connectDB;
+
+12.Định nghĩa Mô hình Dữ liệu
+- Trong file models/User.js, định nghĩa mô hình người dùng sử dụng Mongoose
+const mongoose = require('mongoose');
+
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+});
+
+module.exports = mongoose.model('User', userSchema);
+13. Xây dựng Logic Xử lý trong Controller
+- Trong file controllers/userController.js, thêm các hàm để xử lý logic như đăng ký, đăng nhập người dùng.
+const User = require('../models/User');
+const bcrypt = require('bcryptjs');
+
+// Đăng ký người dùng
+exports.registerUser = async (req, res) => {
+  const { name, email, password } = req.body;
+
+  // Kiểm tra nếu người dùng đã tồn tại
+  const existingUser = await User.findOne({ email });
+  if (existingUser) {
+    return res.status(400).json({ message: 'User already exists' });
+  }
+
+  // Mã hóa mật khẩu
+  const hashedPassword = await bcrypt.hash(password, 10);
+  const newUser = new User({ name, email, password: hashedPassword });
+
+  await newUser.save();
+  res.status(201).json({ message: 'User registered successfully' });
+};
+14.Định nghĩa Route
+- Trong file routes/userRoutes.js, định nghĩa các route cho người dùng.
+const express = require('express');
+const router = express.Router();
+const userController = require('../controllers/userController');
+
+router.post('/register', userController.registerUser);
+
+module.exports = router;
+15.Kết nối Routes trong server.js
+- Trong file server.js, import và sử dụng các route bạn đã định nghĩa
+const express = require('express');
+const mongoose = require('mongoose');
+const connectDB = require('./config/database');
+const userRoutes = require('./routes/userRoutes');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+connectDB(); // Kết nối đến MongoDB
+
+app.use(express.json());
+app.use('/api/users', userRoutes); // Sử dụng routes cho người dùng
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+16.Kiểm tra API
+- Sử dụng Postman hoặc một công cụ tương tự để kiểm tra các endpoint bạn đã tạo. Gửi yêu cầu POST đến http://localhost:3000/api/users/register với dữ liệu JSON:
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+
