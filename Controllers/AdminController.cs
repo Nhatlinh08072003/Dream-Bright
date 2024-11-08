@@ -593,50 +593,50 @@ namespace Dream_Bridge.Controllers
 
             return View(chatMessages);
         }
-       [HttpPost("api/chat/send")]
-public async Task<IActionResult> SendChatMessage(string messageText, int receiverId, IFormFile? attachment)
-{
-    if (!User.Identity.IsAuthenticated)
-    {
-        return Unauthorized("User not authenticated.");
-    }
-
-    var senderIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-    int senderId = senderIdClaim != null && int.TryParse(senderIdClaim.Value, out int id) ? id : 0;
-
-    if (string.IsNullOrEmpty(messageText) && attachment == null)
-    {
-        return BadRequest("Message text or attachment must be provided.");
-    }
-
-    string attachmentUrl = null;
-
-    // Handle file upload if an attachment is present
-    if (attachment != null)
-    {
-        var fileName = Path.GetFileName(attachment.FileName);
-        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
-        using (var stream = new FileStream(filePath, FileMode.Create))
+        [HttpPost("api/chat/send")]
+        public async Task<IActionResult> SendChatMessage(string messageText, int receiverId, IFormFile? attachment)
         {
-            await attachment.CopyToAsync(stream);
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Unauthorized("User not authenticated.");
+            }
+
+            var senderIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+            int senderId = senderIdClaim != null && int.TryParse(senderIdClaim.Value, out int id) ? id : 0;
+
+            if (string.IsNullOrEmpty(messageText) && attachment == null)
+            {
+                return BadRequest("Message text or attachment must be provided.");
+            }
+
+            string attachmentUrl = null;
+
+            // Handle file upload if an attachment is present
+            if (attachment != null)
+            {
+                var fileName = Path.GetFileName(attachment.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await attachment.CopyToAsync(stream);
+                }
+                attachmentUrl = "/uploads/" + fileName;
+            }
+
+            var chatMessage = new ChatMessage
+            {
+                SenderId = senderId,
+                ReceiverId = receiverId,
+                MessageText = messageText,
+                CreatedAt = DateTime.Now,
+                AttachmentUrl = attachmentUrl // Save the URL of the uploaded file
+            };
+
+            _studyAbroadDbContext.ChatMessages.Add(chatMessage);
+            await _studyAbroadDbContext.SaveChangesAsync();
+
+            return Json(new { success = true, message = chatMessage });
         }
-        attachmentUrl = "/uploads/" + fileName;
-    }
-
-    var chatMessage = new ChatMessage
-    {
-        SenderId = senderId,
-        ReceiverId = receiverId,
-        MessageText = messageText,
-        CreatedAt = DateTime.Now,
-        AttachmentUrl = attachmentUrl // Save the URL of the uploaded file
-    };
-
-    _studyAbroadDbContext.ChatMessages.Add(chatMessage);
-    await _studyAbroadDbContext.SaveChangesAsync();
-
-    return Json(new { success = true, message = chatMessage });
-}
 
         [HttpGet("api/chat/messages/{userId}")]
         public IActionResult GetChatMessages(int userId)
