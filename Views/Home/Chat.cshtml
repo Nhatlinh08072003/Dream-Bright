@@ -21,16 +21,26 @@
                     <div class="rounded-lg px-4 py-2 @((message.SenderId == adminId) ? "bg-blue-100" : "bg-green-100")">
                         <span>@message.MessageText</span>
                         <span class="text-gray-400 text-xs ml-2">@message.CreatedAt?.ToString("hh:mm tt")</span>
+                        @if (!string.IsNullOrEmpty(message.AttachmentUrl))
+                        {
+                            <div class="mt-2">
+                                <a href="@message.AttachmentUrl" target="_blank">
+                                    <img src="@message.AttachmentUrl" alt="Attachment" class="max-w-xs max-h-48 rounded-lg" />
+                                </a>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
         }
     </div>
 
-    <form id="chat-form" method="post" action="@Url.Action("SendChatMessage", "Home")" class="flex">
+    <form id="chat-form" method="post" enctype="multipart/form-data" action="@Url.Action("SendChatMessage", "Home")"
+        class="flex">
         <input type="text" name="messageText" id="messageText"
             class="border border-gray-300 rounded-lg p-3 flex-grow focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Type your message..." required />
+        <input type="file" name="attachment" id="attachment" class="border border-gray-300 rounded-lg p-3 ml-2" />
         <input type="hidden" name="receiverId" value="@adminId" /> <!-- ID của admin -->
         <button type="submit"
             class="bg-blue-500 text-white rounded-lg px-6 ml-2 transition duration-200 hover:bg-blue-600">Send</button>
@@ -39,8 +49,8 @@
 
 @section Scripts {
     <script>
-       const chatMessages = document.getElementById("chat-messages");
-chatMessages.scrollTop = chatMessages.scrollHeight;
+        const chatMessages = document.getElementById("chat-messages");
+        chatMessages.scrollTop = chatMessages.scrollHeight;
 
     </script>
 }
