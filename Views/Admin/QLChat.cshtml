@@ -125,15 +125,13 @@
 
                     <div class="mb-2 message-row flex items-center @if(isCurrentUser) {
                 <text>justify-end</text>
- }"
-                        data-user-id="@message.SenderId">
+ }" data-user-id="@message.SenderId">
                         <strong class="mr-2 @if(isCurrentUser) {
                     <text>text-blue-500</text>
  }">
                             @(isCurrentUser ? "You" : (message.SenderId == adminId ? "Admin" : senderName)):
                         </strong>
-                        <span
-                            class="bg-white p-2 rounded-lg shadow @if(isCurrentUser) {
+                        <span class="bg-white p-2 rounded-lg shadow @if(isCurrentUser) {
                     <text>bg-blue-100</text>
  }">@message.MessageText</span>
                         <span class="text-gray-500 text-sm ml-2">@message.CreatedAt?.ToString("hh:mm tt")</span>
