@@ -176,7 +176,7 @@
                             </div>
                             <button id="closeModal" type="button"
                                 class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
-                            <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg">Thêm trường</button>
+                            <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg">Thêm tin tức</button>
                         </form>
                     </div>
                 </div>
@@ -205,8 +205,7 @@
                                 <label class="w-[28%]">Nội dung: </label>
                                 <input asp-for="NewsContent" class="w-[70%] p-2 border border-black rounded-lg" />
                             </div>
-                            <button id="closeModal" type="button"
-                                class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
+                            <button id="CloseEdit" type="button" class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
                             <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg">Cập nhật tin tức</button>
                         </form>
                     </div>
@@ -312,7 +311,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const updateForm = document.getElementById('UpdateForm');
             const modal = updateForm.querySelector('.modal');
-            const closeModalBtn = document.getElementById('closeModal');
+            const closeModalBtn = document.getElementById('CloseEdit');
 
             // Utility function to close the modal
             const closeModal = () => {
@@ -357,7 +356,7 @@
             const schoolName = button.closest('.news-item').querySelector('.news-title').textContent.trim();
 
             // Show confirmation dialog
-            const confirmAction = confirm(`Bạn có chắc chắn muốn xóa trường "${schoolName}"?`);
+            const confirmAction = confirm(`Bạn có chắc chắn muốn xóa tin tức "${schoolName}"?`);
 
             if (confirmAction) {
                 // If confirmed, submit the form
