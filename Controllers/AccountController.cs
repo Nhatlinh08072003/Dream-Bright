@@ -154,6 +154,10 @@ public class AccountController : Controller
     {
         return View();
     }
+    public IActionResult PageAcc()
+    {
+        return View();
+    }
     public IActionResult ResetPassword()
     {
         var model = new ResetPasswordModel(); // Tạo một instance của ResetPasswordModel

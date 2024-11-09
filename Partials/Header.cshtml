@@ -80,6 +80,7 @@
   <!-- Phần Hotline và Menu sẽ được cố định -->
   <div class="fixed-header">
     <!-- Phần Hotline -->
+<<<<<<< HEAD
     <div class="header-hotline border-b border-gray-300 bg-white">
       <div class="container mx-auto flex items-center justify-end gap-3">
         <!-- Thêm phần đăng nhập -->
@@ -124,7 +125,54 @@
           <p>Hotline: <span class="text-red-500">083 8686 8686</span></p>
         </div>
       </div>
+=======
+    @* <div class="header-hotline border-b border-gray-300 bg-white">
+    <div class="container mx-auto flex items-center justify-end gap-3">
+    <!-- Thêm phần đăng nhập -->
+    @if (isAuthenticated)
+    {
+    var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+    <div class="relative z-10">
+    <button id="dropdownButton" class="text-black bg-white px-4 py-2 rounded focus:outline-none">
+    Welcome, @emailClaim
+    </button>
+    <div id="dropdownMenu" class="hidden w-full absolute right-0 bg-white border rounded shadow-md">
+    <ul>
+    <li><a href="/profile" class="block px-4 py-2 text-black hover:bg-gray-100">Profile</a></li>
+    <li><a href="/historyorder" class="block px-4 py-2 text-black hover:bg-gray-100">Lịch sử mua hàng</a></li>
+    <li><a href="/resetpassword" class="block px-4 py-2 text-black hover:bg-gray-100">Đổi mật khẩu</a></li>
+    <li><a href="/updateprofile" class="block px-4 py-2 text-black hover:bg-gray-100">Cập nhật thông tin</a>
+    </li>
+    </ul>
+    @if (User.IsInRole("Admin"))
+    {
+    <a href="/admin" class="block px-4 py-2 text-black hover:bg-gray-100">Admin</a>
+    }
+>>>>>>> origin/Quan-fix
     </div>
+    </div>
+    <a href="@Url.Action("Logout", "Account")" onclick="confirmLogout(event)">
+    <div class="Orther-login">Đăng xuất</div>
+    </a>
+    }
+    else
+    {
+    <a href="/login">
+    <div>
+    <button class="rounded border border-black px-3 py-1 font-bold text-black">Đăng nhập</button>
+    </div>
+    </a>
+    }
+    <div>
+    <img class="w-6" src="https://classic.vn/wp-content/uploads/2022/07/phone-icon-800x800.png"
+    alt="Phone Icon" />
+    </div>
+    <div>
+    <h4 class="text-lg font-bold">DREAM BRIDGE</h4>
+    <p>Hotline: <span class="text-red-500">083 8686 8686</span></p>
+    </div>
+    </div>
+    </div> *@
 
     <!-- Phần Logo và Menu -->
     <div class="header-menu bg-white">
@@ -200,15 +248,30 @@
             <li><a class="transition hover:text-blue-500" href="/timtruong">TÌM TRƯỜNG</a></li>
             <li><a class="transition hover:text-blue-500" href="/tintuc">TIN TỨC</a></li>
             <li><a class="transition hover:text-blue-500" href="/chat">CHAT</a></li>
-            <li>
-              <form class="flex items-center">
-                <input type="text" placeholder="Tìm kiếm..."
-                  class="rounded-l border px-2 py-1 focus:outline-none focus:ring focus:ring-blue-300" />
-                <button class="rounded-r bg-blue-500 px-3 py-1 text-white transition hover:bg-blue-600">Tìm</button>
-              </form>
-            </li>
+
+            @* <li>
+            <form class="flex items-center">
+            <input type="text" placeholder="Tìm kiếm..."
+            class="rounded-l border px-2 py-1 focus:outline-none focus:ring focus:ring-blue-300" />
+            <button class="rounded-r bg-blue-500 px-3 py-1 text-white transition hover:bg-blue-600">Tìm</button>
+            </form>
+            </li> *@
           </ul>
         </div>
+        <div class="flex mr-10">
+          <li onclick="toggleMenu()" class="relative cursor-pointer list-none mr-3">
+            <img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" class="w-6">
+            <ul id="menu" class="hidden absolute bg-white border rounded shadow-lg mt-2 p-2 list-none pl-4"
+              style="width: 200px;">
+              <li class="list-none mr-3 mb-2 w-full"><a href="/login">Đăng nhập</a></li>
+              <li class="list-none"><a href="/register">Đăng ký</a></li>
+            </ul>
+          </li>
+          <li class="list-none">
+            <img src="https://cdn-icons-png.flaticon.com/128/1827/1827422.png" class="w-6">
+          </li>
+        </div>
+
       </div>
     </div>
 
@@ -397,6 +460,10 @@
         dropdownMenu.classList.add('hidden');
       }
     });
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("hidden");
+    }
 
   </script>
 </body>
