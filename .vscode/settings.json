@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\net8.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/162b5a07-2160-4ac8-9dcb-8021e7e3f200/resourceGroups/azure-db/providers/Microsoft.Web/sites/StudyAbroad"
+}
