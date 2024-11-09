@@ -80,52 +80,7 @@
   <!-- Phần Hotline và Menu sẽ được cố định -->
   <div class="fixed-header">
     <!-- Phần Hotline -->
-<<<<<<< HEAD
-    <div class="header-hotline border-b border-gray-300 bg-white">
-      <div class="container mx-auto flex items-center justify-end gap-3">
-        <!-- Thêm phần đăng nhập -->
-        @if (isAuthenticated)
-        {
-          var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-          <div class="relative z-10">
-            <button id="dropdownButton" class="text-black bg-white px-4 py-2 rounded focus:outline-none">
-              Welcome, @emailClaim
-            </button>
-            <div id="dropdownMenu" class="hidden w-full absolute right-0   bg-white border rounded shadow-md">
-              <ul>
-                <li><a href="/profile" class="block px-4 py-2 text-black hover:bg-gray-100">Profile</a></li>
-                <li><a href="/resetpassword" class="block px-4 py-2 text-black hover:bg-gray-100">Đổi mật khẩu</a></li>
-                <li><a href="/updateprofile" class="block px-4 py-2 text-black hover:bg-gray-100">Cập nhật thông tin</a>
-                </li>
-              </ul>
-              @if (User.IsInRole("Admin"))
-              {
-                <a href="/admin" class="block px-4 py-2 text-black hover:bg-gray-100">Admin</a>
-              }
-            </div>
-          </div>
-          <a href="@Url.Action("Logout", "Account")" onclick="confirmLogout(event)">
-            <div class="Orther-login">Đăng xuất</div>
-          </a>
-        }
-        else
-        {
-          <a href="/login">
-            <div>
-              <button class="rounded border border-black px-3 py-1 font-bold text-black">Đăng nhập</button>
-            </div>
-          </a>
-        }
-        <div>
-          <img class="w-6" src="https://classic.vn/wp-content/uploads/2022/07/phone-icon-800x800.png"
-            alt="Phone Icon" />
-        </div>
-        <div>
-          <h4 class="text-lg font-bold">DREAM BRIDGE</h4>
-          <p>Hotline: <span class="text-red-500">083 8686 8686</span></p>
-        </div>
-      </div>
-=======
+
     @* <div class="header-hotline border-b border-gray-300 bg-white">
     <div class="container mx-auto flex items-center justify-end gap-3">
     <!-- Thêm phần đăng nhập -->
@@ -148,7 +103,7 @@
     {
     <a href="/admin" class="block px-4 py-2 text-black hover:bg-gray-100">Admin</a>
     }
->>>>>>> origin/Quan-fix
+    >>>>>>> origin/Quan-fix
     </div>
     </div>
     <a href="@Url.Action("Logout", "Account")" onclick="confirmLogout(event)">
