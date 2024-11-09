@@ -240,5 +240,10 @@ app.MapControllerRoute(
     pattern: "/updateprofile",
     defaults: new { controller = "Account", action = "UpdateProfile" }
 );
+app.MapControllerRoute(
+    name: "PageAcc",
+    pattern: "/pageacc",
+    defaults: new { controller = "Account", action = "PageAcc" }
+);
 
 app.Run();
