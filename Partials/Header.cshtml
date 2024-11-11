@@ -80,8 +80,7 @@
   <!-- Phần Hotline và Menu sẽ được cố định -->
   <div class="fixed-header">
     <!-- Phần Hotline -->
-
-    @* <div class="header-hotline border-b border-gray-300 bg-white">
+    @* <div class="header-hotline border-b border-gray-300 bg-white ">
     <div class="container mx-auto flex items-center justify-end gap-3">
     <!-- Thêm phần đăng nhập -->
     @if (isAuthenticated)
@@ -94,7 +93,6 @@
     <div id="dropdownMenu" class="hidden w-full absolute right-0 bg-white border rounded shadow-md">
     <ul>
     <li><a href="/profile" class="block px-4 py-2 text-black hover:bg-gray-100">Profile</a></li>
-    <li><a href="/historyorder" class="block px-4 py-2 text-black hover:bg-gray-100">Lịch sử mua hàng</a></li>
     <li><a href="/resetpassword" class="block px-4 py-2 text-black hover:bg-gray-100">Đổi mật khẩu</a></li>
     <li><a href="/updateprofile" class="block px-4 py-2 text-black hover:bg-gray-100">Cập nhật thông tin</a>
     </li>
@@ -103,7 +101,6 @@
     {
     <a href="/admin" class="block px-4 py-2 text-black hover:bg-gray-100">Admin</a>
     }
-    >>>>>>> origin/Quan-fix
     </div>
     </div>
     <a href="@Url.Action("Logout", "Account")" onclick="confirmLogout(event)">
@@ -213,19 +210,66 @@
             </li> *@
           </ul>
         </div>
-        <div class="flex mr-10">
-          <li onclick="toggleMenu()" class="relative cursor-pointer list-none mr-3">
-            <img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" class="w-6">
-            <ul id="menu" class="hidden absolute bg-white border rounded shadow-lg mt-2 p-2 list-none pl-4"
-              style="width: 200px;">
-              <li class="list-none mr-3 mb-2 w-full"><a href="/login">Đăng nhập</a></li>
-              <li class="list-none"><a href="/register">Đăng ký</a></li>
-            </ul>
-          </li>
-          <li class="list-none">
+        <div class="flex mr-10 items-center">
+          @* //tai khoan *@
+          <div class="header-hotline  bg-white">
+            <div class="container mx-auto flex items-center justify-end gap-3">
+              <!-- Phần icon và dropdown menu -->
+              @if (isAuthenticated)
+              {
+                <div class="relative">
+                  <button id="iconPersonButton" class="text-black focus:outline-none">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="User Icon"
+                      class="w-6 h-6 mb-px	">
+                  </button>
+
+                  <!-- Dropdown menu -->
+                  <div id="iconDropdownMenutk" class="hidden absolute right-0 border rounded shadow-md mt-2 w-48">
+                    <!-- Tài khoản -->
+                    <div class="px-4 py-2 text-black font-bold">
+                      <a href="/pageacc" class="text-black hover:bg-gray-100">Tài khoản</a>
+                    </div>
+                    <ul>
+                      @if (User.IsInRole("Admin"))
+                      {
+                        <li><a href="/admin" class="block px-4 py-2 text-black hover:bg-gray-100">Admin</a></li>
+                      }
+                      <li>
+                        <a href="@Url.Action("Logout", "Account")"
+                          class="block px-4 py-2  font-bold text-black hover:bg-gray-100" onclick="confirmLogout(event)">
+                          Đăng xuất
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              }
+              else
+              {
+                <div class="relative  ">
+                  <button id="iconPersonButton" class="text-black focus:outline-none">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1077/1077063.png" alt="User Icon" class="w-6 h-6">
+                  </button>
+
+
+                  <div id="iconDropdownMenutk"
+                    class="hidden absolute right-0 bg-white border rounded shadow-md mt-2 w-48">
+                    <ul>
+                      <li><a href="/login" class="block px-4 py-2 text-black hover:bg-gray-100">Đăng nhập</a></li>
+                      <li><a href="/register" class="block px-4 py-2 text-black hover:bg-gray-100">Đăng ký</a></li>
+                    </ul>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+
+          @* //thong bao *@
+          <div class="list-none mb-2">
             <img src="https://cdn-icons-png.flaticon.com/128/1827/1827422.png" class="w-6">
-          </li>
+          </div>
         </div>
+
 
       </div>
     </div>
@@ -388,14 +432,14 @@
 
     // Hide the dropdown menu if clicked outside
     window.addEventListener('click', function (e) {
-      if (!document.getElementById('dropdownButton').contains(e.target)) {
+      if (!document.getElementById('iconDropdownMenutk').contains(e.target)) {
         document.getElementById('dropdownMenu').classList.add('hidden');
       }
     });
   </script>
 
   <script>
-    document.getElementById('dropdownButton').addEventListener('click', function () {
+    document.getElementById('iconDropdownMenutk').addEventListener('click', function () {
       var dropdownMenu = document.getElementById('dropdownMenu');
 
       // Toggle ẩn hiện menu
@@ -408,10 +452,10 @@
 
     // Ẩn menu khi click ra ngoài
     document.addEventListener('click', function (event) {
-      var dropdownButton = document.getElementById('dropdownButton');
+      var iconDropdownMenutk = document.getElementById('iconDropdownMenutk');
       var dropdownMenu = document.getElementById('dropdownMenu');
 
-      if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+      if (!iconDropdownMenutk.contains(event.target) && !dropdownMenu.contains(event.target)) {
         dropdownMenu.classList.add('hidden');
       }
     });
@@ -419,8 +463,34 @@
       const menu = document.getElementById("menu");
       menu.classList.toggle("hidden");
     }
-
   </script>
+  <script>
+    // Bắt sự kiện khi nhấp vào nút icon person
+    document.getElementById('iconPersonButton').addEventListener('click', function (event) {
+      event.stopPropagation(); // Ngăn chặn sự kiện click lan ra ngoài
+      var dropdownMenu = document.getElementById('iconDropdownMenutk');
+      dropdownMenu.classList.toggle('hidden'); // Hiện/ẩn menu
+    });
+
+    // Ẩn menu nếu nhấp ra ngoài
+    document.addEventListener('click', function (event) {
+      var iconPersonButton = document.getElementById('iconPersonButton');
+      var dropdownMenu = document.getElementById('iconDropdownMenutk');
+
+      // Kiểm tra nếu nhấp ngoài khu vực nút icon hoặc menu
+      if (!iconPersonButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.add('hidden'); // Ẩn menu
+      }
+    });
+
+    // Hàm xác nhận đăng xuất
+    function confirmLogout(event) {
+      if (!confirm("Bạn có chắc muốn đăng xuất không?")) {
+        event.preventDefault(); // Ngăn không cho liên kết hoạt động nếu chọn "Không"
+      }
+    }
+  </script>
+
 </body>
 
 </html>
