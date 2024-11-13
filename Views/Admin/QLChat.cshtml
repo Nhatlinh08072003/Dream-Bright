@@ -213,11 +213,11 @@
             const messageRow = document.createElement('div');
             messageRow.className = 'mb-2 message-row flex items-center justify-end';
             messageRow.setAttribute('data-user-id', userId);
-            messageRow.innerHTML = `
+            messageRow.innerHTML =
             <strong class="mr-2 text-blue-500">You:</strong>
             <span class="bg-white p-2 rounded-lg shadow bg-blue-100">${message}</span>
             <span class="text-gray-500 text-sm ml-2">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-            `;
+            ;
 
             // Thêm tin nhắn mới vào chat
             chatMessages.appendChild(messageRow);

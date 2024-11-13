@@ -1,795 +1,795 @@
 {
   "Files": [
     {
-      "Id": "D:\\Git\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Dream-Bridge.bundle.scp.css",
+      "Id": "D:\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Dream-Bridge.bundle.scp.css",
       "PackagePath": "staticwebassets\\Dream-Bridge.bundle.scp.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\0109b52c-2463-494a-b18e-4d610ce6fd41.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\0109b52c-2463-494a-b18e-4d610ce6fd41.jpg",
       "PackagePath": "staticwebassets\\Images\\0109b52c-2463-494a-b18e-4d610ce6fd41.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\01ee0a13-9074-4f0e-8f13-bba6a52ffeea.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\01ee0a13-9074-4f0e-8f13-bba6a52ffeea.png",
       "PackagePath": "staticwebassets\\Images\\01ee0a13-9074-4f0e-8f13-bba6a52ffeea.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\022e0167-4d2a-488d-b2a4-5270426d4e49.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\022e0167-4d2a-488d-b2a4-5270426d4e49.jpg",
       "PackagePath": "staticwebassets\\Images\\022e0167-4d2a-488d-b2a4-5270426d4e49.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\08589cb0-0c65-47a0-809d-895b8bec3bf7.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\08589cb0-0c65-47a0-809d-895b8bec3bf7.jpg",
       "PackagePath": "staticwebassets\\Images\\08589cb0-0c65-47a0-809d-895b8bec3bf7.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\091431d1-51ff-491e-afaa-30ab115927f8.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\091431d1-51ff-491e-afaa-30ab115927f8.png",
       "PackagePath": "staticwebassets\\Images\\091431d1-51ff-491e-afaa-30ab115927f8.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\09327721-28a0-4cdd-b6b8-8817aa8bad87.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\09327721-28a0-4cdd-b6b8-8817aa8bad87.jpg",
       "PackagePath": "staticwebassets\\Images\\09327721-28a0-4cdd-b6b8-8817aa8bad87.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\122d9f69-88d3-437f-a770-a9688cca2b48.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\122d9f69-88d3-437f-a770-a9688cca2b48.jpg",
       "PackagePath": "staticwebassets\\Images\\122d9f69-88d3-437f-a770-a9688cca2b48.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\1539abfb-07eb-494a-9ac4-9980a4a87f8a.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\1539abfb-07eb-494a-9ac4-9980a4a87f8a.png",
       "PackagePath": "staticwebassets\\Images\\1539abfb-07eb-494a-9ac4-9980a4a87f8a.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\18d75892-0bbd-4496-a49e-c8213a5735ff.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\18d75892-0bbd-4496-a49e-c8213a5735ff.png",
       "PackagePath": "staticwebassets\\Images\\18d75892-0bbd-4496-a49e-c8213a5735ff.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\1afe85bf-1bae-49b9-bf7e-798b8572e1fb.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\1afe85bf-1bae-49b9-bf7e-798b8572e1fb.jpg",
       "PackagePath": "staticwebassets\\Images\\1afe85bf-1bae-49b9-bf7e-798b8572e1fb.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\2351a247-4dea-47b1-9b28-6abdbd130959.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\2351a247-4dea-47b1-9b28-6abdbd130959.png",
       "PackagePath": "staticwebassets\\Images\\2351a247-4dea-47b1-9b28-6abdbd130959.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\24852abb-cffd-4e31-9b09-7be4551975c3.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\24852abb-cffd-4e31-9b09-7be4551975c3.png",
       "PackagePath": "staticwebassets\\Images\\24852abb-cffd-4e31-9b09-7be4551975c3.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\27304eb0-4e9c-41c2-a372-b4f6d221a481.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\27304eb0-4e9c-41c2-a372-b4f6d221a481.png",
       "PackagePath": "staticwebassets\\Images\\27304eb0-4e9c-41c2-a372-b4f6d221a481.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\33541e19-c5c8-4494-a602-45a02352bfef.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\33541e19-c5c8-4494-a602-45a02352bfef.png",
       "PackagePath": "staticwebassets\\Images\\33541e19-c5c8-4494-a602-45a02352bfef.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\365a6f4e-9c03-4d1f-8fab-4820059f0e73.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\365a6f4e-9c03-4d1f-8fab-4820059f0e73.png",
       "PackagePath": "staticwebassets\\Images\\365a6f4e-9c03-4d1f-8fab-4820059f0e73.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\3a3233dc-a326-43e7-a749-14faecdeffe1.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\3a3233dc-a326-43e7-a749-14faecdeffe1.png",
       "PackagePath": "staticwebassets\\Images\\3a3233dc-a326-43e7-a749-14faecdeffe1.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\3ab8838e-eb88-4bdb-9d6c-2f0805a85651.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\3ab8838e-eb88-4bdb-9d6c-2f0805a85651.png",
       "PackagePath": "staticwebassets\\Images\\3ab8838e-eb88-4bdb-9d6c-2f0805a85651.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\3e899a14-b42f-439f-b9e5-2663d5a142b8.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\3e899a14-b42f-439f-b9e5-2663d5a142b8.jpg",
       "PackagePath": "staticwebassets\\Images\\3e899a14-b42f-439f-b9e5-2663d5a142b8.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\413cb3bb-0bda-4d12-b542-e148ba10204f.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\413cb3bb-0bda-4d12-b542-e148ba10204f.png",
       "PackagePath": "staticwebassets\\Images\\413cb3bb-0bda-4d12-b542-e148ba10204f.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\44a6fbcd-dbab-48fd-996d-6e6bd65ef2b7.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\44a6fbcd-dbab-48fd-996d-6e6bd65ef2b7.jpg",
       "PackagePath": "staticwebassets\\Images\\44a6fbcd-dbab-48fd-996d-6e6bd65ef2b7.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif",
       "PackagePath": "staticwebassets\\Images\\48b8a611-c6a1-4bec-87fe-61e353fa67f9.jfif"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\5a19496d-fdfb-421e-958f-0911798c9e31.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\5a19496d-fdfb-421e-958f-0911798c9e31.jpg",
       "PackagePath": "staticwebassets\\Images\\5a19496d-fdfb-421e-958f-0911798c9e31.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\5cdb970b-6706-469b-930a-af88db660dfa.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\5cdb970b-6706-469b-930a-af88db660dfa.jpg",
       "PackagePath": "staticwebassets\\Images\\5cdb970b-6706-469b-930a-af88db660dfa.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\5d8ce68a-7b19-4048-9ca0-3db8ef3cddc6.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\5d8ce68a-7b19-4048-9ca0-3db8ef3cddc6.png",
       "PackagePath": "staticwebassets\\Images\\5d8ce68a-7b19-4048-9ca0-3db8ef3cddc6.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\61700bc7-df9a-4cd4-bca4-28833bf11ed4.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\61700bc7-df9a-4cd4-bca4-28833bf11ed4.jpg",
       "PackagePath": "staticwebassets\\Images\\61700bc7-df9a-4cd4-bca4-28833bf11ed4.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\6806a6df-c8d8-48e0-af8c-2f0040f2135b.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\6806a6df-c8d8-48e0-af8c-2f0040f2135b.jpg",
       "PackagePath": "staticwebassets\\Images\\6806a6df-c8d8-48e0-af8c-2f0040f2135b.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\69df279f-94de-4a63-98e4-585ec0a5dc57.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\69df279f-94de-4a63-98e4-585ec0a5dc57.jpg",
       "PackagePath": "staticwebassets\\Images\\69df279f-94de-4a63-98e4-585ec0a5dc57.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\6b1228cc-e6cd-44d4-8c77-65bf214e4b03.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\6b1228cc-e6cd-44d4-8c77-65bf214e4b03.png",
       "PackagePath": "staticwebassets\\Images\\6b1228cc-e6cd-44d4-8c77-65bf214e4b03.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\6c9e14e9-50df-4570-9b49-782a7ad7eaa8.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\6c9e14e9-50df-4570-9b49-782a7ad7eaa8.jpg",
       "PackagePath": "staticwebassets\\Images\\6c9e14e9-50df-4570-9b49-782a7ad7eaa8.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\6fa5ea25-75d2-4f89-9c6a-eaab9e17096f.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\6fa5ea25-75d2-4f89-9c6a-eaab9e17096f.png",
       "PackagePath": "staticwebassets\\Images\\6fa5ea25-75d2-4f89-9c6a-eaab9e17096f.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\748844a9-c4c0-4553-a20d-0477a679f60e.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\748844a9-c4c0-4553-a20d-0477a679f60e.jpg",
       "PackagePath": "staticwebassets\\Images\\748844a9-c4c0-4553-a20d-0477a679f60e.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\763f03a1-31ab-41b3-84b6-b7f6ee9818dc.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\763f03a1-31ab-41b3-84b6-b7f6ee9818dc.png",
       "PackagePath": "staticwebassets\\Images\\763f03a1-31ab-41b3-84b6-b7f6ee9818dc.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\76d90c07-91d9-4142-baf0-d64e107490cb.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\76d90c07-91d9-4142-baf0-d64e107490cb.png",
       "PackagePath": "staticwebassets\\Images\\76d90c07-91d9-4142-baf0-d64e107490cb.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\7a777618-0c62-436c-97e4-ff381fe22cbb.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\7a777618-0c62-436c-97e4-ff381fe22cbb.jpg",
       "PackagePath": "staticwebassets\\Images\\7a777618-0c62-436c-97e4-ff381fe22cbb.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\8197e4f5-379b-4796-884b-6843c4c63d09.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\8197e4f5-379b-4796-884b-6843c4c63d09.png",
       "PackagePath": "staticwebassets\\Images\\8197e4f5-379b-4796-884b-6843c4c63d09.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\827414f7-2c2f-41a5-96db-0d5fa28dced5.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\827414f7-2c2f-41a5-96db-0d5fa28dced5.png",
       "PackagePath": "staticwebassets\\Images\\827414f7-2c2f-41a5-96db-0d5fa28dced5.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\891f11f5-fbfe-4c01-8061-9753e6d0e336.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\891f11f5-fbfe-4c01-8061-9753e6d0e336.png",
       "PackagePath": "staticwebassets\\Images\\891f11f5-fbfe-4c01-8061-9753e6d0e336.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\8ebc88b0-6d48-4c2b-9932-3a870bffabd1.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\8ebc88b0-6d48-4c2b-9932-3a870bffabd1.png",
       "PackagePath": "staticwebassets\\Images\\8ebc88b0-6d48-4c2b-9932-3a870bffabd1.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\960ca558-f03c-4dae-93cd-cf59f6fe1742.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\960ca558-f03c-4dae-93cd-cf59f6fe1742.jpg",
       "PackagePath": "staticwebassets\\Images\\960ca558-f03c-4dae-93cd-cf59f6fe1742.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\96a510d8-1720-4ef2-af39-dcfa4e703fff.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\96a510d8-1720-4ef2-af39-dcfa4e703fff.jpg",
       "PackagePath": "staticwebassets\\Images\\96a510d8-1720-4ef2-af39-dcfa4e703fff.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif",
       "PackagePath": "staticwebassets\\Images\\97888e6f-4aee-4498-a7f9-bfab7e59a0dd.jfif"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\99b956b7-bb6c-4dbe-b96c-e00ef9d7f51b.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\99b956b7-bb6c-4dbe-b96c-e00ef9d7f51b.png",
       "PackagePath": "staticwebassets\\Images\\99b956b7-bb6c-4dbe-b96c-e00ef9d7f51b.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\9e30114a-18f4-4031-a061-50fac46949d6.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\9e30114a-18f4-4031-a061-50fac46949d6.png",
       "PackagePath": "staticwebassets\\Images\\9e30114a-18f4-4031-a061-50fac46949d6.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Albert Einstein.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Albert Einstein.png",
       "PackagePath": "staticwebassets\\Images\\Albert Einstein.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Anh.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Anh.jpg",
       "PackagePath": "staticwebassets\\Images\\Anh.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Canada.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Canada.jpg",
       "PackagePath": "staticwebassets\\Images\\Canada.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Ireland.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Ireland.jpg",
       "PackagePath": "staticwebassets\\Images\\Ireland.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Malaysia.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Malaysia.jpg",
       "PackagePath": "staticwebassets\\Images\\Malaysia.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\My.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\My.png",
       "PackagePath": "staticwebassets\\Images\\My.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Mỹ.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Mỹ.jpg",
       "PackagePath": "staticwebassets\\Images\\Mỹ.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\New Zealand.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\New Zealand.jpg",
       "PackagePath": "staticwebassets\\Images\\New Zealand.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Philippines.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Philippines.jpg",
       "PackagePath": "staticwebassets\\Images\\Philippines.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\QL doanh thu.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\QL doanh thu.png",
       "PackagePath": "staticwebassets\\Images\\QL doanh thu.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Thái Lan.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Thái Lan.jpg",
       "PackagePath": "staticwebassets\\Images\\Thái Lan.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Thụy Sĩ.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Thụy Sĩ.jpg",
       "PackagePath": "staticwebassets\\Images\\Thụy Sĩ.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Untitled.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Untitled.png",
       "PackagePath": "staticwebassets\\Images\\Untitled.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Vanguard.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Vanguard.png",
       "PackagePath": "staticwebassets\\Images\\Vanguard.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Visa-du-hoc-my.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Visa-du-hoc-my.webp",
       "PackagePath": "staticwebassets\\Images\\Visa-du-hoc-my.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\a3bf9d67-2dc9-4c25-9a23-212275e49e61.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\a3bf9d67-2dc9-4c25-9a23-212275e49e61.png",
       "PackagePath": "staticwebassets\\Images\\a3bf9d67-2dc9-4c25-9a23-212275e49e61.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\a59170e8-3c34-4981-9fe0-3c024de57ea0.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\a59170e8-3c34-4981-9fe0-3c024de57ea0.png",
       "PackagePath": "staticwebassets\\Images\\a59170e8-3c34-4981-9fe0-3c024de57ea0.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\aee7e336-d8f2-4f4c-ac22-23f6db0875fa.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\aee7e336-d8f2-4f4c-ac22-23f6db0875fa.jpg",
       "PackagePath": "staticwebassets\\Images\\aee7e336-d8f2-4f4c-ac22-23f6db0875fa.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\afe29d7c-c2c2-475a-8459-a9c1192582d2.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\afe29d7c-c2c2-475a-8459-a9c1192582d2.png",
       "PackagePath": "staticwebassets\\Images\\afe29d7c-c2c2-475a-8459-a9c1192582d2.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\b235eea1-5b5a-468b-b9dd-d23b07249f26.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\b235eea1-5b5a-468b-b9dd-d23b07249f26.jpg",
       "PackagePath": "staticwebassets\\Images\\b235eea1-5b5a-468b-b9dd-d23b07249f26.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\b23f02c8-2814-4956-bc57-aa83c33d4b1a.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\b23f02c8-2814-4956-bc57-aa83c33d4b1a.png",
       "PackagePath": "staticwebassets\\Images\\b23f02c8-2814-4956-bc57-aa83c33d4b1a.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\cc23d8c6-834d-46c5-b2b4-acb72e1039db.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\cc23d8c6-834d-46c5-b2b4-acb72e1039db.jpg",
       "PackagePath": "staticwebassets\\Images\\cc23d8c6-834d-46c5-b2b4-acb72e1039db.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\cc95b384-39fd-403a-b46d-626b74609784.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\cc95b384-39fd-403a-b46d-626b74609784.png",
       "PackagePath": "staticwebassets\\Images\\cc95b384-39fd-403a-b46d-626b74609784.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\cea6ac1d-dcf6-4443-b340-2aa3df6ce775.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\cea6ac1d-dcf6-4443-b340-2aa3df6ce775.png",
       "PackagePath": "staticwebassets\\Images\\cea6ac1d-dcf6-4443-b340-2aa3df6ce775.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\chi-phi-du-hoc-my.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\chi-phi-du-hoc-my.webp",
       "PackagePath": "staticwebassets\\Images\\chi-phi-du-hoc-my.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\chi-phi-du-hoc-thuy-si.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\chi-phi-du-hoc-thuy-si.webp",
       "PackagePath": "staticwebassets\\Images\\chi-phi-du-hoc-thuy-si.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\d1dded05-c224-4406-a57d-999adcb419b7.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\d1dded05-c224-4406-a57d-999adcb419b7.png",
       "PackagePath": "staticwebassets\\Images\\d1dded05-c224-4406-a57d-999adcb419b7.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\d93110f2-dacd-4e12-bbe5-2619f831123f.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\d93110f2-dacd-4e12-bbe5-2619f831123f.jpg",
       "PackagePath": "staticwebassets\\Images\\d93110f2-dacd-4e12-bbe5-2619f831123f.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\danh-gia.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\danh-gia.webp",
       "PackagePath": "staticwebassets\\Images\\danh-gia.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\dich-vu-visa-my.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\dich-vu-visa-my.webp",
       "PackagePath": "staticwebassets\\Images\\dich-vu-visa-my.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\dich-vu-visa-singapore.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\dich-vu-visa-singapore.webp",
       "PackagePath": "staticwebassets\\Images\\dich-vu-visa-singapore.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\dieu-kien-du-hoc-thuy-si.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\dieu-kien-du-hoc-thuy-si.webp",
       "PackagePath": "staticwebassets\\Images\\dieu-kien-du-hoc-thuy-si.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\down-arrow.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\down-arrow.png",
       "PackagePath": "staticwebassets\\Images\\down-arrow.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du học 1.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\du học 1.png",
       "PackagePath": "staticwebassets\\Images\\du học 1.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du học.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\du học.png",
       "PackagePath": "staticwebassets\\Images\\du học.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-my-thinkedu.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\du-hoc-my-thinkedu.webp",
       "PackagePath": "staticwebassets\\Images\\du-hoc-my-thinkedu.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-singapore.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\du-hoc-singapore.webp",
       "PackagePath": "staticwebassets\\Images\\du-hoc-singapore.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si-Switzerland.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si-Switzerland.webp",
       "PackagePath": "staticwebassets\\Images\\du-hoc-thuy-si-Switzerland.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si-nganh-gi.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si-nganh-gi.webp",
       "PackagePath": "staticwebassets\\Images\\du-hoc-thuy-si-nganh-gi.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si-thanh-pho-nao.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si-thanh-pho-nao.webp",
       "PackagePath": "staticwebassets\\Images\\du-hoc-thuy-si-thanh-pho-nao.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si.jpg",
       "PackagePath": "staticwebassets\\Images\\du-hoc-thuy-si.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\du-hoc-thuy-si.webp",
       "PackagePath": "staticwebassets\\Images\\du-hoc-thuy-si.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\duhocmy.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\duhocmy.png",
       "PackagePath": "staticwebassets\\Images\\duhocmy.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\duhocuc.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\duhocuc.png",
       "PackagePath": "staticwebassets\\Images\\duhocuc.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\e0bcb3f3-1765-4216-8a17-d0f8b963ed02.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\e0bcb3f3-1765-4216-8a17-d0f8b963ed02.jpg",
       "PackagePath": "staticwebassets\\Images\\e0bcb3f3-1765-4216-8a17-d0f8b963ed02.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\e577857e-5035-467d-bb4c-950c00ad75b6.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\e577857e-5035-467d-bb4c-950c00ad75b6.png",
       "PackagePath": "staticwebassets\\Images\\e577857e-5035-467d-bb4c-950c00ad75b6.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\e6104711-8134-4ef9-9090-a611b0d56f98.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\e6104711-8134-4ef9-9090-a611b0d56f98.png",
       "PackagePath": "staticwebassets\\Images\\e6104711-8134-4ef9-9090-a611b0d56f98.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\e8a5f8f3-d90d-4802-ad83-7f442392a669.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\e8a5f8f3-d90d-4802-ad83-7f442392a669.jpg",
       "PackagePath": "staticwebassets\\Images\\e8a5f8f3-d90d-4802-ad83-7f442392a669.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\ecd3477d-896c-410e-a416-15df8819592f.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\ecd3477d-896c-410e-a416-15df8819592f.jpg",
       "PackagePath": "staticwebassets\\Images\\ecd3477d-896c-410e-a416-15df8819592f.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\edit.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\edit.png",
       "PackagePath": "staticwebassets\\Images\\edit.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\eeb68170-4841-4ae4-8b5d-4be4989f5ca8.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\eeb68170-4841-4ae4-8b5d-4be4989f5ca8.jpg",
       "PackagePath": "staticwebassets\\Images\\eeb68170-4841-4ae4-8b5d-4be4989f5ca8.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\gia hạn visa 1.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\gia hạn visa 1.png",
       "PackagePath": "staticwebassets\\Images\\gia hạn visa 1.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\he-thong-giao-duc-cua-my.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\he-thong-giao-duc-cua-my.webp",
       "PackagePath": "staticwebassets\\Images\\he-thong-giao-duc-cua-my.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\ho-tro-tu-van.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\ho-tro-tu-van.webp",
       "PackagePath": "staticwebassets\\Images\\ho-tro-tu-van.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hoc-bong.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\hoc-bong.webp",
       "PackagePath": "staticwebassets\\Images\\hoc-bong.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hoc-tieng-anh-tai.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\hoc-tieng-anh-tai.webp",
       "PackagePath": "staticwebassets\\Images\\hoc-tieng-anh-tai.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hình 1.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\hình 1.png",
       "PackagePath": "staticwebassets\\Images\\hình 1.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hình 2.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\hình 2.png",
       "PackagePath": "staticwebassets\\Images\\hình 2.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hình 3.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\hình 3.png",
       "PackagePath": "staticwebassets\\Images\\hình 3.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\hình 4.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\hình 4.png",
       "PackagePath": "staticwebassets\\Images\\hình 4.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\khuyến mãi.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\khuyến mãi.png",
       "PackagePath": "staticwebassets\\Images\\khuyến mãi.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\kinh-nghiem-xin-hoc-bong-du-hoc-my.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\kinh-nghiem-xin-hoc-bong-du-hoc-my.jpg",
       "PackagePath": "staticwebassets\\Images\\kinh-nghiem-xin-hoc-bong-du-hoc-my.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\logo_ad7d0fb1-eaf4-4af0-b86c-3129990aecfa.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\logo_ad7d0fb1-eaf4-4af0-b86c-3129990aecfa.jpg",
       "PackagePath": "staticwebassets\\Images\\logo_ad7d0fb1-eaf4-4af0-b86c-3129990aecfa.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\logo_db62c3d3-6335-4686-b0ac-4601e640782b.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\logo_db62c3d3-6335-4686-b0ac-4601e640782b.jpg",
       "PackagePath": "staticwebassets\\Images\\logo_db62c3d3-6335-4686-b0ac-4601e640782b.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\lua-chon-du-hoc-thuy-si.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\lua-chon-du-hoc-thuy-si.webp",
       "PackagePath": "staticwebassets\\Images\\lua-chon-du-hoc-thuy-si.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\moi-truong-giao-duc-tai-thuy-si.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\moi-truong-giao-duc-tai-thuy-si.webp",
       "PackagePath": "staticwebassets\\Images\\moi-truong-giao-duc-tai-thuy-si.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\ngon-ngu-chinh-thuc-tai-thuy-si.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\ngon-ngu-chinh-thuc-tai-thuy-si.webp",
       "PackagePath": "staticwebassets\\Images\\ngon-ngu-chinh-thuc-tai-thuy-si.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\nhan-vien.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\nhan-vien.webp",
       "PackagePath": "staticwebassets\\Images\\nhan-vien.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\passport2.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\passport2.png",
       "PackagePath": "staticwebassets\\Images\\passport2.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\plus.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\plus.png",
       "PackagePath": "staticwebassets\\Images\\plus.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\shool.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\shool.png",
       "PackagePath": "staticwebassets\\Images\\shool.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\sing.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\sing.png",
       "PackagePath": "staticwebassets\\Images\\sing.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\singapore.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\singapore.jpg",
       "PackagePath": "staticwebassets\\Images\\singapore.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\sinh-vien-singapore.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\sinh-vien-singapore.webp",
       "PackagePath": "staticwebassets\\Images\\sinh-vien-singapore.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp",
       "PackagePath": "staticwebassets\\Images\\so-luong-du-hoc-sinh-viet-nam-o-nuoc-ngoai.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\so-luong-sinh-vien-quoc-te-o-my.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\so-luong-sinh-vien-quoc-te-o-my.webp",
       "PackagePath": "staticwebassets\\Images\\so-luong-sinh-vien-quoc-te-o-my.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\thanh-pho-melbourne-1024x512.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\thanh-pho-melbourne-1024x512.webp",
       "PackagePath": "staticwebassets\\Images\\thanh-pho-melbourne-1024x512.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\thoi-tiet-o-thuy-si.webp",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\thoi-tiet-o-thuy-si.webp",
       "PackagePath": "staticwebassets\\Images\\thoi-tiet-o-thuy-si.webp"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\thuysy.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\thuysy.png",
       "PackagePath": "staticwebassets\\Images\\thuysy.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tin tức.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\tin tức.png",
       "PackagePath": "staticwebassets\\Images\\tin tức.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tongquanuc.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\tongquanuc.png",
       "PackagePath": "staticwebassets\\Images\\tongquanuc.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tongquanuc2.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\tongquanuc2.png",
       "PackagePath": "staticwebassets\\Images\\tongquanuc2.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tongquanuc3.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\tongquanuc3.png",
       "PackagePath": "staticwebassets\\Images\\tongquanuc3.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tongquanuc4.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\tongquanuc4.png",
       "PackagePath": "staticwebassets\\Images\\tongquanuc4.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\trang chủ.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\trang chủ.png",
       "PackagePath": "staticwebassets\\Images\\trang chủ.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\trường.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\trường.png",
       "PackagePath": "staticwebassets\\Images\\trường.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tài khoản.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\tài khoản.png",
       "PackagePath": "staticwebassets\\Images\\tài khoản.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\tư vấn.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\tư vấn.png",
       "PackagePath": "staticwebassets\\Images\\tư vấn.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\uc.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\uc.png",
       "PackagePath": "staticwebassets\\Images\\uc.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\visa 2.png",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\visa 2.png",
       "PackagePath": "staticwebassets\\Images\\visa 2.png"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\visa-du-hoc-uc.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\visa-du-hoc-uc.jpg",
       "PackagePath": "staticwebassets\\Images\\visa-du-hoc-uc.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\Images\\Úc.jpg",
+      "Id": "D:\\Dream-Bright\\wwwroot\\Images\\Úc.jpg",
       "PackagePath": "staticwebassets\\Images\\Úc.jpg"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\css\\input.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\css\\input.css",
       "PackagePath": "staticwebassets\\css\\input.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\css\\output.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\css\\output.css",
       "PackagePath": "staticwebassets\\css\\output.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\css\\site.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\favicon.ico",
+      "Id": "D:\\Dream-Bright\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\js\\site.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

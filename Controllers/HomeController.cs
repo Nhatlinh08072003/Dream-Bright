@@ -31,28 +31,17 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult TinTuc()
+    {
+        var news = _context.News.ToList(); // Lấy danh sách trường từ cơ sở dữ liệu
+        return View(news);
+    }
 
-
-    // // Thêm phương thức Chat
-    // public IActionResult Chat()
-    // {
-
-    //     // Kiểm tra nếu người dùng đã đăng nhập
-    //     if (!User.Identity.IsAuthenticated)
-    //     {
-    //         return RedirectToAction("Login", "Account"); // Chuyển hướng đến trang đăng nhập
-    //     }
-
-    //     ViewData["AdminId"] = 1;
-    //     var chatMessages = _context.ChatMessages
-    //         .Include(m => m.Sender)
-    //         .Include(m => m.Receiver)
-    //         .ToList();
-
-    //     return View(chatMessages);
-    // }// Thêm phương thức Chat
-   
-     public IActionResult Chat()
+    public IActionResult Privacy()
+    {
+        return View();
+    }
+   public IActionResult Chat()
     {
        if (User.IsInRole("Admin") || User.IsInRole("Staff"))
 {
@@ -176,17 +165,6 @@ public async Task<IActionResult> DeleteChatMessage(int messageId)
 
         // Chuyển hướng về trang chat
         return RedirectToAction("Chat");
-    }
-
-    public IActionResult TinTuc()
-    {
-        var news = _context.News.ToList(); // Lấy danh sách trường từ cơ sở dữ liệu
-        return View(news);
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
     }
     public IActionResult DichVu()
     {
