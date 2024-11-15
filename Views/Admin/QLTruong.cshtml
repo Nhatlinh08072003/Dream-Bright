@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hover Effect</title>
+    <title>Quản lý trường</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -103,19 +103,19 @@ group-hover:w-[200px]">
 
         @* @if (TempData["SuccessMessage"] != null)
         {
-        <div class="alert alert-success">
-        @TempData["SuccessMessage"]
-        </div>
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
         }
 
         @if (!ViewData.ModelState.IsValid)
         {
-        foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-        {
-        <div class="alert alert-danger">
-        @error.ErrorMessage
-        </div>
-        }
+            foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <div class="alert alert-danger">
+                    @error.ErrorMessage
+                </div>
+            }
         } *@
         <!-- thẻ div chứa nội dung -->
         <div class="w-[100%] h-[900px] mx-auto w-[calc(100%-200px)]">
@@ -177,10 +177,10 @@ group-hover:w-[200px]">
                     </div>
                 }
             </div>
-            <!-- Div overlay, ban đầu ẩn -->
+            <!-- form Thêm trường, ban đầu ẩn -->
             <div class="overlay fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center hidden"
                 id="overlay">
-                <div class="w-[35%] h-[90%] modal bg-white p-10 rounded-lg shadow-lg text-center">
+                <div class="w-[45%] h-[100%] modal bg-white p-5 rounded-lg shadow-lg text-center">
                     <div class="w-[100%] h-[100%] border border-black flex items-center justify-center">
 
                         <form asp-action="QLTruong" method="post" enctype="multipart/form-data" class="rounded-lg">
@@ -234,9 +234,11 @@ group-hover:w-[200px]">
                     </div>
                 </div>
             </div>
+
+            <!-- form cập nhật trường, ban đầu ẩn -->
             <div class="UpdateForm fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center hidden"
                 id="UpdateForm">
-                <div class="w-[35%] h-[90%] modal bg-white p-10 rounded-lg shadow-lg text-center">
+                <div class="w-[45%] h-[100%] modal bg-white p-10 rounded-lg shadow-lg text-center">
                     <div class="w-[100%] h-[100%] border border-black flex items-center justify-center">
                         <form asp-action="UpdateSchool" method="post" enctype="multipart/form-data" class="rounded-lg">
                             <input type="hidden" name="IdSchool" asp-for="IdSchool" />
@@ -294,35 +296,8 @@ group-hover:w-[200px]">
 
             document.querySelectorAll('#addIcon').forEach(icon => {
                 icon.addEventListener('click', () => {
-                    // Clear the form fields for adding a new school
                     document.querySelector('form').reset();
                     overlay.style.display = 'flex';
-                });
-            });
-            // Event listener for edit buttons
-            document.querySelectorAll('.editIcon').forEach(icon => {
-                icon.addEventListener('click', function () {
-                    const schoolDiv = this.closest('[data-id]');
-                    const schoolId = schoolDiv.getAttribute('data-id');
-                    const title = schoolDiv.querySelector('.school-title').textContent.trim();
-                    const description = schoolDiv.querySelector('.school-description').textContent.trim();
-                    const nation = schoolDiv.querySelector('.school-nation').textContent.trim();
-                    const stateCity = schoolDiv.querySelector('.school-stateCity').textContent.trim();
-                    const averageTuition = schoolDiv.querySelector('.school-averageTuition').textContent.trim();
-                    const level = schoolDiv.querySelector('.school-level').textContent.trim();
-                    const detailedDescription = schoolDiv.querySelector('.school-detailedDescription').textContent.trim();
-
-                    // Populate the form fields with the school's data
-                    document.querySelector('input[name="Id"]').value = schoolId;
-                    document.querySelector('input[name="TitleSchool"]').value = title;
-                    document.querySelector('textarea[name="SchoolDescription"]').value = description;
-                    document.querySelector('input[name="Nation"]').value = nation;
-                    document.querySelector('input[name="StateCity"]').value = stateCity;
-                    document.querySelector('input[name="AverageTuition"]').value = averageTuition;
-                    document.querySelector('input[name="Level"]').value = level;
-                    document.querySelector('input[name="DetailedDescription"]').value = detailedDescription;
-
-                    overlay.style.display = 'flex'; // Show the modal
                 });
             });
 
@@ -331,67 +306,7 @@ group-hover:w-[200px]">
             });
             overlay.addEventListener('click', e => !modal.contains(e.target) && closeModal());
         });
-        //chinh sua form
-        document.addEventListener('DOMContentLoaded', () => {
-            const updateForm = document.getElementById('UpdateForm');
-            const modal = updateForm.querySelector('.modal');
 
-            // Utility function to close the modal
-            const closeModal = () => {
-                updateForm.style.display = 'none';
-                clearFormFields();
-            };
-
-            // Event listener for edit buttons
-            document.querySelectorAll('.editIcon').forEach(icon => {
-                icon.addEventListener('click', function () {
-                    const schoolDiv = this.closest('[data-id]');
-                    if (!schoolDiv) {
-                        console.error("Không tìm thấy thông tin trường.");
-                        return;
-                    }
-
-                    // Retrieve school information from DOM
-                    const schoolId = schoolDiv.getAttribute('data-id');
-                    const title = schoolDiv.querySelector('.school-title')?.textContent.trim() || '';
-                    const description = schoolDiv.querySelector('.school-desciption')?.textContent.trim() || '';
-                    const nation = schoolDiv.querySelector('.school-nation')?.textContent.trim() || '';
-                    const stateCity = schoolDiv.querySelector('.school-stateCity')?.textContent.trim() || '';
-                    const averageTuition = schoolDiv.querySelector('.school-averageTuition')?.textContent.trim() || '';
-                    const level = schoolDiv.querySelector('.school-level')?.textContent.trim() || '';
-                    const detailedDescription = schoolDiv.querySelector('.school-detailedDescription')?.textContent.trim() || '';
-
-                    // Populate form with retrieved data
-                    updateForm.querySelector('input[name="Id"]').value = schoolId;
-                    updateForm.querySelector('input[name="TitleSchool"]').value = title;
-                    updateForm.querySelector('textarea[name="SchoolDescription"]').value = description;
-                    updateForm.querySelector('input[name="Nation"]').value = nation;
-                    updateForm.querySelector('input[name="StateCity"]').value = stateCity;
-                    updateForm.querySelector('input[name="AverageTuition"]').value = averageTuition;
-                    updateForm.querySelector('input[name="Level"]').value = level;
-                    updateForm.querySelector('input[name="DetailedDescription"]').value = detailedDescription;
-
-                    // Display the form modal
-                    updateForm.style.display = 'flex';
-                });
-            });
-
-            // Close modal event handlers
-            document.getElementById('closeModal').addEventListener('click', closeModal);
-            updateForm.addEventListener('click', e => {
-                if (!modal.contains(e.target)) {
-                    closeModal();
-                }
-            });
-            modal.addEventListener('click', e => {
-                e.stopPropagation();
-            });
-
-            // Utility to clear form fields
-            const clearFormFields = () => {
-                updateForm.querySelectorAll('input, textarea').forEach(field => field.value = '');
-            };
-        });
 
         document.addEventListener('DOMContentLoaded', () => {
             const updateForm = document.getElementById('UpdateForm');

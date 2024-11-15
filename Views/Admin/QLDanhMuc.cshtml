@@ -159,18 +159,20 @@
                     class="hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
                     <div class="bg-white p-5 rounded-lg w-[50%] border border-black">
                         <form asp-action="QLDanhMuc" method="post" id="addCategoryForm">
-                            <div class="form-group w-[auto] p-4">
-                                <label asp-for="NamecategoryStab" class="control-label w-[auto]"></label>
-                                <input asp-for="NamecategoryStab" class="form-control w-[50%] p-4"
+                            <div class="form-group m-auto p-4">
+                                <label asp-for="NamecategoryStab" class="control-label w-[auto]">Tên danh
+                                    mục</label>
+                                <input asp-for="NamecategoryStab"
+                                    class="form-control rounded-lg border border-black w-[50%] p-4"
                                     placeholder="Nhập tên danh mục du học" />
                                 <span asp-validation-for="NamecategoryStab" class="text-danger w-[auto]"></span>
                             </div>
                             <div class="text-center">
-                                <button type="submit"
-                                    class="btn btn-primary w-[30%] h-[10%] p-2 rounded-xl mt-[20px] bg-green-500">Tạo
-                                    mới</button>
                                 <button type="button" id="closeAddAccountModal"
                                     class="btn btn-secondary w-[20%] h-[10%] p-2 rounded-xl mt-[20px] bg-red-500">Đóng</button>
+                                <button type="submit"
+                                    class="btn btn-primary w-[20%] h-[10%] p-2 rounded-xl mt-[20px] bg-green-500">Tạo
+                                    mới</button>
                             </div>
                         </form>
                     </div>

@@ -147,10 +147,10 @@
                 }
             </div>
 
-            <!-- Div overlay, ban đầu ẩn -->
+            <!-- thêm tin tức, ban đầu ẩn -->
             <div class="overlay fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center hidden"
                 id="overlay">
-                <div class="w-[35%] h-[90%] modal bg-white p-10 rounded-lg shadow-lg text-center">
+                <div class="w-[30%] h-[50%] modal bg-white p-8 rounded-lg shadow-lg text-center">
                     <div class="w-[100%] h-[100%] border border-black flex items-center justify-center">
 
                         <form asp-action="QLTinTuc" method="post" enctype="multipart/form-data" class="rounded-lg">
@@ -159,8 +159,6 @@
                                 <input type="file" asp-for="ImageFile" class="ml-2" />
                                 <span asp-validation-for="ImageFile"></span>
                             </div>
-                            @* class=" mt-1 block border border-gray-300 rounded-md shadow-sm
-                            focus:border-blue-500 focus:ring focus:ring-blue-200" *@
                             <div class="flex w-[90%] p-2 m-auto">
                                 <label class="w-[28%]">Tiêu đề: </label>
                                 <input asp-for=" TitleNews" class="w-[70%] p-2 border border-black rounded-lg">
@@ -181,9 +179,11 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Cập nhật tin tức, ban đầu ẩn -->
             <div class="UpdateForm fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center hidden"
                 id="UpdateForm">
-                <div class="w-[35%] h-[90%] modal bg-white p-10 rounded-lg shadow-lg text-center">
+                <div class="w-[30%] h-[50%] modal bg-white p-8 rounded-lg shadow-lg text-center">
                     <div class="w-[100%] h-[100%] border border-black flex items-center justify-center">
                         <form asp-action="UpdateNews" method="post" enctype="multipart/form-data" class="rounded-lg">
                             <input type="hidden" name="IdNews" asp-for="IdNews" />
@@ -192,21 +192,21 @@
                                 <input type="file" asp-for="ImageFile" class="ml-2" />
                                 <span asp-validation-for="ImageFile"></span>
                             </div>
-                            <div class="flex w-[90%] p-2 m-auto">
+                            <div class="flex w-[100%] p-2 m-auto">
                                 <label class="w-[28%]">Tiêu đề: </label>
-                                <input asp-for="TitleNews" class="w-[70%] p-2 border border-black rounded-lg">
+                                <input asp-for="TitleNews" class="w-[100%] p-2 border border-black rounded-lg">
                             </div>
-                            <div class="flex w-[90%] p-2 m-auto">
+                            <div class="flex w-[100%] p-2 m-auto">
                                 <label class="w-[28%]">Mô tả: </label>
                                 <input asp-for="NewsDescription"
                                     class="w-[70%] p-2 border border-black rounded-lg"></input>
                             </div>
-                            <div class="flex w-[90%] p-2 m-auto">
+                            <div class="hidden flex w-[90%] p-2 m-auto">
                                 <label class="w-[28%]">Nội dung: </label>
                                 <input asp-for="NewsContent" class="w-[70%] p-2 border border-black rounded-lg" />
                             </div>
                             <button id="CloseEdit" type="button" class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
-                            <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg">Cập nhật tin tức</button>
+                            <button type="submit" class="w-[35%] p-2 bg-green-500 rounded-lg">Cập nhật tin tức</button>
                         </form>
                     </div>
                 </div>
