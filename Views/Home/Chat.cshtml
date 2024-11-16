@@ -4,9 +4,10 @@
 @{
     ViewData["Title"] = "Chat";
     var adminId = (int)(ViewData["AdminId"] ?? 0); // Ép kiểu adminId sang int
-    var adminName = ViewData["AdminName"]?.ToString() ?? "Admin"; // Get admin name
-    var userName = User.FindFirst(ClaimTypes.Name)?.Value ?? "User"; // Get the user's name
+    var adminName = ViewData["AdminName"]?.ToString() ?? "Admin"; // Lấy tên admin
+    var userName = User.FindFirst(ClaimTypes.Name)?.Value ?? "User"; // Lấy tên người dùng
 }
+
 <div class="container mx-auto p-8 bg-white rounded-xl shadow-lg border border-blue-500 text-blue-900">
     <h1 class="text-3xl font-bold text-center mb-8 text-blue-600">CHAT WITH @adminName</h1>
 
@@ -15,12 +16,12 @@
         {
             var senderName = (message.SenderId == adminId) ? adminName : userName;
             <div class="mb-4 flex flex-col @((message.SenderId == adminId) ? "items-start" : "items-end")">
-                <!-- Display sender's name -->
+                <!-- Hiển thị tên người gửi -->
                 <span class="text-blue-600 font-semibold text-xs mb-1">@senderName</span>
 
-                <!-- Message container with bubble -->
+                <!-- Container tin nhắn với bong bóng -->
                 <div
-                    class="relative flex flex-col gap-2 rounded-lg px-5 py-3 shadow-lg 
+                    class="relative flex flex-col gap-2 rounded-lg px-5 py-3 shadow-lg   
                     @((message.SenderId == adminId) ? "bg-blue-200" : "bg-green-200 text-grey-600") max-w-xs break-words">
                     <p>@message.MessageText</p>
 
@@ -34,11 +35,11 @@
                         </div>
                     }
 
-                    <!-- Time displayed below the message -->
-                    <span class="text-gray-500 text-xs self-end">@message.CreatedAt?.ToString("hh:mm")</span>
+                    <!-- Thời gian hiển thị bên dưới tin nhắn -->
+                    <span class="text-gray-500 text-xs self-end">@message.CreatedAt?.ToString("HH:mm")</span>
                 </div>
 
-                <!-- Delete button outside the bubble -->
+                <!-- Nút xóa bên ngoài bong bóng -->
                 @if (message.SenderId.ToString() == User.FindFirst(ClaimTypes.NameIdentifier)?.Value)
                 {
                     <form method="post" action="@Url.Action("DeleteChatMessage", "Home")" class="mt-2 flex justify-end w-full">
@@ -56,7 +57,7 @@
             class="border-none rounded-full px-4 py-2 flex-grow focus:outline-none text-blue-500 placeholder-blue-400"
             placeholder="Type your message..." required />
 
-        <!-- Hidden file input for selecting attachment -->
+        <!-- Input tệp ẩn để chọn tệp đính kèm -->
         <label for="attachment" class="cursor-pointer flex-shrink-0 ml-3">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 hover:text-blue-600" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -70,12 +71,11 @@
         <button type="submit"
             class="bg-blue-500 text-white rounded-full px-4 py-2 ml-3 shadow-lg hover:bg-blue-600 transition duration-300">Send</button>
     </form>
-
 </div>
 
 @section Scripts {
     <script>
         const chatMessages = document.getElementById("chat-messages");
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+        chatMessages.scrollTop = chatMessages.scrollHeight; // Tự động cuộn xuống dưới cùng  
     </script>
 }

@@ -31,10 +31,6 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult Notification()
-    {
-        return View();
-    }
 
 
     // // Thêm phương thức Chat
@@ -55,8 +51,8 @@ public class HomeController : Controller
 
     //     return View(chatMessages);
     // }// Thêm phương thức Chat
-
-    public IActionResult Chat()
+   
+     public IActionResult Chat()
     {
         if (User.IsInRole("Admin") || User.IsInRole("Staff"))
         {
@@ -180,17 +176,6 @@ public class HomeController : Controller
 
         // Chuyển hướng về trang chat
         return RedirectToAction("Chat");
-    }
-
-    public IActionResult TinTuc()
-    {
-        var news = _context.News.ToList(); // Lấy danh sách trường từ cơ sở dữ liệu
-        return View(news);
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
     }
     public IActionResult DichVu()
     {
