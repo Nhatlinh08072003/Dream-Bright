@@ -1,4 +1,4 @@
-<div class="flex p-8 space-x-8">
+<div class="md:flex w-4/5 mx-auto mb-20">
   <!-- Sidebar -->
   <div class="w-1/4 border-r pr-4">
     <h1 class="text-xl font-semibold mb-4">TRANG TÀI KHOẢN</h1>
@@ -6,26 +6,26 @@
     <ul class="space-y-2">
       <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/profile">Thông tin tài khoản</a></li>
       <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/resetpassword">Đổi mật khẩu</a></li>
-      <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/updateprofile">Cập nhật thông tin cá nhân</a>
-      </li>
+      <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/updateprofile">Cập nhật thông tin cá nhân</a></li>
       <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/chat">Tôi muốn tư vấn</a></li>
     </ul>
   </div>
 
+  <!-- Main content -->
+  <div class="w-3/4 flex justify-center items-center">
+    <div class="w-full max-w-3xl p-6">
+      <h2 class="text-2xl font-semibold mb-6">TÀI KHOẢN</h2>
+      <p class="mb-4"></p>
+      <div class="space-y-2 mb-6">
+        <p class="flex items-center">
+          <span class="mr-2">Tên tài khoản: @ViewBag.FullName!</span>
+        </p>
+        <p class="flex items-center">
+          <span class="mr-2"></span>
+        </p>
+      </div>
 
-  <div class="w-3/4">
-    <h2 class="text-2xl font-semibold mb-6">TÀI KHOẢN</h2>
-    <p class="mb-4"></p>
-    <div class="space-y-2 mb-6">
-      <p class="flex items-center">
-        <span class="mr-2">Tên tài khoản: @ViewBag.FullName! </span>
-      </p>
-      <p class="flex items-center">
-        <span class="mr-2"></span>
-      </p>
+      <h3 class="text-xl font-semibold mb-4"></h3>
     </div>
-
-    <h3 class="text-xl font-semibold mb-4"></h3>
-
   </div>
 </div>
