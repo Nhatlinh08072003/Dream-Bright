@@ -180,7 +180,7 @@ group-hover:w-[200px]">
             <!-- form Thêm trường, ban đầu ẩn -->
             <div class="overlay fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center hidden"
                 id="overlay">
-                <div class="w-[45%] h-[100%] modal bg-white p-5 rounded-lg shadow-lg text-center">
+                <div class="w-[30%] h-[100%] modal bg-white p-5 rounded-lg shadow-lg text-center">
                     <div class="w-[100%] h-[100%] border border-black flex items-center justify-center">
 
                         <form asp-action="QLTruong" method="post" enctype="multipart/form-data" class="rounded-lg">
@@ -247,7 +247,7 @@ group-hover:w-[200px]">
                                 <input type="file" asp-for="ImageFile" class="ml-2" />
                                 <span asp-validation-for="ImageFile"></span>
                             </div>
-                            <div class="flex w-[90%] p-2 m-auto">
+                            <div class="flex w-[90%] news-title p-2 m-auto">
                                 <label class="w-[28%]">Tên trường: </label>
                                 <input asp-for="TitleSchool" class="w-[70%] p-2 border border-black rounded-lg">
                             </div>
@@ -279,8 +279,9 @@ group-hover:w-[200px]">
                                     class="w-[70%] p-2 border border-black rounded-lg" />
                             </div>
                             <button id="CloseUpdateForm" type="button"
-                                class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
-                            <button type="submit" class="w-[40%] p-2 bg-green-500 rounded-lg">Cập nhật trường</button>
+                                class="w-[30%] p-2 bg-red-500 rounded-lg btn">Đóng</button>
+                            <button type="submit" class="w-[40%] p-2 bg-green-500 rounded-lg btn btnAdd">Cập nhật
+                                trường</button>
                         </form>
                     </div>
                 </div>
