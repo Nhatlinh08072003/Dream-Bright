@@ -133,6 +133,29 @@ public class AccountController : Controller
     // }
     public IActionResult Profile()
     {
+        //tim nguoi dung
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        // kiểm tra người dùng đã đăng nhập chưa
+        if (userId == null)
+        {
+            return RedirectToAction("Login");
+        }
+
+        var user = _context.Users.Find(int.Parse(userId));
+        // tìm người dùng trong cơ sở dữ liệu
+        if (user == null)
+        {
+            return NotFound();
+        }
+
+        // Trả về view với model là đối tượng user
+        return View(user);
+    }
+
+
+
+    public IActionResult PageAcc()
+    {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
         if (userId == null)
@@ -147,17 +170,10 @@ public class AccountController : Controller
             return NotFound();
         }
 
-        return View(user); // Trả về view với thông tin người dùng
+        ViewBag.FullName = user.FullName; // Truyền tên người dùng vào ViewBag để hiển thị trong view
+        return View();
     }
 
-    public IActionResult HistoryOrder()
-    {
-        return View();
-    }
-    public IActionResult PageAcc()
-    {
-        return View();
-    }
     public IActionResult ResetPassword()
     {
         var model = new ResetPasswordModel(); // Tạo một instance của ResetPasswordModel
@@ -222,6 +238,9 @@ public class AccountController : Controller
             return NotFound();
         }
 
+        // Truyền tên đầy đủ vào ViewBag
+        ViewBag.FullName = user.FullName;
+
         // Tạo ViewModel để đẩy dữ liệu người dùng hiện tại vào form
         var model = new UpdateProfileViewModel
         {
@@ -235,6 +254,7 @@ public class AccountController : Controller
     }
 
 
+
     // Xử lý việc cập nhật thông tin:
     [HttpPost]
     public async Task<IActionResult> UpdateProfile(UpdateProfileViewModel model)
@@ -242,6 +262,12 @@ public class AccountController : Controller
         if (ModelState.IsValid)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userId == null)
+            {
+                return RedirectToAction("Login");
+            }
+
             var user = await _context.Users.FindAsync(int.Parse(userId));
 
             if (user == null)

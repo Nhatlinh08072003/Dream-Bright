@@ -1,56 +1,31 @@
 <div class="flex p-8 space-x-8">
   <!-- Sidebar -->
   <div class="w-1/4 border-r pr-4">
-    <h2 class="text-xl font-semibold mb-4">TRANG TÀI KHOẢN</h2>
-    <p class="mb-2">Xin chào, Quân Trần!</p>
+    <h1 class="text-xl font-semibold mb-4">TRANG TÀI KHOẢN</h1>
+    <p class="mb-2">Xin chào, @ViewBag.FullName!</p>
     <ul class="space-y-2">
       <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/profile">Thông tin tài khoản</a></li>
+      <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/resetpassword">Đổi mật khẩu</a></li>
       <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/updateprofile">Cập nhật thông tin cá nhân</a>
       </li>
-
+      <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/chat">Tôi muốn tư vấn</a></li>
     </ul>
   </div>
 
 
-  @* <div class="w-3/4">
-  <h2 class="text-2xl font-semibold mb-6">TÀI KHOẢN</h2>
-  <p class="mb-4"></p>
-  <div class="space-y-2 mb-6">
-  <p class="flex items-center">
-  <span class="mr-2"></span>
-  </p>
-  <p class="flex items-center">
-  <span class="mr-2"></span>
-  </p>
-  </div>
+  <div class="w-3/4">
+    <h2 class="text-2xl font-semibold mb-6">TÀI KHOẢN</h2>
+    <p class="mb-4"></p>
+    <div class="space-y-2 mb-6">
+      <p class="flex items-center">
+        <span class="mr-2">Tên tài khoản: @ViewBag.FullName! </span>
+      </p>
+      <p class="flex items-center">
+        <span class="mr-2"></span>
+      </p>
+    </div>
 
-  <h3 class="text-xl font-semibold mb-4"></h3>
-  <table class="w-full border">
-  <thead>
-  <tr class="border-b">
-  <th class="py-2 text-left"></th>
-  <th class="py-2 text-left"></th>
-  <th class="py-2 text-left"></th>
-  <th class="py-2 text-left"></th>
-  <th class="py-2 text-left"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr class="border-b">
-  <td class="py-2"></td>
-  <td class="py-2"></td>
-  <td class="py-2 text-blue-600 cursor-pointer hover:text-blue-800"></td>
-  <td class="py-2"></td>
-  <td class="py-2"></td>
-  </tr>
-  <tr class="border-b">
-  <td class="py-2"></td>
-  <td class="py-2"></td>
-  <td class="py-2 text-blue-600 cursor-pointer hover:text-blue-800"></td>
-  <td class="py-2"></td>
-  <td class="py-2"></td>
-  </tr>
-  </tbody>
-  </table>
+    <h3 class="text-xl font-semibold mb-4"></h3>
+
   </div>
-  </div> *@
+</div>

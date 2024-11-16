@@ -31,6 +31,10 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Notification()
+    {
+        return View();
+    }
 
 
     // // Thêm phương thức Chat
@@ -51,13 +55,13 @@ public class HomeController : Controller
 
     //     return View(chatMessages);
     // }// Thêm phương thức Chat
-   
-     public IActionResult Chat()
+
+    public IActionResult Chat()
     {
-       if (User.IsInRole("Admin") || User.IsInRole("Staff"))
-{
-    return RedirectToAction("qlchat", "Admin"); // Chuyển hướng đến trang quản lý chat
-}
+        if (User.IsInRole("Admin") || User.IsInRole("Staff"))
+        {
+            return RedirectToAction("qlchat", "Admin"); // Chuyển hướng đến trang quản lý chat
+        }
 
         // Lấy ID của người dùng hiện tại
         var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
@@ -78,29 +82,29 @@ public class HomeController : Controller
 
         return View(chatMessages);
     }
-[HttpPost]
-public async Task<IActionResult> DeleteChatMessage(int messageId)
-{
-    // Retrieve the message
-    var message = await _context.ChatMessages.FindAsync(messageId);
-    if (message == null)
+    [HttpPost]
+    public async Task<IActionResult> DeleteChatMessage(int messageId)
     {
-        return NotFound("Message not found.");
+        // Retrieve the message
+        var message = await _context.ChatMessages.FindAsync(messageId);
+        if (message == null)
+        {
+            return NotFound("Message not found.");
+        }
+
+        // Ensure only the sender can delete their own messages
+        var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+        if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId) || message.SenderId != userId)
+        {
+            return Unauthorized("You can only delete your own messages.");
+        }
+
+        // Remove the message
+        _context.ChatMessages.Remove(message);
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction("Chat"); // Or you can return a JSON response for AJAX handling
     }
-
-    // Ensure only the sender can delete their own messages
-    var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-    if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId) || message.SenderId != userId)
-    {
-        return Unauthorized("You can only delete your own messages.");
-    }
-
-    // Remove the message
-    _context.ChatMessages.Remove(message);
-    await _context.SaveChangesAsync();
-
-    return RedirectToAction("Chat"); // Or you can return a JSON response for AJAX handling
-}
 
     [HttpPost]
     public async Task<IActionResult> SendChatMessage(string messageText, int receiverId, IFormFile? attachment)

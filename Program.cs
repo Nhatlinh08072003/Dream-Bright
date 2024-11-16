@@ -115,6 +115,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Home", action = "TinTuc" }
 );
 app.MapControllerRoute(
+    name: "Notification",
+    pattern: "/notification",
+    defaults: new { controller = "Home", action = "Notification" }
+);
+app.MapControllerRoute(
     name: "TimTruong",
     pattern: "/timtruong",
     defaults: new { controller = "Home", action = "TimTruong" }
