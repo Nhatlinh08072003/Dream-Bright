@@ -29,6 +29,8 @@ public partial class StudyAbroadDbContext : DbContext
     public DbSet<EmailHistory> EmailHistories { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
+    public DbSet<Notification> Notifications { get; set; }
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 

@@ -79,52 +79,6 @@
 <body>
   <!-- Phần Hotline và Menu sẽ được cố định -->
   <div class="fixed-header">
-    <!-- Phần Hotline -->
-    @* <div class="header-hotline border-b border-gray-300 bg-white ">
-    <div class="container mx-auto flex items-center justify-end gap-3">
-    <!-- Thêm phần đăng nhập -->
-    @if (isAuthenticated)
-    {
-    var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-    <div class="relative z-10">
-    <button id="dropdownButton" class="text-black bg-white px-4 py-2 rounded focus:outline-none">
-    Welcome, @emailClaim
-    </button>
-    <div id="dropdownMenu" class="hidden w-full absolute right-0 bg-white border rounded shadow-md">
-    <ul>
-    <li><a href="/profile" class="block px-4 py-2 text-black hover:bg-gray-100">Profile</a></li>
-    <li><a href="/resetpassword" class="block px-4 py-2 text-black hover:bg-gray-100">Đổi mật khẩu</a></li>
-    <li><a href="/updateprofile" class="block px-4 py-2 text-black hover:bg-gray-100">Cập nhật thông tin</a>
-    </li>
-    </ul>
-    @if (User.IsInRole("Admin"))
-    {
-    <a href="/admin" class="block px-4 py-2 text-black hover:bg-gray-100">Admin</a>
-    }
-    </div>
-    </div>
-    <a href="@Url.Action("Logout", "Account")" onclick="confirmLogout(event)">
-    <div class="Orther-login">Đăng xuất</div>
-    </a>
-    }
-    else
-    {
-    <a href="/login">
-    <div>
-    <button class="rounded border border-black px-3 py-1 font-bold text-black">Đăng nhập</button>
-    </div>
-    </a>
-    }
-    <div>
-    <img class="w-6" src="https://classic.vn/wp-content/uploads/2022/07/phone-icon-800x800.png"
-    alt="Phone Icon" />
-    </div>
-    <div>
-    <h4 class="text-lg font-bold">DREAM BRIDGE</h4>
-    <p>Hotline: <span class="text-red-500">083 8686 8686</span></p>
-    </div>
-    </div>
-    </div> *@
 
     <!-- Phần Logo và Menu -->
     <div class="header-menu bg-white">
@@ -267,57 +221,63 @@
           </div>
 
           @* //thong bao *@
-          <div class="list-none mb-2">
-            <img src="https://cdn-icons-png.flaticon.com/128/1827/1827422.png" class="w-6">
+          <div class="list-none mb-2 relative">
+            <a href="/notification" class="relative" onclick="clearNotification(event)">
+              <img src="https://cdn-icons-png.flaticon.com/128/1827/1827422.png" class="w-6" alt="Notification Bell">
+              <!-- Thẻ hiển thị số thông báo -->
+              <span id="notificationCount"
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">0</span>
+            </a>
           </div>
+
         </div>
-
-
       </div>
+
     </div>
+  </div>
 
-    <!-- Menu dọc cho màn hình nhỏ -->
-    <div id="small-menu" class="bg-white lg:hidden hidden p-4">
-      <ul class="flex flex-col text-lg font-medium">
-        <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/home">TRANG CHỦ</a></li>
-        <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/vechungtoi">VỀ CHÚNG TÔI</a>
-        </li>
+  <!-- Menu dọc cho màn hình nhỏ -->
+  <div id="small-menu" class="bg-white lg:hidden hidden p-4">
+    <ul class="flex flex-col text-lg font-medium">
+      <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/home">TRANG CHỦ</a></li>
+      <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/vechungtoi">VỀ CHÚNG TÔI</a>
+      </li>
 
-        <!-- Mục Du Học -->
-        <li class="border-b border-gray-300">
-          <a class="transition hover:text-blue-500 p-2" href="/duhoc">DU HỌC</a>
-          <ul class="flex flex-col pl-4">
-            <li><a class="hover:text-blue-500" href="/my">Du học Mỹ</a></li>
-            <li><a class="hover:text-blue-500" href="/uc">Du học Úc</a></li>
-            <li><a class="hover:text-blue-500" href="/thuysy">Du học Thụy Sĩ</a></li>
-            <li><a class="hover:text-blue-500" href="/singapore">Du học Singapore</a></li>
-          </ul>
-        </li>
+      <!-- Mục Du Học -->
+      <li class="border-b border-gray-300">
+        <a class="transition hover:text-blue-500 p-2" href="/duhoc">DU HỌC</a>
+        <ul class="flex flex-col pl-4">
+          <li><a class="hover:text-blue-500" href="/my">Du học Mỹ</a></li>
+          <li><a class="hover:text-blue-500" href="/uc">Du học Úc</a></li>
+          <li><a class="hover:text-blue-500" href="/thuysy">Du học Thụy Sĩ</a></li>
+          <li><a class="hover:text-blue-500" href="/singapore">Du học Singapore</a></li>
+        </ul>
+      </li>
 
-        <!-- Mục Dịch Vụ -->
-        <li class="border-b border-gray-300">
-          <a class="transition hover:text-blue-500 p-2" href="/dichvu">DỊCH VỤ</a>
-          <ul class="flex flex-col pl-4">
-            <li><a class="hover:text-blue-500" href="/visamy">Dịch vụ visa Mỹ</a></li>
-            <li><a class="hover:text-blue-500" href="/visauc">Dịch vụ visa Úc</a></li>
-            <li><a class="hover:text-blue-500" href="/visasingapore">Dịch vụ visa Singapore</a></li>
-            <li><a class="hover:text-blue-500" href="/viasathusy">Dịch vụ visa Thụy Sĩ</a></li>
-          </ul>
-        </li>
+      <!-- Mục Dịch Vụ -->
+      <li class="border-b border-gray-300">
+        <a class="transition hover:text-blue-500 p-2" href="/dichvu">DỊCH VỤ</a>
+        <ul class="flex flex-col pl-4">
+          <li><a class="hover:text-blue-500" href="/visamy">Dịch vụ visa Mỹ</a></li>
+          <li><a class="hover:text-blue-500" href="/visauc">Dịch vụ visa Úc</a></li>
+          <li><a class="hover:text-blue-500" href="/visasingapore">Dịch vụ visa Singapore</a></li>
+          <li><a class="hover:text-blue-500" href="/viasathusy">Dịch vụ visa Thụy Sĩ</a></li>
+        </ul>
+      </li>
 
-        <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/timtruong">TÌM TRƯỜNG</a></li>
-        <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/tintuc">TIN TỨC</a></li>
-        <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="lienhe">LIÊN HỆ</a></li>
-        <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/chat">CHAT</a></li>
-        <li>
-          <form class="flex items-center p-2">
-            <input type="text" placeholder="Tìm kiếm..."
-              class="border rounded-l px-2 py-1 focus:outline-none focus:ring focus:ring-blue-300">
-            <button class="bg-blue-500 text-white px-3 py-1 rounded-r hover:bg-blue-600 transition">Tìm</button>
-          </form>
-        </li>
-      </ul>
-    </div>
+      <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/timtruong">TÌM TRƯỜNG</a></li>
+      <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/tintuc">TIN TỨC</a></li>
+      <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="lienhe">LIÊN HỆ</a></li>
+      <li><a class="transition hover:text-blue-500 p-2 border-b border-gray-300" href="/chat">CHAT</a></li>
+      <li>
+        <form class="flex items-center p-2">
+          <input type="text" placeholder="Tìm kiếm..."
+            class="border rounded-l px-2 py-1 focus:outline-none focus:ring focus:ring-blue-300">
+          <button class="bg-blue-500 text-white px-3 py-1 rounded-r hover:bg-blue-600 transition">Tìm</button>
+        </form>
+      </li>
+    </ul>
+  </div>
   </div>
 
   <script>
@@ -491,6 +451,35 @@
         event.preventDefault(); // Ngăn không cho liên kết hoạt động nếu chọn "Không"
       }
     }
+
+    //thong bao 
+    // Hàm để ẩn số thông báo và lưu trạng thái vào localStorage
+    function clearNotification(event) {
+      // Tìm phần tử số thông báo
+      const notificationCount = document.getElementById('notificationCount');
+
+      // Kiểm tra nếu có số thông báo và ẩn nó
+      if (notificationCount) {
+        notificationCount.style.display = 'none';
+
+        // Lưu trạng thái vào localStorage để không hiển thị lại sau khi tải trang
+        localStorage.setItem('notificationRead', 'true');
+      }
+    }
+
+    // Kiểm tra trạng thái thông báo từ localStorage khi trang tải
+    document.addEventListener('DOMContentLoaded', function () {
+      const notificationCount = document.getElementById('notificationCount');
+      const notificationRead = localStorage.getItem('notificationRead');
+
+      // Nếu trạng thái đã được đánh dấu là "đã đọc", ẩn số thông báo ngay khi tải trang
+      if (notificationRead === 'true' && notificationCount) {
+        notificationCount.style.display = 'none';
+      } else if (!notificationRead && notificationCount) {
+        // Nếu chưa đánh dấu là "đã đọc", hiển thị số thông báo lần đầu
+        notificationCount.style.display = 'inline-block';
+      }
+    });
   </script>
 
 </body>

@@ -1,0 +1,57 @@
+<div class="container mx-auto mt-6 mb-40 px-4">
+  <div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <ul>
+      <li class="border-b">
+        <a href="#" class="flex items-start p-4 hover:bg-gray-100"
+          onclick="showNotificationDetail('Thông báo 1', 'Nội dung chi tiết của thông báo 1')">
+          <div class="flex-shrink-0">
+            <img src="https://cdn-icons-png.flaticon.com/128/1827/1827366.png" alt="Notification Icon" class="w-6 h-6">
+          </div>
+          <div class="ml-4">
+            <p class="font-semibold text-gray-800">Thông báo 1</p>
+            <p class="text-sm text-gray-600">Đây là nội dung tóm tắt của thông báo 1...</p>
+          </div>
+          <span class="ml-auto text-xs text-gray-500">2 giờ trước</span>
+        </a>
+      </li>
+      <li class="border-b">
+        <a href="#" class="flex items-start p-4 hover:bg-gray-100"
+          onclick="showNotificationDetail('Thông báo 2', 'Nội dung chi tiết của thông báo 2')">
+          <div class="flex-shrink-0">
+            <img src="https://cdn-icons-png.flaticon.com/128/1827/1827366.png" alt="Notification Icon" class="w-6 h-6">
+          </div>
+          <div class="ml-4">
+            <p class="font-semibold text-gray-800">Thông báo 2</p>
+            <p class="text-sm text-gray-600">Đây là nội dung tóm tắt của thông báo 2...</p>
+          </div>
+          <span class="ml-auto text-xs text-gray-500">1 ngày trước</span>
+        </a>
+      </li>
+      <!-- Thêm các mục thông báo khác nếu có -->
+    </ul>
+  </div>
+</div>
+
+<!-- Popup chi tiết thông báo -->
+<div id="notificationDetailPopup"
+  class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+  <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-1/2 p-6">
+    <h2 id="notificationTitle" class="text-xl font-bold text-gray-800 mb-2"></h2>
+    <p id="notificationContent" class="text-gray-700"></p>
+    <button onclick="closeNotificationDetail()"
+      class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none">Đóng</button>
+  </div>
+</div>
+
+<script>
+  function showNotificationDetail(title, content) {
+    document.getElementById("notificationTitle").innerText = title;
+    document.getElementById("notificationContent").innerText = content;
+    document.getElementById("notificationDetailPopup").classList.remove("hidden");
+  }
+
+  function closeNotificationDetail() {
+    document.getElementById("notificationDetailPopup").classList.add("hidden");
+  }
+
+</script>

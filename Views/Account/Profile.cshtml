@@ -3,43 +3,56 @@
 @{
     ViewData["Title"] = "Profile";
 }
+<div class="md:flex w-4/5 mx-auto">
+    <div class="w-full md:w-3/12 border-r pr-4 mb-4 md:mb-0 mx-5">
+        <!-- 30% chiều rộng khi trên 500px và khoảng cách 20px hai bên -->
+        <h1 class="text-xl font-semibold mb-4">TRANG TÀI KHOẢN</h1>
+        <p class="mb-2">Xin chào, @Model.FullName!</p> <!-- Truyền giá trị từ Model -->
+        <ul class="space-y-2">
+            <li class="text-blue-600 cursor-pointer hover:text-black"><a href="/profile">Thông tin tài khoản</a></li>
+            <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/resetpassword">Đổi mật khẩu</a></li>
+            <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/updateprofile">Cập nhật thông tin cá
+                    nhân</a></li>
+            <li class="text-gray-600 cursor-pointer hover:text-black"><a href="/chat">Tôi muốn tư vấn</a></li>
+        </ul>
+    </div>
+    <div class="w-full md:w-9/12 flex justify-center items-center p-10">
+        <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-6 text-center">Thông Tin Cá Nhân</h2>
 
-<div class="bg-gray-100 flex items-center justify-center p-10">
-    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 class="text-2xl font-bold mb-6 text-center">Thông Tin Cá Nhân</h2>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700">Họ và tên:</label>
+                <p class="mt-1 text-gray-600">@Model.FullName</p> <!-- Truyền giá trị từ Model -->
+            </div>
 
-        <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700">Họ và tên:</label>
-            <p class="mt-1 text-gray-600">@Model.FullName</p>
-        </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700">Email:</label>
+                <p class="mt-1 text-gray-600">@Model.Email</p>
+            </div>
 
-        <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700">Email:</label>
-            <p class="mt-1 text-gray-600">@Model.Email</p>
-        </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700">Số điện thoại:</label>
+                <p class="mt-1 text-gray-600">@Model.PhoneNumber</p>
+            </div>
 
-        <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700">Số điện thoại:</label>
-            <p class="mt-1 text-gray-600">@Model.PhoneNumber</p>
-        </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700">Địa chỉ:</label>
+                <p class="mt-1 text-gray-600">@Model.Address</p>
+            </div>
 
-        <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700">Địa chỉ:</label>
-            <p class="mt-1 text-gray-600">@Model.Address</p>
-        </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700">Vai trò:</label>
+                <p class="mt-1 text-gray-600">@Model.Role</p>
+            </div>
 
-        <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700">Vai trò:</label>
-            <p class="mt-1 text-gray-600">@Model.Role</p>
-        </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700">Trạng thái tư vấn:</label>
+                <p class="mt-1 text-gray-600">@Model.ConsultingStatus</p>
+            </div>
 
-        <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700">Trạng thái tư vấn:</label>
-            <p class="mt-1 text-gray-600">@Model.ConsultingStatus</p>
-        </div>
-
-        <div class="mt-4 text-center">
-            <a href="@Url.Action("Logout", "Account")" class="text-sm text-red-600 hover:text-red-800">Đăng xuất</a>
+            <div class="mt-4 text-center">
+                <a href="@Url.Action("Logout", "Account")" class="text-sm text-red-600 hover:text-red-800">Đăng xuất</a>
+            </div>
         </div>
     </div>
 </div>
