@@ -43,7 +43,7 @@
 
 <body class="items-center justify-center">
 
-    <div class="flex w-[100%]">
+    <div class="flex w-[100%] ">
         <div
             class="group relative flex h-[900px] w-[50px] flex-col items-start bg-green-500 transition-all duration-500 ease-in-out hover:w-[200px]">
             <a href="/Admin"
@@ -97,7 +97,7 @@
             </a>
         </div>
 
-        <div class="w-[100%] h-[900px] mx-auto w-[calc(100%-200px)]">
+        <div class="w-[100%] h-[900px] mx-auto w-[calc(100%-200px)] flex-on-mobile">
             <h1 class="w-[98%] font-bold text-center text-2xl mt-[2%] text-shadow">Quản lý tin tức</h1>
             <div
                 class="w-[5%] mt-[1.5%] h-[4.5%] mr-8 ml-auto mb-[1.5%] shadow-box rounded-lg bg-green-500 text-center">
@@ -108,16 +108,17 @@
             <div class="mx-auto grid grid-cols-2 mt-[1%] gap-4 w-[100%] h-[18%]" id="newsGrid">
                 @foreach (var item in Model.NewsList)
                 {
-                    <div class="w-[95%] h-[100%] border border-black flex items-center justify-between p-5 news-item"
+                    <div class="w-[100%] h-[100%] border border-black flex items-center justify-between p-5 news-item"
                         data-id="@item.IdNews">
-                        <div class="w-[95%] h-[85%] flex">
-                            <img class="w-[50%] h-[100%]" src="@item.NewsImage" alt="News Image" />
+                        <div class="w-[96%] h-[85%] flex">
+                            <img class="w-[40%] h-[100%]" src="@item.NewsImage" alt="News Image" />
                             <div class="ml-2 h-[100%] w-[100%] text-[14px] flex flex-col justify-between">
                                 <h1 class="font-bold flex">Tiêu đề:
-                                    <p class="news-title pl-1 font-bold text-blue-700 font-normal">@item.TitleNews</p>
+                                    <p class="news-title w-[85%] pl-1 font-bold text-blue-700 font-normal">
+                                        @item.TitleNews</p>
                                 </h1>
                                 <h1 class="font-bold flex">Mô tả:
-                                    <p class="news-description pl-1 font-bold text-blue-700 font-normal">
+                                    <p class="news-description w-[85%] pl-1 font-bold text-blue-700 font-normal">
                                         @item.NewsDescription</p>
                                 </h1>
                                 <h1 class="font-bold flex" style="display: none;">Nội dung:
@@ -147,66 +148,69 @@
                 }
             </div>
 
-            <!-- Div overlay, ban đầu ẩn -->
+            <!-- thêm tin tức, ban đầu ẩn -->
             <div class="overlay fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center hidden"
                 id="overlay">
-                <div class="w-[35%] h-[90%] modal bg-white p-10 rounded-lg shadow-lg text-center">
-                    <div class="w-[100%] h-[100%] border border-black flex items-center justify-center">
-
+                <div class="w-[30%] dsa h-[50%] modal bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="w-[100%] dsa h-[100%] border border-black flex items-center justify-center">
                         <form asp-action="QLTinTuc" method="post" enctype="multipart/form-data" class="rounded-lg">
-                            <div class="flex w-[100%] p-2 m-auto">
+                            <div class="flex w-[100%] p-2 m-auto news-title">
                                 <label>Hình ảnh: </label>
                                 <input type="file" asp-for="ImageFile" class="ml-2" />
                                 <span asp-validation-for="ImageFile"></span>
                             </div>
-                            @* class=" mt-1 block border border-gray-300 rounded-md shadow-sm
-                            focus:border-blue-500 focus:ring focus:ring-blue-200" *@
-                            <div class="flex w-[90%] p-2 m-auto">
+                            <div class="flex w-[90%] p-2 m-auto news-title">
                                 <label class="w-[28%]">Tiêu đề: </label>
                                 <input asp-for=" TitleNews" class="w-[70%] p-2 border border-black rounded-lg">
                             </div>
-                            <div class="flex w-[90%] p-2 m-auto">
+                            <div class="flex w-[90%] p-2 m-auto news-description">
                                 <label class="w-[28%]">Miêu tả: </label>
                                 <input asp-for="NewsDescription"
                                     class="w-[70%] p-2 border border-black rounded-lg"></input>
                             </div>
-                            <div class="flex w-[90%] p-2 m-auto">
+                            <div class="flex w-[90%] p-2 m-auto news-NewsContent">
                                 <label class="w-[28%]">Nội dung: </label>
                                 <input asp-for=" NewsContent" class="w-[70%] p-2 border border-black rounded-lg" />
                             </div>
                             <button id="closeModal" type="button"
-                                class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
-                            <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg">Thêm tin tức</button>
+                                class="w-[30%] p-2 bg-red-500 rounded-lg btn">Đóng</button>
+                            <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg btn">Thêm tin
+                                tức</button>
                         </form>
                     </div>
                 </div>
             </div>
+
+
+            <!-- Cập nhật tin tức, ban đầu ẩn -->
             <div class="UpdateForm fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center hidden"
                 id="UpdateForm">
-                <div class="w-[35%] h-[90%] modal bg-white p-10 rounded-lg shadow-lg text-center">
+                <div class="w-[30%] h-[50%] modal bg-white p-8 rounded-lg shadow-lg text-center">
                     <div class="w-[100%] h-[100%] border border-black flex items-center justify-center">
                         <form asp-action="UpdateNews" method="post" enctype="multipart/form-data" class="rounded-lg">
                             <input type="hidden" name="IdNews" asp-for="IdNews" />
-                            <div class="flex w-[100%] p-2 m-auto">
+                            <div class="flex w-[100%] p-2 m-auto news-title">
                                 <label>Hình ảnh: </label>
                                 <input type="file" asp-for="ImageFile" class="ml-2" />
                                 <span asp-validation-for="ImageFile"></span>
                             </div>
-                            <div class="flex w-[90%] p-2 m-auto">
+                            <div class="flex w-[100%] p-2 m-auto news-title">
                                 <label class="w-[28%]">Tiêu đề: </label>
-                                <input asp-for="TitleNews" class="w-[70%] p-2 border border-black rounded-lg">
+                                <input asp-for="TitleNews" class="w-[100%] p-2 border border-black rounded-lg">
                             </div>
-                            <div class="flex w-[90%] p-2 m-auto">
+                            <div class="flex w-[100%] p-2 m-auto news-title">
                                 <label class="w-[28%]">Mô tả: </label>
                                 <input asp-for="NewsDescription"
                                     class="w-[70%] p-2 border border-black rounded-lg"></input>
                             </div>
-                            <div class="flex w-[90%] p-2 m-auto">
+                            <div class="hidden flex w-[90%] p-2 m-auto news-title">
                                 <label class="w-[28%]">Nội dung: </label>
                                 <input asp-for="NewsContent" class="w-[70%] p-2 border border-black rounded-lg" />
                             </div>
-                            <button id="CloseEdit" type="button" class="w-[30%] p-2 bg-red-500 rounded-lg">Đóng</button>
-                            <button type="submit" class="w-[30%] p-2 bg-green-500 rounded-lg">Cập nhật tin tức</button>
+                            <button id="CloseEdit" type="button"
+                                class="w-[30%] p-2 bg-red-500 rounded-lg btn">Đóng</button>
+                            <button type="submit" class="w-[35%] p-2 bg-green-500 rounded-lg btn btnAdd">Cập nhật tin
+                                tức</button>
                         </form>
                     </div>
                 </div>
