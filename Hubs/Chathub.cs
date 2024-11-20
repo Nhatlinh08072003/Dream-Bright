@@ -8,5 +8,10 @@ namespace Dream_Bridge.Hubs
         {
             await Clients.All.SendAsync("ReceiveMessage", user, message);
         }
+         // Hàm này sẽ được gọi từ API để gửi thông báo đến tất cả các client
+    public async Task SendNotification(Notification notification)
+    {
+        await Clients.All.SendAsync("ReceiveNotification", notification);
+    }
     }
 }
