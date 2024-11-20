@@ -7,18 +7,23 @@ using Microsoft.AspNetCore.Authorization;
 using Dream_Bridge.ViewModels;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.SignalR;
+using Dream_Bridge.Hubs;
 // using BCrypt.Net;
 namespace Dream_Bridge.Controllers
 {
     [Authorize(Roles = "Admin, Staff")] // Cho phép cả Admin và Staff truy cập  
     public class AdminController : Controller
     {
+            private readonly IHubContext<ChatHub> _hubContext; // Inject IHubContext
+
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly StudyAbroadDbContext _studyAbroadDbContext;
         private readonly ILogger<AdminController> _logger;
 
-        public AdminController(ILogger<AdminController> logger, StudyAbroadDbContext studyAbroadDbContext, IWebHostEnvironment webHostEnvironment)
+        public AdminController( IHubContext<ChatHub> hubContext,ILogger<AdminController> logger, StudyAbroadDbContext studyAbroadDbContext, IWebHostEnvironment webHostEnvironment)
         {
+              _hubContext = hubContext;
             _logger = logger;
             _webHostEnvironment = webHostEnvironment;
             _studyAbroadDbContext = studyAbroadDbContext;
@@ -90,6 +95,54 @@ namespace Dream_Bridge.Controllers
 
             return View(model);
         }
+            [HttpPost("api/admin/send-notification")]
+public async Task<IActionResult> SendNotification([FromBody] Notification notificationDto)
+{
+    try
+    {
+        var users = await _studyAbroadDbContext.Users.ToListAsync();  // Lấy tất cả người dùng từ cơ sở dữ liệu
+        var notifications = users.Select(user => new Notification
+        {
+            UserId = user.IdUser,
+            Title = notificationDto.Title,
+            Message = notificationDto.Message,
+            CreatedAt = DateTime.Now,
+            IsRead = false
+        }).ToList();
+
+        // Thêm tất cả thông báo vào cơ sở dữ liệu
+        await _studyAbroadDbContext.Notifications.AddRangeAsync(notifications);
+        await _studyAbroadDbContext.SaveChangesAsync();
+
+        // Lưu lịch sử thông báo đã gửi
+        var emailHistories = users.Select(user => new EmailHistory
+        {
+            ToEmail = user.Email,
+            Subject = notificationDto.Title,
+            Body = notificationDto.Message,
+            SentAt = DateTime.Now
+        }).ToList();
+
+        // Thêm lịch sử gửi email vào cơ sở dữ liệu
+        await _studyAbroadDbContext.EmailHistories.AddRangeAsync(emailHistories);
+        await _studyAbroadDbContext.SaveChangesAsync();
+
+        // Gửi thông báo qua SignalR cho tất cả người dùng
+        foreach (var notification in notifications)
+        {
+            await _hubContext.Clients.All.SendAsync("ReceiveNotification", notification);
+        }
+
+        return Ok(new { message = "Notification sent to all users." });
+    }
+    catch (Exception ex)
+    {
+        return StatusCode(500, new { message = "An error occurred while sending notifications.", details = ex.Message });
+    }
+}
+
+
+
 
         public IActionResult QLTuvan()
         {

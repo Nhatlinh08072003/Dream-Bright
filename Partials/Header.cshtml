@@ -219,15 +219,27 @@
               }
             </div>
           </div>
-
-          @* //thong bao *@
+          <!-- Phần chuông thông báo -->
           <div class="list-none mb-2 relative">
-            <a href="/notification" class="relative" onclick="clearNotification(event)">
+            <a href="/notification" class="relative" onclick="toggleNotificationDropdown(event)">
               <img src="https://cdn-icons-png.flaticon.com/128/1827/1827422.png" class="w-6" alt="Notification Bell">
               <!-- Thẻ hiển thị số thông báo -->
               <span id="notificationCount"
                 class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">0</span>
             </a>
+
+            <!-- Dropdown hiển thị thông báo -->
+            <div id="notificationDropdown" class="hidden absolute right-0 bg-white border rounded shadow-md mt-2 w-80">
+              <div class="py-2 px-4 border-b">
+                <h3 class="font-semibold text-lg">Thông báo</h3>
+              </div>
+              <ul id="notificationList" class="max-h-60 overflow-y-auto">
+                <!-- Các thông báo sẽ được thêm vào đây bằng JavaScript -->
+              </ul>
+              <div class="py-2 px-4">
+                <a href="/notification" class="text-blue-600 hover:text-blue-800">Xem tất cả</a>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -452,34 +464,150 @@
       }
     }
 
-    //thong bao 
-    // Hàm để ẩn số thông báo và lưu trạng thái vào localStorage
-    function clearNotification(event) {
-      // Tìm phần tử số thông báo
-      const notificationCount = document.getElementById('notificationCount');
 
-      // Kiểm tra nếu có số thông báo và ẩn nó
-      if (notificationCount) {
-        notificationCount.style.display = 'none';
 
-        // Lưu trạng thái vào localStorage để không hiển thị lại sau khi tải trang
-        localStorage.setItem('notificationRead', 'true');
+
+    // Hàm để lấy thông báo từ server
+    async function fetchNotifications() {
+      try {
+        const response = await fetch('/api/notifications');  // Đảm bảo API này trả về danh sách thông báo
+        if (response.ok) {
+          const notifications = await response.json();
+          renderNotifications(notifications);
+        } else {
+          console.error('Không thể tải thông báo từ server');
+        }
+      } catch (error) {
+        console.error('Lỗi khi gọi API lấy thông báo:', error);
       }
     }
 
-    // Kiểm tra trạng thái thông báo từ localStorage khi trang tải
-    document.addEventListener('DOMContentLoaded', function () {
-      const notificationCount = document.getElementById('notificationCount');
-      const notificationRead = localStorage.getItem('notificationRead');
+    // Hàm để hiển thị thông báo trong dropdown
+    function renderNotifications(notifications) {
+      const notificationList = document.getElementById('notificationList');
+      notificationList.innerHTML = '';  // Xóa danh sách cũ
 
-      // Nếu trạng thái đã được đánh dấu là "đã đọc", ẩn số thông báo ngay khi tải trang
-      if (notificationRead === 'true' && notificationCount) {
-        notificationCount.style.display = 'none';
-      } else if (!notificationRead && notificationCount) {
-        // Nếu chưa đánh dấu là "đã đọc", hiển thị số thông báo lần đầu
-        notificationCount.style.display = 'inline-block';
+      notifications.forEach(notification => {
+        const li = document.createElement('li');
+        li.classList.add('cursor-pointer', 'p-4', 'border-b', 'hover:bg-gray-100', 'flex', 'items-center', 'justify-between');
+
+        // Thêm tiêu đề và nội dung
+        const content = document.createElement('div');
+        content.classList.add('flex', 'flex-col', 'space-y-1');
+        const title = document.createElement('span');
+        title.classList.add('font-semibold', 'text-gray-800');
+        title.textContent = notification.title;
+
+        const message = document.createElement('span');
+        message.classList.add('text-sm', 'text-gray-600');
+        message.textContent = notification.message;
+
+        content.appendChild(title);
+        content.appendChild(message);
+
+        // Hiển thị trạng thái đọc
+        const readStatus = document.createElement('span');
+        readStatus.classList.add(notification.isRead ? 'text-green-500' : 'text-red-500');
+        readStatus.textContent = notification.isRead ? 'Đã đọc' : 'Chưa đọc';
+
+        li.appendChild(content);
+        li.appendChild(readStatus);
+
+        li.addEventListener('click', () => {
+          markAsRead(notification.id);
+          li.classList.add('text-gray-400');  // Đánh dấu thông báo đã đọc
+          readStatus.textContent = 'Đã đọc';
+          readStatus.classList.add('text-green-500');
+        });
+
+        notificationList.appendChild(li);
+      });
+
+      updateNotificationCount(notifications);
+    }
+
+    // Hàm để cập nhật số lượng thông báo chưa đọc
+    function updateNotificationCount(notifications) {
+      const unreadNotifications = notifications.filter(n => !n.isRead);
+      const notificationCount = document.getElementById('notificationCount');
+      notificationCount.textContent = unreadNotifications.length;
+      notificationCount.style.display = unreadNotifications.length > 0 ? 'inline-block' : 'none';
+    }
+
+    // Hàm đánh dấu thông báo là đã đọc (cập nhật trạng thái trong database)
+    async function markAsRead(notificationId) {
+      try {
+        const response = await fetch(`/api/notifications/${notificationId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        if (response.ok) {
+          console.log(`Thông báo ${notificationId} đã được đánh dấu là đã đọc.`);
+        } else {
+          console.error('Không thể đánh dấu thông báo là đã đọc');
+        }
+      } catch (error) {
+        console.error('Lỗi khi đánh dấu thông báo là đã đọc:', error);
       }
+    }
+
+    // Lắng nghe sự kiện khi dropdown được mở
+    function toggleNotificationDropdown(event) {
+      event.preventDefault();
+      const dropdown = document.getElementById('notificationDropdown');
+      dropdown.classList.toggle('hidden');
+      fetchNotifications();  // Lấy và render thông báo khi dropdown mở
+    }
+
+    // Khởi tạo kết nối SignalR
+    const connection = new signalR.HubConnectionBuilder()
+      .withUrl("/chathub")  // URL đến SignalR Hub
+      .build();
+
+    // Lắng nghe sự kiện nhận thông báo
+    connection.on("ReceiveNotification", function (notification) {
+      console.log('Nhận thông báo mới:', notification);
+      // Cập nhật giao diện với thông báo mới
+      const notificationList = document.getElementById('notificationList');
+      const li = document.createElement('li');
+      li.classList.add('cursor-pointer', 'p-4', 'border-b', 'hover:bg-gray-100', 'flex', 'items-center', 'justify-between');
+      const content = document.createElement('div');
+      content.classList.add('flex', 'flex-col', 'space-y-1');
+      const title = document.createElement('span');
+      title.classList.add('font-semibold', 'text-gray-800');
+      title.textContent = notification.title;
+
+      const message = document.createElement('span');
+      message.classList.add('text-sm', 'text-gray-600');
+      message.textContent = notification.message;
+
+      content.appendChild(title);
+      content.appendChild(message);
+
+      const readStatus = document.createElement('span');
+      readStatus.classList.add(notification.isRead ? 'text-green-500' : 'text-red-500');
+      readStatus.textContent = notification.isRead ? 'Đã đọc' : 'Chưa đọc';
+
+      li.appendChild(content);
+      li.appendChild(readStatus);
+
+      notificationList.appendChild(li);
+      updateNotificationCount();
     });
+
+    // Khởi động SignalR
+    connection.start().catch(function (err) {
+      return console.error('Lỗi khi kết nối SignalR: ', err.toString());
+    });
+
+    // Lấy thông báo khi trang được tải
+    document.addEventListener('DOMContentLoaded', function () {
+      fetchNotifications();  // Lấy danh sách thông báo từ server khi tải trang
+    });
+
+
   </script>
 
 </body>
