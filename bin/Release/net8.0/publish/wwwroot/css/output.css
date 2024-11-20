@@ -3220,7 +3220,7 @@ video {
 
 div {
   position: relative;
-  
+
   /* Đảm bảo chữ hiển thị trên lớp mờ */
 }
 
@@ -3240,4 +3240,290 @@ div {
   /* Màu chữ */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   /* Tạo bóng chữ */
+}
+
+
+/* huu */
+.news-item h1 {
+  font-size: 14px;
+}
+
+.news-item p {
+  font-size: 14px;
+}
+
+.news-title,
+.news-description,
+.news-NewsContent {
+  font-size: 14px;
+}
+
+.btn {
+  font-size: 14px;
+}
+
+/* Khi màn hình nhỏ hơn hoặc bằng 1248px */
+@media (max-width: 1286px) {
+  .textTV {
+    font-size: 14px;
+  }
+
+  .news-title,
+  .news-description,
+  .news-NewsContent {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 13px;
+  }
+}
+
+/* Khi màn hình nhỏ hơn hoặc bằng 1248px */
+@media (max-width: 1248px) {
+  .news-item h1 {
+    font-size: 13px;
+    /* Giảm kích thước tiêu đề */
+  }
+
+  .news-item p {
+    font-size: 13px;
+    /* Giảm kích thước mô tả và nội dung */
+  }
+
+  .news-title,
+  .news-description,
+  .news-NewsContent {
+    font-size: 13px;
+    /* Giảm kích thước nội dung chi tiết */
+  }
+
+  .btn {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1224px) {
+  .news-item h1 {
+    font-size: 12px;
+    /* Giảm kích thước tiêu đề */
+  }
+
+  .news-item p {
+    font-size: 12px;
+    /* Giảm kích thước mô tả và nội dung */
+  }
+
+  .news-title,
+  .news-description,
+  .news-NewsContent {
+    font-size: 12px;
+    /* Giảm kích thước nội dung chi tiết */
+  }
+}
+
+@media (max-width: 1168px) {
+  .btn {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 1125px) {
+  .news-item h1 {
+    font-size: 11px;
+    /* Giảm kích thước tiêu đề */
+  }
+
+  .news-item p {
+    font-size: 11px;
+    /* Giảm kích thước mô tả và nội dung */
+  }
+
+  .news-title,
+  .news-description,
+  .news-NewsContent {
+    font-size: 11px;
+    /* Giảm kích thước nội dung chi tiết */
+  }
+}
+
+@media (max-width: 1194px) {
+  .btnAdd {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 1169px) {
+  .news-item h1 {
+    font-size: 11px;
+    /* Giảm kích thước tiêu đề */
+  }
+
+  .news-item p {
+    font-size: 11px;
+    /* Giảm kích thước mô tả và nội dung */
+  }
+
+  .news-title,
+  .news-description,
+  .news-NewsContent {
+    font-size: 11px;
+    /* Giảm kích thước nội dung chi tiết */
+  }
+}
+
+/* Định dạng lưới mặc định */
+#newsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Hiển thị 2 cột mặc định */
+  gap: 16px;
+  /* Khoảng cách giữa các thẻ */
+}
+
+/* Khi màn hình dưới 900px */
+@media screen and (max-width: 1022px) {
+  #newsGrid {
+    grid-template-columns: 1fr;
+
+    .news-item h1 {
+      font-size: 14px;
+      /* Giảm kích thước tiêu đề */
+    }
+
+    .news-item p {
+      font-size: 14px;
+      /* Giảm kích thước mô tả và nội dung */
+    }
+
+    .news-title,
+    .news-description,
+    .news-NewsContent {
+      font-size: 14px;
+      /* Giảm kích thước nội dung chi tiết */
+    }
+  }
+
+  .news-item h1 {
+    font-size: 10px;
+    /* Giảm kích thước tiêu đề */
+  }
+
+  .news-item p {
+    font-size: 10px;
+    /* Giảm kích thước mô tả và nội dung */
+  }
+
+  .news-title,
+  .news-description,
+  .news-NewsContent {
+    font-size: 10px;
+    /* Giảm kích thước nội dung chi tiết */
+  }
+
+  .btn {
+    font-size: 10px;
+  }
+}
+
+
+@media (max-width: 1010px) {
+
+  .btn {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 985px) {
+  .news-item h1 {
+    font-size: 9px;
+    /* Giảm kích thước tiêu đề */
+  }
+
+  .news-item p {
+    font-size: 9px;
+    /* Giảm kích thước mô tả và nội dung */
+  }
+
+  .news-title,
+  .news-description,
+  .news-NewsContent {
+    font-size: 9px;
+    /* Giảm kích thước nội dung chi tiết */
+  }
+
+  .btn {
+    font-size: 9px;
+  }
+}
+
+
+@media (max-width: 948px) {
+  .news-item h1 {
+    font-size: 9px;
+    /* Giảm kích thước tiêu đề */
+  }
+
+  .news-item p {
+    font-size: 9px;
+    /* Giảm kích thước mô tả và nội dung */
+  }
+
+  .news-title,
+  .news-description,
+  .news-NewsContent {
+    font-size: 9px;
+    /* Giảm kích thước nội dung chi tiết */
+  }
+
+  .btn {
+    font-size: 8.5px;
+  }
+}
+
+
+@media (max-width: 913px) {
+  .news-item h1 {
+    font-size: 8.5px;
+    /* Giảm kích thước tiêu đề */
+  }
+
+  .news-item p {
+    font-size: 8.5px;
+    /* Giảm kích thước mô tả và nội dung */
+  }
+
+  .news-title,
+  .news-description,
+  .news-NewsContent {
+    font-size: 8.5px;
+    /* Giảm kích thước nội dung chi tiết */
+  }
+
+  .btn {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 888px) {
+  .news-item h1 {
+    font-size: 7.5px;
+    /* Giảm kích thước tiêu đề */
+  }
+
+  .news-item p {
+    font-size: 7.5px;
+    /* Giảm kích thước mô tả và nội dung */
+  }
+
+  .news-title,
+  .news-description,
+  .news-NewsContent {
+    font-size: 7.5px;
+    /* Giảm kích thước nội dung chi tiết */
+  }
+
+  .btn {
+    font-size: 7px;
+  }
 }
