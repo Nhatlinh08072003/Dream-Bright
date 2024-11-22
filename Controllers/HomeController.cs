@@ -51,8 +51,8 @@ public class HomeController : Controller
 
     //     return View(chatMessages);
     // }// Thêm phương thức Chat
-   
-     public IActionResult Chat()
+
+    public IActionResult Chat()
     {
         if (User.IsInRole("Admin") || User.IsInRole("Staff"))
         {
@@ -186,7 +186,11 @@ public class HomeController : Controller
         var schools = _context.Schools.ToList(); // Lấy danh sách trường từ cơ sở dữ liệu
         return View(schools);
     }
-
+    public IActionResult TinTuc()
+    {
+        var news = _context.News.ToList(); // Lấy danh sách trường từ cơ sở dữ liệu
+        return View(news);
+    }
     [HttpPost("api/schools")]
     public IActionResult FilterSchools([FromBody] FilterViewModel filter)
     {
