@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("localdb"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB"));
     options.EnableSensitiveDataLogging(false);
 });
 

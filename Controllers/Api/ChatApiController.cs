@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Authorization;
 using Dream_Bridge.ViewModels;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.SignalR;
+using Dream_Bridge.Hubs;
 
 namespace Dream_Bridge.Controllers;
 [Route("api/chat")]  
@@ -14,11 +16,12 @@ public class ChatApiController : ControllerBase
 {  
     private readonly StudyAbroadDbContext _context; // Đảm bảo thay thế với DbContext thực tế của bạn  
     private readonly ILogger<ChatApiController> _logger;  
-
-    public ChatApiController(StudyAbroadDbContext context, ILogger<ChatApiController> logger)  
+    private readonly IHubContext<ChatHub> _hubContext; 
+    public ChatApiController(StudyAbroadDbContext context, ILogger<ChatApiController> logger,IHubContext<ChatHub> hubContext)  
     {  
         _context = context;  
         _logger = logger;  
+        _hubContext = hubContext;  // Assign IHubContext<ChatHub>
     }  
 
    [HttpGet("messages/{userId}")]  
@@ -75,6 +78,10 @@ public IActionResult GetChatMessages(int userId, int page = 1, int pageSize = 10
 
         _context.ChatMessages.Add(chatMessage);  
         await _context.SaveChangesAsync();  
+
+
+       // Gửi tin nhắn đến client thông qua SignalR (ChatHub)
+        await _hubContext.Clients.User(receiverId.ToString()).SendAsync("ReceiveMessage", chatMessage);  // Gửi tin nhắn tới client
 
         return Ok(new { success = true, message = chatMessage });  
     }  

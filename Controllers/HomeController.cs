@@ -181,6 +181,11 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult TinTuc()
+    {
+        var news = _context.News.ToList(); // Lấy danh sách trường từ cơ sở dữ liệu
+        return View(news);
+    }
     public IActionResult TimTruong()
     {
         var schools = _context.Schools.ToList(); // Lấy danh sách trường từ cơ sở dữ liệu
