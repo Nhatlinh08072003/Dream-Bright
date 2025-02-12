@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\Dream-Bright\\Dream-Bridge.csproj": {}
+    "D:\\Dream-Bright\\Dream-Bridge.csproj": {}
   },
   "projects": {
-    "D:\\Git\\Dream-Bright\\Dream-Bridge.csproj": {
+    "D:\\Dream-Bright\\Dream-Bridge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\Dream-Bright\\Dream-Bridge.csproj",
+        "projectUniqueName": "D:\\Dream-Bright\\Dream-Bridge.csproj",
         "projectName": "Dream-Bridge",
-        "projectPath": "D:\\Git\\Dream-Bright\\Dream-Bridge.csproj",
-        "packagesPath": "C:\\Users\\anhqu\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\Dream-Bright\\obj\\",
+        "projectPath": "D:\\Dream-Bright\\Dream-Bridge.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "D:\\Dream-Bright\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\anhqu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -93,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
