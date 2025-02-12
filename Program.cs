@@ -7,13 +7,33 @@ using Dream_Bridge.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
+
+var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<Program>>();
+
+// Kiểm tra Singleton trước khi chạy ứng dụng
+var logger1 = LoggerSingleton.Instance;
+var logger2 = LoggerSingleton.Instance;
+var logger3 = LoggerSingleton.Instance;
+
+logger1.Log("Log từ instance 1");
+logger2.Log("Log từ instance 2");
+
+// Kiểm tra 2 instance có giống nhau không
+logger.LogInformation($"🧐 Cùng instance? {ReferenceEquals(logger1, logger2)}");
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("azureDB"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("localDB"));
     options.EnableSensitiveDataLogging(false);
 });
+// // Add singelton
+// builder.Services.AddSingleton<LoggerSingleton>();
 
 // Cấu hình SignalR
 builder.Services.AddSignalR();
@@ -251,4 +271,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Account", action = "PageAcc" }
 );
 
+
+
 app.Run();
+
+
+
+
+

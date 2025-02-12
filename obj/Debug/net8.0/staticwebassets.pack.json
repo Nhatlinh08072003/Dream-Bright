@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "D:\\Dream-Bright\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Dream-Bridge.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Dream-Bridge.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Dream-Bridge.u4vrzk564g.bundle.scp.css"
     },
     {
       "Id": "D:\\Dream-Bright\\wwwroot\\Images\\0109b52c-2463-494a-b18e-4d610ce6fd41.jpg",
@@ -811,6 +811,10 @@
     {
       "Id": "D:\\Dream-Bright\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Dream-Bridge.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Dream-Bridge.Microsoft.AspNetCore.StaticWebAssets.props",
