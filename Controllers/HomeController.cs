@@ -21,6 +21,15 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        var logger1 = LoggerSingleton.Instance;
+        var logger2 = LoggerSingleton.Instance;
+
+        _logger.LogInformation("📌 Log từ instance 1");
+        _logger.LogInformation("📌 Log từ instance 2");
+
+        // Kiểm tra 2 instance có giống nhau không
+        _logger.LogInformation($"🧐 Cùng instance? {ReferenceEquals(logger1, logger2)}");
+
         return View();
     }
     public IActionResult VeChungToi()
