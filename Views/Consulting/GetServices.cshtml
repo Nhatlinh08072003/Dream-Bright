@@ -1,0 +1,9 @@
+@model ConsultingViewModel
+
+<h2>Dịch vụ tư vấn du học tại @Model.Country</h2>
+<ul>
+    @foreach (var service in Model.Services)
+    {
+        <li>@service</li>
+    }
+</ul>
