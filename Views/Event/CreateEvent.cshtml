@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Tạo sự kiện mới";
+}
+
+<h2>Tạo sự kiện mới</h2>
+
+<form method="post">
+    <label for="eventName">Nhập tên sự kiện:</label>
+    <input type="text" id="eventName" name="eventName" required>
+    <button type="submit">Tạo sự kiện</button>
+</form>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <p>@ViewBag.Message</p>
+}

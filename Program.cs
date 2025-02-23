@@ -9,10 +9,7 @@ using Dream_Bridge.Services.Adapters;
 using Dream_Bridge.Services.Logging;
 using Dream_Bridge.Services.Repositories;
 using Dream_Bridge.Data;
-using Microsoft.EntityFrameworkCore;
-using Dream_Bridge.Services.Adapters;
-using Dream_Bridge.Data;
-using Dream_Bridge.Services.Repositories;
+using Dream_Bridge.Models.Observer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +19,7 @@ builder.Logging.AddConsole();
 
 // Đăng ký dịch vụ
 builder.Services.AddControllersWithViews();
+
 builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("localDB"));
@@ -30,6 +28,7 @@ builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 // Đăng ký các dịch vụ vào DI container
 builder.Services.AddScoped<IApiAdapter, ApiAdapter>();
 builder.Services.AddScoped<ILoggingService, LoggingService>();
@@ -45,13 +44,19 @@ builder.Services.AddScoped<Func<string, IStudyAbroadFactory>>(serviceProvider =>
     };
 });
 
-// Đăng ký Repository
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+// Cấu hình Observer: tạo instance, attach observer, và đăng ký vào DI
+var notifier = new EventNotifier();
+notifier.Attach(new AdminObserver());
+notifier.Attach(new UserObserver("Người dùng A"));
+builder.Services.AddSingleton(notifier);
+
 // Đăng ký SignalR
 builder.Services.AddSignalR();
+
 // Đăng ký EmailService
 builder.Services.AddScoped<EmailService>();
-// Đăng ký HttpClient và ApiAdapter
+
+// Đăng ký HttpClient và ApiAdapter (chỉ cần đăng ký một lần)
 builder.Services.AddHttpClient<IApiAdapter, ApiAdapter>();
 
 // Cấu hình xác thực
