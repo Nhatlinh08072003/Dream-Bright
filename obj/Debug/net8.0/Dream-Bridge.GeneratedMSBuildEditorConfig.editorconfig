@@ -86,6 +86,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUUxUdXZhbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Dream-Bright/Views/Consulting/GetServices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGluZ1xHZXRTZXJ2aWNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Dream-Bright/Views/DichVu/ChiTiet.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGljaFZ1XENoaVRpZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -124,6 +128,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Dream-Bright/Views/DuHoc/Uc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVIb2NcVWMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Dream-Bright/Views/Event/CreateEvent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQ3JlYXRlRXZlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Dream-Bright/Views/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/laptop/OneDrive/Máy tính/HK1_năm 3/Dream-Bright/Views/Home/Chat.cshtml]
