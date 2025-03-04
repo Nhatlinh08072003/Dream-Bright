@@ -98,6 +98,13 @@
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
                     Chat</span>
             </a>
+            <a href="/qltruycap"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">visibility</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Truy Cập</span>
+            </a>
         </div>
 
         <!-- thẻ table chứa nội dung -->
@@ -128,23 +135,23 @@
                                 <td class="text-black text-center border border-black p-3">@registration.PhoneNumber</td>
                                 <td class="text-black text-center border border-black p-3">
                                     <select onchange="updateStatus(this)" data-id="@registration.IdConsulting" class="w-[90%] h-[32px] mx-auto rounded-md 
-            @(registration.Status == "Chưa tư vấn" ? "bg-red-200" : 
-              registration.Status == "Đã tư vấn" ? "bg-green-500" : "bg-red-500")">>
-                                        <option value="Chưa tư vấn" selected="@(registration.Status == "Chưa tư vấn")"
-                                            class="bg-red-200">Chưa
-                                            tư vấn</option>
-                                        <option value="Đã tư vấn" selected="@(registration.Status == "Đã tư vấn")"
-                                            class="bg-green-500">Đã tư vấn
-                                        </option>
-                                        <option value="Không thể liên lạc"
-                                            selected="@(registration.Status == "Không thể liên lạc")" class="bg-red-500">
-                                            Không thể liên lạc
-                                        </option>
-                                    </select>
+                @(registration.Status == "Chưa tư vấn" ? "bg-red-200" :
+                                registration.Status == "Đã tư vấn" ? "bg-green-500" : "bg-red-500")">>
+                                    <option value="Chưa tư vấn" selected="@(registration.Status == "Chưa tư vấn")"
+                                        class="bg-red-200">Chưa
+                                        tư vấn</option>
+                                    <option value="Đã tư vấn" selected="@(registration.Status == "Đã tư vấn")"
+                                        class="bg-green-500">Đã tư vấn
+                                    </option>
+                                    <option value="Không thể liên lạc"
+                                        selected="@(registration.Status == "Không thể liên lạc")" class="bg-red-500">
+                                        Không thể liên lạc
+                                    </option>
+                                </select>
 
                                 </td>
                             </tr>
-                        }
+                                                }
                     </tbody>
                 </table>
             </div>

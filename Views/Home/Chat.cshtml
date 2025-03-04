@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Chat";
     var adminId = (int)(ViewData["AdminId"] ?? 0); // Ép kiểu adminId sang int
-    var adminName = ViewData["AdminName"]?.ToString() ?? "Admin"; // Lấy tên admin
+    var adminName = ViewData["StaffName"]?.ToString() ?? "Staff"; // Lấy tên admin
     var userName = User.FindFirst(ClaimTypes.Name)?.Value ?? "User"; // Lấy tên người dùng
 }
 
@@ -22,7 +22,7 @@
                 <!-- Container tin nhắn với bong bóng -->
                 <div
                     class="relative flex flex-col gap-2 rounded-lg px-5 py-3 shadow-lg   
-                    @((message.SenderId == adminId) ? "bg-blue-200" : "bg-green-200 text-grey-600") max-w-xs break-words">
+                                @((message.SenderId == adminId) ? "bg-blue-200" : "bg-green-200 text-grey-600") max-w-xs break-words">
                     <p>@message.MessageText</p>
 
                     @if (!string.IsNullOrEmpty(message.AttachmentUrl))

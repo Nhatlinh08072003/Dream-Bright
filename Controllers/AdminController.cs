@@ -9,25 +9,106 @@ using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.SignalR;
 using Dream_Bridge.Hubs;
+using Dream_Bridge.Model.Main;
+using Microsoft.AspNetCore.Authentication;
 // using BCrypt.Net;
 namespace Dream_Bridge.Controllers
 {
     [Authorize(Roles = "Admin, Staff")] // Cho phép cả Admin và Staff truy cập  
     public class AdminController : Controller
     {
-            private readonly IHubContext<ChatHub> _hubContext; // Inject IHubContext
-
+        private readonly IHubContext<ChatHub> _hubContext; // Inject IHubContext
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IChatPermissionService _chatPermissionService;
         private readonly StudyAbroadDbContext _studyAbroadDbContext;
         private readonly ILogger<AdminController> _logger;
 
-        public AdminController( IHubContext<ChatHub> hubContext,ILogger<AdminController> logger, StudyAbroadDbContext studyAbroadDbContext, IWebHostEnvironment webHostEnvironment)
+        public AdminController(IHubContext<ChatHub> hubContext, ILogger<AdminController> logger, StudyAbroadDbContext studyAbroadDbContext, IWebHostEnvironment webHostEnvironment, IChatPermissionService chatPermissionService)
         {
-              _hubContext = hubContext;
+            _hubContext = hubContext;
+            _chatPermissionService = chatPermissionService;
             _logger = logger;
             _webHostEnvironment = webHostEnvironment;
             _studyAbroadDbContext = studyAbroadDbContext;
         }
+        //Proxy
+
+        public IActionResult CheckChatPermission(int userId)
+        {
+            bool canAccess = _chatPermissionService.CanUserAccessChat(userId);
+            return Json(new { CanAccess = canAccess });
+        }
+        [HttpGet("QLTruyCap")]
+        public IActionResult ManageChatPermission()
+        {
+            var staffUsers = _studyAbroadDbContext.Users.Where(u => u.Role == "Staff").ToList();
+            return View("QLTruyCap", staffUsers);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateStaffPermission(int staffId, bool canAccessChat)
+        {
+            var staff = _studyAbroadDbContext.Users.FirstOrDefault(u => u.IdUser == staffId && u.Role == "Staff");
+            if (staff != null)
+            {
+                staff.CanAccessChat = canAccessChat;
+                _studyAbroadDbContext.SaveChanges();
+            }
+
+            return RedirectToAction("ManageStaff");
+        }
+        public class ChatPermissionModel
+        {
+            public int UserId { get; set; }
+            public bool IsActive { get; set; } // 0: Cho phép, 1: Không cho phép
+        }
+
+        [HttpPost]
+        public IActionResult UpdateChatPermission([FromBody] ChatPermissionModel model)
+        {
+            if (model == null || model.UserId == 0)
+            {
+                return BadRequest("Dữ liệu không hợp lệ!");
+            }
+
+            var user = _studyAbroadDbContext.Users.Find(model.UserId);
+            if (user == null)
+            {
+                return NotFound("Người dùng không tồn tại!");
+            }
+
+            // Cập nhật đúng trường CanAccessChat thay vì IsActive
+            user.CanAccessChat = model.IsActive;
+            _studyAbroadDbContext.SaveChanges();
+
+            // 🔹 Cập nhật lại Claim "CanAccessChat" nếu người dùng đang đăng nhập
+            var userClaims = HttpContext.User;
+            if (userClaims.Identity.IsAuthenticated && userClaims.FindFirst(ClaimTypes.NameIdentifier)?.Value == user.IdUser.ToString())
+            {
+                var identity = (ClaimsIdentity)userClaims.Identity;
+
+                // Xóa Claim cũ trước khi thêm mới
+                var oldClaim = identity.FindFirst("CanAccessChat");
+                if (oldClaim != null)
+                {
+                    identity.RemoveClaim(oldClaim);
+                }
+
+                // Thêm Claim mới dựa trên giá trị CanAccessChat
+                identity.AddClaim(new Claim("CanAccessChat", user.CanAccessChat ? "True" : "False"));
+
+                // Cập nhật Claims trong session (nếu cần)
+                HttpContext.SignOutAsync();
+                HttpContext.SignInAsync(new ClaimsPrincipal(identity));
+            }
+
+            return Ok("Cập nhật thành công!");
+        }
+
+
+
+
+
         private int GetCurrentUserId()
         {
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
@@ -36,6 +117,13 @@ namespace Dream_Bridge.Controllers
                 return userId;
             }
             return 0;
+        }
+
+        public class ChatPermissionRequest
+        {
+            public int userId { get; set; }
+            public bool canAccessChat { get; set; }
+
         }
 
         [HttpGet]
@@ -95,51 +183,51 @@ namespace Dream_Bridge.Controllers
 
             return View(model);
         }
-            [HttpPost("api/admin/send-notification")]
-public async Task<IActionResult> SendNotification([FromBody] Notification notificationDto)
-{
-    try
-    {
-        var users = await _studyAbroadDbContext.Users.ToListAsync();  // Lấy tất cả người dùng từ cơ sở dữ liệu
-        var notifications = users.Select(user => new Notification
+        [HttpPost("api/admin/send-notification")]
+        public async Task<IActionResult> SendNotification([FromBody] Notification notificationDto)
         {
-            UserId = user.IdUser,
-            Title = notificationDto.Title,
-            Message = notificationDto.Message,
-            CreatedAt = DateTime.Now,
-            IsRead = false
-        }).ToList();
+            try
+            {
+                var users = await _studyAbroadDbContext.Users.ToListAsync();  // Lấy tất cả người dùng từ cơ sở dữ liệu
+                var notifications = users.Select(user => new Notification
+                {
+                    UserId = user.IdUser,
+                    Title = notificationDto.Title,
+                    Message = notificationDto.Message,
+                    CreatedAt = DateTime.Now,
+                    IsRead = false
+                }).ToList();
 
-        // Thêm tất cả thông báo vào cơ sở dữ liệu
-        await _studyAbroadDbContext.Notifications.AddRangeAsync(notifications);
-        await _studyAbroadDbContext.SaveChangesAsync();
+                // Thêm tất cả thông báo vào cơ sở dữ liệu
+                await _studyAbroadDbContext.Notifications.AddRangeAsync(notifications);
+                await _studyAbroadDbContext.SaveChangesAsync();
 
-        // Lưu lịch sử thông báo đã gửi
-        var emailHistories = users.Select(user => new EmailHistory
-        {
-            ToEmail = user.Email,
-            Subject = notificationDto.Title,
-            Body = notificationDto.Message,
-            SentAt = DateTime.Now
-        }).ToList();
+                // Lưu lịch sử thông báo đã gửi
+                var emailHistories = users.Select(user => new EmailHistory
+                {
+                    ToEmail = user.Email,
+                    Subject = notificationDto.Title,
+                    Body = notificationDto.Message,
+                    SentAt = DateTime.Now
+                }).ToList();
 
-        // Thêm lịch sử gửi email vào cơ sở dữ liệu
-        await _studyAbroadDbContext.EmailHistories.AddRangeAsync(emailHistories);
-        await _studyAbroadDbContext.SaveChangesAsync();
+                // Thêm lịch sử gửi email vào cơ sở dữ liệu
+                await _studyAbroadDbContext.EmailHistories.AddRangeAsync(emailHistories);
+                await _studyAbroadDbContext.SaveChangesAsync();
 
-        // Gửi thông báo qua SignalR cho tất cả người dùng
-        foreach (var notification in notifications)
-        {
-            await _hubContext.Clients.All.SendAsync("ReceiveNotification", notification);
+                // Gửi thông báo qua SignalR cho tất cả người dùng
+                foreach (var notification in notifications)
+                {
+                    await _hubContext.Clients.All.SendAsync("ReceiveNotification", notification);
+                }
+
+                return Ok(new { message = "Notification sent to all users." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An error occurred while sending notifications.", details = ex.Message });
+            }
         }
-
-        return Ok(new { message = "Notification sent to all users." });
-    }
-    catch (Exception ex)
-    {
-        return StatusCode(500, new { message = "An error occurred while sending notifications.", details = ex.Message });
-    }
-}
 
 
 
@@ -314,12 +402,15 @@ public async Task<IActionResult> SendNotification([FromBody] Notification notifi
 
         public IActionResult QLChat()
         {
-            // if (!User.Identity.IsAuthenticated || !User.IsInRole("Admin")||!User.IsInRole("Staff") )
-            // {
-            //     return RedirectToAction("qlchat", "admin"); 
-            //     return RedirectToAction("qlchat", "staff"); 
-            // }
+            // Lấy UserId từ claims
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+            var user = _studyAbroadDbContext.Users.Find(userId);
 
+            // Nếu không tìm thấy user hoặc IsActive = 0 => chặn truy cập
+            if (user == null || (!user.IsActive && user.Role == "Staff"))
+            {
+                return RedirectToAction("AccessDenied", "Account");
+            }
 
             var chatMessages = _studyAbroadDbContext.ChatMessages
                 .Include(m => m.Sender)
@@ -331,9 +422,42 @@ public async Task<IActionResult> SendNotification([FromBody] Notification notifi
                 .ToList();
 
             ViewData["Users"] = users;
-
             return View(chatMessages);
         }
+
+
+        // public IActionResult QLChat()
+        // {
+        //     // Kiểm tra nếu chưa đăng nhập
+        //     if (!User.Identity.IsAuthenticated)
+        //     {
+        //         return RedirectToAction("Login", "Account");
+        //     }
+
+        //     // Kiểm tra quyền truy cập Chat
+        //     bool canAccessChat = User.HasClaim("CanAccessChat", "True");
+
+        //     // Nếu là Staff nhưng không có quyền, chặn vào QLChat
+        //     if (User.IsInRole("Staff") && !canAccessChat)
+        //     {
+        //         return RedirectToAction("AccessDenied", "Account"); // Chỉ chặn QLChat, không chặn đăng nhập
+        //     }
+
+        //     // Lấy danh sách tin nhắn và người dùng
+        //     var chatMessages = _studyAbroadDbContext.ChatMessages
+        //         .Include(m => m.Sender)
+        //         .Include(m => m.Receiver)
+        //         .ToList();
+
+        //     var users = _studyAbroadDbContext.Users
+        //         .Select(u => new { u.IdUser, u.FullName })
+        //         .ToList();
+
+        //     ViewData["Users"] = users;
+
+        //     return View(chatMessages);
+        // }
+
         [HttpPost("api/chat/send")]
         public async Task<IActionResult> SendChatMessage(string messageText, int receiverId, IFormFile? attachment)
         {
@@ -656,6 +780,8 @@ public async Task<IActionResult> SendNotification([FromBody] Notification notifi
         }
     }
 
+
+
     [Serializable]
     internal class DbUpdateException : Exception
     {
@@ -671,4 +797,6 @@ public async Task<IActionResult> SendNotification([FromBody] Notification notifi
         {
         }
     }
+
+
 }

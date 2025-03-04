@@ -21,6 +21,17 @@
             <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
             <script src="~/js/site.js" asp-append-version="true"></script>
             @await RenderSectionAsync("Scripts", required: false)
+
+            @using System.Security.Claims
+            @{
+                var canAccessChat = User.HasClaim("CanAccessChat", "True");
+            }
+
+            @if (User.IsInRole("Admin") || canAccessChat)
+            {
+                <li><a href="@Url.Action("QLChat", "Admin")">Quản lý Chat</a></li>
+            }
+
 </body>
 
 </html>

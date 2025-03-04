@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Configuration;
 using Dream_Bridge.Hubs;
+using Dream_Bridge.Model.Main;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -80,6 +81,8 @@ JsonConvert.DefaultSettings = () => new JsonSerializerSettings
     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
 };
 
+builder.Services.AddScoped<IChatPermissionService, ChatPermissionService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -96,6 +99,9 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
+
+
+
 
 // Thêm endpoint cho SignalR
 app.MapHub<Dream_Bridge.Hubs.ChatHub>("/chatHub");
@@ -224,6 +230,11 @@ app.MapControllerRoute(
     name: "QLTaikhoan",
     pattern: "/qltaikhoan",
     defaults: new { controller = "Admin", action = "QLTaikhoan" }
+);
+app.MapControllerRoute(
+    name: "QLTruyCap",
+    pattern: "/qltruycap",
+    defaults: new { controller = "Admin", action = "QuanLyTruyCap" }
 );
 app.MapControllerRoute(
     name: "QLChat",
