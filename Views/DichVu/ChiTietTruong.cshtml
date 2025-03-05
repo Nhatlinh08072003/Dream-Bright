@@ -11,11 +11,10 @@
             <p><strong>Bậc học:</strong> @Model.Level</p>
             <div><strong>Học phí trung bình:</strong> @Model.AverageTuition.ToString("C")</div>
         </div>
-        @* <p>@Html.Raw(Model.DetailedDescription)</p> *@
+
         <div>
             @Html.Raw(HtmlHelpers.FormatNewsContent(Model.DetailedDescription).ToString())
         </div>
-
 
         <div class="mt-4 text-center">
             <button class="rounded bg-blue-500 px-4 py-2 text-white w-2/5" id="consultButton">

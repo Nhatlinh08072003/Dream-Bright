@@ -155,6 +155,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Home", action = "DichVu" }
 );
 app.MapControllerRoute(
+    name: "ChatBot",
+    pattern: "/chatbot",
+    defaults: new { controller = "Home", action = "ChatBot" }
+);
+app.MapControllerRoute(
     name: "TinTuc",
     pattern: "/tintuc",
     defaults: new { controller = "Home", action = "TinTuc" }
