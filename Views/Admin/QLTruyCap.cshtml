@@ -1,0 +1,85 @@
+@using Dream_Bridge.Models.Main
+@model List<User>
+
+@{
+    ViewData["Title"] = "Quản lý quyền truy cập Chat";
+}
+
+<h2 class="text-2xl font-bold mb-4 text-gray-700 text-center">Quản lý quyền truy cập Chat</h2>
+
+<div class="overflow-x-auto bg-white p-6 shadow-md rounded-lg">
+    <table class="w-full border border-gray-200 rounded-lg">
+        <thead class="bg-gray-100 text-gray-700">
+            <tr>
+                <th class="p-3 border">Họ Tên</th>
+                <th class="p-3 border">Email</th>
+                <th class="p-3 border">Số Điện Thoại</th>
+                <th class="p-3 border">Vai Trò</th>
+                <th class="p-3 border">Quyền Truy Cập</th>
+                <th class="p-3 border">Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr class="text-center hover:bg-gray-50 transition">
+                    <td class="p-3 border">@user.FullName</td>
+                    <td class="p-3 border">@user.Email</td>
+                    <td class="p-3 border">@user.PhoneNumber</td>
+                    <td class="p-3 border font-semibold text-blue-600">@user.Role</td>
+                    <td class="p-3 border">
+                        <select class="chat-permission px-3 py-1 border rounded-lg focus:ring focus:ring-blue-300"
+                            data-user-id="@user.IdUser">
+                            <option value="true" selected="@(user.CanAccessChat ? "selected" : null)">Cho phép</option>
+                            <option value="false" selected="@(!user.CanAccessChat ? "selected" : null)">Không cho phép
+                            </option>
+
+                        </select>
+                    </td>
+                    <td class="p-3 border">
+                        <button
+                            class="btn-update bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600 transition flex items-center justify-center gap-2"
+                            data-user-id="@user.IdUser">
+                            <span class="btn-text">Cập nhật</span>
+                            <span
+                                class="loader hidden animate-spin border-2 border-white border-t-transparent rounded-full w-4 h-4"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    document.querySelectorAll('.btn-update').forEach(button => {
+        button.addEventListener('click', async function () {
+            let userId = this.getAttribute('data-user-id');
+            let select = document.querySelector(`.chat-permission[data-user-id='${userId}']`);
+            let isActive = select.value === "true";
+            let btnText = this.querySelector('.btn-text');
+            let loader = this.querySelector('.loader');
+
+            btnText.classList.add('hidden');
+            loader.classList.remove('hidden');
+
+            try {
+                let response = await fetch('/Admin/UpdateChatPermission', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ userId: parseInt(userId), isActive })
+                });
+
+                if (!response.ok) throw new Error("Lỗi cập nhật quyền!");
+
+                alert("Cập nhật thành công!");
+            } catch (error) {
+                alert("❌ Cập nhật thất bại! Vui lòng thử lại.");
+                console.error("❌ Lỗi:", error);
+            } finally {
+                btnText.classList.remove('hidden');
+                loader.classList.add('hidden');
+            }
+        });
+    });
+</script>

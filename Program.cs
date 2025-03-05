@@ -10,6 +10,7 @@ using Dream_Bridge.Services.Logging;
 using Dream_Bridge.Services.Repositories;
 using Dream_Bridge.Data;
 using Dream_Bridge.Models.Observer;
+using Dream_Bridge.Model.Main;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -97,6 +98,8 @@ JsonConvert.DefaultSettings = () => new JsonSerializerSettings
     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
 };
 
+builder.Services.AddScoped<IChatPermissionService, ChatPermissionService>();
+
 var app = builder.Build();
 
 // Cấu hình Middleware
@@ -116,6 +119,187 @@ app.MapHub<ChatHub>("/chatHub");
 
 // Định tuyến Controller
 app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+
+// Thêm endpoint cho SignalR
+app.MapHub<Dream_Bridge.Hubs.ChatHub>("/chatHub");
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "Home",
+    pattern: "/home",
+    defaults: new { controller = "Home", action = "Home" }
+);
+app.MapControllerRoute(
+    name: "VeChungToi",
+    pattern: "/vechungtoi",
+    defaults: new { controller = "Home", action = "VeChungToi" }
+);
+app.MapControllerRoute(
+    name: "DuHoc",
+    pattern: "/duhoc",
+    defaults: new { controller = "Home", action = "DuHoc" }
+);
+app.MapControllerRoute(
+    name: "Chat",
+    pattern: "/chat",
+    defaults: new { controller = "Home", action = "Chat" }
+);
+app.MapControllerRoute(
+    name: "DichVu",
+    pattern: "/dichvu",
+    defaults: new { controller = "Home", action = "DichVu" }
+);
+app.MapControllerRoute(
+    name: "TinTuc",
+    pattern: "/tintuc",
+    defaults: new { controller = "Home", action = "TinTuc" }
+);
+app.MapControllerRoute(
+    name: "Notification",
+    pattern: "/notification",
+    defaults: new { controller = "Home", action = "Notification" }
+);
+app.MapControllerRoute(
+    name: "TimTruong",
+    pattern: "/timtruong",
+    defaults: new { controller = "Home", action = "TimTruong" }
+);
+app.MapControllerRoute(
+    name: "Uc",
+    pattern: "/uc",
+    defaults: new { controller = "DuHoc", action = "Uc" }
+);
+app.MapControllerRoute(
+    name: "My",
+    pattern: "/my",
+    defaults: new { controller = "DuHoc", action = "My" }
+);
+app.MapControllerRoute(
+    name: "Singapore",
+    pattern: "/singapore",
+    defaults: new { controller = "DuHoc", action = "Singapore" }
+);
+app.MapControllerRoute(
+    name: "ThuySy",
+    pattern: "/thuysy",
+    defaults: new { controller = "DuHoc", action = "ThuySy" });
+
+// dich vu
+app.MapControllerRoute(
+    name: "VisaUc",
+    pattern: "/visauc",
+    defaults: new { controller = "DichVu", action = "VisaUc" }
+);
+app.MapControllerRoute(
+    name: "VisaMy",
+    pattern: "/visamy",
+    defaults: new { controller = "DichVu", action = "VisaMy" }
+);
+app.MapControllerRoute(
+    name: "VisaSingapore",
+    pattern: "/visasingapore",
+    defaults: new { controller = "DichVu", action = "VisaSingapore" }
+);
+app.MapControllerRoute(
+    name: "VisaThuySy",
+    pattern: "/viasathusy",
+    defaults: new { controller = "DichVu", action = "VisaThuySy" }
+);
+app.MapControllerRoute(
+    name: "ChiTiet",
+    pattern: "/chitiet",
+    defaults: new { controller = "DichVu", action = "ChiTiet" }
+);
+app.MapControllerRoute(
+    name: "ChiTietTruong",
+    pattern: "/chitietruong",
+    defaults: new { controller = "DichVu", action = "ChiTietTruong" }
+);
+app.MapControllerRoute(
+   name: "QLTruong",
+   pattern: "/qltruong",
+   defaults: new { controller = "Admin", action = "QLTruong" }
+);
+app.MapControllerRoute(
+    name: "QLTintuc",
+    pattern: "/qltintuc",
+    defaults: new { controller = "Admin", action = "QLTintuc" }
+);
+app.MapControllerRoute(
+    name: "QLTuvan",
+    pattern: "/qltuvan",
+    defaults: new { controller = "Admin", action = "QLTuvan" }
+);
+app.MapControllerRoute(
+    name: "QLTaikhoan",
+    pattern: "/qltaikhoan",
+    defaults: new { controller = "Admin", action = "QLTaikhoan" }
+);
+app.MapControllerRoute(
+    name: "TQuan",
+    pattern: "/tongquan",
+    defaults: new { controller = "Admin", action = "TQuan" }
+);
+app.MapControllerRoute(
+    name: "QLTaikhoan",
+    pattern: "/qltaikhoan",
+    defaults: new { controller = "Admin", action = "QLTaikhoan" }
+);
+app.MapControllerRoute(
+    name: "QLTruyCap",
+    pattern: "/qltruycap",
+    defaults: new { controller = "Admin", action = "QuanLyTruyCap" }
+);
+app.MapControllerRoute(
+    name: "QLChat",
+    pattern: "/qlchat",
+    defaults: new { controller = "Admin", action = "QLChat" }
+);
+app.MapControllerRoute(
+    name: "QLDanhMuc",
+    pattern: "/qlduhoc",
+    defaults: new { controller = "Admin", action = "QLDanhMuc" }
+);
+app.MapControllerRoute(
+    name: "Login",
+    pattern: "/login",
+    defaults: new { controller = "Account", action = "Login" }
+);
+app.MapControllerRoute(
+    name: "Profile",
+    pattern: "/profile",
+    defaults: new { controller = "Account", action = "Profile" }
+);
+app.MapControllerRoute(
+    name: "Register",
+    pattern: "/register",
+    defaults: new { controller = "Account", action = "Register" }
+);
+app.MapControllerRoute(
+    name: "HistoryOrder",
+    pattern: "/historyorder",
+    defaults: new { controller = "Account", action = "HistoryOrder" }
+);
+app.MapControllerRoute(
+    name: "Resetpassword",
+    pattern: "/resetpassword",
+    defaults: new { controller = "Account", action = "Resetpassword" }
+);
+app.MapControllerRoute(
+    name: "UpdateProfile",
+    pattern: "/updateprofile",
+    defaults: new { controller = "Account", action = "UpdateProfile" }
+);
+app.MapControllerRoute(
+    name: "PageAcc",
+    pattern: "/pageacc",
+    defaults: new { controller = "Account", action = "PageAcc" }
+);
 
 var routes = new Dictionary<string, (string Controller, string Action)>
 {

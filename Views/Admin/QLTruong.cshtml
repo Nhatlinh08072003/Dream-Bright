@@ -1,4 +1,11 @@
 @model SchoolViewModel
+@using Dream_Bridge.Models.Main
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var userId = HttpContextAccessor.HttpContext.User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    var user = userId != null ? ViewData["CurrentUser"] as User : null;
+}
 @{
     Layout = "_AdminLayout";
 }
@@ -51,55 +58,65 @@
         <div class="group relative flex h-[900px] w-[50px] flex-col items-start bg-green-500 transition-all duration-500 ease-in-out
 hover:w-[200px]">
             <a href="/Admin" class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out
-group-hover:w-[200px]">
+    group-hover:w-[200px]">
                 <span class="material-icons text-2xl">home</span>
                 <span
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Tổng
                     Quan</span>
             </a>
             <a href="/qltruong" class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out
-group-hover:w-[200px]">
+    group-hover:w-[200px]">
                 <span class="material-icons text-2xl">school</span>
                 <span
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
                     Trường</span>
             </a>
             <a href="/qltuvan" class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out
-group-hover:w-[200px]">
+    group-hover:w-[200px]">
                 <span class="material-icons text-2xl">help_outline</span>
                 <span
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
                     Tư vấn</span>
             </a>
             <a href="/qlduhoc" class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out
-group-hover:w-[200px]">
+    group-hover:w-[200px]">
                 <span class="material-icons text-2xl">public</span>
                 <span
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">Danh
                     mục du học</span>
             </a>
             <a href="/qltintuc" class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out
-group-hover:w-[200px]">
+    group-hover:w-[200px]">
                 <span class="material-icons text-2xl">announcement</span>
                 <span
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
                     Tin tức</span>
             </a>
             <a href="/qltaikhoan" class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out
-group-hover:w-[200px]">
+    group-hover:w-[200px]">
                 <span class="material-icons text-2xl">account_circle</span>
                 <span
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
                     Tài khoản</span>
             </a>
-            <a href="/qlchat" class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out
-group-hover:w-[200px]">
+
+            <a href="/qlchat"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
                 <span class="material-icons text-2xl">chat</span>
                 <span
                     class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
                     Chat</span>
             </a>
+
+            <a href="/qltruycap"
+                class="flex items-center relative pl-3 h-[50px] w-[50px] text-white transition-all duration-500 ease-in-out group-hover:w-[200px]">
+                <span class="material-icons text-2xl">visibility</span>
+                <span
+                    class="ml-2 whitespace-nowrap opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">QL
+                    Truy Cập</span>
+            </a>
         </div>
+
 
         @* @if (TempData["SuccessMessage"] != null)
         {
