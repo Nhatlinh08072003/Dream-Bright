@@ -2,13 +2,13 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Dream_Bridge.Models;
 using Dream_Bridge.Models.Main;
+using Dream_Bridge.Services;
 
 namespace Dream_Bridge.Controllers;
 public class DichvuController : Controller
 {
     private readonly ILogger<DichvuController> _logger;
     private readonly StudyAbroadDbContext _context;
-
     public DichvuController(ILogger<DichvuController> logger, StudyAbroadDbContext context)
     {
         _logger = logger;
@@ -39,8 +39,10 @@ public class DichvuController : Controller
         {
             return NotFound();
         }
+
         return View(school);
     }
+
 
     // Action chi tiết tin tức
     [HttpGet("News/Detail")]

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
- namespace  Dream_Bridge.Data
+namespace Dream_Bridge.Data
 {
     public class ApplicationDbContext : DbContext
     {

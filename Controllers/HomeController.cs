@@ -5,6 +5,7 @@ using Dream_Bridge.Models.Main;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using Dream_Bright.Models.Main;
 
 namespace Dream_Bridge.Controllers;
 
@@ -34,6 +35,25 @@ public class HomeController : Controller
     public IActionResult VeChungToi() => View();
     public IActionResult DuHoc() => View();
     public IActionResult DichVu() => View();
+    public IActionResult ChatBot() => View();
+
+
+    [HttpPost]
+    public IActionResult ChatBot([FromBody] ChatRequest data)
+    {
+        if (string.IsNullOrEmpty(data.Message))
+        {
+            return Json(new { response = "Bạn chưa nhập tin nhắn!" });
+        }
+
+        ChatbotContext chatbot = new ChatbotContext();
+        string botResponse = chatbot.GetResponse(data.Message);
+
+        return Json(new { response = botResponse });
+    }
+
+
+
 
     public IActionResult TinTuc()
     {
