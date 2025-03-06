@@ -1,23 +1,33 @@
+using System;
+using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 
-public sealed class LoggerSingleton
+public class LoggerSingleton
 {
-    private static readonly Lazy<LoggerSingleton> _instance =
-        new Lazy<LoggerSingleton>(() => new LoggerSingleton());
+    public int InstanceId { get; } = Guid.NewGuid().GetHashCode();
+    private readonly List<string> _logs = new();
+    private readonly object _lock = new();
+    public event Action<List<string>>? OnLogUpdated;
 
-    private static int _instanceCount = 0; // Đếm số lần tạo instance
+    public IReadOnlyList<string> Logs => _logs.AsReadOnly();
 
-    private LoggerSingleton()
+    public LoggerSingleton() // ✅ Constructor công khai để DI có thể khởi tạo
     {
-        _instanceCount++;
-        Console.WriteLine($"🔥 LoggerSingleton instance created: {_instanceCount}");
+        Console.WriteLine($"📌 Logger Instance Created: {InstanceId}");
     }
 
-    public static LoggerSingleton Instance => _instance.Value;
-
-    public void Log(string message)
+    public void AddLog(string level, string message)
     {
-        Console.WriteLine($"[LOG]: {message}");
+        lock (_lock)
+        {
+            string logEntry = $"{DateTime.Now:HH:mm:ss} [{level}] - {message}";
+            _logs.Add(logEntry);
+
+            if (_logs.Count > 50) _logs.RemoveAt(0);
+
+            Console.WriteLine($"✅ LOG ADDED: {logEntry}");
+
+            OnLogUpdated?.Invoke(_logs);
+        }
     }
 }
-
