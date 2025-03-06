@@ -1,34 +1,46 @@
-using System.IO;
-using System.Text;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using Dream_Bridge.Models;
 using Dream_Bridge.Models.Main;
-public class CSVReport : ReportTemplate<User>
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Dream_Bright.Models.Main;
+using System.Text;
+
+namespace MyProject.Models
 {
-    public CSVReport(StudyAbroadDbContext dbContext) : base(dbContext) { }
-
-    protected override List<User> FetchData()
+    public class CSVReport : ReportTemplate<User>
     {
-        return _dbContext.Users.ToList();
-    }
+        public CSVReport(StudyAbroadDbContext dbContext) : base(dbContext) { }
 
-    protected override string FormatData(List<User> data)
-    {
-        StringBuilder sb = new StringBuilder();
-        sb.AppendLine("ID,Name,Email");
-
-        foreach (var user in data)
+        protected override List<User> FetchData()
         {
-            sb.AppendLine($"{user.IdUser},{user.FullName},{user.Email}");
+            return _dbContext.Users.ToList();
         }
 
-        return sb.ToString();
-    }
+        protected override string FormatData(List<User> data)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("ID,Name,Email");
 
-    protected override void SaveReport(string formattedData)
-    {
-        string filePath = "Reports/UserReport.csv";
-        File.WriteAllText(filePath, formattedData);
-        Console.WriteLine($"📄 CSV Report saved to {filePath}");
+            foreach (var user in data)
+            {
+                sb.AppendLine($"{user.IdUser},{user.FullName},{user.Email}");
+            }
+
+            return sb.ToString();
+        }
+
+        protected override string SaveReport(string formattedData)
+        {
+            string folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/reports");
+            Directory.CreateDirectory(folderPath);
+
+            string filePath = Path.Combine(folderPath, "UserReport.csv");
+            File.WriteAllText(filePath, formattedData);
+
+            return filePath;
+        }
     }
 }

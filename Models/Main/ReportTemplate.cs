@@ -1,29 +1,32 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using Dream_Bridge.Models;
 using Dream_Bridge.Models.Main;
-public abstract class ReportTemplate<T>
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Dream_Bright.Models.Main;
+
+namespace MyProject.Models
 {
-    protected readonly StudyAbroadDbContext _dbContext;
-
-    public ReportTemplate(StudyAbroadDbContext dbContext)
+    public abstract class ReportTemplate<T>
     {
-        _dbContext = dbContext;
+        protected readonly StudyAbroadDbContext _dbContext;
+
+        public ReportTemplate(StudyAbroadDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
+        public string GenerateReport()
+        {
+            var data = FetchData();
+            string formattedData = FormatData(data);
+            return SaveReport(formattedData);
+        }
+
+        protected abstract List<T> FetchData();
+        protected abstract string FormatData(List<T> data);
+        protected abstract string SaveReport(string formattedData);
     }
-
-    // Template Method - Định nghĩa quy trình xuất báo cáo
-    public void GenerateReport()
-    {
-        var data = FetchData(); // Bước 1: Lấy dữ liệu từ database
-        string formattedData = FormatData(data); // Bước 2: Xử lý dữ liệu
-        SaveReport(formattedData); // Bước 3: Xuất báo cáo
-    }
-
-    // Lấy dữ liệu từ Database (tùy theo từng loại báo cáo)
-    protected abstract List<T> FetchData();
-
-    // Xử lý dữ liệu (tùy theo định dạng báo cáo: PDF, CSV, JSON)
-    protected abstract string FormatData(List<T> data);
-
-    // Xuất báo cáo (ghi ra file hoặc gửi qua email)
-    protected abstract void SaveReport(string formattedData);
 }

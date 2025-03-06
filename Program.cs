@@ -142,7 +142,11 @@ app.MapControllerRoute(
     pattern: "/log",
     defaults: new { controller = "Log", action = "Index" }
 );
-
+app.MapControllerRoute(
+    name: "Report",
+    pattern: "/report",
+    defaults: new { controller = "Report", action = "Index" }
+);
 app.MapControllerRoute(
     name: "VeChungToi",
     pattern: "/vechungtoi",

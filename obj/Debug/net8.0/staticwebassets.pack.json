@@ -813,6 +813,18 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "D:\\Dream-Bright\\wwwroot\\reports\\UserReport.csv",
+      "PackagePath": "staticwebassets\\reports\\UserReport.csv"
+    },
+    {
+      "Id": "D:\\Dream-Bright\\wwwroot\\reports\\UserReport.json",
+      "PackagePath": "staticwebassets\\reports\\UserReport.json"
+    },
+    {
+      "Id": "D:\\Dream-Bright\\wwwroot\\reports\\UserReport.pdf",
+      "PackagePath": "staticwebassets\\reports\\UserReport.pdf"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Dream-Bridge.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
