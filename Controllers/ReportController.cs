@@ -1,35 +1,52 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using Dream_Bridge.Models;
 using Dream_Bridge.Models.Main;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Dream_Bright.Models.Main;
+using System.Text;
 
-[Route("api/reports")]
-[ApiController]
-public class ReportController : ControllerBase
+namespace MyProject.Controllers
 {
-    private readonly StudyAbroadDbContext _dbContext;
-
-    public ReportController(StudyAbroadDbContext dbContext)
+    public class ReportController : Controller
     {
-        _dbContext = dbContext;
-    }
+        private readonly StudyAbroadDbContext _dbContext;
 
-    [HttpGet("export/{type}")]
-    public IActionResult ExportReport(string type)
-    {
-        ReportTemplate<User> report = type.ToLower() switch
+        public ReportController(StudyAbroadDbContext dbContext)
         {
-            "pdf" => new PDFReport(_dbContext),
-            "csv" => new CSVReport(_dbContext),
-            "json" => new JSONReport(_dbContext),
-            _ => null
-        };
-
-        if (report == null)
-        {
-            return BadRequest("Invalid report type. Use 'pdf', 'csv', or 'json'.");
+            _dbContext = dbContext;
         }
 
-        report.GenerateReport();
-        return Ok($"Report {type.ToUpper()} generated successfully!");
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpGet("export/{type}")]
+        public IActionResult ExportReport(string type)
+        {
+            Models.ReportTemplate<User> report = type.ToLower() switch
+            {
+                "pdf" => new Models.PDFReport(_dbContext),
+                "csv" => new Models.CSVReport(_dbContext),
+                "json" => new Models.JSONReport(_dbContext),
+                _ => null
+            };
+
+            if (report == null)
+            {
+                return BadRequest("Invalid report type. Use 'pdf', 'csv', or 'json'.");
+            }
+
+            string filePath = report.GenerateReport();
+            string fileUrl = $"/reports/{Path.GetFileName(filePath)}";
+
+            TempData["Message"] = $"Report {type.ToUpper()} generated successfully!";
+            TempData["FileUrl"] = fileUrl;
+
+            return RedirectToAction("Index");
+        }
     }
 }

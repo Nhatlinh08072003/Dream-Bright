@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Generate Reports";
+    var message = TempData["Message"] as string;
+    var fileUrl = TempData["FileUrl"] as string;
+}
+
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg mb-20">
+    <h1 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+        📊 Generate Reports
+    </h1>
+
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="mt-4 p-3 text-green-800 bg-green-100 border border-green-300 rounded-lg">
+            @message
+        </div>
+    }
+
+    <div class="mt-6 flex flex-wrap gap-3">
+        <a class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition"
+            href="@Url.Action("ExportReport", "Report", new { type = "csv" })">
+            Generate CSV
+        </a>
+        <a class="px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600 transition"
+            href="@Url.Action("ExportReport", "Report", new { type = "pdf" })">
+            Generate PDF
+        </a>
+        <a class="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transition"
+            href="@Url.Action("ExportReport", "Report", new { type = "json" })">
+            Generate JSON
+        </a>
+    </div>
+
+    @if (!string.IsNullOrEmpty(fileUrl))
+    {
+        var fileType = fileUrl.EndsWith(".csv") ? "CSV" :
+        fileUrl.EndsWith(".pdf") ? "PDF" :
+        fileUrl.EndsWith(".json") ? "JSON" : "File";
+
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold text-gray-700 flex items-center gap-2">
+                📂 Download @fileType Report
+            </h2>
+            <a class="mt-3 inline-block px-5 py-2 bg-indigo-500 text-white rounded-lg shadow hover:bg-indigo-600 transition"
+                href="@fileUrl" download>
+                ⬇ Download @fileType Report
+            </a>
+        </div>
+    }
+</div>

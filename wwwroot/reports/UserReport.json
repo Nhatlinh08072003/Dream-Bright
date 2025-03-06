@@ -1,0 +1,40 @@
+[
+  {
+    "IdUser": 1,
+    "FullName": "Administrator",
+    "Email": "admin@gmail.com",
+    "PhoneNumber": "0123456789",
+    "Address": "123 Admin Street",
+    "Password": "123123",
+    "Role": "Admin",
+    "IsConsultant": false,
+    "ConsultingStatus": "chua tu v?n",
+    "CreatedAt": "2025-03-06T10:53:12.937",
+    "CanAccessChat": false,
+    "ChatMessageReceivers": [],
+    "ChatMessageSenders": [],
+    "Comments": [],
+    "News": [],
+    "StudyAbroadCatalogs": [],
+    "IsActive": true
+  },
+  {
+    "IdUser": 2,
+    "FullName": "Nguyễn Lê Kim Lân",
+    "Email": "uinlan@gmail.com",
+    "PhoneNumber": "0967951708",
+    "Address": "Phú Quốc",
+    "Password": "asdasd",
+    "Role": "Staff",
+    "IsConsultant": false,
+    "ConsultingStatus": "Chưa tư vấn",
+    "CreatedAt": "2025-03-06T11:32:48.98",
+    "CanAccessChat": false,
+    "ChatMessageReceivers": [],
+    "ChatMessageSenders": [],
+    "Comments": [],
+    "News": [],
+    "StudyAbroadCatalogs": [],
+    "IsActive": true
+  }
+]
