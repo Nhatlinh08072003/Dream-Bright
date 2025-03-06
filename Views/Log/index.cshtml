@@ -1,0 +1,53 @@
+<style>
+    footer {
+        display: none !important;
+    }
+</style>
+
+<h2 class="text-2xl font-bold text-gray-200 bg-gray-900 p-4 rounded-t-lg">
+    Live Logs
+</h2>
+<div class="p-4 bg-gray-800 text-white rounded-b-lg shadow-lg mb-20">
+    <p class="mb-2 text-lg font-semibold">
+        <strong>Logger Instance ID:</strong>
+        <span id="instanceId" class="text-green-400 font-mono"></span>
+    </p>
+    <div class="border border-gray-700 rounded-lg overflow-hidden">
+        <ul id="logList" class="bg-gray-900 text-gray-300 text-sm p-3 space-y-1 h-60 overflow-y-auto">
+            <!-- Logs sẽ được thêm vào đây -->
+        </ul>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/logHub")
+                .build();
+
+            connection.on("ReceiveLog", function (logs) {
+                console.log("📢 Nhận logs từ server:", logs); // Debug
+                $("#logList").html(""); // Xóa danh sách cũ
+                logs.forEach(log => {
+                    $("#logList").append(`<li>${log}</li>`); // Cập nhật UI
+                });
+            });
+
+            connection.start()
+                .then(() => console.log("✅ SignalR Connected!"))
+                .catch(err => console.error("❌ SignalR Error:", err));
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("/api/logs/instance")
+                .then(response => response.text()) // Lấy ID từ API
+                .then(instanceId => {
+                    console.log("🔍 Logger Instance ID:", instanceId);
+                    document.getElementById("instanceId").textContent = instanceId; // Hiển thị trên UI
+                })
+                .catch(error => console.error("❌ Lỗi lấy Instance ID:", error));
+        });
+    </script>
+}

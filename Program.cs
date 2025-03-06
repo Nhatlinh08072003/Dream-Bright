@@ -13,7 +13,9 @@ using Dream_Bridge.Models.Observer;
 using Dream_Bridge.Model.Main;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddSingleton<LoggerSingleton>(); // Đăng ký Singleton
+builder.Services.AddSignalR(); // Đăng ký SignalR
+builder.Services.AddControllersWithViews();
 // Cấu hình Logging
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
@@ -117,6 +119,7 @@ app.UseSession();
 // Cấu hình SignalR
 app.MapHub<ChatHub>("/chatHub");
 
+app.MapHub<LogHub>("/logHub");
 // Định tuyến Controller
 app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
@@ -134,6 +137,12 @@ app.MapControllerRoute(
     pattern: "/home",
     defaults: new { controller = "Home", action = "Home" }
 );
+app.MapControllerRoute(
+    name: "Log",
+    pattern: "/log",
+    defaults: new { controller = "Log", action = "Index" }
+);
+
 app.MapControllerRoute(
     name: "VeChungToi",
     pattern: "/vechungtoi",

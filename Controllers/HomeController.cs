@@ -12,9 +12,9 @@ namespace Dream_Bridge.Controllers;
 public class HomeController : Controller
 {
     private readonly StudyAbroadDbContext _context;
-    private readonly ILogger<HomeController> _logger;
+    private readonly LoggerSingleton _logger;
 
-    public HomeController(ILogger<HomeController> logger, StudyAbroadDbContext context)
+    public HomeController(LoggerSingleton logger, StudyAbroadDbContext context)
     {
         _logger = logger;
         _context = context;
@@ -22,12 +22,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var logger1 = LoggerSingleton.Instance;
-        var logger2 = LoggerSingleton.Instance;
-
-        _logger.LogInformation("📌 Log từ instance 1");
-        _logger.LogInformation("📌 Log từ instance 2");
-        _logger.LogInformation($"🧐 Cùng instance? {ReferenceEquals(logger1, logger2)}");
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "Guest"; // Lấy userId hoặc "Guest"
+        _logger.AddLog("INFO", $"User {userId} đã truy cập trang Home."); // Ghi log
 
         return View();
     }
