@@ -60,7 +60,7 @@ namespace Dream_Bridge.Controllers
         public class ChatPermissionModel
         {
             public int UserId { get; set; }
-            public bool IsActive { get; set; } // 0: Cho phép, 1: Không cho phép
+            public bool CanAccessChat { get; set; } // 0: Không cho phép, 1: Cho phép
         }
 
         [HttpPost]
@@ -77,27 +77,27 @@ namespace Dream_Bridge.Controllers
                 return NotFound("Người dùng không tồn tại!");
             }
 
-            // Cập nhật đúng trường CanAccessChat thay vì IsActive
-            user.CanAccessChat = model.IsActive;
+            // Cập nhật trạng thái CanAccessChat
+            user.CanAccessChat = model.CanAccessChat;
             _studyAbroadDbContext.SaveChanges();
 
-            // 🔹 Cập nhật lại Claim "CanAccessChat" nếu người dùng đang đăng nhập
+            // Nếu người dùng hiện tại chính là người vừa cập nhật, cập nhật Claims
             var userClaims = HttpContext.User;
             if (userClaims.Identity.IsAuthenticated && userClaims.FindFirst(ClaimTypes.NameIdentifier)?.Value == user.IdUser.ToString())
             {
                 var identity = (ClaimsIdentity)userClaims.Identity;
 
-                // Xóa Claim cũ trước khi thêm mới
+                // Xóa claim cũ trước khi thêm claim mới
                 var oldClaim = identity.FindFirst("CanAccessChat");
                 if (oldClaim != null)
                 {
                     identity.RemoveClaim(oldClaim);
                 }
 
-                // Thêm Claim mới dựa trên giá trị CanAccessChat
+                // Thêm claim mới
                 identity.AddClaim(new Claim("CanAccessChat", user.CanAccessChat ? "True" : "False"));
 
-                // Cập nhật Claims trong session (nếu cần)
+                // Đăng xuất và đăng nhập lại để cập nhật claim
                 HttpContext.SignOutAsync();
                 HttpContext.SignInAsync(new ClaimsPrincipal(identity));
             }
@@ -105,9 +105,12 @@ namespace Dream_Bridge.Controllers
             return Ok("Cập nhật thành công!");
         }
 
+        public class ChatPermissionRequest
+        {
+            public int userId { get; set; }
+            public bool canAccessChat { get; set; }
 
-
-
+        }
 
         private int GetCurrentUserId()
         {
@@ -117,13 +120,6 @@ namespace Dream_Bridge.Controllers
                 return userId;
             }
             return 0;
-        }
-
-        public class ChatPermissionRequest
-        {
-            public int userId { get; set; }
-            public bool canAccessChat { get; set; }
-
         }
 
         [HttpGet]
@@ -231,7 +227,6 @@ namespace Dream_Bridge.Controllers
 
 
 
-
         public IActionResult QLTuvan()
         {
             var consultingRegistrations = _studyAbroadDbContext.ConsultingRegistrations.ToList();
@@ -266,7 +261,6 @@ namespace Dream_Bridge.Controllers
 
             return View(newsViewModel);
         }
-
 
 
 
@@ -406,8 +400,8 @@ namespace Dream_Bridge.Controllers
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
             var user = _studyAbroadDbContext.Users.Find(userId);
 
-            // Nếu không tìm thấy user hoặc IsActive = 0 => chặn truy cập
-            if (user == null || (!user.IsActive && user.Role == "Staff"))
+            // Nếu không tìm thấy user hoặc CanAccessChat = false => chặn truy cập
+            if (user == null || (!user.CanAccessChat && user.Role == "Staff"))
             {
                 return RedirectToAction("AccessDenied", "Account");
             }
@@ -424,39 +418,6 @@ namespace Dream_Bridge.Controllers
             ViewData["Users"] = users;
             return View(chatMessages);
         }
-
-
-        // public IActionResult QLChat()
-        // {
-        //     // Kiểm tra nếu chưa đăng nhập
-        //     if (!User.Identity.IsAuthenticated)
-        //     {
-        //         return RedirectToAction("Login", "Account");
-        //     }
-
-        //     // Kiểm tra quyền truy cập Chat
-        //     bool canAccessChat = User.HasClaim("CanAccessChat", "True");
-
-        //     // Nếu là Staff nhưng không có quyền, chặn vào QLChat
-        //     if (User.IsInRole("Staff") && !canAccessChat)
-        //     {
-        //         return RedirectToAction("AccessDenied", "Account"); // Chỉ chặn QLChat, không chặn đăng nhập
-        //     }
-
-        //     // Lấy danh sách tin nhắn và người dùng
-        //     var chatMessages = _studyAbroadDbContext.ChatMessages
-        //         .Include(m => m.Sender)
-        //         .Include(m => m.Receiver)
-        //         .ToList();
-
-        //     var users = _studyAbroadDbContext.Users
-        //         .Select(u => new { u.IdUser, u.FullName })
-        //         .ToList();
-
-        //     ViewData["Users"] = users;
-
-        //     return View(chatMessages);
-        // }
 
         [HttpPost("api/chat/send")]
         public async Task<IActionResult> SendChatMessage(string messageText, int receiverId, IFormFile? attachment)
@@ -515,7 +476,6 @@ namespace Dream_Bridge.Controllers
             return Json(messages);
         }
 
-
         [HttpGet]
         public IActionResult QLTruong()
         {
@@ -534,7 +494,6 @@ namespace Dream_Bridge.Controllers
             // Return the populated ViewModel to the view
             return View(schoolViewModel);
         }
-
 
         [HttpPost]
         public IActionResult QLTruong(SchoolViewModel model)
@@ -781,7 +740,6 @@ namespace Dream_Bridge.Controllers
     }
 
 
-
     [Serializable]
     internal class DbUpdateException : Exception
     {
@@ -798,5 +756,5 @@ namespace Dream_Bridge.Controllers
         }
     }
 
-
 }
+
