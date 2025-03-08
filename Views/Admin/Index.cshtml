@@ -167,7 +167,7 @@
             <!-- Danh sách Người dùng -->
             <h1 class="text-xl font-bold mb-4">Danh sách Email đã gửi</h1>
             <div class="overflow-x-auto">
-                <table class="min-w-full bg-white shadow-md rounded-lg">
+                <table id="emailTable" class="min-w-full bg-white shadow-md rounded-lg">
                     <thead>
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">STT</th>
@@ -180,7 +180,7 @@
                     <tbody class="text-gray-600 text-sm font-light">
                         @for (int i = 0; i < Model.EmailHistories.Count; i++)
                         {
-                            <tr class="border-b border-gray-300 hover:bg-gray-100">
+                            <tr class="email-row border-b border-gray-300 hover:bg-gray-100">
                                 <td class="py-3 px-6">@i </td>
                                 <td class="py-3 px-6">@Model.EmailHistories[i].ToEmail</td>
                                 <td class="py-3 px-6">@Model.EmailHistories[i].Subject</td>

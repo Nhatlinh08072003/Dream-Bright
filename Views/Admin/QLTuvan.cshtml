@@ -111,7 +111,7 @@
         <div class="mx-auto">
             <h1 class="w-[100%] font-bold text-center text-shadow text-2xl mt-[2%]">Danh sách tư vấn</h1>
             <div class="w-[100%] mt-[2%]">
-                <table class="border mx-auto border-black">
+                <table id="consultationTable" class="border mx-auto border-black">
                     <thead>
                         <tr class="bg-green-500">
                             <th class="text-black text-center h-[45px] border border-black">Họ và Tên</th>
@@ -126,7 +126,7 @@
                     <tbody>
                         @foreach (var registration in Model)
                         {
-                            <tr>
+                            <tr class="consultation-row">
                                 <td class="text-black text-center border border-black p-3">@registration.FullName</td>
                                 <td class="text-black text-center border border-black p-3">@registration.Email</td>
                                 <td class="text-black text-center border border-black p-3">@registration.ConsultingType</td>
@@ -134,9 +134,10 @@
                                 </td>
                                 <td class="text-black text-center border border-black p-3">@registration.PhoneNumber</td>
                                 <td class="text-black text-center border border-black p-3">
-                                    <select onchange="updateStatus(this)" data-id="@registration.IdConsulting" class="w-[90%] h-[32px] mx-auto rounded-md 
-                @(registration.Status == "Chưa tư vấn" ? "bg-red-200" :
-                                registration.Status == "Đã tư vấn" ? "bg-green-500" : "bg-red-500")">>
+                                    <select onchange="updateStatus(this)" data-id="@registration.IdConsulting"
+                                        class="w-[90%] h-[32px] mx-auto rounded-md 
+                        @(registration.Status == "Chưa tư vấn" ? "bg-red-200" :
+                                                                                                                                            registration.Status == "Đã tư vấn" ? "bg-green-500" : "bg-red-500")">>
                                     <option value="Chưa tư vấn" selected="@(registration.Status == "Chưa tư vấn")"
                                         class="bg-red-200">Chưa
                                         tư vấn</option>
