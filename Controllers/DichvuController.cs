@@ -5,31 +5,38 @@ using Dream_Bridge.Models.Main;
 using Dream_Bridge.Services;
 
 namespace Dream_Bridge.Controllers;
-public class DichvuController : Controller
+public class DichvuController : Controller, IDichvuController
 {
+    private readonly IDichvuController _decoratedController;
     private readonly ILogger<DichvuController> _logger;
     private readonly StudyAbroadDbContext _context;
-    public DichvuController(ILogger<DichvuController> logger, StudyAbroadDbContext context)
+
+    public DichvuController(IDichvuController decoratedController, ILogger<DichvuController> logger, StudyAbroadDbContext context)
     {
+        _decoratedController = decoratedController;
         _logger = logger;
         _context = context;
     }
 
     public IActionResult VisaUc()
     {
-        return View();
+        _logger.LogInformation("VisaUc action called");
+        return _decoratedController.VisaUc();
     }
     public IActionResult VisaMy()
     {
-        return View();
+        _logger.LogInformation("VisaMy action called");
+        return _decoratedController.VisaMy();
     }
     public IActionResult VisaSingapore()
     {
-        return View();
+        _logger.LogInformation("VisaSingapore action called");
+        return _decoratedController.VisaSingapore();
     }
     public IActionResult VisaThuySy()
     {
-        return View();
+        _logger.LogInformation("VisaThuySy action called");
+        return _decoratedController.VisaThuySy();
     }
 
     public IActionResult ChiTietTruong(int id)
