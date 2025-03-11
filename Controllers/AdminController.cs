@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.SignalR;
 using Dream_Bridge.Hubs;
 using Dream_Bridge.Model.Main;
 using Microsoft.AspNetCore.Authentication;
+using DreamBright.Models;
 // using BCrypt.Net;
 namespace Dream_Bridge.Controllers
 {

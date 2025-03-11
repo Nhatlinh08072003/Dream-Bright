@@ -8,9 +8,12 @@ using Dream_Bridge.Services.Factories;
 using Dream_Bridge.Services.Adapters;
 using Dream_Bridge.Services.Logging;
 using Dream_Bridge.Services.Repositories;
-using Dream_Bridge.Data;
 using Dream_Bridge.Models.Observer;
 using Dream_Bridge.Model.Main;
+using DreamBright.Services;
+using DreamBright.Services.Factory;
+using DreamBright.Services.US;
+using DreamBright.Services.UK;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<LoggerSingleton>(); // Đăng ký Singleton
@@ -29,7 +32,7 @@ builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
     options.EnableSensitiveDataLogging(false);
 });
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Đăng ký các dịch vụ vào DI container
@@ -37,15 +40,21 @@ builder.Services.AddScoped<IApiAdapter, ApiAdapter>();
 builder.Services.AddScoped<ILoggingService, LoggingService>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IServiceFactory, ServiceFactory>();
-builder.Services.AddScoped<Func<string, IStudyAbroadFactory>>(serviceProvider => country =>
-{
-    return country switch
-    {
-        "US" => new USStudyAbroadFactory(),
-        "UK" => new UKStudyAbroadFactory(),
-        _ => throw new Exception("Không hỗ trợ quốc gia này")
-    };
-});
+
+// Xóa các đăng ký services cũ và thêm các đăng ký mới
+builder.Services.AddScoped<USStudyAbroadFactory>();
+builder.Services.AddScoped<UKStudyAbroadFactory>();
+builder.Services.AddScoped<IStudyAbroadFactorySelector, StudyAbroadFactorySelector>();
+
+// Đăng ký các services cụ thể
+builder.Services.AddScoped<IScholarshipService, USScholarshipService>();
+builder.Services.AddScoped<IScholarshipService, UKScholarshipService>();
+builder.Services.AddScoped<IVisaService, USVisaService>();
+builder.Services.AddScoped<IVisaService, UKVisaService>();
+builder.Services.AddScoped<ISchoolSelectionService, USSchoolSelectionService>();
+builder.Services.AddScoped<ISchoolSelectionService, UKSchoolSelectionService>();
+
+// Xóa các đăng ký trùng lặp khác
 
 // Cấu hình Observer: tạo instance, attach observer, và đăng ký vào DI
 var notifier = new EventNotifier();
@@ -317,6 +326,13 @@ app.MapControllerRoute(
     name: "PageAcc",
     pattern: "/pageacc",
     defaults: new { controller = "Account", action = "PageAcc" }
+);
+
+// Thêm route cho Consulting
+app.MapControllerRoute(
+    name: "consulting",
+    pattern: "Consulting/{action=GetServices}/{country?}",
+    defaults: new { controller = "Consulting" }
 );
 
 var routes = new Dictionary<string, (string Controller, string Action)>

@@ -1,9 +1,10 @@
-@model ConsultingViewModel
+@model DreamBright.Models.ConsultingViewModel
 
-<h2>Dịch vụ tư vấn du học tại @Model.Country</h2>
+<h2>Dịch vụ cho quốc gia: @Model.Country</h2>
+
 <ul>
     @foreach (var service in Model.Services)
     {
-        <li>@service</li>
+                <li>    @service</li>
     }
 </ul>

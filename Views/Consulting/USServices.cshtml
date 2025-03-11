@@ -1,0 +1,61 @@
+@model DreamBright.Models.ConsultingViewModel
+@{
+    ViewData["Title"] = "US Study Services";
+}
+
+<div class="container mx-auto px-4 py-12">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-800 mb-3">Dịch vụ du học @Model.Country</h1>
+        <p class="text-xl text-gray-600">Khám phá cơ hội học tập tại Mỹ 🇺🇸</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="transform transition-all duration-300 hover:-translate-y-2">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="bg-blue-600 text-white p-4">
+                    <h3 class="text-xl font-bold flex items-center">
+                        <i class="fas fa-graduation-cap mr-2"></i>Học bổng
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600">@Model.ScholarshipInfo</p>
+                </div>
+                <div class="px-6 py-4 bg-gray-50">
+                    <a href="#" class="block text-center text-blue-600 border-2 border-blue-600 rounded-lg py-2 hover:bg-blue-600 hover:text-white transition-colors duration-300">Tìm hiểu thêm</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="transform transition-all duration-300 hover:-translate-y-2">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="bg-green-600 text-white p-4">
+                    <h3 class="text-xl font-bold flex items-center">
+                        <i class="fas fa-passport mr-2"></i>Visa
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600">@Model.VisaInfo</p>
+                </div>
+                <div class="px-6 py-4 bg-gray-50">
+                    <a href="/visamy" class="block text-center text-green-600 border-2 border-green-600 rounded-lg py-2 hover:bg-green-600 hover:text-white transition-colors duration-300">Tìm hiểu thêm</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="transform transition-all duration-300 hover:-translate-y-2">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="bg-cyan-600 text-white p-4">
+                    <h3 class="text-xl font-bold flex items-center">
+                        <i class="fas fa-university mr-2"></i>Chọn trường
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600">@Model.SchoolSelectionInfo</p>
+                </div>
+                <div class="px-6 py-4 bg-gray-50">
+                    <a href="#" class="block text-center text-cyan-600 border-2 border-cyan-600 rounded-lg py-2 hover:bg-cyan-600 hover:text-white transition-colors duration-300">Tìm hiểu thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

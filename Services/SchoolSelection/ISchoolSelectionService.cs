@@ -1,4 +1,4 @@
 public interface ISchoolSelectionService
 {
-    void ProvideSchoolSelectionInfo();
+    string ProvideSchoolSelectionInfo();
 }

@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Dream_Bridge.Models;
+using DreamBright.Models;
 
 namespace Dream_Bridge.Controllers;
 public class DuhocController : Controller

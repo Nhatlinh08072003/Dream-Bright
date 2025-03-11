@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Dream_Bright.Models.Main;
+using DreamBright.Models;
 
 namespace Dream_Bridge.Controllers;
 

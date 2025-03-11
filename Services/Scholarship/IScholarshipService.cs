@@ -1,4 +1,4 @@
 public interface IScholarshipService
 {
-    void ProvideScholarshipInfo();
+    string ProvideScholarshipInfo();
 }

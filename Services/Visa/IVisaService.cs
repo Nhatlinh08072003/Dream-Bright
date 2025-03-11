@@ -1,4 +1,4 @@
 public interface IVisaService
 {
-    void ProvideVisaInfo();
+    string ProvideVisaInfo();
 }

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Dream_Bridge.ViewModels;
 using Dream_Bright.Models;
+using DreamBright.Models;
 
 namespace Dream_Bridge.Controllers;
 

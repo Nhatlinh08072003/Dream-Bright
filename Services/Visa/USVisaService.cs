@@ -1,4 +1,4 @@
 public class USVisaService : IVisaService
 {
-    public void ProvideVisaInfo() => Console.WriteLine("🇺🇸 Xin visa du học Mỹ...");
+    public string ProvideVisaInfo() => "🇺🇸 Xin visa du học Mỹ...";
 }

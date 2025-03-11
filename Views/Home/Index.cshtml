@@ -1,141 +1,204 @@
-﻿<div class="overflow-x-hidden">
-    <!-- Banner slideshow -->
-    <div class="relative w-full">
-        <div class="flex transition-transform duration-1000 ease-in-out" id="slideshow">
-            <img class="w-full flex-shrink-0 object-cover" src="Images/hình 1.png" alt="banner1" />
-            <img class="w-full flex-shrink-0 object-cover" src="Images/hình 2.png" alt="banner2" />
-            <img class="w-full flex-shrink-0 object-cover" src="Images/hình 3.png" alt="banner3" />
-            <img class="w-full flex-shrink-0 object-cover" src="Images/hình 4.png" alt="banner4" />
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="overflow-x-hidden">
+        <!-- Banner slideshow -->
+        <div class="relative w-full">
+            <div class="flex transition-transform duration-1000 ease-in-out" id="slideshow">
+                <img class="w-full flex-shrink-0 object-cover" src="Images/hình 1.png" alt="banner1" />
+                <img class="w-full flex-shrink-0 object-cover" src="Images/hình 2.png" alt="banner2" />
+                <img class="w-full flex-shrink-0 object-cover" src="Images/hình 3.png" alt="banner3" />
+                <img class="w-full flex-shrink-0 object-cover" src="Images/hình 4.png" alt="banner4" />
+            </div>
+            <div class="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2">
+                <button class="h-3 w-3 rounded-full bg-gray-300" data-slide="0"></button>
+                <button class="h-3 w-3 rounded-full bg-gray-300" data-slide="1"></button>
+                <button class="h-3 w-3 rounded-full bg-gray-300" data-slide="2"></button>
+                <button class="h-3 w-3 rounded-full bg-gray-300" data-slide="3"></button>
+            </div>
         </div>
-        <div class="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2">
-            <button class="h-3 w-3 rounded-full bg-gray-300" data-slide="0"></button>
-            <button class="h-3 w-3 rounded-full bg-gray-300" data-slide="1"></button>
-            <button class="h-3 w-3 rounded-full bg-gray-300" data-slide="2"></button>
-            <button class="h-3 w-3 rounded-full bg-gray-300" data-slide="3"></button>
+
+        <!-- Container -->
+        <div class="w-full">
+            <div>
+                <h2 class="mt-10 text-center text-3xl">QUỐC GIA DU HỌC</h2>
+            </div>
+
+            <!-- Nước du học -->
+            <div class="mb-10 w-full">
+                <div class="mt-20 flex flex-wrap justify-center text-center text-2xl">
+                    <div class="mx-2 flex flex-1 flex-col items-center">
+                        <a href="http://">
+                            <div class="h-48 w-80 overflow-hidden">
+                                <img class="h-full w-full rounded-lg object-cover" src="Images/Mỹ.jpg" alt="" />
+                            </div>
+                            <h2 class="mt-4">DU HOC MỸ</h2>
+                        </a>
+                    </div>
+                    <div class="mx-2 flex flex-1 flex-col items-center">
+                        <a href="http://">
+                            <div class="h-48 w-80 overflow-hidden">
+                                <img class="h-full w-full rounded-lg object-cover" src="Images/singapore.jpg" alt="" />
+                            </div>
+                            <h2 class="mt-4">DU HOC SINGAPORE</h2>
+                        </a>
+                    </div>
+                    <div class="mx-2 flex flex-1 flex-col items-center">
+                        <a href="/uc">
+                            <div class="h-48 w-80 overflow-hidden">
+                                <img class="h-full w-full rounded-lg object-cover" src="Images/Úc.jpg" alt="" />
+                            </div>
+                            <h2 class="mt-4">DU HOC ÚC</h2>
+                        </a>
+                    </div>
+                    <div class="mx-2 flex flex-1 flex-col items-center">
+                        <a href="http://">
+                            <div class="h-48 w-80 overflow-hidden">
+                                <img class="h-full w-full rounded-lg object-cover" src="Images/Thụy Sĩ.jpg" alt="" />
+                            </div>
+                            <h2 class="mt-4">DU HOC THỤY SĨ</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 py-12">
+                <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Welcome to Dream Bridge</h1>
+                <p class="text-lg text-center text-gray-600 mb-8">Select a country to view available services:</p>
+
+                <div class="max-w-md mx-auto">
+                    <form asp-controller="Consulting" asp-action="GetServices" method="get" class="space-y-4">
+                        <div class="relative">
+                            <label for="country" class="sr-only">Country</label>
+                            <select name="country" id="country" class="block w-full px-4 py-3 rounded-lg border-2 border-gray-200 
+                               focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
+                               transition-colors duration-200 bg-white 
+                               appearance-none cursor-pointer">
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <!-- Add more countries as needed -->
+                            </select>
+                            <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold 
+                           py-3 px-6 rounded-lg transition-colors duration-200 
+                           transform hover:scale-105">
+                            View Services
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="mx-4 md:mx-16">
+                <div class="border-b-2 border-t-2 border-black">
+                    <h2 class="mt-20 text-2xl font-bold">HLLQEDU - CÔNG TY TƯ VẤN DU HỌC UY TÍN, CHUYÊN NGHIỆP HÀNG ĐẦU
+                        VIỆT
+                        NAM</h2>
+                    <br />
+                    <p class="mb-10 text-xl">
+                        Với kỹ năng, kinh nghiệm được đúc kết qua nhiều năm, đội ngũ nhân viên không ngừng thay đổi và
+                        cải
+                        thiện để luôn nằm top đầu trong thị trường du học đầy cam go này. Việc xây dựng, khẳng định và
+                        củng
+                        cố thương hiệu của chúng tôi không phải tự nhiên mà có, mà nó được đúc kết bởi ban điều hành với
+                        hơn
+                        10 năm làm việc, điều đó được chứng minh qua một lượng lớn học sinh, sinh viên đậu visa, những
+                        con
+                        người đã tin tưởng và đồng hành với chúng tôi từ lúc đầu cho tới tận ngày hôm <br /><br />
+                        Đó chính là lý do tại sao – HLLQEDUcation có mặt ở đây để phục vụ bạn!
+                    </p>
+                </div>
+
+                <div class="mt-4 grid grid-cols-2 gap-4 border-b-2 border-black">
+                    <div class="flex items-center rounded-lg p-4 text-base">
+                        <img class="w-35 h-35 mb-2 rounded-lg object-cover" src="Images/nhan-vien.webp" alt="" />
+                        <p class="text-left">Đội ngũ tư vấn chuyên nghiệp với hơn 10 năm kinh nghiệm hoạt động trong
+                            lĩnh
+                            vực du học, luôn sẵn sàng tư vấn cho bạn bất cứ thời gian nào trong ngày và bất kỳ ngày nào
+                            trong tuần.</p>
+                    </div>
+                    <div class="flex items-center rounded-lg p-4 text-base">
+                        <img class="w-35 h-35 mb-2 rounded-lg object-cover" src="Images/hoc-bong.webp" alt="" />
+                        <p class="text-left">Hỗ trợ chứng minh tài chính du học, hỗ trợ săn những suất học bổng giá trị,
+                            những chương trình ưu đãi và hỗ trợ cho du học sinh.</p>
+                    </div>
+                    <div class="flex items-center rounded-lg p-4 text-base">
+                        <img class="w-35 h-35 mb-2 rounded-lg object-cover" src="Images/ho-tro-tu-van.webp" alt="" />
+                        <p class="text-left">Hỗ trợ tư vấn lựa chọn ngành học, trường học phù hợp với trình độ và khả
+                            năng
+                            tài chính, giúp bạn phát huy tối đa thế mạnh của bản thân và khai phá những tiềm năng còn ẩn
+                            giấu.</p>
+                    </div>
+                    <div class="flex items-center rounded-lg p-4 text-base">
+                        <img class="w-35 h-35 mb-2 rounded-lg object-cover" src="Images/danh-gia.webp" alt="" />
+                        <p class="text-left">99% học sinh tin tưởng và hài lòng với dịch vụ của HLLQEDU trước khi du
+                            học.
+                            100% học sinh tiếp tục giới thiệu bạn bè và người thân đến với HLLQEDU sau khi đi du học.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Container -->
-    <div class="w-full">
-        <div>
-            <h2 class="mt-10 text-center text-3xl">QUỐC GIA DU HỌC</h2>
-        </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('#slideshow img');
+        const dots = document.querySelectorAll('.absolute button');
+        const totalSlides = slides.length;
+        const slideWidth = 100; // phần trăm của container
 
-        <!-- Nước du học -->
-        <div class="mb-10 w-full">
-            <div class="mt-20 flex flex-wrap justify-center text-center text-2xl">
-                <div class="mx-2 flex flex-1 flex-col items-center">
-                    <a href="http://">
-                        <div class="h-48 w-80 overflow-hidden">
-                            <img class="h-full w-full rounded-lg object-cover" src="Images/Mỹ.jpg" alt="" />
-                        </div>
-                        <h2 class="mt-4">DU HOC MỸ</h2>
-                    </a>
-                </div>
-                <div class="mx-2 flex flex-1 flex-col items-center">
-                    <a href="http://">
-                        <div class="h-48 w-80 overflow-hidden">
-                            <img class="h-full w-full rounded-lg object-cover" src="Images/singapore.jpg" alt="" />
-                        </div>
-                        <h2 class="mt-4">DU HOC SINGAPORE</h2>
-                    </a>
-                </div>
-                <div class="mx-2 flex flex-1 flex-col items-center">
-                    <a href="/uc">
-                        <div class="h-48 w-80 overflow-hidden">
-                            <img class="h-full w-full rounded-lg object-cover" src="Images/Úc.jpg" alt="" />
-                        </div>
-                        <h2 class="mt-4">DU HOC ÚC</h2>
-                    </a>
-                </div>
-                <div class="mx-2 flex flex-1 flex-col items-center">
-                    <a href="http://">
-                        <div class="h-48 w-80 overflow-hidden">
-                            <img class="h-full w-full rounded-lg object-cover" src="Images/Thụy Sĩ.jpg" alt="" />
-                        </div>
-                        <h2 class="mt-4">DU HOC THỤY SĨ</h2>
-                    </a>
-                </div>
-            </div>
-        </div>
+        function showSlide(index) {
+            currentIndex = index;
+            const offset = -currentIndex * slideWidth;
+            document.getElementById('slideshow').style.transform = `translateX(${offset}%)`;
+            updateDots();
+        }
 
-        <div class="mx-4 md:mx-16">
-            <div class="border-b-2 border-t-2 border-black">
-                <h2 class="mt-20 text-2xl font-bold">HLLQEDU - CÔNG TY TƯ VẤN DU HỌC UY TÍN, CHUYÊN NGHIỆP HÀNG ĐẦU VIỆT
-                    NAM</h2>
-                <br />
-                <p class="mb-10 text-xl">
-                    Với kỹ năng, kinh nghiệm được đúc kết qua nhiều năm, đội ngũ nhân viên không ngừng thay đổi và cải
-                    thiện để luôn nằm top đầu trong thị trường du học đầy cam go này. Việc xây dựng, khẳng định và củng
-                    cố thương hiệu của chúng tôi không phải tự nhiên mà có, mà nó được đúc kết bởi ban điều hành với hơn
-                    10 năm làm việc, điều đó được chứng minh qua một lượng lớn học sinh, sinh viên đậu visa, những con
-                    người đã tin tưởng và đồng hành với chúng tôi từ lúc đầu cho tới tận ngày hôm <br /><br />
-                    Đó chính là lý do tại sao – HLLQEDUcation có mặt ở đây để phục vụ bạn!
-                </p>
-            </div>
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('bg-gray-500', index === currentIndex);
+                dot.classList.toggle('bg-gray-300', index !== currentIndex);
+            });
+        }
 
-            <div class="mt-4 grid grid-cols-2 gap-4 border-b-2 border-black">
-                <div class="flex items-center rounded-lg p-4 text-base">
-                    <img class="w-35 h-35 mb-2 rounded-lg object-cover" src="Images/nhan-vien.webp" alt="" />
-                    <p class="text-left">Đội ngũ tư vấn chuyên nghiệp với hơn 10 năm kinh nghiệm hoạt động trong lĩnh
-                        vực du học, luôn sẵn sàng tư vấn cho bạn bất cứ thời gian nào trong ngày và bất kỳ ngày nào
-                        trong tuần.</p>
-                </div>
-                <div class="flex items-center rounded-lg p-4 text-base">
-                    <img class="w-35 h-35 mb-2 rounded-lg object-cover" src="Images/hoc-bong.webp" alt="" />
-                    <p class="text-left">Hỗ trợ chứng minh tài chính du học, hỗ trợ săn những suất học bổng giá trị,
-                        những chương trình ưu đãi và hỗ trợ cho du học sinh.</p>
-                </div>
-                <div class="flex items-center rounded-lg p-4 text-base">
-                    <img class="w-35 h-35 mb-2 rounded-lg object-cover" src="Images/ho-tro-tu-van.webp" alt="" />
-                    <p class="text-left">Hỗ trợ tư vấn lựa chọn ngành học, trường học phù hợp với trình độ và khả năng
-                        tài chính, giúp bạn phát huy tối đa thế mạnh của bản thân và khai phá những tiềm năng còn ẩn
-                        giấu.</p>
-                </div>
-                <div class="flex items-center rounded-lg p-4 text-base">
-                    <img class="w-35 h-35 mb-2 rounded-lg object-cover" src="Images/danh-gia.webp" alt="" />
-                    <p class="text-left">99% học sinh tin tưởng và hài lòng với dịch vụ của HLLQEDU trước khi du học.
-                        100% học sinh tiếp tục giới thiệu bạn bè và người thân đến với HLLQEDU sau khi đi du học.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        function showNextSlide() {
+            showSlide((currentIndex + 1) % totalSlides);
+        }
 
-<script>
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('#slideshow img');
-    const dots = document.querySelectorAll('.absolute button');
-    const totalSlides = slides.length;
-    const slideWidth = 100; // phần trăm của container
+        setInterval(showNextSlide, 3000); // Thay đổi ảnh mỗi 3 giây
 
-    function showSlide(index) {
-        currentIndex = index;
-        const offset = -currentIndex * slideWidth;
-        document.getElementById('slideshow').style.transform = `translateX(${offset}%)`;
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-slide'), 10);
+                showSlide(index);
+            });
+        });
+
+        // Initial update
         updateDots();
-    }
+    </script>
+</body>
 
-    function updateDots() {
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('bg-gray-500', index === currentIndex);
-            dot.classList.toggle('bg-gray-300', index !== currentIndex);
-        });
-    }
-
-    function showNextSlide() {
-        showSlide((currentIndex + 1) % totalSlides);
-    }
-
-    setInterval(showNextSlide, 3000); // Thay đổi ảnh mỗi 3 giây
-
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-            const index = parseInt(dot.getAttribute('data-slide'), 10);
-            showSlide(index);
-        });
-    });
-
-    // Initial update
-    updateDots();
-</script>
+</html>

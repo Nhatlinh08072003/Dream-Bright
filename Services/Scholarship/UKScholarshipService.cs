@@ -1,4 +1,4 @@
 public class UKScholarshipService : IScholarshipService
 {
-    public void ProvideScholarshipInfo() => Console.WriteLine("🇬🇧 Học bổng tại Anh...");
+    public string ProvideScholarshipInfo() => "🇬🇧 Học bổng tại Anh...";
 }

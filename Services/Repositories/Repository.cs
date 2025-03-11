@@ -1,6 +1,6 @@
 
-using  Dream_Bridge.Data;
-
+using Dream_Bridge.Models;
+using Dream_Bridge.Models.Main;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,10 +9,10 @@ namespace  Dream_Bridge.Services.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly ApplicationDbContext _context;
+        private readonly StudyAbroadDbContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public Repository(ApplicationDbContext context)
+        public Repository(StudyAbroadDbContext context)
         {
             _context = context;
             _dbSet = context.Set<T>();

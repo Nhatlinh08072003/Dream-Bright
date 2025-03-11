@@ -1,52 +1,96 @@
+using System;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Dream_Bridge.Models;
-using Dream_Bridge.Models.Main;
+using DreamBright.Models;
+using DreamBright.Services.Factory;
+using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Dream_Bridge.Controllers;
-
-public class ConsultingController : Controller
+namespace DreamBright.Controllers
 {
-    private readonly Func<string, IStudyAbroadFactory> _factorySelector;
-
-    public ConsultingController(Func<string, IStudyAbroadFactory> factorySelector)
+    public class ConsultingController : Controller
     {
-        _factorySelector = factorySelector;
-    }
+        private readonly IStudyAbroadFactorySelector _factorySelector;
+        private readonly ILogger<ConsultingController> _logger;
 
-   public IActionResult GetServices(string country)
-{
-    try
-    {
-        var factory = _factorySelector(country);
-        var scholarship = factory.CreateScholarshipService();
-        var visa = factory.CreateVisaService();
-        var schoolSelection = factory.CreateSchoolSelectionService();
-
-        // Gọi phương thức nhưng không thể lưu vào danh sách
-        scholarship.ProvideScholarshipInfo();
-        visa.ProvideVisaInfo();
-        schoolSelection.ProvideSchoolSelectionInfo();
-
-        var viewModel = new ConsultingViewModel
+        // Chỉ giữ lại một constructor duy nhất
+        public ConsultingController(
+            IStudyAbroadFactorySelector factorySelector, 
+            ILogger<ConsultingController> logger)
         {
-            Country = country,
-            Services = new List<string> // Chỉ chứa dữ liệu tĩnh hoặc nhập vào từ nơi khác
+            _factorySelector = factorySelector ?? throw new ArgumentNullException(nameof(factorySelector));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        }
+
+        [HttpGet]
+        public IActionResult GetServices(string country)
+        {
+            try
             {
-                "Dịch vụ đã được thực thi."
+                if (string.IsNullOrEmpty(country))
+                {
+                    _logger.LogWarning("Country parameter is null or empty");
+                    return RedirectToAction("DuHoc", "Home");
+                }
+
+                // Xử lý chuỗi country
+                country = country.Trim();
+                if (country.Contains("Mỹ", StringComparison.OrdinalIgnoreCase))
+                    country = "US";
+                else if (country.Contains("Anh", StringComparison.OrdinalIgnoreCase))
+                    country = "UK";
+
+                _logger.LogInformation($"Processing request for country code: {country}");
+
+                _logger.LogInformation($"Getting services for country: {country}");
+                
+                var factory = _factorySelector.GetFactory(country);
+                if (factory == null)
+                {
+                    _logger.LogError($"Factory not found for country: {country}");
+                    throw new InvalidOperationException($"Không thể tạo factory cho quốc gia: {country}");
+                }
+
+                var scholarship = factory.CreateScholarshipService();
+                var visa = factory.CreateVisaService();
+                var schoolSelection = factory.CreateSchoolSelectionService();
+
+                var viewModel = new DreamBright.Models.ConsultingViewModel
+                {
+                    Country = country,
+                    ScholarshipInfo = scholarship.ProvideScholarshipInfo(),
+                    VisaInfo = visa.ProvideVisaInfo(),
+                    SchoolSelectionInfo = schoolSelection.ProvideSchoolSelectionInfo(),
+                    Services = new List<string>
+                    {
+                        "Dịch vụ học bổng",
+                        "Dịch vụ visa",
+                        "Dịch vụ chọn trường"
+                    }
+                };
+
+                _logger.LogInformation($"Returning view for country: {country}");
+                
+                return country?.ToUpper() switch
+                {
+                    "US" => View("USServices", viewModel),
+                    "UK" => View("UKServices", viewModel),
+                    _ => View("Error", new ErrorViewModel { 
+                        ErrorMessage = "Không hỗ trợ quốc gia này",
+                        RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+                    })
+                };
             }
-        };
-
-        return View(viewModel);
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error processing request for country {country}: {ex}");
+                return View("Error", new ErrorViewModel { 
+                    ErrorMessage = $"Có lỗi xảy ra khi xử lý yêu cầu: {ex.Message}",
+                    RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+                });
+            }
+        }
     }
-    catch (Exception ex)
-    {
-        return View("Error", new { errorMessage = ex.Message });
-    }
-}
-
-
 }
