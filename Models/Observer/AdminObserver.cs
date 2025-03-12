@@ -1,12 +1,11 @@
-using System;
-
 namespace Dream_Bridge.Models.Observer
 {
-    public class AdminObserver : IObserver
+    public class AdminObserver : IEventObserver
     {
-        public void Update(string message)
+        public void Update(string eventMessage)
         {
-            Console.WriteLine($"🔔 Admin nhận thông báo: {message}");
+            // Xử lý thông báo cho admin
+            Console.WriteLine($"Admin received: {eventMessage}");
         }
     }
 }

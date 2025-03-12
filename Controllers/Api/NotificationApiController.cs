@@ -5,68 +5,79 @@ using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
 using Dream_Bridge.Hubs;
 
-[ApiController]
-[Route("api/[controller]")]
-public class NotificationsController : ControllerBase
+namespace Dream_Bridge.Controllers.Api
 {
-    private readonly StudyAbroadDbContext _context;
-    private readonly IHubContext<ChatHub> _hubContext; // SignalR Hub
-
-    public NotificationsController(StudyAbroadDbContext context, IHubContext<ChatHub> hubContext)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class NotificationApiController : ControllerBase
     {
-        _context = context;
-        _hubContext = hubContext;
-    }
+        private readonly StudyAbroadDbContext _context;
+        private readonly IHubContext<ChatHub> _hubContext; // SignalR Hub
 
-    // Lấy danh sách thông báo chưa đọc
-    [HttpGet]
-    public async Task<IActionResult> GetNotifications()
-    {
-        var notifications = await _context.Notifications
-            .Where(n => !n.IsRead) // Lọc thông báo chưa đọc    
-            .OrderByDescending(n => n.CreatedAt)
-            .Take(1) // Giới hạn số thông báo nếu cần
-            .ToListAsync();
-
-        return Ok(notifications);
-    }
-
-    // Tạo thông báo mới
-    [HttpPost]
-    public async Task<IActionResult> CreateNotification([FromBody] Notification notification)
-    {
-        if (notification == null)
+        public NotificationApiController(StudyAbroadDbContext context, IHubContext<ChatHub> hubContext)
         {
-            return BadRequest("Thông báo không hợp lệ");
+            _context = context;
+            _hubContext = hubContext;
         }
 
-        // Thêm thông báo mới vào cơ sở dữ liệu
-        notification.CreatedAt = DateTime.Now; // Đặt thời gian tạo thông báo
-        notification.IsRead = false; // Đánh dấu là chưa đọc
-
-        _context.Notifications.Add(notification);
-        await _context.SaveChangesAsync();
-
-        // Gửi thông báo cho tất cả người dùng qua SignalR
-        await _hubContext.Clients.All.SendAsync("ReceiveNotification", notification);
-
-        return Ok(notification); // Trả về thông báo vừa tạo
-    }
-
-    // Đánh dấu thông báo là đã đọc
-    [HttpPut("{id}")]
-    public async Task<IActionResult> MarkAsRead(int id)
-    {
-        var notification = await _context.Notifications.FindAsync(id);
-
-        if (notification == null)
+        // Lấy danh sách thông báo chưa đọc
+        [HttpGet]
+        public async Task<IActionResult> GetNotifications()
         {
-            return NotFound("Thông báo không tồn tại");
+            var notifications = await _context.Notifications
+                .Where(n => !n.IsRead) // Lọc thông báo chưa đọc    
+                .OrderByDescending(n => n.CreatedAt)
+                .Take(1) // Giới hạn số thông báo nếu cần
+                .ToListAsync();
+
+            return Ok(notifications);
         }
 
-        notification.IsRead = true;
-        await _context.SaveChangesAsync();
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] NotificationCreateRequest request)
+        {
+            var notification = new Dream_Bridge.Models.Main.Notification
+            {
+                Title = request.Title,
+                Message = request.Message,
+                Type = request.Type,
+                UserId = request.UserId,
+                CreatedAt = DateTime.Now,
+                IsRead = false
+            };
 
-        return Ok(notification); // Trả về thông báo đã được đánh dấu là đã đọc
+            _context.Notifications.Add(notification);
+            await _context.SaveChangesAsync();
+
+            // Gửi thông báo cho tất cả người dùng qua SignalR
+            await _hubContext.Clients.All.SendAsync("ReceiveNotification", notification);
+
+            return Ok(notification);
+        }
+
+        // Đánh dấu thông báo là đã đọc
+        [HttpPut("{id}")]
+        public async Task<IActionResult> MarkAsRead(int id)
+        {
+            var notification = await _context.Notifications.FindAsync(id);
+
+            if (notification == null)
+            {
+                return NotFound("Thông báo không tồn tại");
+            }
+
+            notification.IsRead = true;
+            await _context.SaveChangesAsync();
+
+            return Ok(notification); // Trả về thông báo đã được đánh dấu là đã đọc
+        }
+    }
+
+    public class NotificationCreateRequest
+    {
+        public string Title { get; set; }
+        public string Message { get; set; }
+        public string Type { get; set; }
+        public int? UserId { get; set; }
     }
 }

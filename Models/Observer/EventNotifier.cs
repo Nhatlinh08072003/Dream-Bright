@@ -1,17 +1,15 @@
-using System.Collections.Generic;
-
 namespace Dream_Bridge.Models.Observer
 {
-    public class EventNotifier : ISubject
+    public class EventNotifier
     {
-        private readonly List<IObserver> _observers = new();
+        private readonly List<IEventObserver> _observers = new();
 
-        public void Attach(IObserver observer)
+        public void Attach(IEventObserver observer)
         {
             _observers.Add(observer);
         }
 
-        public void Detach(IObserver observer)
+        public void Detach(IEventObserver observer)
         {
             _observers.Remove(observer);
         }

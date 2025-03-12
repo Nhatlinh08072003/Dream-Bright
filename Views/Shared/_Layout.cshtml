@@ -9,29 +9,29 @@
 </head>
 
 <body>
-    <partial name="../../Partials/Header.cshtml">
-        <div class="container1">
-            <main role="main">
-                @RenderBody()
-            </main>
-        </div>
-        <partial name="../../Partials/Footer.cshtml">
+    @await Html.PartialAsync("_NotificationPartial")
+    <partial name="../../Partials/Header.cshtml" />
+    
+    <div class="container1">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+    
+    <partial name="../../Partials/Footer.cshtml" />
 
-            <script src="~/lib/jquery/dist/jquery.min.js"></script>
-            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="~/js/site.js" asp-append-version="true"></script>
-            @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/notification.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
 
-            @using System.Security.Claims
-            @{
-                var canAccessChat = User.HasClaim("CanAccessChat", "True");
-            }
-
-            @if (User.IsInRole("Admin") || canAccessChat)
-            {
-                <li><a href="@Url.Action("QLChat", "Admin")">Quản lý Chat</a></li>
-            }
-
+    @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.HasClaim("CanAccessChat", "True")))
+    {
+        <li><a href="@Url.Action("QLChat", "Admin")">Quản lý Chat</a></li>
+    }
 </body>
 
 </html>
