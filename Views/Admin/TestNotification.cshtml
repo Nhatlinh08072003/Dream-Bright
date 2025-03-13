@@ -1,0 +1,194 @@
+@{
+    ViewData["Title"] = "Test Notifications";
+}
+
+<div class="min-h-screen bg-gray-100 py-6">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Test Notifications</h2>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6">
+                <h5 class="text-xl font-semibold text-gray-800 mb-6">Send Single Notification</h5>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">User</label>
+                        <select id="userId" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                            <option value="">Select a user...</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <input type="text" id="message" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Type</label>
+                        <select id="type" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                            <option value="success" class="text-green-600">Success</option>
+                            <option value="info" class="text-blue-600">Info</option>
+                            <option value="warning" class="text-yellow-600">Warning</option>
+                            <option value="danger" class="text-red-600">Danger</option>
+                        </select>
+                    </div>
+
+                    <div class="flex space-x-4 pt-4">
+                        <button onclick="sendSingleNotification()" 
+                            class="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
+                            Send to User
+                        </button>
+                        <button onclick="sendBroadcast()" 
+                            class="px-6 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-colors">
+                            Broadcast
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="responseMessage" class="mt-4 p-4 rounded-md hidden transform transition-all duration-300">
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden mt-6">
+            <div class="p-6">
+                <h5 class="text-xl font-semibold text-gray-800 mb-6">Recent Notifications</h5>
+                <div id="recentNotifications" class="space-y-4">
+                    <!-- Notifications will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/notification.js"></script>
+    <script>
+        // Load users when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUsers();
+        });
+
+        function loadUsers() {
+            fetch('/Admin/GetUsers')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(users => {
+                    console.log('Users loaded:', users); // Debug log
+                    const select = document.getElementById('userId');
+                    select.innerHTML = '<option value="">Select a user...</option>';
+                    users.forEach(user => {
+                        const option = document.createElement('option');
+                        option.value = user.idUser;
+                        option.textContent = `${user.fullName} (${user.email})`;
+                        select.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading users:', error);
+                });
+        }
+
+        function showMessage(message, isSuccess) {
+            const messageDiv = document.getElementById('responseMessage');
+            messageDiv.textContent = message;
+            messageDiv.className = `mt-4 p-4 rounded-md ${isSuccess ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'} transform transition-all duration-300`;
+            messageDiv.style.display = 'block';
+
+            // Add slide-in animation
+            messageDiv.style.transform = 'translateY(0)';
+            messageDiv.style.opacity = '1';
+
+            setTimeout(() => {
+                messageDiv.style.transform = 'translateY(-10px)';
+                messageDiv.style.opacity = '0';
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 300);
+            }, 3000);
+        }
+
+        function sendSingleNotification() {
+            const data = {
+                userId: document.getElementById('userId').value,
+                message: document.getElementById('message').value,
+                type: document.getElementById('type').value
+            };
+
+            fetch('/Notification/SendNotification', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(result => {
+                showMessage(result.success ? 'Notification sent successfully' : 'Failed to send notification', result.success);
+            })
+            .catch(error => {
+                showMessage('Error sending notification: ' + error.message, false);
+            });
+        }
+
+        function sendBroadcast() {
+            const data = {
+                message: document.getElementById('message').value,
+                type: document.getElementById('type').value
+            };
+
+            fetch('/Notification/broadcast', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                showMessage(result.success ? 'Broadcast sent successfully' : 'Failed to send broadcast', result.success);
+            })
+            .catch(error => {
+                showMessage('Error sending broadcast: ' + error.message, false);
+            });
+        }
+
+        // Load recent notifications
+        function loadRecentNotifications() {
+            fetch('/Notification/my-notifications')
+                .then(response => response.json())
+                .then(notifications => {
+                    const container = document.getElementById('recentNotifications');
+                    container.innerHTML = notifications.map(n => `
+                        <div class="p-4 border rounded ${n.type}-notification">
+                            <p class="font-medium">${n.message}</p>
+                            <small class="text-gray-500">${new Date(n.createdAt).toLocaleString()}</small>
+                        </div>
+                    `).join('');
+                });
+        }
+
+        // Load notifications when page loads
+        document.addEventListener('DOMContentLoaded', loadRecentNotifications);
+
+        // Refresh notifications after sending
+        const originalSendSingleNotification = sendSingleNotification;
+        sendSingleNotification = async function() {
+            await originalSendSingleNotification();
+            loadRecentNotifications();
+        }
+    </script>
+}

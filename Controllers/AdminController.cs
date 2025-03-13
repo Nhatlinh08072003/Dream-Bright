@@ -186,7 +186,7 @@ namespace Dream_Bridge.Controllers
             try
             {
                 var users = await _studyAbroadDbContext.Users.ToListAsync();  // Lấy tất cả người dùng từ cơ sở dữ liệu
-                var notifications = users.Select(user => new Notification
+                var notifications = users.Select(user => new Dream_Bridge.Models.Main.Notification
                 {
                     UserId = user.IdUser,
                     Title = notificationDto.Title,
@@ -731,6 +731,20 @@ namespace Dream_Bridge.Controllers
             }
 
             return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult GetUsers()
+        {
+            var users = _studyAbroadDbContext.Users
+                .Where(u => u.Role != "Admin") // Lọc bớt admin nếu cần
+                .Select(u => new {
+                    idUser = u.IdUser,
+                    fullName = u.FullName,
+                    email = u.Email
+                })
+                .ToList();
+            return Json(users);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

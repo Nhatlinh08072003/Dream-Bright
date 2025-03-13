@@ -8,45 +8,50 @@ using Dream_Bridge.Services.Factories;
 using Dream_Bridge.Services.Adapters;
 using Dream_Bridge.Services.Logging;
 using Dream_Bridge.Services.Repositories;
-using Dream_Bridge.Models.Observer;
+using Dream_Bridge.Services.Notifications;
 using Dream_Bridge.Model.Main;
 using DreamBright.Services;
 using DreamBright.Services.Factory;
 using DreamBright.Services.US;
 using DreamBright.Services.UK;
+using Dream_Bridge.Models.Observer;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddSingleton<LoggerSingleton>(); // Đăng ký Singleton
-builder.Services.AddSignalR(); // Đăng ký SignalR
-builder.Services.AddControllersWithViews();
-// Cấu hình Logging
-builder.Logging.ClearProviders();
-builder.Logging.AddConsole();
 
-// Đăng ký dịch vụ
+// Add services to the container
 builder.Services.AddControllersWithViews();
+builder.Services.AddSignalR();
+builder.Services.AddSingleton<LoggerSingleton>();
+builder.Services.AddSingleton<NotificationService>();
 
+// Add ChatPermissionService
+builder.Services.AddScoped<IChatPermissionService, ChatPermissionService>();
+
+// Add HttpContextAccessor
+builder.Services.AddHttpContextAccessor();
+
+// Add event notification services
+builder.Services.AddSingleton<EventNotifier>();
+
+// Database configuration
 builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("localDB"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     options.EnableSensitiveDataLogging(false);
 });
 
-builder.Services.AddDbContext<StudyAbroadDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Đăng ký các dịch vụ vào DI container
+// Register services
 builder.Services.AddScoped<IApiAdapter, ApiAdapter>();
 builder.Services.AddScoped<ILoggingService, LoggingService>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IServiceFactory, ServiceFactory>();
+builder.Services.AddScoped<EmailService>();
+builder.Services.AddHttpClient<IApiAdapter, ApiAdapter>();
 
-// Xóa các đăng ký services cũ và thêm các đăng ký mới
+// Register study abroad services
 builder.Services.AddScoped<USStudyAbroadFactory>();
 builder.Services.AddScoped<UKStudyAbroadFactory>();
 builder.Services.AddScoped<IStudyAbroadFactorySelector, StudyAbroadFactorySelector>();
-
-// Đăng ký các services cụ thể
 builder.Services.AddScoped<IScholarshipService, USScholarshipService>();
 builder.Services.AddScoped<IScholarshipService, UKScholarshipService>();
 builder.Services.AddScoped<IVisaService, USVisaService>();
@@ -54,24 +59,7 @@ builder.Services.AddScoped<IVisaService, UKVisaService>();
 builder.Services.AddScoped<ISchoolSelectionService, USSchoolSelectionService>();
 builder.Services.AddScoped<ISchoolSelectionService, UKSchoolSelectionService>();
 
-// Xóa các đăng ký trùng lặp khác
-
-// Cấu hình Observer: tạo instance, attach observer, và đăng ký vào DI
-var notifier = new EventNotifier();
-notifier.Attach(new AdminObserver());
-notifier.Attach(new UserObserver("Người dùng A"));
-builder.Services.AddSingleton(notifier);
-
-// Đăng ký SignalR
-builder.Services.AddSignalR();
-
-// Đăng ký EmailService
-builder.Services.AddScoped<EmailService>();
-
-// Đăng ký HttpClient và ApiAdapter (chỉ cần đăng ký một lần)
-builder.Services.AddHttpClient<IApiAdapter, ApiAdapter>();
-
-// Cấu hình xác thực
+// Authentication & Authorization
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -85,16 +73,13 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.SlidingExpiration = true;
     });
 
-// Cấu hình phân quyền
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
     options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
 });
 
-// Cấu hình session
-builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddDistributedMemoryCache();
+// Session configuration
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -102,6 +87,7 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
+<<<<<<< HEAD
 // Cấu hình JsonConvert
 JsonConvert.DefaultSettings = () => new JsonSerializerSettings
 {
@@ -122,36 +108,35 @@ builder.Services.AddScoped<IDichvuService>(provider =>
 
 builder.Services.AddScoped<IChatPermissionService, ChatPermissionService>();
 
+=======
+>>>>>>> ecf659aa4f4abc2092fd071cb6f927aaa143752b
 var app = builder.Build();
 
-// Cấu hình Middleware
+// Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
 }
-app.UseStaticFiles();
+
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
 
-// Cấu hình SignalR
+// Configure SignalR hubs
 app.MapHub<ChatHub>("/chatHub");
-
 app.MapHub<LogHub>("/logHub");
-// Định tuyến Controller
-app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapHub<Dream_Bridge.Hubs.NotificationHub>("/notificationHub");
 
-
-
-// Thêm endpoint cho SignalR
-app.MapHub<Dream_Bridge.Hubs.ChatHub>("/chatHub");
-
+// Configure routes
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+<<<<<<< HEAD
 // Add a route for the DemoBuilderPattern action
 app.MapControllerRoute(
     name: "demoBuilderPattern",
@@ -358,6 +343,8 @@ app.MapControllerRoute(
     defaults: new { controller = "DichVu", action = "DemoDecoratorPattern" }
 );
 
+=======
+>>>>>>> ecf659aa4f4abc2092fd071cb6f927aaa143752b
 var routes = new Dictionary<string, (string Controller, string Action)>
 {
     { "/home", ("Home", "Home") },
@@ -365,19 +352,26 @@ var routes = new Dictionary<string, (string Controller, string Action)>
     { "/duhoc", ("Home", "DuHoc") },
     { "/chat", ("Home", "Chat") },
     { "/dichvu", ("Home", "DichVu") },
+    { "/chatbot", ("Home", "ChatBot") },
     { "/tintuc", ("Home", "TinTuc") },
     { "/notification", ("Home", "Notification") },
     { "/timtruong", ("Home", "TimTruong") },
+    
+    // Du học routes
     { "/uc", ("DuHoc", "Uc") },
     { "/my", ("DuHoc", "My") },
     { "/singapore", ("DuHoc", "Singapore") },
     { "/thuysy", ("DuHoc", "ThuySy") },
+    
+    // Dịch vụ routes
     { "/visauc", ("DichVu", "VisaUc") },
     { "/visamy", ("DichVu", "VisaMy") },
     { "/visasingapore", ("DichVu", "VisaSingapore") },
     { "/visathuysy", ("DichVu", "VisaThuySy") },
     { "/chitiet", ("DichVu", "ChiTiet") },
     { "/chitietruong", ("DichVu", "ChiTietTruong") },
+    
+    // Admin routes
     { "/qltruong", ("Admin", "QLTruong") },
     { "/qltintuc", ("Admin", "QLTintuc") },
     { "/qltuvan", ("Admin", "QLTuvan") },
@@ -385,6 +379,9 @@ var routes = new Dictionary<string, (string Controller, string Action)>
     { "/tongquan", ("Admin", "TQuan") },
     { "/qlchat", ("Admin", "QLChat") },
     { "/qlduhoc", ("Admin", "QLDanhMuc") },
+    { "/qltruycap", ("Admin", "QuanLyTruyCap") },
+    
+    // Account routes
     { "/login", ("Account", "Login") },
     { "/profile", ("Account", "Profile") },
     { "/register", ("Account", "Register") },
@@ -392,6 +389,13 @@ var routes = new Dictionary<string, (string Controller, string Action)>
     { "/resetpassword", ("Account", "Resetpassword") },
     { "/updateprofile", ("Account", "UpdateProfile") },
     { "/pageacc", ("Account", "PageAcc") },
+    
+    // Log and Report routes
+    { "/log", ("Log", "Index") },
+    { "/report", ("Report", "Index") },
+
+    // Consulting route
+    { "/consulting", ("Consulting", "GetServices") }
 };
 
 foreach (var route in routes)

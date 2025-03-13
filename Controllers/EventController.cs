@@ -5,11 +5,11 @@ namespace Dream_Bridge.Controllers
 {
     public class EventController : Controller
     {
-        private readonly EventNotifier _notifier;
+        private readonly EventNotifier _eventNotifier;
 
-        public EventController(EventNotifier notifier)
+        public EventController(EventNotifier eventNotifier)
         {
-            _notifier = notifier;
+            _eventNotifier = eventNotifier;
         }
 
         // Hiển thị form nhập thông tin sự kiện
@@ -20,19 +20,16 @@ namespace Dream_Bridge.Controllers
 
         // Xử lý khi người dùng tạo sự kiện
         [HttpPost]
-        public IActionResult CreateEvent(string eventName)
+        public IActionResult CreateEvent(string message)
         {
-            if (string.IsNullOrWhiteSpace(eventName))
+            if (string.IsNullOrWhiteSpace(message))
             {
                 ViewBag.Message = "⚠️ Tên sự kiện không được để trống.";
                 return View();
             }
 
-            string message = $"🔥 Sự kiện mới: {eventName}";
-            _notifier.Notify(message);
-
-            ViewBag.Message = $"✅ Đã gửi thông báo: {eventName}";
-            return View();
+            _eventNotifier.Notify(message);
+            return Ok("Event created and notifications sent");
         }
     }
 }

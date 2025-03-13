@@ -1,0 +1,17 @@
+<div id="notification-container" class="fixed top-4 right-4 z-50 space-y-4">
+    <!-- Notifications will be inserted here dynamically -->
+</div>
+
+<template id="notification-template">
+    <div class="notification bg-white rounded-lg shadow-lg p-4 mb-4 transform transition-all duration-300 hover:scale-105">
+        <div class="flex items-center">
+            <div class="notification-icon mr-3"></div>
+            <div class="flex-1">
+                <p class="notification-message text-sm"></p>
+                <p class="notification-time text-xs text-gray-500 mt-1"></p>
+            </div>
+            <button class="close-btn ml-2 text-gray-400 hover:text-gray-600">×</button>
+        </div>
+    </div>
+</template>
+
