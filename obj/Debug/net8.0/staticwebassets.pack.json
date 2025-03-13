@@ -593,15 +593,11 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-<<<<<<< HEAD
-      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\js\\site.js",
-=======
-      "Id": "D:\\Dream-Bright\\wwwroot\\js\\notification.js",
+      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\js\\notification.js",
       "PackagePath": "staticwebassets\\js\\notification.js"
     },
     {
-      "Id": "D:\\Dream-Bright\\wwwroot\\js\\site.js",
->>>>>>> ecf659aa4f4abc2092fd071cb6f927aaa143752b
+      "Id": "D:\\Git\\Dream-Bright\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
