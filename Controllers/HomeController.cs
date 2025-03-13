@@ -15,10 +15,11 @@ namespace Dream_Bridge.Controllers;
 public class HomeController : Controller
 {
     private readonly StudyAbroadDbContext _context;
-    private readonly ILogger<HomeController> _logger;
+    // private readonly ILogger<HomeController> _logger;
     private readonly SchoolQueryBuilder _queryBuilder;
+    private readonly LoggerSingleton _logger;
 
-    public HomeController(ILogger<HomeController> logger, StudyAbroadDbContext context)
+    public HomeController(LoggerSingleton logger, StudyAbroadDbContext context)
     {
         _logger = logger;
         _context = context;
@@ -34,7 +35,9 @@ public class HomeController : Controller
     /******  82e744c0-a362-4b87-93fc-eedb0b94f0bc  *******/
     public IActionResult Index()
     {
-        _logger.LogInformation("📌 Trang chủ được truy cập.");
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "Guest"; // Lấy userId hoặc "Guest"
+        _logger.AddLog("INFO", $"User {userId} đã truy cập trang Home."); // Ghi log
+
         return View();
     }
 
