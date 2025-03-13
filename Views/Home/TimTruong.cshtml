@@ -25,6 +25,12 @@
                     </select>
                 </div>
 
+                <div class="flex-1">
+                    <h3 class="mb-2 font-semibold">Học phí tối đa</h3>
+                    <input id="maxTuition" type="number" class="w-full rounded-md border border-gray-300 px-4 py-2"
+                        max="@ViewBag.MaxTuition" />
+                </div>
+
                 <div class="flex self-end md:w-auto">
                     <button id="search-btn" type="button"
                         class="w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 md:w-auto md:px-6">
@@ -32,13 +38,6 @@
                     </button>
                 </div>
             </div>
-
-
-            @* <button id="search-btn" type="button"
-            class="ml-auto w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 md:w-1/3"
-            disabled>
-            Tìm trường
-            </button> *@
         </form>
     </div>
 
@@ -57,7 +56,6 @@
                             <div class="flex flex-1 flex-col justify-between ml-4">
                                 <a href="@Url.Action("ChiTietTruong", "DichVu", new { id = school.IdSchool })"
                                     class="cursor-pointer">
-                                    <h2 class="mb-2 text-left text-xl font-bold">@school.TitleSchool</h2>
                                     <ul class="list-inside list-disc text-sm text-gray-600">
                                         <li>Quốc gia: <span class="text-blue-600">@school.Nation</span></li>
                                         <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">@school.StateCity</span></li>
@@ -81,11 +79,36 @@
             <button id="view-more-btn" class="rounded bg-blue-500 px-4 py-2 text-white">Xem thêm</button>
         </div>
     </div>
+
+    <div class="container mx-auto p-4">
+        <h2 class="mb-4 text-2xl font-semibold">Demo Builder Pattern</h2>
+        <div class="text-center">
+            <button id="demo-builder-btn" class="rounded bg-green-500 px-4 py-2 text-white hover:bg-green-700">
+                Xem Demo Builder Pattern
+            </button>
+        </div>
+        <div id="builder-demo-container" class="mt-4 hidden">
+            <h3 class="text-xl font-semibold">Danh sách trường từ Builder Pattern</h3>
+            <table class="w-full mt-4 border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border border-gray-300 px-4 py-2">Tên trường</th>
+                        <th class="border border-gray-300 px-4 py-2">Quốc gia</th>
+                        <th class="border border-gray-300 px-4 py-2">Tỉnh/Thành phố</th>
+                        <th class="border border-gray-300 px-4 py-2">Bậc học</th>
+                        <th class="border border-gray-300 px-4 py-2">Học phí</th>
+                    </tr>
+                </thead>
+                <tbody id="builder-demo-table"></tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         loadNations();
+        loadMaxTuition();
         setupEventListeners();
     });
 
@@ -93,7 +116,9 @@
         document.getElementById('country').addEventListener('change', loadCitiesAndEducationLevels);
         document.getElementById('city').addEventListener('change', checkFormValidity);
         document.getElementById('educationLevel').addEventListener('change', checkFormValidity);
+        document.getElementById('maxTuition').addEventListener('input', checkFormValidity);
         document.getElementById('search-btn').addEventListener('click', searchSchools);
+        document.getElementById('demo-builder-btn').addEventListener('click', demoBuilderPattern);
     }
 
     async function loadNations() {
@@ -103,6 +128,16 @@
             populateDropdown('country', nations);
         } catch (error) {
             console.error('Error fetching nations:', error);
+        }
+    }
+
+    async function loadMaxTuition() {
+        try {
+            const response = await fetch('/api/max-tuition');
+            const maxTuition = await response.json();
+            document.getElementById('maxTuition').max = maxTuition;
+        } catch (error) {
+            console.error('Error fetching max tuition:', error);
         }
     }
 
@@ -138,13 +173,15 @@
         const country = document.getElementById("country").value;
         const city = document.getElementById("city").value;
         const educationLevel = document.getElementById("educationLevel").value;
-        document.getElementById("search-btn").disabled = !(country && city && educationLevel);
+        const maxTuition = document.getElementById("maxTuition").value;
+        document.getElementById("search-btn").disabled = !(country && city && educationLevel && maxTuition);
     }
 
     async function searchSchools() {
         const country = document.getElementById("country").value;
         const city = document.getElementById("city").value;
         const educationLevel = document.getElementById("educationLevel").value;
+        const maxTuition = document.getElementById("maxTuition").value;
 
         try {
             const response = await fetch(`/api/schools`, {
@@ -152,7 +189,12 @@
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ country, city, educationLevel })
+                body: JSON.stringify({
+                    country,
+                    city,
+                    educationLevel,
+                    maxTuition: parseFloat(maxTuition) // Đảm bảo giá trị là số
+                })
             });
 
             if (response.ok) {
@@ -166,26 +208,49 @@
         }
     }
 
+    async function demoBuilderPattern() {
+        try {
+            const response = await fetch(`/Home/DemoBuilderPattern`);
+            if (response.ok) {
+                const schools = await response.json();
+                const tableBody = document.getElementById("builder-demo-table");
+                tableBody.innerHTML = schools.map(school => `
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2">${school.titleSchool}</td>
+                        <td class="border border-gray-300 px-4 py-2">${school.nation}</td>
+                        <td class="border border-gray-300 px-4 py-2">${school.stateCity}</td>
+                        <td class="border border-gray-300 px-4 py-2">${school.level}</td>
+                        <td class="border border-gray-300 px-4 py-2">${school.averageTuition.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</td>
+                    </tr>
+                `).join('');
+                document.getElementById("builder-demo-container").classList.remove("hidden");
+            } else {
+                console.error("Failed to fetch demo schools:", response.statusText);
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    }
+
     function renderSchoolCards(schools) {
         const schoolContainer = document.getElementById("school-cards");
         schoolContainer.innerHTML = schools.length
             ? schools.map(school => `
-                <div class="school-card mb-4 w-full px-2 sm:w-1/2">
-                    <div class="flex h-full flex-row rounded-lg bg-white p-4 shadow-md hover:shadow-lg transition-shadow duration-200">
-                        <img src="${school.imageSchool}" alt="${school.titleSchool}" class="h-32 w-32 object-cover rounded-md flex-shrink-0" loading="lazy" />
-                        <div class="flex flex-1 flex-col justify-between ml-4">
-                            <a href="/DichVu/ChiTietTruong/${school.idSchool}" class="cursor-pointer">
-                                <h2 class="mb-2 text-left text-xl font-bold">${school.titleSchool}</h2>
-                                <ul class="list-inside list-disc text-sm text-gray-600">
-                                    <li>Quốc gia: <span class="text-blue-600">${school.nation}</span></li>
-                                    <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">${school.stateCity}</span></li>
-                                    <li>Bậc học: <span class="text-blue-600">${school.level}</span></li>
-                                    <li>Học phí trung bình: <span class="text-blue-600">${parseFloat(school.averageTuition).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span></li>
-                                </ul>
-                            </a>
-                        </div>
+            <div class="school-card mb-4 w-full px-2 sm:w-1/2">
+                <div class="flex h-full flex-row rounded-lg bg-white p-4 shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <img src="${school.imageSchool}" alt="${school.titleSchool}" class="h-32 w-32 object-cover rounded-md flex-shrink-0" loading="lazy" />
+                    <div class="flex flex-1 flex-col justify-between ml-4">
+                        <a href="/DichVu/ChiTietTruong/${school.idSchool}" class="cursor-pointer">
+                            <ul class="list-inside list-disc text-sm text-gray-600">
+                                <li>Quốc gia: <span class="text-blue-600">${school.nation}</span></li>
+                                <li>Tỉnh bang/ Thành phố: <span class="text-blue-600">${school.stateCity}</span></li>
+                                <li>Bậc học: <span class="text-blue-600">${school.level}</span></li>
+                                <li>Học phí trung bình: <span class="text-blue-600">${parseFloat(school.averageTuition).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span></li>
+                            </ul>
+                        </a>
                     </div>
-                </div>`).join('')
+                </div>
+            </div>`).join('')
             : `<p class="text-gray-600">Không có trường nào để hiển thị.</p>`;
     }
 </script>

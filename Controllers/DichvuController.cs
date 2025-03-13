@@ -10,31 +10,39 @@ public class DichvuController : Controller
 {
     private readonly ILogger<DichvuController> _logger;
     private readonly StudyAbroadDbContext _context;
-    public DichvuController(ILogger<DichvuController> logger, StudyAbroadDbContext context)
+    private readonly IDichvuService _dichvuService;
+
+    public DichvuController(ILogger<DichvuController> logger, StudyAbroadDbContext context, IDichvuService dichvuService)
     {
         _logger = logger;
         _context = context;
+        _dichvuService = dichvuService;
     }
 
     public IActionResult VisaUc()
     {
+        _dichvuService.Log("VisaUc action called");
         return View();
     }
     public IActionResult VisaMy()
     {
+        _dichvuService.Log("VisaMy action called");
         return View();
     }
     public IActionResult VisaSingapore()
     {
+        _dichvuService.Log("VisaSingapore action called");
         return View();
     }
     public IActionResult VisaThuySy()
     {
+        _dichvuService.Log("VisaThuySy action called");
         return View();
     }
 
     public IActionResult ChiTietTruong(int id)
     {
+        _dichvuService.Log($"ChiTietTruong action called with id: {id}");
         var school = _context.Schools.Find(id);
         if (school == null)
         {
@@ -49,6 +57,7 @@ public class DichvuController : Controller
     [HttpGet("News/Detail")]
     public IActionResult Chitiet(int id)
     {
+        _dichvuService.Log($"Chitiet action called with id: {id}");
         // Tìm tin tức theo IdNews
         var newsItem = _context.News.FirstOrDefault(n => n.IdNews == id);
         if (newsItem == null)
@@ -60,6 +69,15 @@ public class DichvuController : Controller
     }
 
 
+    public IActionResult DemoDecoratorPattern()
+    {
+        _dichvuService.Log("DemoDecoratorPattern action called");
+        var demoModel = new DemoDecoratorPatternViewModel
+        {
+            Message = "Decorator pattern demo executed. Check logs for details."
+        };
+        return View(demoModel);
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

@@ -1,10 +1,12 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 using Dream_Bridge.Models;
 using Dream_Bridge.Models.Main;
-using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
+
+using Dream_Bridge.Builders;
 using Dream_Bright.Models.Main;
 using DreamBright.Models;
 
@@ -13,19 +15,26 @@ namespace Dream_Bridge.Controllers;
 public class HomeController : Controller
 {
     private readonly StudyAbroadDbContext _context;
-    private readonly LoggerSingleton _logger;
+    private readonly ILogger<HomeController> _logger;
+    private readonly SchoolQueryBuilder _queryBuilder;
 
-    public HomeController(LoggerSingleton logger, StudyAbroadDbContext context)
+    public HomeController(ILogger<HomeController> logger, StudyAbroadDbContext context)
     {
         _logger = logger;
         _context = context;
+        _queryBuilder = new SchoolQueryBuilder(_context.Schools.AsQueryable());
     }
 
+    /*************  ✨ Codeium Command ⭐  *************/
+    /// <summary>
+    /// Handles the request for the home page and logs the access.
+    /// </summary>
+    /// <returns>The view for the home page.</returns>
+
+    /******  82e744c0-a362-4b87-93fc-eedb0b94f0bc  *******/
     public IActionResult Index()
     {
-        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "Guest"; // Lấy userId hoặc "Guest"
-        _logger.AddLog("INFO", $"User {userId} đã truy cập trang Home."); // Ghi log
-
+        _logger.LogInformation("📌 Trang chủ được truy cập.");
         return View();
     }
 
@@ -34,23 +43,15 @@ public class HomeController : Controller
     public IActionResult DichVu() => View();
     public IActionResult ChatBot() => View();
 
-
     [HttpPost]
     public IActionResult ChatBot([FromBody] ChatRequest data)
     {
         if (string.IsNullOrEmpty(data.Message))
-        {
             return Json(new { response = "Bạn chưa nhập tin nhắn!" });
-        }
 
-        ChatbotContext chatbot = new ChatbotContext();
-        string botResponse = chatbot.GetResponse(data.Message);
-
-        return Json(new { response = botResponse });
+        var chatbot = new ChatbotContext();
+        return Json(new { response = chatbot.GetResponse(data.Message) });
     }
-
-
-
 
     public IActionResult TinTuc()
     {
@@ -58,61 +59,76 @@ public class HomeController : Controller
         return View(news);
     }
 
-    public IActionResult TimTruong()
+    public IActionResult TimTruong(string country, string city, string level, decimal? maxTuition)
     {
-        var schools = _context.Schools.ToList();
+        // Demonstrating the usage of the Builder pattern
+        var schools = _queryBuilder
+            .FilterByCountry(country)
+            .FilterByCity(city)
+            .FilterByLevel(level)
+            .FilterByMaxTuition(maxTuition)
+            .Build()
+            .OrderBy(s => s.AverageTuition)
+            .ToList();
+
+        var maxTuitionFee = _context.Schools.Max(s => s.AverageTuition);
+
+        ViewBag.MaxTuition = maxTuitionFee;
+
         return View(schools);
     }
 
     [HttpPost("api/schools")]
     public IActionResult FilterSchools([FromBody] FilterViewModel filter)
     {
-        var filteredSchools = _context.Schools
-            .Where(s => (string.IsNullOrEmpty(filter.Country) || s.Nation == filter.Country) &&
-                        (string.IsNullOrEmpty(filter.City) || s.StateCity == filter.City) &&
-                        (string.IsNullOrEmpty(filter.EducationLevel) || s.Level == filter.EducationLevel))
+        var filteredSchools = _queryBuilder
+            .FilterByCountry(filter.Country)
+            .FilterByCity(filter.City)
+            .FilterByLevel(filter.EducationLevel)
+            .FilterByMaxTuition(filter.MaxTuition) // Chỉ truyền MaxTuition
+            .Build()
             .ToList();
 
         return Json(filteredSchools);
     }
 
+
     [HttpGet("api/nations")]
     public IActionResult GetNations()
     {
-        var nations = _context.Schools.Select(s => s.Nation).Distinct().ToList();
-        return Json(nations);
+        return Json(_context.Schools.Select(s => s.Nation).Distinct().ToList());
     }
 
     [HttpGet("api/cities/{nation}")]
     public IActionResult GetCities(string nation)
     {
-        var cities = _context.Schools.Where(s => s.Nation == nation).Select(s => s.StateCity).Distinct().ToList();
-        return Json(cities);
+        return Json(_context.Schools.Where(s => s.Nation == nation).Select(s => s.StateCity).Distinct().ToList());
     }
 
     [HttpGet("api/education-levels/{nation}")]
     public IActionResult GetEducationLevels(string nation)
     {
-        var educationLevels = _context.Schools.Where(s => s.Nation == nation).Select(s => s.Level).Distinct().ToList();
-        return Json(educationLevels);
+        return Json(_context.Schools.Where(s => s.Nation == nation).Select(s => s.Level).Distinct().ToList());
+    }
+
+    [HttpGet("api/max-tuition")]
+    public IActionResult GetMaxTuition()
+    {
+        var maxTuition = _context.Schools.Max(s => s.AverageTuition);
+        return Json(maxTuition);
     }
 
     [Authorize]
     public IActionResult Chat()
     {
         if (User.IsInRole("Admin") || User.IsInRole("Staff"))
-        {
             return RedirectToAction("qlchat", "Admin");
-        }
 
         var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
         if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
-        {
             return Unauthorized("User not authenticated.");
-        }
 
         ViewData["AdminId"] = 1;
-
         var chatMessages = _context.ChatMessages
             .Include(m => m.Sender)
             .Include(m => m.Receiver)
@@ -128,34 +144,26 @@ public class HomeController : Controller
     public async Task<IActionResult> SendChatMessage(string messageText, int receiverId, IFormFile? attachment)
     {
         if (string.IsNullOrEmpty(messageText))
-        {
             return BadRequest("Message text cannot be empty.");
-        }
 
         var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
         if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int senderId))
-        {
             return Unauthorized("User not authenticated.");
-        }
 
         var receiver = await _context.Users.FindAsync(receiverId);
         if (receiver == null)
-        {
             return NotFound("Receiver not found.");
-        }
 
         string attachmentUrl = null;
         if (attachment != null)
         {
-            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+            var uploadsFolder = Path.Combine("wwwroot", "uploads");
             Directory.CreateDirectory(uploadsFolder);
             var uniqueFileName = $"{Guid.NewGuid()}_{Path.GetFileName(attachment.FileName)}";
             var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await attachment.CopyToAsync(stream);
-            }
-            attachmentUrl = "/uploads/" + uniqueFileName;
+            using var stream = new FileStream(filePath, FileMode.Create);
+            await attachment.CopyToAsync(stream);
+            attachmentUrl = $"/uploads/{uniqueFileName}";
         }
 
         var chatMessage = new ChatMessage
@@ -169,7 +177,6 @@ public class HomeController : Controller
 
         _context.ChatMessages.Add(chatMessage);
         await _context.SaveChangesAsync();
-
         return RedirectToAction("Chat");
     }
 
@@ -179,26 +186,37 @@ public class HomeController : Controller
     {
         var message = await _context.ChatMessages.FindAsync(messageId);
         if (message == null)
-        {
             return NotFound("Message not found.");
-        }
 
         var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
         if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId) || message.SenderId != userId)
-        {
             return Unauthorized("You can only delete your own messages.");
-        }
 
         _context.ChatMessages.Remove(message);
         await _context.SaveChangesAsync();
-
         return RedirectToAction("Chat");
     }
 
+    public IActionResult DemoBuilderPattern()
+    {
+        var schools = _queryBuilder
+            .FilterByCountry("USA")
+            .FilterByCity("New York")
+            .FilterByLevel("Undergraduate")
+            .FilterByMaxTuition(30000)
+            .Build()
+            .ToList();
+
+        return Json(schools);
+    }
+
+    /// <summary>
+    ///     Renders the error page with the request ID.
+    /// </summary>
+    /// <returns>The error view.</returns>
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
-

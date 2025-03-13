@@ -109,6 +109,17 @@ JsonConvert.DefaultSettings = () => new JsonSerializerSettings
     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
 };
 
+// Register the original service as a concrete type
+builder.Services.AddScoped<DichvuService>();
+
+// Manually register the decorator
+builder.Services.AddScoped<IDichvuService>(provider =>
+{
+    var originalService = provider.GetRequiredService<DichvuService>();
+    var logger = provider.GetRequiredService<ILogger<LoggingDecorator>>();
+    return new LoggingDecorator(originalService, logger);
+});
+
 builder.Services.AddScoped<IChatPermissionService, ChatPermissionService>();
 
 var app = builder.Build();
@@ -140,6 +151,12 @@ app.MapHub<Dream_Bridge.Hubs.ChatHub>("/chatHub");
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// Add a route for the DemoBuilderPattern action
+app.MapControllerRoute(
+    name: "demoBuilderPattern",
+    pattern: "Home/DemoBuilderPattern",
+    defaults: new { controller = "Home", action = "DemoBuilderPattern" });
 
 app.MapControllerRoute(
     name: "Home",
@@ -333,6 +350,12 @@ app.MapControllerRoute(
     name: "consulting",
     pattern: "Consulting/{action=GetServices}/{country?}",
     defaults: new { controller = "Consulting" }
+);
+
+app.MapControllerRoute(
+    name: "demoDecoratorPattern",
+    pattern: "DichVu/DemoDecoratorPattern",
+    defaults: new { controller = "DichVu", action = "DemoDecoratorPattern" }
 );
 
 var routes = new Dictionary<string, (string Controller, string Action)>
