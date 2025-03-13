@@ -87,7 +87,7 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-<<<<<<< HEAD
+
 // Cấu hình JsonConvert
 JsonConvert.DefaultSettings = () => new JsonSerializerSettings
 {
@@ -108,8 +108,7 @@ builder.Services.AddScoped<IDichvuService>(provider =>
 
 builder.Services.AddScoped<IChatPermissionService, ChatPermissionService>();
 
-=======
->>>>>>> ecf659aa4f4abc2092fd071cb6f927aaa143752b
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
@@ -136,7 +135,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-<<<<<<< HEAD
+
 // Add a route for the DemoBuilderPattern action
 app.MapControllerRoute(
     name: "demoBuilderPattern",
@@ -343,8 +342,7 @@ app.MapControllerRoute(
     defaults: new { controller = "DichVu", action = "DemoDecoratorPattern" }
 );
 
-=======
->>>>>>> ecf659aa4f4abc2092fd071cb6f927aaa143752b
+
 var routes = new Dictionary<string, (string Controller, string Action)>
 {
     { "/home", ("Home", "Home") },
