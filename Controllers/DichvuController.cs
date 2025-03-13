@@ -34,6 +34,13 @@ public class DichvuController : Controller
         _dichvuService.Log("VisaSingapore action called");
         return View();
     }
+    /*************  ✨ Codeium Command ⭐  *************/
+    /// <summary>
+    /// Handles the request for the Swiss visa service page.
+    /// Logs the action call and returns the corresponding view.
+    /// </summary>
+
+    /******  165eb7c0-2765-4b33-8557-b89fe199f5d5  *******/
     public IActionResult VisaThuySy()
     {
         _dichvuService.Log("VisaThuySy action called");
