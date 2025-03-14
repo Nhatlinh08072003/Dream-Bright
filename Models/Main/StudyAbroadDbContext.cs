@@ -34,7 +34,7 @@ public partial class StudyAbroadDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
-      => optionsBuilder.UseSqlServer("Server=LAPTOP-6MMRS9KB\\TAQUAN;Database=StudyAbroad;MultipleActiveResultSets=true;User ID=sa ;Password=asdasd;Trusted_Connection=True;TrustServerCertificate=Yes");
+      => optionsBuilder.UseSqlServer("Server=NHATLINH\\NHATLINH;Database=StudyAbroad;MultipleActiveResultSets=true;User ID=sa ;Password=asdasd;Trusted_Connection=True;TrustServerCertificate=Yes");
 
     //  => optionsBuilder.UseSqlServer("Server=tcp:uinlan.database.windows.net,1433;Initial Catalog=StudyAbroad;Persist Security Info=False;User ID=uinlan;Password=AnhthuongAnh@2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 

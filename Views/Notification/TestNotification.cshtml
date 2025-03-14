@@ -6,28 +6,41 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-gray-900 mb-6">Test Notifications</h2>
 
+        <!-- Send Single Notification Form -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
             <div class="p-6">
                 <h5 class="text-xl font-semibold text-gray-800 mb-6">Send Single Notification</h5>
 
                 <div class="space-y-4">
+                    <!-- User Selection -->
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">User</label>
-                        <select id="userId" 
+                        <select id="userId"
                             class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
                             <option value="">Select a user...</option>
                         </select>
                     </div>
 
+                    <!-- Title Input -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                        <input type="text" id="message" 
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors" />
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Title</label>
+                        <input type="text" id="title"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                            placeholder="Enter notification title">
                     </div>
 
+                    <!-- Message Input -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <input type="text" id="message"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                            placeholder="Enter notification message">
+                    </div>
+
+                    <!-- Type Selection -->
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Type</label>
-                        <select id="type" 
+                        <select id="type"
                             class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
                             <option value="success" class="text-green-600">Success</option>
                             <option value="info" class="text-blue-600">Info</option>
@@ -36,12 +49,13 @@
                         </select>
                     </div>
 
+                    <!-- Buttons -->
                     <div class="flex space-x-4 pt-4">
-                        <button onclick="sendSingleNotification()" 
+                        <button onclick="sendSingleNotification()"
                             class="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
                             Send to User
                         </button>
-                        <button onclick="sendBroadcast()" 
+                        <button onclick="sendBroadcast()"
                             class="px-6 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-colors">
                             Broadcast
                         </button>
@@ -50,9 +64,11 @@
             </div>
         </div>
 
+        <!-- Response Message -->
         <div id="responseMessage" class="mt-4 p-4 rounded-md hidden transform transition-all duration-300">
         </div>
 
+        <!-- Recent Notifications -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden mt-6">
             <div class="p-6">
                 <h5 class="text-xl font-semibold text-gray-800 mb-6">Recent Notifications</h5>
@@ -65,14 +81,14 @@
 </div>
 
 @section Scripts {
-    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
-    <script src="~/js/notification.js"></script>
     <script>
-        // Load users when page loads
-        document.addEventListener('DOMContentLoaded', function() {
+        // Load users and notifications when the page loads
+        document.addEventListener('DOMContentLoaded', function () {
             loadUsers();
+            loadRecentNotifications();
         });
 
+        // Load users from the server
         function loadUsers() {
             fetch('/Admin/GetUsers')
                 .then(response => {
@@ -82,7 +98,6 @@
                     return response.json();
                 })
                 .then(users => {
-                    console.log('Users loaded:', users); // Debug log
                     const select = document.getElementById('userId');
                     select.innerHTML = '<option value="">Select a user...</option>';
                     users.forEach(user => {
@@ -97,6 +112,7 @@
                 });
         }
 
+        // Show a message to the user
         function showMessage(message, isSuccess) {
             const messageDiv = document.getElementById('responseMessage');
             messageDiv.textContent = message;
@@ -116,79 +132,71 @@
             }, 3000);
         }
 
-        function sendSingleNotification() {
-            const data = {
-                userId: document.getElementById('userId').value,
-                message: document.getElementById('message').value,
-                type: document.getElementById('type').value
-            };
+        // Send a single notification
+        async function sendSingleNotification() {
+            const userId = document.getElementById('userId').value;
+            const title = document.getElementById('title').value;
+            const message = document.getElementById('message').value;
+            const type = document.getElementById('type').value;
 
-            fetch('/Notification/SendNotification', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
+            if (!userId || !title || !message || !type) {
+                showMessage('Please fill in all fields', false);
+                return;
+            }
+
+            try {
+                const response = await fetch("/Notification/SendNotification", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        userId: userId,
+                        title: title,
+                        message: message,
+                        type: type
+                    })
+                });
+
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                return response.json();
-            })
-            .then(result => {
-                showMessage(result.success ? 'Notification sent successfully' : 'Failed to send notification', result.success);
-            })
-            .catch(error => {
+
+                const data = await response.json();
+                console.log("Response:", data);
+                showMessage(data.message, data.success);
+                loadRecentNotifications(); // Refresh the notifications list
+            } catch (error) {
+                console.error("Error sending notification:", error);
                 showMessage('Error sending notification: ' + error.message, false);
-            });
-        }
-
-        function sendBroadcast() {
-            const data = {
-                message: document.getElementById('message').value,
-                type: document.getElementById('type').value
-            };
-
-            fetch('/Notification/broadcast', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(result => {
-                showMessage(result.success ? 'Broadcast sent successfully' : 'Failed to send broadcast', result.success);
-            })
-            .catch(error => {
-                showMessage('Error sending broadcast: ' + error.message, false);
-            });
+            }
         }
 
         // Load recent notifications
         function loadRecentNotifications() {
             fetch('/Notification/my-notifications')
-                .then(response => response.json())
-                .then(notifications => {
-                    const container = document.getElementById('recentNotifications');
-                    container.innerHTML = notifications.map(n => `
-                        <div class="p-4 border rounded ${n.type}-notification">
-                            <p class="font-medium">${n.message}</p>
-                            <small class="text-gray-500">${new Date(n.createdAt).toLocaleString()}</small>
-                        </div>
-                    `).join('');
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success && Array.isArray(data.notifications)) {
+                        const container = document.getElementById('recentNotifications');
+                        container.innerHTML = data.notifications.map(n => `
+                                <div class="p-4 border rounded ${n.type}-notification">
+                                    <p class="font-medium">${n.message}</p>
+                                    <small class="text-gray-500">${new Date(n.createdAt).toLocaleString()}</small>
+                                </div>
+                            `).join('');
+                    } else {
+                        console.error('Invalid response format:', data);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading notifications:', error);
                 });
-        }
-
-        // Load notifications when page loads
-        document.addEventListener('DOMContentLoaded', loadRecentNotifications);
-
-        // Refresh notifications after sending
-        const originalSendSingleNotification = sendSingleNotification;
-        sendSingleNotification = async function() {
-            await originalSendSingleNotification();
-            loadRecentNotifications();
         }
     </script>
 }

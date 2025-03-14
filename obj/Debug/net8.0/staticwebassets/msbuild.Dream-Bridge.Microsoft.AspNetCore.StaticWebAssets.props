@@ -3738,8 +3738,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ybknjj5pdj</Fingerprint>
-      <Integrity>rnWaCZyaQ4AjVPbGtyjtJhWfzZFfCvb/l3DboZHSYcE=</Integrity>
+      <Fingerprint>72q7l8bfk3</Fingerprint>
+      <Integrity>r0QQDqeRd+RTrq2biumxh7+GVvrVVAHYcnHcrxOX5kM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\reports\UserReport.csv'))</OriginalItemSpec>
@@ -3756,8 +3756,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>30q665zjgu</Fingerprint>
-      <Integrity>3UwmYr5gLAiFtuALGYrQLx+lmNECdBP8dLzL0tWQdlY=</Integrity>
+      <Fingerprint>trsv96urci</Fingerprint>
+      <Integrity>acRV0T+5QVFIw/4LT5yGrtAchJLTP510AiZ4ZuWT7Pk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\reports\UserReport.json'))</OriginalItemSpec>
@@ -3774,8 +3774,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>wtwutgg8ll</Fingerprint>
-      <Integrity>tH6TWrenURNcPh5VzNO1W0bCz4Xqt+CvBIEC874qNLM=</Integrity>
+      <Fingerprint>9xgk9b7bqz</Fingerprint>
+      <Integrity>rXcmmTItPyNBLXQhuLN4fAfcD9lOSiFix9w0Xp6Awqw=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\reports\UserReport.pdf'))</OriginalItemSpec>
