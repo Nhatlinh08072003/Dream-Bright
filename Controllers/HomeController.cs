@@ -33,14 +33,77 @@ public class HomeController : Controller
     /// <returns>The view for the home page.</returns>
 
     /******  82e744c0-a362-4b87-93fc-eedb0b94f0bc  *******/
+    // public IActionResult Index()
+    // {
+    //     var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "Guest"; // Lấy userId hoặc "Guest"
+    //     _logger.AddLog("INFO", $"User {userId} đã truy cập trang Home."); // Ghi log
+
+    //     return View();
+    // }
+    // public IActionResult Index()
+    //     {
+    //         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "Guest";
+    //         _logger.AddLog("INFO", $"User {userId} đã truy cập trang Home.");
+
+    //         // Lấy danh sách thông báo từ database
+    //         var notifications = _context.Notifications
+    //             .OrderByDescending(n => n.CreatedAt)
+    //             .Take(10) // Giới hạn 10 thông báo mới nhất
+    //             .Select(n => new NotificationViewModel
+    //             {
+    //                 UserId = n.UserId ?? 0,
+    //                 Title = n.Title,
+    //                 Message = n.Message,
+    //                 Type = n.Type
+    //             })
+    //             .ToList();
+
+    //         var viewModel = new IndexViewModel
+    //         {
+    //             Notifications = notifications
+    //         };
+
+    //         return View(viewModel);
+    //     }
     public IActionResult Index()
     {
-        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "Guest"; // Lấy userId hoặc "Guest"
-        _logger.AddLog("INFO", $"User {userId} đã truy cập trang Home."); // Ghi log
+        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+        int? currentUserId = null;
 
-        return View();
+        if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int parsedUserId))
+        {
+            currentUserId = parsedUserId;
+            _logger.AddLog("INFO", $"User {currentUserId} đã truy cập trang Home.");
+        }
+        else
+        {
+            _logger.AddLog("INFO", "Người dùng chưa đăng nhập đã truy cập trang Home.");
+        }
+
+        var notifications = new List<NotificationViewModel>(); // Khởi tạo mặc định là danh sách rỗng
+        if (currentUserId.HasValue)
+        {
+            notifications = _context.Notifications
+                .Where(n => n.UserId == currentUserId.Value)
+                .OrderByDescending(n => n.CreatedAt)
+                .Take(10)
+                .Select(n => new NotificationViewModel
+                {
+                    UserId = n.UserId ?? 0,
+                    Title = n.Title,
+                    Message = n.Message,
+                    Type = n.Type
+                })
+                .ToList();
+        }
+
+        var viewModel = new IndexViewModel
+        {
+            Notifications = notifications
+        };
+
+        return View(viewModel);
     }
-
     public IActionResult VeChungToi() => View();
     public IActionResult DuHoc() => View();
     public IActionResult DichVu() => View();

@@ -22,10 +22,12 @@ namespace Dream_Bridge.Controllers
     public class NotificationController : Controller
     {
         private readonly StudyAbroadDbContext _studyAbroadDbContext;
+        private readonly IHubContext<NotificationHub> _hubContext;
 
-        public NotificationController(StudyAbroadDbContext studyAbroadDbContext)
+        public NotificationController(StudyAbroadDbContext studyAbroadDbContext, IHubContext<NotificationHub> hubContext)
         {
             _studyAbroadDbContext = studyAbroadDbContext;
+
         }
 
         [HttpGet("my-notifications")]
@@ -48,36 +50,97 @@ namespace Dream_Bridge.Controllers
         }
 
 
+        // [HttpPost("SendNotification")]
+        // public async Task<IActionResult> SendNotification([FromBody] NotificationViewModel model)
+        // {
+        //     try
+        //     {
+        //         if (!ModelState.IsValid)
+        //         {
+        //             return Json(new { success = false, message = "Invalid notification data" });
+        //         }
+
+        //         var notification = new Dream_Bridge.Models.Main.Notification
+        //         {
+        //             UserId = model.UserId,
+        //             Title = model.Title,
+        //             Message = model.Message,
+        //             Type = model.Type, // Ensure this is mapped correctly
+        //             CreatedAt = DateTime.Now,
+        //             IsRead = false
+        //         };
+
+        //         _studyAbroadDbContext.Notifications.Add(notification);
+        //         await _studyAbroadDbContext.SaveChangesAsync();
+
+        //         return Json(new { success = true, message = "Notification saved successfully" });
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         Console.WriteLine($"Error: {ex.Message}");
+        //         return StatusCode(500, new { success = false, message = "Internal Server Error", error = ex.Message });
+        //     }
+        // }
+        // [HttpPost("SendNotification")]
+        // public async Task<IActionResult> SendNotification([FromBody] NotificationViewModel model)
+        // {
+        //     try
+        //     {
+        //         if (!ModelState.IsValid)
+        //         {
+        //             return Json(new { success = false, message = "Invalid notification data" });
+        //         }
+
+        //         var notification = new Dream_Bridge.Models.Main.Notification
+        //         {
+        //             UserId = model.UserId,
+        //             Title = model.Title,
+        //             Message = model.Message,
+        //             Type = model.Type,
+        //             CreatedAt = DateTime.Now,
+        //             IsRead = false
+        //         };
+
+        //         _studyAbroadDbContext.Notifications.Add(notification);
+        //         await _studyAbroadDbContext.SaveChangesAsync();
+
+        //         // Gửi thông báo qua SignalR
+        //         await _hubContext.Clients.All.SendAsync("ReceiveNotification", model.Message, model.Type);
+
+        //         return Json(new { success = true, message = "Notification saved successfully" });
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         Console.WriteLine($"Error: {ex.Message}");
+        //         return StatusCode(500, new { success = false, message = "Internal Server Error", error = ex.Message });
+        //     }
+        // }
         [HttpPost("SendNotification")]
         public async Task<IActionResult> SendNotification([FromBody] NotificationViewModel model)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                if (!ModelState.IsValid)
-                {
-                    return Json(new { success = false, message = "Invalid notification data" });
-                }
-
-                var notification = new Dream_Bridge.Models.Main.Notification
-                {
-                    UserId = model.UserId,
-                    Title = model.Title,
-                    Message = model.Message,
-                    Type = model.Type, // Ensure this is mapped correctly
-                    CreatedAt = DateTime.Now,
-                    IsRead = false
-                };
-
-                _studyAbroadDbContext.Notifications.Add(notification);
-                await _studyAbroadDbContext.SaveChangesAsync();
-
-                return Json(new { success = true, message = "Notification saved successfully" });
+                return Json(new { success = false, message = "Dữ liệu thông báo không hợp lệ" });
             }
-            catch (Exception ex)
+
+            var notification = new Dream_Bridge.Models.Main.Notification
             {
-                Console.WriteLine($"Error: {ex.Message}");
-                return StatusCode(500, new { success = false, message = "Internal Server Error", error = ex.Message });
-            }
+                UserId = model.UserId,
+                Title = model.Title,
+                Message = model.Message,
+                Type = model.Type,
+                CreatedAt = DateTime.Now,
+                IsRead = false
+            };
+
+            // Thay _context bằng _studyAbroadDbContext
+            _studyAbroadDbContext.Notifications.Add(notification);
+            await _studyAbroadDbContext.SaveChangesAsync();
+
+            // Gửi thông báo qua SignalR đến người dùng cụ thể
+            await _hubContext.Clients.User(model.UserId.ToString()).SendAsync("ReceiveNotification", model.Message, model.Type);
+
+            return Json(new { success = true, message = "Thông báo đã được gửi thành công" });
         }
         public IActionResult TestNotification()
         {

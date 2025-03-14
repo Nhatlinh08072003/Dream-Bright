@@ -1,4 +1,6 @@
-﻿@{
+﻿@using System.Linq
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -13,9 +15,45 @@
 </head>
 
 <body>
-
-
     <div class="overflow-x-hidden">
+        <!-- Hiển thị thông báo -->
+        <div class="container mx-auto mt-6 mb-40 px-4">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <h2 class="p-4 text-xl font-bold text-gray-800">Thông báo</h2>
+                <ul id="notificationList" class="divide-y divide-gray-200">
+                    @if (Model.Notifications != null && Model.Notifications.Count > 0)
+                    {
+                        @foreach (var notification in Model.Notifications)
+                        {
+                            <li class="transition duration-300 ease-in-out hover:bg-gray-50">
+                                <div class="flex items-start p-4">
+                                    <div class="flex-shrink-0">
+                                        <img src="https://cdn-icons-png.flaticon.com/128/1827/1827366.png"
+                                            alt="Notification Icon" class="w-6 h-6">
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <p class="font-semibold text-gray-800">@notification.Title</p>
+                                        <p class="text-sm text-gray-600">@notification.Message</p>
+                                    </div>
+                                    <span class="ml-auto text-xs text-gray-500">
+                                        @notification.CreatedAt.ToString("HH:mm dd/MM/yyyy")
+                                    </span>
+                                    <button class="ml-4 text-gray-400 hover:text-gray-600"
+                                        onclick="this.parentElement.parentElement.remove()">
+                                        ×
+                                    </button>
+                                </div>
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        <li class="p-4 text-center text-gray-500">Không có thông báo nào.</li>
+                    }
+                </ul>
+            </div>
+        </div>
+
         <!-- Banner slideshow -->
         <div class="relative w-full">
             <div class="flex transition-transform duration-1000 ease-in-out" id="slideshow">
@@ -75,6 +113,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="container mx-auto px-4 py-12">
                 <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Welcome to Dream Bridge</h1>
                 <p class="text-lg text-center text-gray-600 mb-8">Select a country to view available services:</p>
@@ -107,22 +146,21 @@
                     </form>
                 </div>
             </div>
+
             <div class="mx-4 md:mx-16">
                 <div class="border-b-2 border-t-2 border-black">
                     <h2 class="mt-20 text-2xl font-bold">HLLQEDU - CÔNG TY TƯ VẤN DU HỌC UY TÍN, CHUYÊN NGHIỆP HÀNG ĐẦU
-                        VIỆT
-                        NAM</h2>
+                        VIỆT NAM</h2>
                     <br />
                     <p class="mb-10 text-xl">
                         Với kỹ năng, kinh nghiệm được đúc kết qua nhiều năm, đội ngũ nhân viên không ngừng thay đổi và
-                        cải
-                        thiện để luôn nằm top đầu trong thị trường du học đầy cam go này. Việc xây dựng, khẳng định và
-                        củng
-                        cố thương hiệu của chúng tôi không phải tự nhiên mà có, mà nó được đúc kết bởi ban điều hành với
-                        hơn
-                        10 năm làm việc, điều đó được chứng minh qua một lượng lớn học sinh, sinh viên đậu visa, những
-                        con
-                        người đã tin tưởng và đồng hành với chúng tôi từ lúc đầu cho tới tận ngày hôm <br /><br />
+                        cải thiện để luôn nằm top đầu trong thị trường du học đầy cam go này. Việc xây dựng, khẳng định
+                        và
+                        củng cố thương hiệu của chúng tôi không phải tự nhiên mà có, mà nó được đúc kết bởi ban điều
+                        hành với
+                        hơn 10 năm làm việc, điều đó được chứng minh qua một lượng lớn học sinh, sinh viên đậu visa,
+                        những
+                        con người đã tin tưởng và đồng hành với chúng tôi từ lúc đầu cho tới tận ngày hôm <br /><br />
                         Đó chính là lý do tại sao – HLLQEDUcation có mặt ở đây để phục vụ bạn!
                     </p>
                 </div>
@@ -131,8 +169,8 @@
                     <div class="flex items-center rounded-lg p-4 text-base">
                         <img class="w-35 h-35 mb-2 rounded-lg object-cover" src="Images/nhan-vien.webp" alt="" />
                         <p class="text-left">Đội ngũ tư vấn chuyên nghiệp với hơn 10 năm kinh nghiệm hoạt động trong
-                            lĩnh
-                            vực du học, luôn sẵn sàng tư vấn cho bạn bất cứ thời gian nào trong ngày và bất kỳ ngày nào
+                            lĩnh vực du học, luôn sẵn sàng tư vấn cho bạn bất cứ thời gian nào trong ngày và bất kỳ ngày
+                            nào
                             trong tuần.</p>
                     </div>
                     <div class="flex items-center rounded-lg p-4 text-base">
@@ -143,15 +181,15 @@
                     <div class="flex items-center rounded-lg p-4 text-base">
                         <img class="w-35 h-35 mb-2 rounded-lg object-cover" src="Images/ho-tro-tu-van.webp" alt="" />
                         <p class="text-left">Hỗ trợ tư vấn lựa chọn ngành học, trường học phù hợp với trình độ và khả
-                            năng
-                            tài chính, giúp bạn phát huy tối đa thế mạnh của bản thân và khai phá những tiềm năng còn ẩn
+                            năng tài chính, giúp bạn phát huy tối đa thế mạnh của bản thân và khai phá những tiềm năng
+                            còn ẩn
                             giấu.</p>
                     </div>
                     <div class="flex items-center rounded-lg p-4 text-base">
                         <img class="w-35 h-35 mb-2 rounded-lg object-cover" src="Images/danh-gia.webp" alt="" />
                         <p class="text-left">99% học sinh tin tưởng và hài lòng với dịch vụ của HLLQEDU trước khi du
+                            học. 100% học sinh tiếp tục giới thiệu bạn bè và người thân đến với HLLQEDU sau khi đi du
                             học.
-                            100% học sinh tiếp tục giới thiệu bạn bè và người thân đến với HLLQEDU sau khi đi du học.
                         </p>
                     </div>
                 </div>
@@ -159,15 +197,19 @@
         </div>
     </div>
 
+    <!-- Script chung -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="~/lib/signalr/dist/browser/signalr.js"></script>
+
+    <!-- Script cho slideshow -->
     <script>
         let currentIndex = 0;
         const slides = document.querySelectorAll('#slideshow img');
         const dots = document.querySelectorAll('.absolute button');
         const totalSlides = slides.length;
-        const slideWidth = 100; // phần trăm của container
+        const slideWidth = 100;
 
         function showSlide(index) {
             currentIndex = index;
@@ -187,7 +229,7 @@
             showSlide((currentIndex + 1) % totalSlides);
         }
 
-        setInterval(showNextSlide, 3000); // Thay đổi ảnh mỗi 3 giây
+        setInterval(showNextSlide, 3000);
 
         dots.forEach(dot => {
             dot.addEventListener('click', () => {
@@ -196,9 +238,44 @@
             });
         });
 
-        // Initial update
         updateDots();
     </script>
+
+    <!-- Script cho SignalR, chỉ chạy khi người dùng đã đăng nhập -->
+    @if (User.Identity.IsAuthenticated)
+    {
+        <script>
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/notificationHub")
+                .build();
+
+            connection.on("ReceiveNotification", (message, type) => {
+                const notificationList = document.getElementById("notificationList");
+                const li = document.createElement("li");
+                li.className = "transition duration-300 ease-in-out hover:bg-gray-50";
+                li.innerHTML = `
+                        <div class="flex items-start p-4">
+                            <div class="flex-shrink-0">
+                                <img src="https://cdn-icons-png.flaticon.com/128/1827/1827366.png" 
+                                     alt="Notification Icon" class="w-6 h-6">
+                            </div>
+                            <div class="ml-4 flex-1">
+                                <p class="font-semibold text-gray-800">${type}</p>
+                                <p class="text-sm text-gray-600">${message}</p>
+                            </div>
+                            <span class="ml-auto text-xs text-gray-500">Vừa xong</span>
+                            <button class="ml-4 text-gray-400 hover:text-gray-600" 
+                                    onclick="this.parentElement.parentElement.remove()">
+                                ×
+                            </button>
+                        </div>
+                    `;
+                notificationList.insertBefore(li, notificationList.firstChild);
+            });
+
+            connection.start().catch(err => console.error(err.toString()));
+        </script>
+    }
 </body>
 
 </html>
