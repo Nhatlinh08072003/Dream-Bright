@@ -142,6 +142,12 @@ app.MapControllerRoute(
     pattern: "Home/DemoBuilderPattern",
     defaults: new { controller = "Home", action = "DemoBuilderPattern" });
 
+
+app.MapControllerRoute(
+    name: "Notification",
+    pattern: "/Notification/TestNotification",
+    defaults: new { controller = "Notification", action = "TestNotification" }
+);
 app.MapControllerRoute(
     name: "Home",
     pattern: "/home",

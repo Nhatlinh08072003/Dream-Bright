@@ -12,6 +12,7 @@ namespace Dream_Bridge.Models
 
         public List<EmailHistory>? EmailHistories { get; set; } // Thêm danh sách EmailHistory
         public string? Message { get; set; }
+        public List<NotificationViewModel> Notifications { get; set; }
     }
 
 }
