@@ -10,7 +10,7 @@ public class ChatbotContext
     public string GetResponse(string userInput)
     {
         // Chọn chiến lược dựa trên nội dung câu hỏi
-        if (userInput.Contains("Mỹ") || userInput.Contains("mỹ") || userInput.Contains("canada") || userInput.Contains("Canada") || userInput.Contains("úc") || userInput.Contains("Úc"))
+        if (userInput.Contains("Mỹ") || userInput.Contains("mỹ") || userInput.Contains("canada") || userInput.Contains("Canada") || userInput.Contains("úc") || userInput.Contains("Úc") || userInput.Contains("Singapore"))
         {
             strategy = new CountryStrategy();
         }

@@ -10,19 +10,21 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             text-align: center;
+            width: 100%;
         }
 
         .chat-container {
+            height: 400px;
             width: 350px;
-            margin: 50px auto;
+            margin: auto;
             background: white;
-            padding: 20px;
+            padding: 10px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .chat-box {
-            height: 300px;
+            height: 350px;
             overflow-y: auto;
             border: 1px solid #ddd;
             padding: 10px;
@@ -71,57 +73,83 @@
             cursor: pointer;
             margin-left: 5px;
         }
+
+        .option-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .option-button:hover {
+            background: #28a745;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="chat-container">
-        <h3 class="p-2">Chatbot Tư Vấn Du Học</h3>
+        <h3 class="">Chatbot Tư Vấn Du Học</h3>
         <div class="chat-box" id="chat-box"></div>
-        <div class="input-container p-2">
-            <input class="p-2 b-2" type="text" id="user-input" placeholder="Nhập tin nhắn...">
-            <button id="send-button" class="p-2">Gửi</button>
+        <div ">
+            <div id="user-input"">
         </div>
     </div>
 
     <script>
-        document.getElementById("send-button").addEventListener("click", sendMessage);
+        document.addEventListener("DOMContentLoaded", function () {
+            let chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML += `<div class="bot-message"> Bạn muốn tư vấn về vấn đề gì?</div>`;
+            chatBox.innerHTML += `<div class="bot-message"> <button class="option-button" onclick="selectOption('Du học Mỹ')">Du học Mỹ</button> <button class="option-button" onclick="selectOption('Du học Úc')">Du học Úc</button> <button class="option-button" onclick="selectOption('Du học Canada')">Du học Canada</button> <button class="option-button" onclick="selectOption('Du học Singapore')">Du học Singapore</button></div>`;
+        });
+
+        function selectOption(option) {
+            document.getElementById("user-input").value = option; 
+            sendMessage();
+        }
+        
+        document.getElementById("send-button").addEventListener("click", sendMessage); 
         document.getElementById("user-input").addEventListener("keypress", function (event) {
-            if (event.key === "Enter") {
-                sendMessage();
+    
+                if (event.key === "Enter") {
+                    sendMessage();
             }
         });
 
         function sendMessage() {
             let userInput = document.getElementById("user-input").value.trim();
             if (userInput === "") return;
+                 
+                 let chatBox = document.getElementById("chat-box");
+                chatBox.innerHTML += `<div class="user-message"> ${userInput}</div>`;
+              
+                fetch("http://localhost:5041/chatbot", { // Đổi URL nếu API chạy ở cổng khác
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message: userInput })
+                })    
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Dữ liệu API trả về:", data); // Debug log kiểm tra API trả về gì
 
-            let chatBox = document.getElementById("chat-box");
-            chatBox.innerHTML += `<div class="user-message">Bạn: ${userInput}</div>`;
-
-            fetch("http://localhost:5041/chatbot", { // Đổi URL nếu API chạy ở cổng khác
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message: userInput })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Dữ liệu API trả về:", data); // Debug log kiểm tra API trả về gì
-
-                    let botReply = data.reply || data.response || "Xin lỗi, bot chưa hiểu."; // Kiểm tra thuộc tính trả về
-                    chatBox.innerHTML += `<div class="bot-message">Bot: ${botReply}</div>`;
-                    chatBox.scrollTop = chatBox.scrollHeight;
-                })
-                .catch(error => {
-                    console.error("Lỗi API:", error);
-                    chatBox.innerHTML += `<div class="bot-message">Lỗi: Không thể kết nối với máy chủ.</div>`;
-                });
-
-            document.getElementById("user-input").value = ""; // Xóa input sau khi gửi
-        }
+                        let botReply = data.reply || data.response || "Xin lỗi, bot chưa hiểu."; // Kiểm tra thuộc tính trả về
+                        chatBox.innerHTML += `<div class="bot-message"> ${botReply}</div>`;
+                        chatBox.scrollTop = chatBox.scrollHeight; 
+                    })
+                        .catch(error => {
+                            console.error("Lỗi API:", error);
+                            chatBox.innerHTML += `<div class="bot-message">Lỗi: Không thể kết nối với máy chủ.</div>`;  
+                            }); 
+                            
+                            document.getElementById("user-input").value = ""; // Xóa input sau khi gửi
+                        }
     </script>
 
 </body>
 
-</html>
+
