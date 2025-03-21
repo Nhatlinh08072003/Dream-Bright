@@ -1,0 +1,49 @@
+@model List<string>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamBright - Payment Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-4 shadow-lg">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">DreamBright - Payment Adapter Dashboard</h1>
+            <p class="mt-1 text-sm">Danh sách giao dịch được xử lý qua Adapter Pattern</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8">
+        <section>
+            <h2 class="text-2xl font-bold text-center mb-6">Danh sách Giao Dịch</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <div class="bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-lg font-semibold text-indigo-600">Giao dịch mới</h3>
+                        <p class="mt-2 text-sm">@Model[i]</p>
+                        <a href="/adapter/details/@(i + 1)">
+                            <button class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg w-full">
+                                Xem Chi Tiết
+                            </button>
+                        </a>
+                    </div>
+                }
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 DreamBright. Tư vấn du học và thanh toán đa kênh.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

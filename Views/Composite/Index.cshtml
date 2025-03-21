@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch Vụ Du Học</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButtons = document.querySelectorAll('.toggle-details');
+
+            toggleButtons.forEach((btn) => {
+                btn.addEventListener('click', function () {
+                    const target = btn.getAttribute('data-target');
+                    const content = document.querySelector(`#${target}`);
+                    content.classList.toggle('hidden');
+                    btn.textContent = content.classList.contains('hidden') ? 'Xem chi tiết' : 'Ẩn chi tiết';
+                });
+            });
+        });
+    </script>
+</head>
+
+<body class="bg-gray-100 min-h-screen items-center justify-center">
+
+    <div class="bg-white shadow-lg rounded-2xl p-8 max-w-lg w-full" style="margin-left: 35%;">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Dịch Vụ Du Học</h1>
+
+        <div>
+            <div class="mb-4">
+                <div class="flex justify-between items-center bg-blue-500 text-white px-4 py-3 rounded-lg">
+                    <span class="text-lg font-semibold">Dịch vụ Du học</span>
+                    <button class="toggle-details bg-blue-700 px-3 py-1 rounded hover:bg-blue-800"
+                        data-target="group-1">
+                        Xem chi tiết
+                    </button>
+                </div>
+
+                <div id="group-1" class="mt-2 hidden">
+                    <ul class="space-y-2 mt-4 pl-6">
+                        <li class="bg-gray-100 p-3 rounded">
+                            <div class="flex justify-between items-center">
+                                <span>Tư vấn Visa</span>
+                                <button class="toggle-details text-blue-600 hover:underline"
+                                    data-target="service-visa">Xem chi tiết</button>
+                            </div>
+                            <div id="service-visa" class="hidden mt-2 text-sm text-gray-700">
+                                ✅ Chi tiết dịch vụ: Tư vấn các thủ tục xin Visa du học.
+                            </div>
+                        </li>
+
+                        <li class="bg-gray-100 p-3 rounded">
+                            <div class="flex justify-between items-center">
+                                <span>Hỗ trợ Học bổng</span>
+                                <button class="toggle-details text-blue-600 hover:underline"
+                                    data-target="service-scholarship">Xem chi tiết</button>
+                            </div>
+                            <div id="service-scholarship" class="hidden mt-2 text-sm text-gray-700">
+                                ✅ Chi tiết dịch vụ: Hỗ trợ tìm kiếm và nộp đơn xin học bổng.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -477,8 +477,14 @@ C:\Users\laptop\OneDrive\Máy tính\HK1_năm 3\Dream-Bright\obj\Debug\net8.0\Dre
 C:\Users\laptop\OneDrive\Máy tính\HK1_năm 3\Dream-Bright\obj\Debug\net8.0\Dream-Bridge.genruntimeconfig.cache
 C:\Users\laptop\OneDrive\Máy tính\HK1_năm 3\Dream-Bright\obj\Debug\net8.0\ref\Dream-Bridge.dll
 =======
+>>>>>>> 9e583ba244190108597ffae95a1bdb802d00abcd
 D:\Dream-Bright\bin\Debug\net8.0\appsettings.Development.json
 D:\Dream-Bright\bin\Debug\net8.0\appsettings.json
+D:\Dream-Bright\bin\Debug\net8.0\launchSettings.json
+D:\Dream-Bright\bin\Debug\net8.0\package-lock.json
+D:\Dream-Bright\bin\Debug\net8.0\package.json
+D:\Dream-Bright\bin\Debug\net8.0\Dream-Bridge.staticwebassets.runtime.json
+D:\Dream-Bright\bin\Debug\net8.0\Dream-Bridge.staticwebassets.endpoints.json
 D:\Dream-Bright\bin\Debug\net8.0\LatoFont\Lato-Black.ttf
 D:\Dream-Bright\bin\Debug\net8.0\LatoFont\Lato-BlackItalic.ttf
 D:\Dream-Bright\bin\Debug\net8.0\LatoFont\Lato-Bold.ttf
@@ -498,11 +504,6 @@ D:\Dream-Bright\bin\Debug\net8.0\LatoFont\Lato-SemiBoldItalic.ttf
 D:\Dream-Bright\bin\Debug\net8.0\LatoFont\Lato-Thin.ttf
 D:\Dream-Bright\bin\Debug\net8.0\LatoFont\Lato-ThinItalic.ttf
 D:\Dream-Bright\bin\Debug\net8.0\LatoFont\OFL.txt
-D:\Dream-Bright\bin\Debug\net8.0\launchSettings.json
-D:\Dream-Bright\bin\Debug\net8.0\package-lock.json
-D:\Dream-Bright\bin\Debug\net8.0\package.json
-D:\Dream-Bright\bin\Debug\net8.0\Dream-Bridge.staticwebassets.runtime.json
-D:\Dream-Bright\bin\Debug\net8.0\Dream-Bridge.staticwebassets.endpoints.json
 D:\Dream-Bright\bin\Debug\net8.0\Dream-Bridge.exe
 D:\Dream-Bright\bin\Debug\net8.0\Dream-Bridge.deps.json
 D:\Dream-Bright\bin\Debug\net8.0\Dream-Bridge.runtimeconfig.json
@@ -513,18 +514,6 @@ D:\Dream-Bright\bin\Debug\net8.0\Azure.Identity.dll
 D:\Dream-Bright\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\Dream-Bright\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 D:\Dream-Bright\bin\Debug\net8.0\Humanizer.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.barcodes.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.bouncy-castle-connector.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.forms.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.io.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.kernel.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.layout.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.pdfa.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.pdfua.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.sign.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.styledxmlparser.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.svg.dll
-D:\Dream-Bright\bin\Debug\net8.0\itext.commons.dll
 D:\Dream-Bright\bin\Debug\net8.0\MailKit.dll
 D:\Dream-Bright\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\Dream-Bright\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -535,7 +524,6 @@ D:\Dream-Bright\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
 D:\Dream-Bright\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 D:\Dream-Bright\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
 D:\Dream-Bright\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-D:\Dream-Bright\bin\Debug\net8.0\Microsoft.DotNet.PlatformAbstractions.dll
 D:\Dream-Bright\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 D:\Dream-Bright\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\Dream-Bright\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
@@ -717,4 +705,3 @@ D:\Dream-Bright\obj\Debug\net8.0\refint\Dream-Bridge.dll
 D:\Dream-Bright\obj\Debug\net8.0\Dream-Bridge.pdb
 D:\Dream-Bright\obj\Debug\net8.0\Dream-Bridge.genruntimeconfig.cache
 D:\Dream-Bright\obj\Debug\net8.0\ref\Dream-Bridge.dll
->>>>>>> 9e583ba244190108597ffae95a1bdb802d00abcd

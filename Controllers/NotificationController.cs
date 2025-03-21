@@ -27,6 +27,7 @@ namespace Dream_Bridge.Controllers
         public NotificationController(StudyAbroadDbContext studyAbroadDbContext, IHubContext<NotificationHub> hubContext)
         {
             _studyAbroadDbContext = studyAbroadDbContext;
+            _hubContext = hubContext;
 
         }
 

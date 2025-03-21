@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyweight Pattern - University List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer>
+        // Flyweight logic: University Factory
+        const universityFactory = (() => {
+            const universities = {};
+
+            return {
+                getUniversity(name, country) {
+                    const key = `${name}-${country}`;
+                    if (!universities[key]) {
+                        universities[key] = { name, country };
+                    }
+                    return universities[key];
+                },
+                getAllUniversities() {
+                    return Object.values(universities);
+                }
+            };
+        })();
+
+        // Function to handle adding a university and displaying the list
+        function addUniversity() {
+            const nameInput = document.getElementById("university-name");
+            const countryInput = document.getElementById("university-country");
+
+            const name = nameInput.value;
+            const country = countryInput.value;
+
+            if (name && country) {
+                universityFactory.getUniversity(name, country);
+                displayUniversities();
+                nameInput.value = "";
+                countryInput.value = "";
+            }
+        }
+
+        function displayUniversities() {
+            const universityList = document.getElementById("university-list");
+            universityList.innerHTML = "";
+
+            const universities = universityFactory.getAllUniversities();
+            universities.forEach(university => {
+                const li = document.createElement("li");
+                li.classList.add("bg-gray-100", "rounded", "p-3", "shadow-md", "hover:bg-blue-100", "transition");
+                li.innerText = `${university.name} - ${university.country}`;
+                universityList.appendChild(li);
+            });
+        }
+    </script>
+</head>
+
+
+<div class="bg-white shadow-lg rounded-2xl p-8 w-full max-w-xl" style="margin-left: 32%;">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Danh Sách Trường Đại Học</h1>
+
+    <!-- Form to add universities -->
+    <div class="mb-6">
+        <label class="block text-gray-700 font-medium mb-2">Tên Trường</label>
+        <input id="university-name" type="text" placeholder="Nhập tên trường"
+            class="w-full border-gray-300 rounded p-2 mb-4 focus:outline-none focus:border-blue-500">
+
+        <label class="block text-gray-700 font-medium mb-2">Quốc Gia</label>
+        <input id="university-country" type="text" placeholder="Nhập quốc gia"
+            class="w-full border-gray-300 rounded p-2 mb-4 focus:outline-none focus:border-blue-500">
+
+        <button onclick="addUniversity()" type="button"
+            class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+            Thêm Trường Đại Học
+        </button>
+    </div>
+
+    <!-- University list section -->
+    <div class="mt-6">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Các Trường Đại Học Đã Thêm</h2>
+        <ul id="university-list" class="space-y-2"></ul>
+    </div>
+</div>
+
+
+
+</html>
