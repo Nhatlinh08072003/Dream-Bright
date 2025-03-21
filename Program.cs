@@ -15,8 +15,41 @@ using DreamBright.Services.Factory;
 using DreamBright.Services.US;
 using DreamBright.Services.UK;
 using Dream_Bridge.Models.Observer;
+using Dream_Bridge.Models.Composite;
+using Dream_Bridge.Models.Flyweight;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Adapter
+var paypalPayment = new PaymentProcessor(new PayPalAdapter(new PayPalService()));
+paypalPayment.Process(100);
+
+var vnpayPayment = new PaymentProcessor(new VNPayAdapter(new VNPayService()));
+vnpayPayment.Process(200);
+
+// Bridge
+var onlineBasic = new OnlineConsulting(new BasicService());
+var directPremium = new DirectConsulting(new PremiumService());
+
+onlineBasic.Consult();
+directPremium.Consult();
+
+// Composite
+var visaConsulting = new SingleService("Tư vấn Visa");
+var scholarshipSupport = new SingleService("Hỗ trợ Học bổng");
+
+var studyAbroadServices = new ServiceGroup("Dịch vụ Du học");
+studyAbroadServices.AddService(visaConsulting);
+studyAbroadServices.AddService(scholarshipSupport);
+
+studyAbroadServices.ShowInfo();
+
+// Flyweight
+var harvard1 = UniversityFactory.GetUniversity("Harvard", "USA");
+var harvard2 = UniversityFactory.GetUniversity("Harvard", "USA");
+
+Console.WriteLine(ReferenceEquals(harvard1, harvard2)); // True
+///////
 
 // Add services to the container
 builder.Services.AddControllersWithViews();
@@ -142,7 +175,31 @@ app.MapControllerRoute(
     pattern: "Home/DemoBuilderPattern",
     defaults: new { controller = "Home", action = "DemoBuilderPattern" });
 
-
+//Adapter
+app.MapControllerRoute(
+    name: "Adapter",
+    pattern: "/Adapter/Index",
+    defaults: new { controller = "Adapter", action = "Index" }
+);
+//Bridge
+app.MapControllerRoute(
+    name: "Bridge",
+    pattern: "/Bridge/Index",
+    defaults: new { controller = "Bridge", action = "Index" }
+);
+//Composite
+app.MapControllerRoute(
+    name: "Composite",
+    pattern: "/Composite/Index",
+    defaults: new { controller = "Composite", action = "Index" }
+);
+//Flyweight
+app.MapControllerRoute(
+    name: "Flyweight",
+    pattern: "/Flyweight/Index",
+    defaults: new { controller = "Flyweight", action = "Index" }
+);
+//////////
 app.MapControllerRoute(
     name: "Notification",
     pattern: "/Notification/TestNotification",
