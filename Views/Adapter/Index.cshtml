@@ -1,4 +1,5 @@
-@model List<string>
+@using Dream_Bright.Models
+@model List<PaymentTransaction>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,42 +9,255 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DreamBright - Payment Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body class="bg-gray-100 text-gray-800">
-    <header class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-4 shadow-lg">
-        <div class="container mx-auto text-center">
-            <h1 class="text-3xl font-bold">DreamBright - Payment Adapter Dashboard</h1>
-            <p class="mt-1 text-sm">Danh sách giao dịch được xử lý qua Adapter Pattern</p>
+<body class="bg-gray-50">
+    <header class="bg-gradient-to-r from-blue-600 to-purple-700 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold">DreamBright</h1>
+                    <p class="mt-1 text-sm opacity-90">Payment Adapter Dashboard</p>
+                </div>
+                <div class="flex space-x-4">
+                    <button id="newPaymentBtn"
+                        class="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-blue-50 transition">
+                        <i class="fas fa-plus mr-2"></i>New Payment
+                    </button>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="container mx-auto py-8">
-        <section>
-            <h2 class="text-2xl font-bold text-center mb-6">Danh sách Giao Dịch</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                @for (int i = 0; i < Model.Count; i++)
-                {
-                    <div class="bg-white rounded-2xl shadow-lg p-6 hover:scale-105 transition-transform duration-300">
-                        <h3 class="text-lg font-semibold text-indigo-600">Giao dịch mới</h3>
-                        <p class="mt-2 text-sm">@Model[i]</p>
-                        <a href="/adapter/details/@(i + 1)">
-                            <button class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg w-full">
-                                Xem Chi Tiết
-                            </button>
-                        </a>
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Transaction History</h2>
+                <div class="relative">
+                    <select
+                        class="block appearance-none bg-gray-100 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
+                        <option>All Gateways</option>
+                        <option>PayPal</option>
+                        <option>VNPay</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                }
+                </div>
             </div>
-        </section>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                ID</th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Description</th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Gateway</th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Amount</th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Date</th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Status</th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        @foreach (var transaction in Model)
+                        {
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">@transaction.Id
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">@transaction.Description</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
+                                                    @(transaction.Gateway == "PayPal" ? "bg-blue-100 text-blue-800" : "bg-green-100 text-green-800")">
+                                        @transaction.Gateway
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    @transaction.FormattedAmount</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    @transaction.Date.ToString("dd/MM/yyyy HH:mm")</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full @transaction.StatusColor">
+                                        @transaction.Status
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="/adapter/details/@transaction.Id"
+                                        class="text-blue-600 hover:text-blue-900 mr-3">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="text-red-600 hover:text-red-900">
+                                        <i class="fas fa-receipt"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
+                        <i class="fas fa-wallet text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-500">Total Transactions</p>
+                        <p class="text-2xl font-semibold text-gray-800">@Model.Count</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 text-green-600 mr-4">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-500">Completed</p>
+                        <p class="text-2xl font-semibold text-gray-800">@Model.Count(t => t.Status == "Completed")</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-yellow-100 text-yellow-600 mr-4">
+                        <i class="fas fa-exchange-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-500">Payment Gateways</p>
+                        <p class="text-2xl font-semibold text-gray-800">2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
+    <!-- New Payment Modal -->
+    <div id="paymentModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-md">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">New Payment</h3>
+                    <button id="closeModal" class="text-gray-400 hover:text-gray-500">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <form id="paymentForm">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="amount">Amount</label>
+                        <input type="number" id="amount" name="amount"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="gateway">Payment Gateway</label>
+                        <select id="gateway" name="gateway"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+                            <option value="">Select Gateway</option>
+                            <option value="PayPal">PayPal (USD)</option>
+                            <option value="VNPay">VNPay (VND)</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="description">Description</label>
+                        <textarea id="description" name="description" rows="3"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <div class="flex justify-end space-x-3">
+                        <button type="button" id="cancelPayment"
+                            class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">Cancel</button>
+                        <button type="submit"
+                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            Process Payment
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-gray-900 text-white py-6">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2025 DreamBright. Tư vấn du học và thanh toán đa kênh.</p>
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 DreamBright. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Modal handling
+        const modal = document.getElementById('paymentModal');
+        const openBtn = document.getElementById('newPaymentBtn');
+        const closeBtn = document.getElementById('closeModal');
+        const cancelBtn = document.getElementById('cancelPayment');
+        const paymentForm = document.getElementById('paymentForm');
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        paymentForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                amount: parseFloat(document.getElementById('amount').value),
+                gateway: document.getElementById('gateway').value,
+                description: document.getElementById('description').value
+            };
+
+            try {
+                const response = await fetch('/adapter/process', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert(`Payment processed successfully! Transaction ID: ${result.transactionId}`);
+                    modal.classList.add('hidden');
+                    paymentForm.reset();
+                    // In a real app, you would refresh the transaction list
+                    window.location.reload();
+                } else {
+                    alert(`Payment failed: ${result.message}`);
+                }
+            } catch (error) {
+                alert('An error occurred while processing the payment');
+                console.error('Error:', error);
+            }
+        });
+    </script>
 </body>
 
 </html>

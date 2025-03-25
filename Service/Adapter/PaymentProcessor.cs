@@ -1,3 +1,4 @@
+using Dream_Bright.Services.Adapters;
 public class PaymentProcessor
 {
     private readonly IPaymentGateway _paymentGateway;

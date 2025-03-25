@@ -17,15 +17,16 @@ using DreamBright.Services.UK;
 using Dream_Bridge.Models.Observer;
 using Dream_Bridge.Models.Composite;
 using Dream_Bridge.Models.Flyweight;
+using Dream_Bright.Services.Logging;
+using Dream_Bright.Services.PaymentGateways;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Adapter
-var paypalPayment = new PaymentProcessor(new PayPalAdapter(new PayPalService()));
-paypalPayment.Process(100);
-
-var vnpayPayment = new PaymentProcessor(new VNPayAdapter(new VNPayService()));
-vnpayPayment.Process(200);
+// Đăng ký các service thanh toán
+builder.Services.AddSingleton<ITransactionLogger, ConsoleLogger>();
+builder.Services.AddTransient<PayPalService>();
+builder.Services.AddTransient<VNPayService>();
 
 // Bridge
 var onlineBasic = new OnlineConsulting(new BasicService());
